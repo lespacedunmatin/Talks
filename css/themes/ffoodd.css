@@ -142,7 +142,38 @@ blockquote {
   color: #01171d;
 }
 
+blockquote {
+  quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
+  position: relative;
+  z-index: 1;
+}
+
+blockquote::before {
+  content: open-quote;
+  font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "Arial", sans-serif;
+  left: -.6em;
+  opacity: .3;
+  position: absolute;
+  top: -.1em;
+  z-index: -1;
+}
+
+blockquote p {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.125em;
+  line-height: 1.333;
+}
+
+blockquote p::after {
+  content: close-quote;
+  font: 300 1em "bello-pro-1", "bello-pro-2", "Arial", sans-serif;
+  opacity: .3;
+}
+
 .hljs {
+  background: none;
+  color: #032c36;
   padding: 10px;
 }
 
@@ -445,33 +476,6 @@ div.tool-bar-elt {
 .modeplan .slide {
   border-bottom: 2px solid #032c36;
   padding-top: 1em;
-}
-
-.couv,
-.end {
-  text-align: center;
-  color: #032c36;
-}
-
-.credit {
-  padding: 0;
-}
-
-.credit li {
-  display: inline-block;
-}
-
-.credit a {
-  padding: 2px 3px;
-  border: 1px solid #efeee3;
-  border-radius: 3px;
-  text-decoration: none;
-}
-
-.credit a:hover,
-.credit a:focus {
-  background: orange;
-  border: 1px solid #032c36;
 }
 
 /** @subsection 7.1 COLUMN **/
