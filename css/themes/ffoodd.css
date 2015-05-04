@@ -46,8 +46,8 @@ Index
 body {
   font-family: "museo-slab-1", "museo-slab-2", sans-serif;
   font-weight: 300;
-  background-color: #032C36;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAOElEQVR42mNgYGBgAmJ+IBYBYm4GAkAIiKWQMBc+xRJoigXxKRZGU4zXKUxQ00SBmI9h0IFhEaQAj8ADZ2F3CVYAAAAASUVORK5CYII="), radial-gradient(ellipse at center center , #1B4049 0%, #032C36 100%);
+  background-color: #032c36;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAOElEQVR42mNgYGBgAmJ+IBYBYm4GAkAIiKWQMBc+xRJoigXxKRZGU4zXKUxQ00SBmI9h0IFhEaQAj8ADZ2F3CVYAAAAASUVORK5CYII="), radial-gradient(ellipse at center center , #1b4049 0%, #032c36 100%);
   background-repeat: repeat, no-repeat;
   color: #032c36;
   text-align: left;
@@ -56,31 +56,34 @@ body {
 a,
 a:hover,
 a:focus,
+.btn,
+.btn:hover,
+.btn:focus,
 button,
 button:hover,
 button:focus,
 input,
 input:hover,
 input:focus {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  transition: all .3s ease-in;
 }
 
-a,
-.icon {
+a {
   color: #c42419;
 }
 
 a:hover,
 a:focus {
+  color: #971c13;
   text-decoration: none;
+  transition: all .3s ease-out;
 }
 
-.btn
+.btn:focus,
 a:focus,
 select:focus,
 button:focus {
-  outline: 2px solid #c42419;
+  outline: 2px solid #971c13;
 }
 
 button {
@@ -89,23 +92,26 @@ button {
 }
 
 .slide button {
-  border: 1px solid #F9F9F9;
+  background: #c42419;
   border-radius: 3px;
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, .2);
+  color: #efeee3;
   font-size: 90%;
   margin-bottom: 2px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
+               2px 2px 2px rgba(0, 0, 0, .2);
+  transition: all .6s ease-in;
 }
 
-.slide button:hover {
-  border: 1px solid orange;
-  background: #F9F9F9;
+.slide button:hover,
+.slide button:focus {
+  color: #fff;
+  box-shadow: inset 999px 0 0 0 rgba(0, 0, 0, .2);
+  transition: all .3s ease-out;
 }
 
 figcaption {
   font-size: 80%;
-}
-
-strong {
-  font-family: 'os-regular';
 }
 
 code,
@@ -117,7 +123,6 @@ kbd {
   font: 300 1em/1.5 "museo-slab-1", "museo-slab-2", sans-serif;
   padding: 0 .2em;
   white-space: nowrap;
-
 }
 
 h3 code,
@@ -130,14 +135,25 @@ pre code {
   white-space: pre-wrap;
 }
 
+em, i,
+strong, b,
+blockquote {
+  color: #01171d;
+}
+
 .hljs {
   padding: 10px;
 }
 
+#wrapper {
+  padding: 0 12%;
+}
+
 .slide img {
-  box-shadow: 0 0 3px #666;
+  box-shadow: 0 0 3px #032c36;
   border: 3px solid #fff;
 }
+
 
 /** @subsection 1.1 TABLE **/
 
@@ -152,15 +168,15 @@ caption {
   font-size: 150%;
   font-weight: bold;
   text-align: left;
-  background: #F9F9F9;
+  background: #efeee3;
 }
 
 thead {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #032c36;
 }
 
 tbody tr:nth-child(even) {
-  background-color: #F9F9F9;
+  background-color: #efeee3;
 }
 
 th {
@@ -182,6 +198,7 @@ td {
 
 /** @subsection 2.1 HEADINGS **/
 h1, h2, h3, h4, h5, h6 {
+  color: #01171d;
   -webkit-font-feature-settings: "liga", "dlig", "c2sc", "frac", "hist";
   -moz-font-feature-settings: "liga", "dlig", "c2sc", "frac", "hist";
   font-feature-settings: "liga", "dlig", "c2sc", "frac", "hist";
@@ -203,16 +220,10 @@ h3 {
   font-family: "museo-slab-1", "museo-slab-2", sans-serif;
 }
 
-h4 {
-  margin: 0.3em;
-}
-
-h5 {
-  margin: 0.3em;
-}
-
+h4,
+h5,
 h6 {
-  margin: 0.3em;
+  margin: .3em;
 }
 
 /** @subsection 2.2 TEXT **/
@@ -221,7 +232,7 @@ h6 {
 .slide ul,
 .slide ol,
 .slide blockquote {
-  margin: 0.2em 0 0.5em 0;
+  margin: .2em 0 .5em 0;
   line-height: 150%;
 }
 
@@ -247,14 +258,23 @@ h6 {
  * -------------------------
  */
 
+.main-header a,
 .main-header h1 {
+  color: #efeee3;
   font-family: "bello-pro-1", "bello-pro-2", sans-serif;
   font-size: 3vh;
   font-weight: 300;
   -webkit-font-feature-settings: "liga", "dlig", "c2sc";
   -moz-font-feature-settings: "liga", "dlig", "c2sc";
   font-feature-settings: "liga", "dlig", "c2sc";
+  margin: .67em 0;
   text-rendering: optimizelegibility;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
+               2px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.main-header a {
+  display: inline-block;
 }
 
 .modeplan .main-header {
@@ -278,10 +298,6 @@ h6 {
  * -------------------------
  */
 
-.tool-bar {
-  background: #fff;
-}
-
 .modeplan .tool-bar {
   box-shadow: 0 -2px 3px #bbb;
   background: #fff;
@@ -290,49 +306,105 @@ h6 {
 /** @subsection 5.1 NAVIGATION ELEMENTS **/
 
 .select-goto {
-  color: #666;
-  border: none;
+  border: 0;
+  border-radius: 50px;
+  color: #032c36;
+  display: inline-block;
+  float: none;
+  margin: 0 1em 0 0;
+  padding: .46em .5em;
+  transition: all .3s ease-in;
+  vertical-align: middle;
+}
+
+.slide-counter {
+  position: static;
+}
+
+#cpt > div {
+  background: linear-gradient(105deg, #fff 0%, #fff 50%, #efeee3 50%, #efeee3 100%);
+  border-radius: 50px;
+  height: auto;
+  padding: .46em .5em;
+  width: auto;
 }
 
 .slide-counter-current {
-  background-color: #fff;
-  color: #666;
-  border: 1px solid #666;
+  color: #01171d;
 }
 
-.slide-counter-total {
-  background-color: #666;
-  color: #fff;
-  border: 1px solid transparent;
+.btn,
+.related a,
+.slide-counter > div {
+  background: #efeee3;
+  border-radius: 50%;
+  color: #032c36;
+  display: inline-block;
+  height: 2em;
+  padding: 0;
+  text-decoration: none;
+  width: 2em;
 }
 
-.btn:hover .icon {
-  opacity: 0.5;
+.btn:hover,
+.btn:focus,
+.related a:hover,
+.related a:focus,
+.select-goto:hover,
+.select-goto:focus {
+  background: #fff;
+  box-shadow: 0 0 0 .5em rgba(0, 0, 0, .3);
 }
 
-.btn[disabled="disabled"]:hover {
-  opacity: 1;
+.btn[disabled="disabled"]:hover,
+.btn[disabled="disabled"]:focus {
+  background: #efeee3;
+  box-shadow: none;
   cursor: default;
+}
+
+.related a .icon {
+  text-align: center;
+  height: 2em;
+  width: 2em;
+}
+
+.related a .icon::before {
+  font-size: 150%;
+  line-height: 1.4;
+}
+
+.btn .icon:before {
+  line-height: 80%;
+}
+
+.btn .icon-prev::before {
+    transform: translate( -.1em, 0);
+}
+
+.btn .icon-next::before {
+    transform: translate( .1em, 0);
 }
 
 /** @subsection 5.2 RELATED LINKS **/
 
-.related a {
-  padding: 2px 3px;
-  font-size: 70%;
-  border: 1px solid #666;
-  border-radius: 3px;
-  text-decoration: none;
-}
-
 .related a img {
-  position: related;
+  position: relative;
   margin-top: -4px;
 }
 
-.related a:hover {
-  background: #F9F9F9;
-  border: 1px solid #aaa;
+#navbar li,
+.related li {
+  display: inline-block;
+  float: none;
+  margin-left: 1em;
+  vertical-align: middle;
+}
+
+li.tool-bar-elt,
+div.tool-bar-elt {
+  height: auto;
+  overflow: visible;
 }
 
 /**
@@ -349,7 +421,7 @@ h6 {
 .index span {
   padding: 0;
   color: #fff;
-  background-color: #666;
+  background-color: #032c36;
 }
 
 /**
@@ -366,14 +438,14 @@ h6 {
 }
 
 .modeplan .slide {
-  border-bottom: 2px solid #666;
+  border-bottom: 2px solid #032c36;
   padding-top: 1em;
 }
 
 .couv,
 .end {
   text-align: center;
-  color: #666;
+  color: #032c36;
 }
 
 .credit {
@@ -386,7 +458,7 @@ h6 {
 
 .credit a {
   padding: 2px 3px;
-  border: 1px solid #F9F9F9;
+  border: 1px solid #efeee3;
   border-radius: 3px;
   text-decoration: none;
 }
@@ -394,7 +466,7 @@ h6 {
 .credit a:hover,
 .credit a:focus {
   background: orange;
-  border: 1px solid #666;
+  border: 1px solid #032c36;
 }
 
 /** @subsection 7.1 COLUMN **/
@@ -412,7 +484,7 @@ h6 {
 button.disc {
   display: block;
   width: 100%;
-  border: none;
+  border: 0;
   padding-top: 85px;
 }
 
@@ -432,8 +504,8 @@ button.disc1:focus {
  */
 
 .tool-block {
-  background-color: #F9F9F9;
-  color: #666;
+  background-color: #efeee3;
+  color: #032c36;
   box-shadow: 0 0 10px #000;
 }
 
@@ -441,20 +513,20 @@ button.disc1:focus {
   padding-top: 5px;
   font-size: 1.2em;
   text-align: center;
-  border-bottom: 1px dashed #666;
+  border-bottom: 1px dashed #032c36;
   text-transform: uppercase;
 }
 
 .tool-block li,
 .tool-block label,
 .tool-block select {
-  font-size: 0.75em;
+  font-size: .75em;
 }
 
 /** @subsection 8.1 TOOLS ELEMENTS **/
 
 .tool-block-settings fieldset {
-  border: none;
+  border: 0;
 }
 
 .tool-block-settings legend {
@@ -468,25 +540,25 @@ button.disc1:focus {
 .help {
   border: 1px solid orange;
   border-radius: 5px;
-  background: #666;
+  background: #032c36;
   color: #fff;
 }
 
 .tool-block button:hover,
 .tool-block button:focus {
-  color: #666;
+  color: #032c36;
 }
 
 .btn-setting { /* Save & Default button*/
-  background-color: #666;
-  border: 1px solid  #666;
+  background-color: #032c36;
+  border: 1px solid  #032c36;
   color: #fff;
 }
 
 .btn-setting:hover,
 .btn-setting:focus {
-  background: #F9F9F9;
-  color: #666;
+  background: #efeee3;
+  color: #032c36;
 }
 
 /**
@@ -496,79 +568,79 @@ button.disc1:focus {
  */
 
 #volet.Flash {
-  background: #666;
+  background: #032c36;
 }
 
 @media screen and (min-width: 48em) {
 
-h2 {
-  float: left;
-  margin-bottom: 0.5em;
-}
+  h2 {
+    float: left;
+    margin-bottom: .5em;
+  }
 
-h2 + * {
-  clear: both;
-}
+  h2 + * {
+    clear: both;
+  }
 
-h3 {
-  float: left;
-  margin-bottom: 1em;
-}
+  h3 {
+    float: left;
+    margin-bottom: 1em;
+  }
 
-h3 + * {
-  clear: both;
-}
+  h3 + * {
+    clear: both;
+  }
 
-.col-left {
-  float: left;
-  width: 50%;
-  padding: 0 5% 0 0;
-}
+  .col-left {
+    float: left;
+    width: 50%;
+    padding: 0 5% 0 0;
+  }
 
-.col-right {
-  float: right;
-  width: 50%;
-  padding: 0 0 0 5%;
-}
+  .col-right {
+    float: right;
+    width: 50%;
+    padding: 0 0 0 5%;
+  }
 
-.list-disc li {
-  float: left;
-  width: 25%;
-}
+  .list-disc li {
+    float: left;
+    width: 25%;
+  }
 
 }
 
 @media screen and (max-width: 48em) and (min-width:24em) {
 
-.list-disc li {
-  float: left;
-  width: 50%;
-}
+  .list-disc li {
+    float: left;
+    width: 50%;
+  }
 
 }
 
 @media screen and (max-width: 48em) {
 
-.main-header h1 {
-  font-size: 80%;
-}
+  .main-header h1 {
+    font-size: 80%;
+  }
 
-.main-header {
-  background: #fff;
-  padding: 5px;
-  box-shadow: 0 2px 3px #bbb;
-}
+  .main-header {
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 2px 3px #bbb;
+  }
 
-.tool-bar {
-  box-shadow: 0 -2px 3px #bbb;
-}
+  .tool-bar {
+    box-shadow: 0 -2px 3px #bbb;
+  }
 
-.related {
-  background: #fff;
-  border: 3px solid #F9F9F9;
-  border-left: 0;
-  border-bottom: 0;
-}
+  .related {
+    background: #fff;
+    border: 3px solid #efeee3;
+    border-left: 0;
+    border-bottom: 0;
+  }
 
 }
 
