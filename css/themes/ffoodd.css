@@ -83,7 +83,8 @@ a:focus {
 a:focus,
 select:focus,
 button:focus {
-  outline: 2px solid #971c13;
+  box-shadow: 0 0 0 .25em #971c13 !important;
+  outline: none !important;
 }
 
 button {
@@ -356,6 +357,10 @@ h6 {
   box-shadow: 0 0 0 .5em rgba(0, 0, 0, .3);
 }
 
+.btn[disabled="disabled"] {
+  opacity: .5;
+}
+
 .btn[disabled="disabled"]:hover,
 .btn[disabled="disabled"]:focus {
   background: #efeee3;
@@ -504,61 +509,107 @@ button.disc1:focus {
  */
 
 .tool-block {
-  background-color: #efeee3;
-  color: #032c36;
-  box-shadow: 0 0 10px #000;
+  background-color: #b31d14;
+  background-image: linear-gradient(to bottom, #c42419 0%, #a1160f 100%);
+  border-top: 1px solid #d7665e;
+  color: #efeee3;
+  outline: 1px solid #000;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
+               2px 2px 2px rgba(0, 0, 0, .2);
+  transition: outline .3s ease-in;
 }
 
 .tool-block-title {
-  padding-top: 5px;
+  color: #efeee3;
+  font-family: "bello-pro-1", "bello-pro-2", sans-serif;
   font-size: 1.2em;
-  text-align: center;
-  border-bottom: 1px dashed #032c36;
-  text-transform: uppercase;
+  margin-left: 1.5em;
+}
+
+#Ct {
+  margin-left: 2.6em;
 }
 
 .tool-block li,
 .tool-block label,
 .tool-block select {
+  color: #fff;
   font-size: .75em;
+  font-weight: 500;
+}
+
+.tool-block select {
+  color: #01171d;
+}
+
+.tool-block button {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
+               2px 2px 2px rgba(0, 0, 0, .2);
+  transition: all .3s ease-in;
+}
+
+.tool-block button:hover,
+.tool-block button:focus {
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5),
+               2px 2px 2px rgba(0, 0, 0, .5);
+  transition: all .3s ease-out;
+}
+
+#FormConfig {
+  margin-left: 1.3em;
 }
 
 /** @subsection 8.1 TOOLS ELEMENTS **/
 
 .tool-block-settings fieldset {
   border: 0;
+  font-size: 1em;
 }
 
 .tool-block-settings legend {
+  font-family: "bello-pro-1", "bello-pro-2", sans-serif;
   font-size: 1.5em;
-  -webkit-font-feature-settings: "c2sc";
-  -moz-font-feature-settings: "c2sc";
-  font-feature-settings: "c2sc";
-  font-variant: small-caps;
 }
 
 .help {
-  border: 1px solid orange;
   border-radius: 5px;
-  background: #032c36;
-  color: #fff;
+  background: #fff;
+  color: #032c36;
+  font-weight: 500;
+  text-shadow: none;
 }
 
 .tool-block button:hover,
 .tool-block button:focus {
-  color: #032c36;
-}
-
-.btn-setting { /* Save & Default button*/
-  background-color: #032c36;
-  border: 1px solid  #032c36;
   color: #fff;
 }
 
+.btn-setting {
+  background-color: #032c36;
+  background-image: linear-gradient(to bottom, #9fb8d5 0%, #02181e 100%);
+  background-size: auto 300%;
+  background-position: 0 50%;
+  border: 1px solid #000;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .25);
+  color: #fff !important;
+  font-weight: 500;
+  padding: .75em 1em;
+  text-decoration: none !important;
+  text-shadow: 1px 1px rgba(0, 0, 0, .25);
+  transition: all .3s linear;
+}
+
+
 .btn-setting:hover,
 .btn-setting:focus {
-  background: #efeee3;
-  color: #032c36;
+  background-color: #02181e;
+  background-position: 0 100%;
+}
+
+.btn-setting:active {
+  background-color: #04404e;
+  background-position: 0 0;
 }
 
 /**
