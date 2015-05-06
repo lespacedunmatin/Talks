@@ -152,6 +152,14 @@ var config = {
     slide: true,
     group: 'Geffects'
   },
+  // FFOODD
+  ffoodd: {
+    val: 'ffoodd',
+    classSetting: 'ffoodd',
+    flap: false,
+    slide: false,
+    group: 'Geffects'
+  },
   /** Players **/
   Stexte: {
     id: 'Stexte',
@@ -308,7 +316,7 @@ var config = {
     classSetting: 'btn-close',
     iconClass: 'icon icon-close',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/close.png'
+    fallBackSrcImg:'img/close.svg'
   },
   /** Setting navbar
     Setting navbar button and select
@@ -320,14 +328,14 @@ var config = {
     classSetting: 'tool-bar-elt btn btn-prev',
     iconClass: 'icon icon-prev',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/prev.png'
+    fallBackSrcImg:'img/prev.svg'
   },
   Bnext: {
     id: 'next',
     classSetting: 'tool-bar-elt btn btn-next',
     iconClass: 'icon icon-next',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/next.png'
+    fallBackSrcImg:'img/next.svg'
   },
   Select:{
     id: 'tocP',
@@ -338,21 +346,21 @@ var config = {
     classSetting: 'btn btn-goto',
     iconClass: 'icon icon-goto',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/goto.png'
+    fallBackSrcImg:'img/goto.svg'
   },
   Btoc: {
     id: 'toc',
     classSetting: 'tool-bar-elt btn btn-block-summary',
     iconClass: 'icon icon-summary',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/summary.png'
+    fallBackSrcImg:'img/summary.svg'
   },
   Bconfig: {
     id: 'set',
     classSetting: 'tool-bar-elt btn btn-block-settings',
     iconClass: 'icon icon-settings',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/settings.png'
+    fallBackSrcImg:'img/settings.svg'
   },
   SelectWrapper: {
     id: 'Fgo',
@@ -732,20 +740,15 @@ function Toc(){
   Cbutton.setAttribute( 'id', config.Bclose.idSummary );
   Ctitle.setAttribute( 'class', config.Ctitle.classSetting );
   Cbutton.className = config.Bclose.classSetting;
+
   //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Bclose.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Bclose.fallBackSrcImg;
-  CspanText.appendChild( document.createTextNode( lang.Wclose ) );
-  CspanText.className = config.Bclose.fallbackClass;
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Bclose.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Wclose );
+  CspanIcon.setAttribute( 'height', '16' );
+  CspanIcon.setAttribute( 'width', '16' );
+
+  Cbutton.appendChild( CspanIcon );
   Ctitle.appendChild( Cbutton );
   $( config.Summary.id ).appendChild( Ctitle );
   //Set summary list
@@ -995,20 +998,15 @@ function PushConfig(){
   Cbutton.setAttribute( 'type', 'button' );
   Cbutton.setAttribute( 'id', config.Bclose.idConfig );
   Cbutton.className = config.Bclose.classSetting;
+
   //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Bclose.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Bclose.fallBackSrcImg;
-  CspanText.appendChild( document.createTextNode( lang.Wclose ) );
-  CspanText.className = config.Bclose.fallbackClass;
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Bclose.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Wclose );
+  CspanIcon.setAttribute( 'height', '16' );
+  CspanIcon.setAttribute( 'width', '16' );
+
+  Cbutton.appendChild( CspanIcon );
   // Set window title and close button
   Ctitle.appendChild(Cbutton);
   $( config.Setting.id ).appendChild(Ctitle);
@@ -1139,22 +1137,15 @@ function PushNavBar(){
   Cbutton.setAttribute( 'id', config.Bprev.id );
   Cbutton.setAttribute( 'title', lang.Bprev.title );
   Cbutton.className = config.Bprev.classSetting;
+
   //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Bprev.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Bprev.title );
+  CspanIcon.setAttribute( 'height', '32' );
+  CspanIcon.setAttribute( 'width', '32' );
 
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Bprev.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Bprev.fallBackSrcImg;
-  CspanText.appendChild( document.createTextNode( lang.Bprev.title ) );
-  CspanText.className = config.Bprev.fallbackClass;
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  Cbutton.appendChild( CspanIcon );
   Cli.appendChild( Cbutton );
   Clist.appendChild( Cli );
 
@@ -1177,21 +1168,13 @@ function PushNavBar(){
   Cbutton.className = config.Bselect.classSetting;
 
   //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Bselect.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Bselect.title );
+  CspanIcon.setAttribute( 'height', '32' );
+  CspanIcon.setAttribute( 'width', '32' );
 
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Bselect.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Bselect.fallBackSrcImg;
-  CspanText.appendChild( document.createTextNode( lang.Bselect.title ) );
-  CspanText.className = config.Bselect.fallbackClass
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  Cbutton.appendChild( CspanIcon );
   Cdiv.appendChild( Cbutton );
   Cli.appendChild( Cdiv );
   Clist.appendChild( Cli );
@@ -1205,21 +1188,13 @@ function PushNavBar(){
   Cbutton.className = config.Bnext.classSetting;
 
   //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Bnext.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Bnext.title );
+  CspanIcon.setAttribute( 'height', '32' );
+  CspanIcon.setAttribute( 'width', '32' );
 
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Bnext.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Bnext.fallBackSrcImg;
-  CspanText.appendChild( document.createTextNode( lang.Bnext.title ) );
-  CspanText.className = config.Bnext.fallbackClass;
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  Cbutton.appendChild( CspanIcon );
   Cli.appendChild( Cbutton );
   Clist.appendChild( Cli );
 
@@ -1232,22 +1207,13 @@ function PushNavBar(){
   Cbutton.className = config.Btoc.classSetting;
 
   //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Btoc.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Btoc.title );
+  CspanIcon.setAttribute( 'height', '32' );
+  CspanIcon.setAttribute( 'width', '32' );
 
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Btoc.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Btoc.fallBackSrcImg;
-  CspanText.innerHTML = lang.Btoc.title;
-  CspanText.appendChild( document.createTextNode( lang.Btoc.title ) );
-  CspanText.className = config.Btoc.fallbackClass;
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  Cbutton.appendChild( CspanIcon );
   Cli.appendChild( Cbutton );
   Clist.appendChild( Cli );
 
@@ -1284,22 +1250,13 @@ function PushNavBar(){
   Cbutton.setAttribute( 'title', lang.Bconfig.title );
   Cbutton.className = config.Bconfig.classSetting;
 
-  //Icon implementation
-  var CspanFallback = document.createElement( 'SPAN' );
-  CspanFallback.className = config.IconFallBack.classSetting;
+  var CspanIcon = document.createElement( 'IMG' );
+  CspanIcon.src = config.Bconfig.fallBackSrcImg;
+  CspanIcon.setAttribute( 'alt', lang.Bconfig.title );
+  CspanIcon.setAttribute( 'height', '32' );
+  CspanIcon.setAttribute( 'width', '32' );
 
-  var CspanIcon = document.createElement( 'SPAN' );
-  CspanIcon.className = config.Bconfig.iconClass;
-  CspanIcon.setAttribute( 'aria-hidden', 'true' );
-
-  var CspanText = document.createElement( 'SPAN' );
-  //CspanText.src = config.Bconfig.fallBackSrcImg;
-  CspanText.appendChild( document.createTextNode( lang.Bconfig.title ) );
-  CspanText.className = config.Bconfig.fallbackClass;
-  CspanText.className += " adobeBlank";
-  CspanFallback.appendChild( CspanIcon );
-  CspanFallback.appendChild( CspanText );
-  Cbutton.appendChild( CspanFallback );
+  Cbutton.appendChild( CspanIcon );
   Cli.appendChild( Cbutton );
   Clist.appendChild( Cli );
   // Include the navbar
