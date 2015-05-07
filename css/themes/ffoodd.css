@@ -86,7 +86,9 @@ a:focus {
 .btn:focus,
 a:focus,
 select:focus,
-button:focus {
+button:focus,
+.btn-close:hover,
+.btn-close:focus {
   box-shadow: 0 0 0 .25em #971c13 !important;
   outline: none !important;
 }
@@ -185,13 +187,13 @@ blockquote p::after {
 .modeplan #wrapper {
   height: 80vh;
   overflow-x: hidden;
-  padding: 0 12%;
+  margin: 0;
+  padding: 0 15vw;
 }
 
 .modeplan #wrapper {
-  margin: 10vh 12%;
-  padding: 0;
-  width: 76%;
+  margin: 10vh 15vw;
+  width: 70vw;
 }
 
 .modeplan .tool-bar,
@@ -308,6 +310,10 @@ h6 {
  * -------------------------
  */
 
+.main-header {
+  padding: 0 calc(15vw + .5em);
+}
+
 .main-header a,
 .main-header h1 {
   color: #efeee3;
@@ -393,7 +399,7 @@ h6 {
 .related a:focus,
 .select-goto:hover,
 .select-goto:focus {
-  box-shadow: 0 0 0 .3em rgba(0, 0, 0, .3);
+  box-shadow: 0 0 0 .3em rgba(196, 36, 25, .75);
 }
 
 .slide-counter > div {
@@ -421,8 +427,7 @@ h6 {
 * @see http://davidwalsh.name/firefox-buttons
 */
 .btn::-moz-focus-inner,
-.btn::-moz-focus-inner,
-.btn::-moz-focus-inner {
+.btn-close::-moz-focus-inner {
   border: 0;
   margin: 0;
   outline: none;
@@ -430,12 +435,25 @@ h6 {
 }
 
 /** @subsection 5.2 RELATED LINKS **/
+#wrappernav {
+  padding: 0 calc(15vw + .5em);
+  overflow: hidden;
+}
+
+#navbar {
+  margin: 5px 0 0;
+}
+
 #navbar li,
 .related li {
   display: inline-block;
   float: none;
-  margin-left: 1em;
   vertical-align: middle;
+}
+
+#navbar li + li,
+.related li + li {
+  margin-left: 1em;
 }
 
 li.tool-bar-elt,
@@ -473,8 +491,9 @@ button.tool-bar-elt {
  */
 .slide {
   max-height: 77vh;
+  overflow-x: hidden;
   overflow-y: auto;
-  padding: 2em;
+  padding: 1.5em;
   top: 2vh;
 }
 
@@ -482,8 +501,8 @@ button.tool-bar-elt {
 body > :not(.modeplan) .slide {
   background: #efeee3;
   border: 1px solid #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 0 7px rgba(0, 0, 0, .2);
+  border-radius: .4rem;
+  box-shadow: 0 0 0 .5rem rgba(0, 0, 0, .2);
 }
 
 
@@ -525,34 +544,62 @@ button.disc1:focus {
   background-color: #b31d14;
   background-image: linear-gradient(to bottom, #c42419 0%, #a1160f 100%);
   border-top: 1px solid #d7665e;
+  bottom: 0;
   color: #efeee3;
+  height: 100vh !important;
   outline: 1px solid #000;
+  padding: 1em;
+  position: absolute;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
                2px 2px 2px rgba(0, 0, 0, .2);
+  top: 0;
   transition: outline .3s ease-in;
+  width: 15vw;
 }
 
 .tool-block-title {
   color: #efeee3;
   font-family: "bello-pro-1", "bello-pro-2", sans-serif;
   font-size: 1.2em;
-  margin-left: 1.5em;
+  position: relative;
 }
 
-#Ct {
-  margin-left: 2.6em;
+.tool-block ol {
+  padding-left: 1em;
 }
 
 .tool-block li,
 .tool-block label,
 .tool-block select {
-  color: #fff;
+  color: #efeee3;
   font-size: .75em;
   font-weight: 500;
 }
 
+.input-setting,
+.label-setting,
+.label-setting img {
+  display: inline-block;
+  margin-top: .5em;
+  vertical-align: middle;
+}
+
+.input-setting {
+  position: static;
+}
+
+.label-setting {
+  line-height: 1;
+  padding-left: .5em;
+}
+
+.tool-block label img {
+  margin: -2px .25em 0 0;
+}
+
 .tool-block select {
   color: #01171d;
+  margin-top: .5em;
 }
 
 .tool-block button {
@@ -564,14 +611,11 @@ button.disc1:focus {
 
 .tool-block button:hover,
 .tool-block button:focus {
+  color: #fff;
   text-decoration: none;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .5),
                2px 2px 2px rgba(0, 0, 0, .5);
   transition: all .3s ease-out;
-}
-
-#FormConfig {
-  margin-left: 1.3em;
 }
 
 /** @subsection 8.1 TOOLS ELEMENTS **/
@@ -579,24 +623,29 @@ button.disc1:focus {
 .tool-block-settings fieldset {
   border: 0;
   font-size: 1em;
+  margin: 0;
+  padding: 0 0 1em;
 }
 
 .tool-block-settings legend {
-  font-family: "bello-pro-1", "bello-pro-2", sans-serif;
-  font-size: 1.5em;
+  font-family: "museo-slab-1","museo-slab-2",sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: .3em 0 .25em;
 }
 
 .help {
-  border-radius: 5px;
-  background: #fff;
+  border-radius: .25rem;
+  background: #efeee3;
   color: #032c36;
-  font-weight: 500;
+  font-size: .75rem;
+  font-weight: 300;
   text-shadow: none;
 }
 
-.tool-block button:hover,
-.tool-block button:focus {
-  color: #fff;
+.btn-group-settings {
+  padding: 1em 0;
+  text-align: left;
 }
 
 .btn-setting {
@@ -608,12 +657,11 @@ button.disc1:focus {
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .25);
   color: #fff !important;
   font-weight: 500;
-  padding: .75em 1em;
+  padding: .66em;
   text-decoration: none !important;
   text-shadow: 1px 1px rgba(0, 0, 0, .25);
   transition: all .3s linear;
 }
-
 
 .btn-setting:hover,
 .btn-setting:focus {
@@ -624,6 +672,21 @@ button.disc1:focus {
 .btn-setting:active {
   background-color: #04404e;
   background-position: 0 0;
+}
+
+.btn-close {
+  border: 0;
+  border-radius: 50%;
+  height: 1rem;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1rem;
+}
+
+.btn-close img {
+  display: block;
 }
 
 /**
@@ -647,19 +710,21 @@ button.disc1:focus {
   }
 }
 
-#wrapper {
+[data-effect="ffoodd"] #wrapper {
   -webkit-animation: move-up 800ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
-   animation: move-up 800ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+          animation: move-up 800ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 /** @subsection 9.2 SLIDING **/
 [data-effect="ffoodd"] .slide {
   display: block !important;
   opacity: 0;
+  margin: .5rem;
   position: absolute;
+  top: 0 !important;
   visibility: hidden;
   -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+          transform-style: preserve-3d;
   transition: transform-origin 800ms cubic-bezier(.26, .86, .44, .985),
               transform 800ms cubic-bezier(.26, .86, .44, .985),
               visibility 800ms cubic-bezier(.26, .86, .44, .985),
@@ -671,19 +736,19 @@ button.disc1:focus {
   pointer-events: none;
   position: absolute;
   -webkit-transform: translate3d(-150%, 0, 0);
-  transform: translate3d(-150%, 0, 0);
+          transform: translate3d(-150%, 0, 0);
   visibility: hidden;
 }
 
 [data-effect="ffoodd"] .slide[style*="display: block"] {
-  opacity: 1;
-  position: relative;
-  visibility: visible;
+  opacity: 1          !important;
+  position: relative  !important;
+  visibility: visible !important;
 }
 
 [data-effect="ffoodd"] .slide[style*="display: block"] ~ .slide[style*="display: none"] {
   -webkit-transform: translate3d(150%, 0, 0);
-  transform: translate3d(150%, 0, 0);
+          transform: translate3d(150%, 0, 0);
 }
 /* fin des transitions made by ffoodd */
 

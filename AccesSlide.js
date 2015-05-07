@@ -191,7 +191,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0,
     group: 'Gaccess'
   } ,
@@ -201,7 +202,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0,
     group: 'Gaccess'
   },
@@ -211,7 +213,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0,
     group: 'Gaccess'
   },
@@ -221,7 +224,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0,
     group: 'Gaccess'
   },
@@ -231,7 +235,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0,
     group: 'Gaccess'
   },
@@ -241,7 +246,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0,
     group : 'Gaccess'
   },
@@ -251,7 +257,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
-    IconClass: 'icon icon-setting-sound',
+    //IconClass: 'icon icon-setting-sound',
+    IconSrc: 'img/sound.svg',
     val: 0 ,
     group: 'Gaccess'
   },
@@ -261,7 +268,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-next',
-    IconClass: 'icon icon-setting-next',
+    //IconClass: 'icon icon-setting-next',
+    IconSrc: 'img/next.svg',
     val: 0,
     group: 'Gaccess'
   },
@@ -272,7 +280,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-mouse',
-    IconClass: 'icon icon-setting-mouse',
+    //IconClass: 'icon icon-setting-mouse',
+    IconSrc: 'img/click.svg',
     val: 0,
     group: 'Gaccess'
   },
@@ -285,7 +294,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-summary',
-    IconClass: 'icon icon-setting-summary',
+    //IconClass: 'icon icon-setting-summary',
+    IconSrc: 'img/summary.svg',
     val: 1,
     group: 'Gslide'
   },
@@ -295,7 +305,8 @@ var config = {
     classSetting : 'input-setting',
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-plan',
-    IconClass: 'icon icon-setting-plan',
+    //IconClass: 'icon icon-setting-plan',
+    IconSrc: 'img/plan.svg',
     val: 0,
     group: 'Gslide'
   },
@@ -1051,10 +1062,15 @@ function PushConfig(){
         var Clabel = document.createElement( 'LABEL' );
         Clabel.setAttribute( 'for', config[ param ].id );
         Clabel.className = config[ param].classLabelSetting;
-        var IconSpan = document.createElement( 'SPAN' );
+
+        var IconSpan = document.createElement( 'IMG' );
         IconSpan.setAttribute( 'aria-hidden', 'true' );
-        IconSpan.className = config[ param ].IconClass;
+        IconSpan.setAttribute( 'width', '12' );
+        IconSpan.setAttribute( 'height', '12' );
+        IconSpan.setAttribute( 'alt', '' );
+        IconSpan.src = config[ param ].IconSrc;
         Clabel.appendChild( IconSpan );
+
         Clabel.appendChild( document.createTextNode( lang[ param ].label ) );
         var Cphelp = document.createElement( 'P' );
         Cphelp.setAttribute( 'id', 'help-' + config[ param ].id );
@@ -1075,10 +1091,15 @@ function PushConfig(){
         var Clabel = document.createElement( 'LABEL' );
         Clabel.setAttribute( 'for', config[ param ].id );
         Clabel.className = config[ param].classLabelSetting;
-        var IconSpan = document.createElement( 'SPAN' );
+
+        var IconSpan = document.createElement( 'IMG' );
         IconSpan.setAttribute( 'aria-hidden', 'true' );
-        IconSpan.className = config[ param ].IconClass;
+        IconSpan.setAttribute( 'width', '12' );
+        IconSpan.setAttribute( 'height', '12' );
+        IconSpan.setAttribute( 'alt', '' );
+        IconSpan.src = config[ param ].IconSrc;
         Clabel.appendChild( IconSpan );
+
         Clabel.appendChild( document.createTextNode( lang[ param ].label ) );
         var Cphelp = document.createElement( 'P' );
         Cphelp.setAttribute( 'id', 'help-' + config[ param ].id );
