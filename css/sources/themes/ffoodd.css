@@ -251,9 +251,9 @@ td {
 /** @subsection 2.1 HEADINGS **/
 h1, h2, h3, h4, h5, h6 {
   color: #01171d;
-  -webkit-font-feature-settings: "liga", "dlig", "c2sc", "frac", "hist";
-  -moz-font-feature-settings: "liga", "dlig", "c2sc", "frac", "hist";
-  font-feature-settings: "liga", "dlig", "c2sc", "frac", "hist";
+  -webkit-font-feature-settings: "liga", "dlig", "calt", "ordn", "c2sc", "frac", "hist";
+  -moz-font-feature-settings: "liga", "dlig", "calt", "ordn", "c2sc", "frac", "hist";
+  font-feature-settings: "liga", "dlig", "calt", "ordn", "c2sc", "frac", "hist";
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -295,13 +295,20 @@ h6 {
 }
 
 .slide .small {
-  font-size: 90%;
+  font-size: smaller;
   font-weight: normal;
 }
 
 .slide .small * {
-  font-size: 100%;
+  font-size: 1em;
   font-weight: normal;
+}
+
+.slide abbr {
+  font-variant-caps: small-caps;
+  -webkit-font-feature-settings: "smcp";
+  -moz-font-feature-settings: "smcp";
+  font-feature-settings: "smcp";
 }
 
 /**
@@ -574,7 +581,27 @@ button.disc1:focus {
   color: #efeee3;
   font-size: .75em;
   font-weight: 500;
+}
+
+.input-setting,
+.label-setting,
+.label-setting img {
+  display: inline-block;
+  margin-top: .5em;
+  vertical-align: middle;
+}
+
+.input-setting {
+  position: static;
+}
+
+.label-setting {
+  line-height: 1;
   padding-left: .5em;
+}
+
+.tool-block label img {
+  margin: -2px .25em 0 0;
 }
 
 .tool-block select {
