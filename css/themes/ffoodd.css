@@ -148,6 +148,11 @@ blockquote {
   color: #01171d;
 }
 
+b,
+strong {
+  font-weight: 500;
+}
+
 blockquote {
   quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D";
   position: relative;
@@ -302,6 +307,18 @@ h6 {
 .slide .small * {
   font-size: 1em;
   font-weight: normal;
+}
+
+.slide dl {
+  font-size: .75em;
+}
+
+.slide dt {
+  font-weight: 500;
+}
+
+.slide dd {
+  margin-bottom: 1em;
 }
 
 .slide abbr {
