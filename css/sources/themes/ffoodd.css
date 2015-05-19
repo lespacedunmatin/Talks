@@ -295,6 +295,15 @@ h6 {
   font-style: normal;
 }
 
+.slide ul {
+  list-style: none;
+}
+
+.slide ul li::before {
+  content: "‒ ";
+  color: #c42419;
+}
+
 .slide ul ul,
 .slide ul ol {
   font-size: 100%;
