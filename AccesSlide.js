@@ -756,6 +756,7 @@ function Toc(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Bclose.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Wclose );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '16' );
   CspanIcon.setAttribute( 'width', '16' );
 
@@ -1014,6 +1015,7 @@ function PushConfig(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Bclose.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Wclose );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '16' );
   CspanIcon.setAttribute( 'width', '16' );
 
@@ -1163,6 +1165,7 @@ function PushNavBar(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Bprev.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Bprev.title );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '32' );
   CspanIcon.setAttribute( 'width', '32' );
 
@@ -1192,6 +1195,7 @@ function PushNavBar(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Bselect.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Bselect.title );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '32' );
   CspanIcon.setAttribute( 'width', '32' );
 
@@ -1212,6 +1216,7 @@ function PushNavBar(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Bnext.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Bnext.title );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '32' );
   CspanIcon.setAttribute( 'width', '32' );
 
@@ -1231,6 +1236,7 @@ function PushNavBar(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Btoc.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Btoc.title );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '32' );
   CspanIcon.setAttribute( 'width', '32' );
 
@@ -1274,6 +1280,7 @@ function PushNavBar(){
   var CspanIcon = document.createElement( 'IMG' );
   CspanIcon.src = config.Bconfig.fallBackSrcImg;
   CspanIcon.setAttribute( 'alt', lang.Bconfig.title );
+  CspanIcon.setAttribute( 'role', 'img' );
   CspanIcon.setAttribute( 'height', '32' );
   CspanIcon.setAttribute( 'width', '32' );
 
