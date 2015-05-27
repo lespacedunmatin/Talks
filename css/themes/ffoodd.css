@@ -106,7 +106,7 @@ kbd {
   border-radius: 2px;
   box-sizing: border-box;
   color: #c42419;
-  font: 300 .4em/1.1 "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif;
+  font: 300 .4em/1.1 "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   margin-top: 0;
   padding: 0 .2em;
   white-space: nowrap;
@@ -117,12 +117,12 @@ h3 kbd {
   background: inherit;
 }
 
-pre code {
-  border: 0;
-  white-space: pre-wrap;
-}
+  pre code {
+    border: 0;
+    white-space: pre-wrap;
+  }
 
-pre code span { line-height: 1; }
+    pre code span { line-height: 1; }
 
 b,
 strong {
@@ -136,28 +136,28 @@ blockquote {
   z-index: 1;
 }
 
-blockquote::before {
-  color: #c42419;
-  content: open-quote;
-  font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif;
-  left: -.88em;
-  position: absolute;
-  top: -.1em;
-  z-index: -1;
-}
+  blockquote::before {
+    color: #c42419;
+    content: open-quote;
+    font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    left: -.88em;
+    position: absolute;
+    top: -.1em;
+    z-index: -1;
+  }
 
-blockquote p {
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1em;
-  line-height: 1.25;
-}
+  blockquote p {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1.25;
+  }
 
-blockquote p::after {
-  color: #c42419;
-  content: close-quote;
-  font: 300 1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif;
-}
+    blockquote p::after {
+      color: #c42419;
+      content: close-quote;
+      font: 300 1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
 
 cite {
   font-style: normal;
@@ -245,11 +245,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font: 300 2.8em/1.1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif;
+  font: 300 2.8em/1.1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h3 {
-  font: 500 italic 1.4em "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif;
+  font: 500 italic 1.4em "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
   h3 em {
@@ -272,7 +272,7 @@ h6 {
   font-size: .75em;
   font-weight: 300;
   margin: .2em 0 .5em 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .slide :last-child {
@@ -280,7 +280,7 @@ h6 {
 }
 
 .slide blockquote {
-  margin: .5em 0 1em 2em;
+  margin: 2em 0 2em 2em;
 }
 
 .slide blockquote h3 {
@@ -299,8 +299,7 @@ h6 {
 
 .slide ul ul,
 .slide ul ol {
-  font-size: 100%;
-  line-height: 100%;
+  font-size: .75em;
 }
 
 .slide small,
@@ -328,7 +327,7 @@ h6 {
 }
 
 .slide h2 abbr {
-  font: 500 italic 1em "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif;
+  font: 500 italic 1em "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-variant: small-caps;
 }
 
@@ -350,7 +349,7 @@ h6 {
 .main-header a,
 .main-header h1 {
   color: #efeee3;
-  font-family: "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif;
+  font-family: "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 3vh;
   font-weight: 300;
   -webkit-font-feature-settings: "liga", "dlig", "c2sc";
@@ -368,7 +367,7 @@ h6 {
 }
 
 .main-header h1 {
-  font-family: "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif;
+  font-family: "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 
@@ -599,7 +598,7 @@ button.disc1:focus {
 
 .tool-block-title {
   color: #efeee3;
-  font-family: "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif;
+  font-family: "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.2em;
   position: relative;
 }
@@ -668,7 +667,7 @@ button.disc1:focus {
 }
 
 .tool-block-settings legend {
-  font-family: "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif;
+  font-family: "museo-slab-1", "museo-slab-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1.2em;
   font-weight: 500;
   margin: .3em 0 .25em;
@@ -801,22 +800,6 @@ button.disc1:focus {
 code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;font-family:"Consolas","Monaco","Andale Mono",monospace;font-size:small;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;-moz-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px white;white-space:pre;word-spacing:normal}pre[class*="language-"]{margin:0;overflow:auto;padding:0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:#905}.token.selector,.token.attr-name,.token.string,.token.builtin{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:#a67f59}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}.token a{color:inherit}.namespace{opacity:.7}
 
 @media screen and (min-width: 48em) {
-  h2 {
-    float: left;
-  }
-
-  h2 + * {
-    clear: both;
-  }
-
-  h3 {
-    float: left;
-  }
-
-  h3 + * {
-    clear: both;
-  }
-
   .table {
     display: table;
     table-layout: fixed;
