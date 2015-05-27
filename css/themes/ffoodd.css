@@ -189,12 +189,6 @@ cite {
   height: 10vh;
 }
 
-.slide img {
-  box-shadow: 0 0 3px #032c36;
-  border: 3px solid #fff;
-}
-
-
 /** @subsection 1.1 TABLE **/
 
 table {
@@ -821,6 +815,22 @@ code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;fon
 
   h3 + * {
     clear: both;
+  }
+
+  .table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .col-50 {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  .col-50 + .col-50 {
+    text-align: right;
   }
 
   .col-left {
