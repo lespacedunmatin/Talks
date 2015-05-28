@@ -304,8 +304,10 @@ h6 {
 
 .slide small,
 .slide .small {
+  display: block;
   font-size: .6em;
   font-weight: 300;
+  line-height: 1.4;
 }
 
 .slide .small * {
