@@ -174,14 +174,14 @@ cite {
   height: 86vh;
   overflow-x: hidden;
   margin: 0;
-  padding: 0 15vw;
+  padding: 0 8vw;
 }
 
 .modeplan #wrapper {
   height: 78vh;
-  margin: 10vh 15vw;
+  margin: 10vh 8vw;
   padding: 0;
-  width: 70vw;
+  width: 84vw;
 }
 
 .modeplan .tool-bar,
@@ -230,7 +230,7 @@ td {
  * -------------------------
  */
 #wrapper {
-  font-size: 30px;
+  font-size: 36px;
 }
 
 /** @subsection 2.1 HEADINGS **/
@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font: 300 2.8em/1.1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 300 2.4em/1.1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h3 {
@@ -280,13 +280,21 @@ h6 {
 }
 
 .slide blockquote {
-  margin: 2em 0 2em 2em;
+  margin: 1em 0 1em 2em;
 }
 
-.slide blockquote h3 {
-  font-size: 1em;
-  font-style: normal;
-}
+  .slide blockquote h3 {
+    font-size: .75em;
+    font-style: normal;
+  }
+
+  .slide blockquote p {
+    font-size: .86em;
+  }
+
+  .slide blockquote footer {
+    font-size: .75em;
+  }
 
 .slide ul {
   list-style: none;
