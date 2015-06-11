@@ -160,7 +160,10 @@ blockquote {
     }
 
 cite {
+  display: block;
   font-style: normal;
+  font-size: .75em;
+  text-align: right;
 }
 
 .hljs {
@@ -290,10 +293,6 @@ h6 {
 
   .slide blockquote p {
     font-size: .86em;
-  }
-
-  .slide blockquote footer {
-    font-size: .75em;
   }
 
 .slide ul {

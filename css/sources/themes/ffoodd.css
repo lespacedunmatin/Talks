@@ -117,12 +117,12 @@ h3 kbd {
   background: inherit;
 }
 
-pre code {
-  border: 0;
-  white-space: pre-wrap;
-}
+  pre code {
+    border: 0;
+    white-space: pre-wrap;
+  }
 
-pre code span { line-height: 1; }
+    pre code span { line-height: 1; }
 
 b,
 strong {
@@ -136,31 +136,34 @@ blockquote {
   z-index: 1;
 }
 
-blockquote::before {
-  color: #c42419;
-  content: open-quote;
-  font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  left: -.88em;
-  position: absolute;
-  top: -.1em;
-  z-index: -1;
-}
+  blockquote::before {
+    color: #c42419;
+    content: open-quote;
+    font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    left: -.88em;
+    position: absolute;
+    top: -.1em;
+    z-index: -1;
+  }
 
-blockquote p {
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1em;
-  line-height: 1.25;
-}
+  blockquote p {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1em;
+    line-height: 1.25;
+  }
 
-blockquote p::after {
-  color: #c42419;
-  content: close-quote;
-  font: 300 1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-}
+    blockquote p::after {
+      color: #c42419;
+      content: close-quote;
+      font: 300 1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
 
 cite {
+  display: block;
   font-style: normal;
+  font-size: .75em;
+  text-align: right;
 }
 
 .hljs {
@@ -174,14 +177,14 @@ cite {
   height: 86vh;
   overflow-x: hidden;
   margin: 0;
-  padding: 0 15vw;
+  padding: 0 8vw;
 }
 
 .modeplan #wrapper {
   height: 78vh;
-  margin: 10vh 15vw;
+  margin: 10vh 8vw;
   padding: 0;
-  width: 70vw;
+  width: 84vw;
 }
 
 .modeplan .tool-bar,
@@ -230,7 +233,7 @@ td {
  * -------------------------
  */
 #wrapper {
-  font-size: 30px;
+  font-size: 36px;
 }
 
 /** @subsection 2.1 HEADINGS **/
@@ -245,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  font: 300 2.8em/1.1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 300 2.4em/1.1em "bello-pro-1", "bello-pro-2", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h3 {
@@ -272,7 +275,7 @@ h6 {
   font-size: .75em;
   font-weight: 300;
   margin: .2em 0 .5em 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .slide :last-child {
@@ -280,13 +283,17 @@ h6 {
 }
 
 .slide blockquote {
-  margin: .5em 0 1em 2em;
+  margin: 1em 0 1em 2em;
 }
 
-.slide blockquote h3 {
-  font-size: 1em;
-  font-style: normal;
-}
+  .slide blockquote h3 {
+    font-size: .75em;
+    font-style: normal;
+  }
+
+  .slide blockquote p {
+    font-size: .86em;
+  }
 
 .slide ul {
   list-style: none;
@@ -304,8 +311,10 @@ h6 {
 
 .slide small,
 .slide .small {
+  display: block;
   font-size: .6em;
   font-weight: 300;
+  line-height: 1.4;
 }
 
 .slide .small * {
@@ -800,22 +809,6 @@ button.disc1:focus {
 code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;font-family:"Consolas","Monaco","Andale Mono",monospace;font-size:small;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;-moz-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px white;white-space:pre;word-spacing:normal}pre[class*="language-"]{margin:0;overflow:auto;padding:0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#999}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:#905}.token.selector,.token.attr-name,.token.string,.token.builtin{color:#690}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:#a67f59}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.regex,.token.important{color:#e90}.token.important{font-weight:bold}.token.entity{cursor:help}.token a{color:inherit}.namespace{opacity:.7}
 
 @media screen and (min-width: 48em) {
-  h2 {
-    float: left;
-  }
-
-  h2 + * {
-    clear: both;
-  }
-
-  h3 {
-    float: left;
-  }
-
-  h3 + * {
-    clear: both;
-  }
-
   .table {
     display: table;
     table-layout: fixed;
