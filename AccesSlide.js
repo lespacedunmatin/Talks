@@ -282,7 +282,7 @@ var config = {
     classLabelSetting: 'label-setting setting-mouse',
     //IconClass: 'icon icon-setting-mouse',
     IconSrc: 'img/click.svg',
-    val: 0,
+    val: 1,
     group: 'Gaccess'
   },
   /** Slideshow parameters **/
@@ -958,7 +958,7 @@ function ResetConfig(){
       if( config[ ConfigRef ].val === 1 ) TabConfigRef[i].setAttribute( 'checked', 'checked' );
     }
     else if( TabConfigRef[i].nodeName === 'SELECT' ){
-      TabConfigRef[i].value = config.Eno.val;
+      TabConfigRef[i].value = config.ffoodd.val;
     }
   }
 }
