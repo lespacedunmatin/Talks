@@ -99,20 +99,28 @@
           <h2>Une question d’hygiène technique</h2>
           <p>Il existe plusieurs avantages connexes à cette discipline de développement&nbsp;:</p>
           <ul>
-            <li>la maintenance est grandement facilitée par la maîtrise de l’écosystème technique&nbsp;;</li>
-            <li>le recyclage de fonctionnalités et de mécanismes améliore l’homogénéité du code et aide à définir puis appliquer des conventions d’écriture et de nommage&nbsp;;</li>
-            <li>l’architecture technique et la documentation ne coûteront presque plus rien.</li>
+            <li>la maintenance est grandement facilitée par la maîtrise de l’écosystème technique<span aria-hidden="true">&nbsp;⚙</span>&nbsp;;</li>
+            <li>le recyclage<span aria-hidden="true">&nbsp;♻</span> de fonctionnalités et de mécanismes améliore l’homogénéité du code et aide à définir puis appliquer des conventions d’écriture et de nommage&nbsp;;</li>
+            <li>l’architecture technique et la documentation<span aria-hidden="true">&nbsp;✍</span> ne coûteront presque plus rien.</li>
           </ul>
+          <p>Ça ressemble à de bonnes habitudes, non&nbsp;?</p>
         </section>
 
         <section class="slide">
           <h2>Les extensions (obligatoires)</h2>
-          <p></p>
+          <p>La majorité des travailleurs utilisant WordPress disposent de leur flotte d’extensions favories, utilisée systématiquement ou presque. Inconvénient&nbsp;: les extensions sont administrables.</p>
+          <p>Les <i lang="en"><abbr title="Must Use">mu</abbr>-plugins</i> ne le sont pas&nbsp;! Si elles sont présentes, elles sont activées et non administrables. Fini les accidents<span aria-hidden="true">&nbsp;⚠</span>.</p>
+          <p>C’est particulièrement utile pour <strong>personnaliser le <abbr title="What You See Is What You Get" lang="en">wysiwyg</abbr></strong>, par exemple.</p>
+          <p class="small">J’en ai quelques-unes amusantes, <a href="https://github.com/ffoodd/ffeeeedd--extensions/tree/master/mu-plugins">elles sont sur GitHub</a>.</p>
         </section>
 
         <section class="slide">
           <h2>Les autres <abbr lang="en" title="Content Management System">cms</abbr></h2>
-          <p></p>
+          <p>La majorité des autres <abbr lang="en" title="Content Management System">cms</abbr> conseille de modifier directement les thèmes… Cela ne permet malheureusement pas de faciliter la maintenance, les évolutions ni le recyclage.
+Le travail est difficilement capitalisable.</p>
+          <h3>Drupal</h3>
+          <p><a href="https://www.drupal.org/node/225125" hreflang="en">Leur approche</a> est extrêmement intéressante puisque chaque thème peut adopter <strong>plusieurs</strong> sous-thèmes.</p>
+          <p>On peut ainsi imaginer des sous-thèmes <strong>spécialisés</strong>, ou une gestion par <strong>couche de l’interface</strong>.</p>
         </section>
 
         <section  class="slide end noprint">
