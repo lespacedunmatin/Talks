@@ -26,36 +26,6 @@ Index
  * -------------------------
  */
 
-/* Polices de fallback
-@font-face {
-    font-family: "Roboto";
-    src: url("../fonts/robotoslab-bold-webfont.woff2") format("woff2"),
-         url("../fonts/robotoslab-bold-webfont.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: "Roboto";
-    src: url("../fonts/robotoslab-light-webfont.woff2") format("woff2"),
-         url("../fonts/robotoslab-light-webfont.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Pacifico";
-    src: url("../fonts/pacifico-webfont.woff2") format("woff2"),
-         url("../fonts/pacifico-webfont.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-
-h2 {
-  line-height: 1.6em !important;
-}*/
-
 body {
   font-family: "museo-slab-1", "museo-slab-2", "Roboto", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
@@ -285,6 +255,8 @@ h3 {
   font: 500 italic 1.4em "museo-slab-1", "museo-slab-2", "Roboto", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+  h2 i,
+  h3 i,
   h2 em,
   h3 em {
     font-style: normal;
