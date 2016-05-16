@@ -861,7 +861,7 @@ code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;fon
     width: 50%;
   }
 
-  .col-50 + .col-50 {
+  .col-50 + .col-50:not(pre) {
     text-align: right;
   }
 
