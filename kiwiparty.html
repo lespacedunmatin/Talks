@@ -86,7 +86,8 @@
           <li class="col-50">La crise d’hystérie</li>
         </ol>
         <p>
-          Pas trop mon truc. Un graphiste aguerri partagerait ses outils, méthodes… Mais <strong>je suis intégrateur</strong>.
+          Pas trop mon truc. Un graphiste aguerri partagerait ses outils, méthodes… Mais <strong>je suis intégrateur</strong>, et
+          je proposerai donc des solutions d’intégrateur.
           <br>
           <small>Sous-entendu&nbsp;: je ne parlerai pas de <a href="https://www.sketchapp.com/" hreflang="en">Sketch</a> ou
             d’<a href="https://www.invisionapp.com/" hreflang="en" lang="en">InVision</a>, mais vous devriez vraiment y jeter un œil.</small>
@@ -100,7 +101,7 @@
       <section class="slide">
         <h2>Revoir ses fondamentaux</h2>
         <h3>Accordez-vous sur un protocole de travail</h3>
-        <p>Une piqure de rappel ne peut pas faire de mal&nbsp;:</p>
+        <p>Avant de commencer, une piqure de rappel ne peut pas faire de mal&nbsp;:</p>
         <ul>
           <li>
             Pour le graphiste, la <a href="http://photoshopetiquette.com/" hreflang="en" lang="en">Photoshop Etiquette</a> défend une approche organisée du
@@ -121,7 +122,7 @@
       <section class="slide">
         <h2>Le versionnement sémantique avec Git</h2>
         <h3>Sus aux noms de fichiers abracadabrantesques&nbsp;!</h3>
-        <p>Poussons, recommandons Git&nbsp;! Quelques arguments et suggestions, au cas où&nbsp;:</p>
+        <p><strong>Poussons</strong>, recommandons Git&nbsp;! Quelques arguments et suggestions, au cas où&nbsp;:</p>
         <ul>
           <li>conserver l’historique et pouvoir revenir à une version précédente&nbsp;;</li>
           <li>utiliser les tags pour marquer les versions majeures et mineures&nbsp;;</li>
@@ -140,6 +141,12 @@
           Pour les rigolos du fond, il est intéressant de signaler que Dropbox ou Google Drive par exemple disposent d’un historique,
           et vous permettent de <strong>revenir à une version antérieure</strong>. C’est-y-pas merveilleux&nbsp;?
         </p>
+        <p class="small">
+          Un petit tuto pour la route&nbsp;:
+          <a href="http://webdesign.tutsplus.com/tutorials/quick-tip-versioning-your-graphics-files-with-dropbox--webdesign-6986" hreflang="en" lang="en">
+            <i>Versioning Your Graphics Files With Dropbox</i>
+          </a>
+        </p>
       </section>
 
       <section class="slide">
@@ -149,31 +156,102 @@
             On a tous l’habitude d’inclure des fichiers, que ce soit dans un <abbr lang="en" title="Content Management System">CMS</abbr>
             ou avec n’importe quel langage de <i lang="en">templating</i>. Mais savez-vous qu’on peut faire pareil très facilement dans Photoshop&nbsp;?
           </p>
-          <p>
-          Ça confère les mêmes avantages&nbsp;: aucune répétition, une propagation des changements facilitée, et la capacité de travailler à plusieurs
-            en répartissant la responsabilité les fichiers paritles.
-          </p>
-          <p>
+          <p>Ça confère les mêmes avantages&nbsp;:</p>
+          <ul>
+            <li>aucune répétition dans différents fichiers&nbsp;;</li>
+            <li>une propagation des changements «&nbsp;automagique&nbsp;»&nbsp;;</li>
+            <li>et la capacité de travailler à plusieurs en répartissant la responsabilité des fichiers partiels entre plusieurs graphistes.</li>
+          </ul>
+          <p>Mis bout à bout avec un gestionnaire de versions, ça devient plutôt intéressant&nbsp;!</p>
+          <p class="small"><a href="https://helpx.adobe.com/fr/photoshop/how-to/photoshop-linked-smart-objects.html">Création de liens entre des objets dynamiques dans Photoshop</a></p>
+        </div>
+        <div class="col-50">
+          <pre>
+              <code class="language-markup">
+              home.psd
+              post.psd
+              404.psd
+              /templates
+                  _header.psd
+                  _footer.psd
+                  _nav.psd
+              /components
+                  _tabpanel.psd
+                  _dropdown.psd
+                  _modal.psd
+            </code>
+          </pre>
+          <p class="small">
             En poussant le délire, on peut aller jusqu’à <a href="http://atomicdesign.bradfrost.com/table-of-contents/" hreflang="en">une conception atomique</a>
             comme l’entend Brad Frost&nbsp;: atomes, molécules, organismes, gabarits, pages.
           </p>
         </div>
-        <pre class="col-50 text-">
-          <code class="html">
-            home.psd
-            post.psd
-            404.psd
-              /templates
-                _header.psd
-                _footer.psd
-                _nav.psd
-              /components
-                _tabpanel.psd
-                _dropdown.psd
-                _modal.psd
-          </code>
-        </pre>
+      </section>
 
+      <section class="slide">
+        <h2>Optimisation avec Gulp</h2>
+        <div class="col-50">
+          <p>
+            Les fichiers externes peuvent être travaillés isolément et surveillés avec <a href="http://gulpjs.com/" hreflang="en">Gulp</a> ou consorts&nbsp;:
+            on travaille dans le répertoire source et on optimise vers le fichier distant.
+          </p>
+          <pre>
+              <code class="language-markup">
+                /src
+                    /img
+                    /svg
+                    /sprite
+                /dist
+                    /img
+                    /svg
+                    /sprite
+              </code>
+          </pre>
+          <p>
+            Avec un bon <i lang="en">watcher</i>, rien de plus à faire que
+            respecter l’arborescence et penser à démarrer le <i lang="en">watcher</i>&nbsp;!
+          </p>
+          <pre>
+              <code class="language-markup">
+                gulp watch src
+              </code>
+          </pre>
+        </div>
+        <div class="col-50">
+          <p>Comme dans votre <i lang="en">workflow front-end</i>, vous pouvez faire plein de choses&nbsp;:</p>
+          <ul>
+            <li>optimisation du poids des fichiers&nbsp;;</li>
+            <li>optimisation des dimensions&nbsp;;</li>
+            <li>génération de <i lang="en">sprite</i> à la volée&nbsp;</li>
+            <li>génération de polices d’icône&nbsp;</li>
+            <li>renommer, copier, déplacer des fichiers&nbsp;</li>
+            <li>utilisation de Git <i>via</i> un script <abbr lang="en" title="Node Package Manager">npm</abbr>&nbsp;</li>
+            <li>et vous aurez peut-être plein d’autres idées&nbsp;?</li>
+          </ul>
+        </div>
+      </section>
+
+      <section  class="slide">
+        <h2>Les éléments d’un système de design</h2>
+        <p>Dans le métier de graphiste, on parle de <strong>charte graphique</strong>. En tant qu’intégrateur, on évoque un <strong>guide de styles</strong>.</p>
+        <h3>Les mêmes informations</h3>
+        <p>Ils contiennent tous les éléments graphiques récurrents et réutilisables&nbsp;:</p>
+        <ul>
+          <li>palette de couleurs&nbsp;: dominante, secondaire, tonique, ainsi que les camaïeux&nbsp;;</li>
+          <li>les styles de caractères&nbsp;: titraille, labeur…</li>
+          <li>l’échelle typographique&nbsp;;</li>
+          <li>la grille, etc.</li>
+        </ul>
+        <p>
+          Pour l’intégrateur, l’idéal serait d’obtenir directement les variables de base de son intégration en exploitant le PSD, non&nbsp;?
+        </p>
+        <p>
+          Et bien jetez un œil à <a href="https://github.com/layervault/psd.rb" hreflang="en">PSD.rb</a>&nbsp;! C’est un <i lang="en">parser</i>
+          en Ruby qui permet d’extraire les informations telles que les corps de texte, les couleurs, les tracés vectoriels, les contenus textuels…
+        </p>
+        <p class="small">
+          Il existe <a href="https://www.npmjs.com/package/psd" hreflang="en">un <i lang="en">package</i> Node qui s’interface avec PSD.Rb</a>
+          et <a href="https://www.npmjs.com/package/psd-extractor" hreflang="en">un autre qui extrait les caractères, corps et couleurs dans un fichier <code>.json</code> en précisant le nombre d’occurrences</a>.</p>
       </section>
 
       <section  class="slide end noprint">
