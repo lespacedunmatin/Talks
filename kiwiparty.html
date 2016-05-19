@@ -61,7 +61,10 @@
         <p><small>Mais je suis mauvais, ne le répétez pas&nbsp;!</small></p>
         <p>
           Cependant cette année, j’ai travaillé avec une espèce en voie d’extinction&nbsp;: <strong>un graphiste «&nbsp;à l’ancienne&nbsp;»</strong>
-          —&nbsp;qui travaille dans Photoshop et tout.
+          —&nbsp;qui travaille dans Photoshop comme à la belle époque. Mais si, vous savez&nbsp;? Quand Photoshop n’avait aucun concurrent sérieux.
+        </p>
+        <p class="small">
+          <abbr title="Nota Bene">NB</abbr>&nbsp;: Ce qui suit est un pur exercice de style. Vous êtes prévenus&nbsp;!
         </p>
       </section>
 
@@ -71,11 +74,14 @@
         <p class="small">C’est le nom et le poids du fichier que j’ai reçu dans le cadre de la refonte graphique du site sur lequel je travaillais.</p>
         <p>En ouvrant le fichier, je tombe sur&nbsp;:</p>
         <ul>
-          <li>un nid de calques masqués <i>(♬ ohé ohé ♪)</i>&nbsp;;</li>
+          <li>un nid de calques masqués (♬ <i>ohé ohé</i> ♪)&nbsp;;</li>
           <li>des tracés Photoshop qui se promènent&nbsp;;</li>
-          <li>des éléments dupliqués&nbsp;;</li>
-          <li>contre toute attente les maquettes de trois pages différentes&nbsp;;</li>
-          <li>quelques trucs aplatis, quelques sources manquantes.</li>
+          <li>aucun repère&nbsp;;</li>
+          <li>contre toute attente les maquettes de trois pages différentes —&nbsp;et donc des éléments dupliqués&nbsp;;</li>
+          <li>des noms de calques, groupes et masques à la limite du folklore&nbsp;;</li>
+          <li>quelques trucs aplatis, quelques sources manquantes, et pour les exports&nbsp;: c’est bibi au cas par cas&nbsp;;</li>
+          <li>chaque fichier arrive en mode «&nbsp;annule et remplace&nbsp;», et pour échanger, nous discutons… par mail&nbsp;;</li>
+          <li>des textes transformés dans Photoshop, qui se retrouvent avec un corps tel que <code>12.43px</code></li>
         </ul>
         <p><strong>Un vrai de vrai</strong>.</p>
       </section>
@@ -94,7 +100,7 @@
           <small>
             Sous-entendu&nbsp;: je ne parlerai pas d’<a href="https://avocode.com/" hreflang="en">Avocode</a> ou
             d’<a href="https://www.invisionapp.com/" hreflang="en" lang="en">InVision</a>
-            (et leur extension <a href="https://www.invisionapp.com/craft" hreflang="en">Craft</a>),
+            (et leur extension <a href="https://www.invisionapp.com/craft" hreflang="en">Craft</a>, incluant notamment <a href="http://blog.invisionapp.com/cloud-connected-design-assets-library/" hreflang="en">Library</a>),
             mais vous devriez <strong>vraiment</strong> y jeter un œil.
           </small>
         </p>
@@ -103,7 +109,7 @@
       <section class="slide">
         <h2>Revoir ses fondamentaux</h2>
         <h3>Définir un protocole de travail</h3>
-        <p>Avant de commencer, une piqure de rappel ne peut pas faire de mal&nbsp;:</p>
+        <p>Avant de commencer, une piqure de rappel ne peut pas faire de mal —&nbsp;se remettre en question est <strong>indispensable</strong>&nbsp;:</p>
         <ul>
           <li>
             Pour le graphiste, la <a href="http://photoshopetiquette.com/" hreflang="en" lang="en">Photoshop Etiquette</a> défend une approche organisée du
@@ -117,14 +123,14 @@
         <p>Je vous invite à définir <strong>ensemble</strong> les paramètres par défaut dans Photoshop, que ce soit ceux de la création d’un nouveau document, les unités et typographie, ou encore les exports de fichiers.</p>
         <p class="small">
           Ça peut sembler évident mais une bonne expression des besoins permettra d’éviter la majorité des écueils, et c’est aussi une bonne occasion
-          de faire preuve de pédagogie et d’expliquer les tenants et les aboutissants de votre intégration.
+          de faire preuve de pédagogie et d’expliquer les tenants et les aboutissants de votre intégration. Dialoguez, sapristi&nbsp;!
         </p>
       </section>
 
       <section class="slide">
         <h2>Le versionnement sémantique avec Git</h2>
         <h3>Sus aux noms de fichiers abracadabrantesques&nbsp;!</h3>
-        <p><strong>Poussons</strong>, recommandons Git&nbsp;! Quelques arguments et suggestions, au cas où&nbsp;:</p>
+        <p><strong>Poussons</strong>, recommandons Git&nbsp;! Quelques arguments et suggestions, pour la route&nbsp;:</p>
         <ul>
           <li>conserver l’historique et pouvoir revenir à une version précédente&nbsp;;</li>
           <li>utiliser les tags pour marquer les versions majeures et mineures&nbsp;;</li>
@@ -195,7 +201,7 @@
         <div class="col-50">
           <p>
             Les fichiers externes peuvent être travaillés isolément et surveillés avec <a href="http://gulpjs.com/" hreflang="en">Gulp</a> ou consorts&nbsp;:
-            on travaille dans le répertoire source et on optimise vers le fichier distant.
+            on travaille dans le répertoire source et on génère dans le fichier distant.
           </p>
           <pre>
               <code class="language-markup">
@@ -203,19 +209,12 @@
                     /img
                     /svg
                     /sprite
+                    /icon-font
                 /dist
                     /img
                     /svg
                     /sprite
-              </code>
-          </pre>
-          <p>
-            Avec un bon <i lang="en">watcher</i>, rien de plus à faire que
-            respecter l’arborescence et penser à démarrer le <i lang="en">watcher</i>&nbsp;!
-          </p>
-          <pre>
-              <code class="language-markup">
-                gulp watch src
+                    /icon-font
               </code>
           </pre>
         </div>
@@ -227,9 +226,12 @@
             <li>génération de <i lang="en">sprite</i> à la volée&nbsp;</li>
             <li>génération de polices d’icône&nbsp;</li>
             <li>renommer, copier, déplacer des fichiers&nbsp;</li>
-            <li>utilisation de Git <i>via</i> un script <abbr lang="en" title="Node Package Manager">npm</abbr>&nbsp;</li>
-            <li>et vous aurez peut-être plein d’autres idées&nbsp;?</li>
+            <li>utilisation de Git <i>via</i> un script <abbr lang="en" title="Node Package Manager">npm</abbr>.</li>
           </ul>
+          <p>
+            Et que sais-je encore&nbsp;! En vous équipant correctement, le graphiste pourrait vous livrer tout ça
+            déjà optimisé sur votre repo, de manière transparente pour lui.
+          </p>
         </div>
       </section>
 
@@ -284,7 +286,7 @@
       </section>
 
       <section  class="slide">
-        <h2>Les solutions «&nbsp;Satellites&nbsp;»</h2>
+        <h2>Les solutions «&nbsp;satellites&nbsp;»</h2>
         <p>
           Si votre camarade graphiste travaille sur OSX, sachez que tous ces scripts (Git, Gulp, exploitation de PSD, script Photoshop…) peuvent
           être branchés et déclenchés avec <a href="https://www.alfredapp.com/" hreflang="en">Alfred</a>. Une seule interface graphique pour tout
@@ -294,7 +296,7 @@
           Et si comme moi vous êtes un adepte du libre, sachez que <a href="http://brackets.io/" hreflang="en">Brackets</a> embarque
           un extracteur de PSD avec visualisation. Croyez-moi, ça a déjà sauvé pas mal de balles anti-stress&nbsp;!
         </p>
-        <h3>Faites confiance à votre entourage</h3>
+        <h3>Et surtout, faites confiance à votre entourage</h3>
         <p>
           Le chef de projet, le commercial, le <i lang="en">lead dev</i>, le directeur artistique, peu importe les gens qui vous entourent&nbsp;:
           ils peuvent probablement vous suggérer des solutions auxquelles vous n’auriez pas pensé&nbsp;!
@@ -308,8 +310,7 @@
           <li>le graphiste freine des quatre fers&nbsp;;</li>
           <li>le PSD vient d’ailleurs, il m’arrive validé&nbsp;;</li>
           <li>le <i lang="en">workflow</i> complet est pyramidal (<abbr lang="en" title="Also Known As">a.k.a.</abbr> «&nbsp;cycle en V&nbsp;») —&nbsp;on ne peut pas revenir et échanger&nbsp;;</li>
-          <li>les intermédiaires sont si nombreux que c’est comme jouer au téléphone arabe (chef de projet, commercial, dans notre équipe <b>et</b> dans celle du graphiste, …)&nbsp;;</li>
-          <li>etc.</li>
+          <li>les intermédiaires sont si nombreux que c’est comme jouer au téléphone arabe (chef de projet, commercial, dans notre équipe <b>et</b> dans celle du graphiste, etc.)&nbsp;;</li>
         </ul>
         <h3>L’amortisseur de PSD</h3>
         <p>
@@ -317,6 +318,20 @@
           mais si ça vous permet de conserver votre tignasse plus longtemps, pourquoi pas&nbsp;?
           Lister les typographies, les couleurs, les corps… Tout ceci sera du pain béni quand vous verrez atterrir un PSD de 163 Mo&nbsp;!
         </p>
+      </section>
+
+      <section  class="slide">
+        <h2>Conclusion</h2>
+        <p>
+          Même sans connaitre forcément les arcanes de Photoshop, en tant qu’intégrateur vous avez des connaissances à partager avec votre camarade
+          graphiste. Et si l’échange est impossible, vous pouvez toujours bricoler un amortisseur&nbsp;!
+        </p>
+        <p>
+          Le plus important est de ne pas être résistant aux interactions humaines&nbsp;: tachez de rester bienveillant en toute situation et positif avec autrui.
+          Échangez, bricolez, outillez-vous&nbsp;!
+        </p>
+        <h3>Fin</h3>
+        <p>Ils se remercièrent et eurent beaucoup d’échanges.</p>
       </section>
 
       <section  class="slide end noprint">
