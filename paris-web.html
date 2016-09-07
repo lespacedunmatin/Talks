@@ -60,7 +60,7 @@
       <main role="main" id="main">
 
         <section class="slide couv">
-          <h2>Il n'y a pas que class et id dans la vie</h2>
+          <h2>Il n&apos;y a pas que class et id dans la vie</h2>
           <h3>Les autres sélecteurs sont bios, aussi</h3>
           <footer class="table">
             <p>animé par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
@@ -68,16 +68,154 @@
         </section>
 
         <section class="slide">
-          <h2>Définition officielle<span aria-hidden="true">&nbsp;✔</span></h2>
-          <blockquote>
-            <p>Mettre le Web et ses services à la disposition de tous les individus, quel que soit leur matériel ou logiciel, leur infrastructure réseau, leur langue maternelle, leur culture, leur localisation géographique, ou leurs aptitudes physiques ou mentales.</p>
-            <cite>Tim Berners-Lee</cite>
-          </blockquote>
-          <p>Plutôt éloigné de la «&nbsp;prise en compte du handicap&nbsp;», pas vrai&nbsp;?</p>
-          <p><strong>Démystifions tout ça.</strong></p>
+          <h2>Démythifions</h2>
+          <h3>La contre-performance des sélecteurs</h3>
+          <p>La rumeur court depuis plusieurs années que les sélecteurs universels, d&apos;attributs ou d&apos;adjacence ne seraient pas performants&nbsp;— et sont par conséquent à éviter.</p>
+          <p><strong>C&apos;est faux.</strong> Et <a href="https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/" hreflang="en">c&apos;est prouvé par Ben Frain en 2014</a>.</p>
+          <p class="small">La différence &nbsp;— qui, certes, existe&nbsp;— est absolument <strong>négligeable</strong>. En revanche, soyez prudents avec <strong>les propriétés</strong> que vous utilisez.</p>
         </section>
 
-        
+        <section class="slide">
+          <h2>Démythifions encore</h2>
+          <h3>La séparation du fond et de la forme</h3>
+          <p>
+            On s&apos;en sert à tort et à travers, de celle-là. Généralement contre une idée et sans réfléchir —&nbsp;comme un <strong>axiome</strong>.
+            Pourtant dans le web, cet univers en <abbr lang="en" title="HyperText Markup Language">HTML</abbr> et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>, sa seule portée
+            pratique pertinente est de ne pas utiliser d&apos;attributs de présentation dans le HTML ni de balises sémantiques pour leur aspect visuel. <strong>Saÿtou</strong>.
+          </p>
+          <p class="small">Et si on prône ça, c&apos;est juste parce que sinon le fond devient inintelligible.</p>
+          <p>
+            Pour tous les autres cas, invoquer la séparation du fond et de la forme est inepte,
+            pour une raison pourtant simple&nbsp;: <strong>la forme dépend du fond</strong>. Ça n&apos;est guère plus compliqué que ça.
+          </p>
+          <p class="small">J&apos;en ai parlé plus en détail dans «&nbsp;<a href="http://www.ffoodd.fr/le-sens-de-la-semantique/">Le sens de la sémantique</a>&nbsp;».</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les sélecteurs pestiférés</h2>
+          <p>La mode en ce moment —&nbsp;fidèlement aux mythes précédemment évoqués&nbsp;— est de n&apos;utiliser que des classes. Des classes partout&nbsp;! <strong>Saÿcon</strong>. En plus, c&apos;est moins coloré syntaxiquement dans mon éditeur.</p>
+          <p>Voyons nos vilains petits canards&nbsp;:</p>
+          <ol>
+            <li class="Cmasque">Le sélecteur universel <code>*</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;attributs complexes <code>[attr*=""]</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;adjacence et de parenté <code>* + *, * > *, * ~ *</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;élément surqualifiés <code>html[class*=""]</code></li>
+          </ol>
+          <p class="Cmasque">Moi, je les aime beaucoup. Ils sont rigolos. Allez, jetons-y un œil.</p>
+        </section>
+
+        <section class="slide">
+          <h2>L&apos;économique de répétition</h2>
+          <p>
+            Celui-ci est relativement courant.
+            Notamment chez ceux qui en ont marre d&apos;étendre des bêtises dans leur pré-processeur.
+            En fait, on peut s&apos;en servir pour mettre en place des motifs, ce que vous faites tout le temps si vous appliquez BEM, SMACSS ou OOCSS&nbsp;:
+          </p>
+          <div class="col-50">
+            <pre>
+              <code class="language-css">
+                [class*="bouton"] {}
+                .bouton--xxl {}
+              </code>
+            </pre>
+          </div>
+          <div class="col-50">
+            <pre>
+              <code class="language-markup">
+                <button class="bouton--xxl" type="button">Yihaaa!</button>
+              </code>
+            </pre>
+          </div>
+          <p>
+            Et ô magie, les deux déclarations s&apos;appliqueront. Adieu le <code>class="btn btn-lg btn-default"</code> de BootStrap.
+            J&apos;aime beaucoup car ça permet de s&apos;appliquer à nommer et abstraire son barda pour en faire des motifs de conception viables.
+          </p>
+        </section>
+
+        <section class="slide">
+          <h2 lang="de">ACH, JA&nbsp;!</h2>
+          <p>
+            S&apos;appliquer à respecter un motif de conception, ça vous parle&nbsp;?
+            Ceux d&apos;<abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr> sont particulièrement chatouilleux.
+            Alors si comme moi vous préférez que votre script n&apos;ait pas à tartiner des classes
+            à tout bout de champ, les sélecteurs d&apos;attributs sont vos amis&nbsp;:
+          </p>
+          <pre>
+            <code class="language-css">
+              [role="tabpanel"][aria-hidden="true"] {
+                  display: none;
+              }
+            </code>
+          </pre>
+          <p>Et voilà&nbsp;! Pourquoi utiliser des classes —&nbsp;que vous manipulez en <abbr lang="en" title="JavaScript">JS</abbr> de toute façon&nbsp;— quand vous disposez d&nbsp;une panoplie complète d&apos;attributs&nbsp;?</p>
+        </section>
+
+        <section class="slide">
+          <h2>La chouette lobotomisée</h2>
+          <p class="small">Crédit à <a href="http://alistapart.com/article/axiomatic-css-and-lobotomized-owls" hreflang="en">Heydon Pickering sur AListApart</a>.</p>
+          <p>Ces smileys vont sûrement vous faire crier, mais honnêtement pourquoi galérer à gérer vos espacements sur des classes, quand&nbsp;:</p>
+          <pre>
+            <code class="language-css">
+              * + * {
+                  margin-top: 1.5rem;
+              }
+            </code>
+          </pre>
+          <p>fait le job pour vous&nbsp;? Et il a des copains&nbsp;!</p>
+          <h3>La chouette dubitative et la chouette <i lang="en">duck face</i></h3>
+          <p>
+            Le sélecteur d&apos;adjacence directe est pratique,
+            mais celui d&apos;adjacence indirecte également (<code>* ~ *</code>)
+            —&nbsp;et celui de parenté (<code>* > *</code>), je vous raconte même pas&nbsp;!
+            Utile lorsque l&apos;affichage d&apos;un enfant direct dépend de celui d&apos;un prédécesseur, par exemple&nbsp;:
+          </p>
+          <pre>
+            <code class="language-css">
+              main > *:target ~ * {
+                  display: none;
+              }
+            </code>
+          </pre>
+          <p class="small">Devinez quoi&nbsp;? Cet exemple aussi est d&apos;<a href=" https://www.smashingmagazine.com/2015/12/reimagining-single-page-applications-progressive-enhancement/" hreflang="en">Heydon Pickering, sur SmashingMagazine</a> cette fois.</p>
+        </section>
+
+        <section class="slide">
+          <h2>Les garde-fous</h2>
+          <p>Progressons dans l&apos;hérésie&nbsp;: et si nous ajoutions <del>futilement</del> du poids à nos sélecteurs, pour rigoler&nbsp;?</p>
+          <p>Saÿmal, pas vrai&nbsp;? Pourtant tous les <i lang="en">frameworks</i> CSS <strong>devraient</strong> en abuser, notamment parce qu&apos;ils pourraient ainsi contribuer à améliorer la qualité globale des sites produits grâce à eux.</p>
+          <h3>Un exemple, un exemple&nbsp;!</h3>
+          <p>L&apos;astuce du <code>box-sizing</code> sur <code>html</code> est extrêmement répandue, afin de simplifier les calculs de dimension des éléments.</p>
+          <p class="small">
+            Vous la trouvez par exemple dans
+            <a href="https://github.com/zurb/foundation-sites/blob/develop/dist/foundation.css#L370)" hreflang="en">Foundation</a>
+            et dans <a href="https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap.css#L301)" hreflang="en">Bootstrap V4</a>.
+          </p>
+          <p>
+            Imaginez un peu si ces <i lang="en">frameworks</i> ne copiaient pas bêtement cette astuce,
+            mais y ajoutaient un seul, tout petit attribut&nbsp;: <code>[lang]</code>.
+          </p>
+          <pre>
+            <code class="language-css">
+              html[lang] {
+                box-sizing: border-box;
+              }
+
+              *, *::after, *::before {
+                box-sizing: inherit;
+              }
+            </code>
+          </pre>
+          <p>
+            <abbr title="À mon humble avis">ÀMHA</abbr>, les utilisateurs auraient tôt fait de préciser la langue du document,
+            et une des erreurs d&apos;accessibilité les plus courantes serait tout à coup menacée d&apos;extinction&nbsp;!
+          </p>
+        </section>
+
+
+        <section class="slide">
+          <h2>Slide de base</h2>
+          <p>Lorem ipsum.</p>
+        </section>
 
         <section  class="slide end noprint">
           <h2 class="end-title">Merci</h2>
