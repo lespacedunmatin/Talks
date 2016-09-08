@@ -105,35 +105,7 @@
         </section>
 
         <section class="slide">
-          <h2>L&apos;économique de répétition</h2>
-          <p>
-            Celui-ci est relativement courant.
-            Notamment chez ceux qui en ont marre d&apos;étendre des bêtises dans leur pré-processeur.
-            En fait, on peut s&apos;en servir pour mettre en place des motifs, ce que vous faites tout le temps si vous appliquez BEM, SMACSS ou OOCSS&nbsp;:
-          </p>
-          <div class="col-50">
-            <pre>
-              <code class="language-css">
-                [class*="bouton"] {}
-                .bouton--xxl {}
-              </code>
-            </pre>
-          </div>
-          <div class="col-50">
-            <pre>
-              <code class="language-markup">
-                <button class="bouton--xxl" type="button">Yihaaa!</button>
-              </code>
-            </pre>
-          </div>
-          <p>
-            Et ô magie, les deux déclarations s&apos;appliqueront. Adieu le <code>class="btn btn-lg btn-default"</code> de BootStrap.
-            J&apos;aime beaucoup car ça permet de s&apos;appliquer à nommer et abstraire son barda pour en faire des motifs de conception viables.
-          </p>
-        </section>
-
-        <section class="slide">
-          <h2 lang="de">ACH, JA&nbsp;!</h2>
+          <h2 lang="de">Ach, ja&nbsp;!</h2>
           <p>
             S&apos;appliquer à respecter un motif de conception, ça vous parle&nbsp;?
             Ceux d&apos;<abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr> sont particulièrement chatouilleux.
@@ -151,9 +123,52 @@
         </section>
 
         <section class="slide">
+          <h2>L&apos;économique de répétition</h2>
+          <p>
+            Les sélecteurs d&apos;attributs peuvent fonctionner <strong>comme des expressions régulières</strong>. Et ça, c&apos;est vachement pratique.
+            On peut s&apos;en servir pour mettre en place des motifs, ce que vous faites déjà avec des méthodologies comme <a href="https://en.bem.info/methodology/" hreflang="en-US">BEM</a>, <a href="https://smacss.com/" hreflang="en">SMACSS</a> ou <a href="http://oocss.org/" hreflang="en">OOCSS</a>.
+            Et si comme moi, vous trouvez que quelquechose cloche dans le  <code>class="btn btn-lg btn-default"</code> de Bootstrap, vous devriez apprécier ce qui suit&nbsp;:
+          </p>
+          <div class="col-50">
+            <pre class="language-css">
+              <code class="language-css">
+                [class*="btn"] {
+                  border-width: .25em;
+                }
+
+                [class*="primary"] {
+                  background-color: #032c36;
+                  color: #efeee3;
+                }
+
+                [class*="-xs"] {
+                  font-size: smaller;
+                }
+              </code>
+            </pre>
+          </div>
+          <div class="col-50">
+              <style scoped>[class*="btn"]{border-width:.25em}[class*="primary"]{background-color:#032c36;color:#efeee3}[class*="-xs"]{font-size:smaller}</style>
+              <button class="btn-primary-xs" type="button">Yihaaa!</button>
+
+              <button class="btn-xs" type="button">Yihaaa!</button>
+
+              <button class="btn-primary" type="button">Yihaaa!</button>
+          </div>
+          <p>
+            Placer dans le HTML la classe <code>btn-primary-xs</code> permettra d&apos;appliquer les trois déclarations&nbsp;!
+            J&apos;aime beaucoup car ça permet de s&apos;appliquer à nommer et abstraire son barda pour en faire des motifs de conception viables.
+          </p>
+          <p class="small">
+            Gaffe aux téléscopages&nbsp;: tout ce qui aura une classe comprenant <code>-xs</code> sera plus petit.
+            Logique, mais ça peut surprendre malgré tout :)
+          </p>
+        </section>
+
+        <section class="slide">
           <h2>La chouette lobotomisée</h2>
           <p class="small">Crédit à <a href="http://alistapart.com/article/axiomatic-css-and-lobotomized-owls" hreflang="en">Heydon Pickering sur AListApart</a>.</p>
-          <p>Ces smileys vont sûrement vous faire crier, mais honnêtement pourquoi galérer à gérer vos espacements sur des classes, quand&nbsp;:</p>
+          <p>Ces smileys vont sûrement vous faire crier, mais honnêtement pourquoi galérer à gérer vos espacements sur des classes, quand ce sélecteur fait le job pour vous&nbsp;?</p>
           <pre>
             <code class="language-css">
               * + * {
@@ -161,13 +176,12 @@
               }
             </code>
           </pre>
-          <p>fait le job pour vous&nbsp;? Et il a des copains&nbsp;!</p>
           <h3>La chouette dubitative et la chouette <i lang="en">duck face</i></h3>
           <p>
             Le sélecteur d&apos;adjacence directe est pratique,
             mais celui d&apos;adjacence indirecte également (<code>* ~ *</code>)
             —&nbsp;et celui de parenté (<code>* > *</code>), je vous raconte même pas&nbsp;!
-            Utile lorsque l&apos;affichage d&apos;un enfant direct dépend de celui d&apos;un prédécesseur, par exemple&nbsp;:
+            Utile lorsque l&apos;affichage d&apos;un enfant direct dépend de celui d&apos;un prédécesseur, par ex.&nbsp;:
           </p>
           <pre>
             <code class="language-css">
@@ -180,19 +194,16 @@
         </section>
 
         <section class="slide">
-          <h2>Les garde-fous</h2>
+          <h2>Le garde-fous</h2>
           <p>Progressons dans l&apos;hérésie&nbsp;: et si nous ajoutions <del>futilement</del> du poids à nos sélecteurs, pour rigoler&nbsp;?</p>
-          <p>Saÿmal, pas vrai&nbsp;? Pourtant tous les <i lang="en">frameworks</i> CSS <strong>devraient</strong> en abuser, notamment parce qu&apos;ils pourraient ainsi contribuer à améliorer la qualité globale des sites produits grâce à eux.</p>
-          <h3>Un exemple, un exemple&nbsp;!</h3>
-          <p>L&apos;astuce du <code>box-sizing</code> sur <code>html</code> est extrêmement répandue, afin de simplifier les calculs de dimension des éléments.</p>
-          <p class="small">
+          <p class="small">Saÿmal, pas vrai&nbsp;? Pourtant tous les <i lang="en">frameworks</i> CSS <strong>devraient</strong> en abuser, notamment parce qu&apos;ils pourraient ainsi contribuer à améliorer la qualité globale des sites produits grâce à eux.</p>
+          <h3>L&apos;astuce du <code>box-sizing</code> sur <code>html</code></h3>
+          <p>
             Vous la trouvez par exemple dans
             <a href="https://github.com/zurb/foundation-sites/blob/develop/dist/foundation.css#L370)" hreflang="en">Foundation</a>
             et dans <a href="https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap.css#L301)" hreflang="en">Bootstrap V4</a>.
-          </p>
-          <p>
             Imaginez un peu si ces <i lang="en">frameworks</i> ne copiaient pas bêtement cette astuce,
-            mais y ajoutaient un seul, tout petit attribut&nbsp;: <code>[lang]</code>.
+            mais y ajoutaient un seul, tout petit attribut <code>[lang]</code>.
           </p>
           <pre>
             <code class="language-css">
@@ -205,12 +216,43 @@
               }
             </code>
           </pre>
-          <p>
+          <p class="small">
             <abbr title="À mon humble avis">ÀMHA</abbr>, les utilisateurs auraient tôt fait de préciser la langue du document,
             et une des erreurs d&apos;accessibilité les plus courantes serait tout à coup menacée d&apos;extinction&nbsp;!
           </p>
         </section>
 
+        <section class="slide">
+          <h2>L&apos;autre garde-fous</h2>
+          <p>
+            Nous savons tous que les images sont un point particulièrement sensible du web.
+            Est-ce qu&apos;elle véhicule de l&apos;information&nbsp;? Comment doit-elle s&apos;afficher&nbsp;?
+            <strong>Bla bla bla</strong>.
+          </p>
+          <p>Par principe, et ce depuis l&apos;avènement du <abbr lang="en" title="Responsive WebDesign">RWD</abbr>, on colle un petit bout de CSS par défaut sur <code>img</code>&nbsp;:</p>
+          <pre>
+            <code class="language-css">
+              img {
+                  max-width: 100%;
+              }
+            </code>
+          </pre>
+          <p class="small">
+            On le trouve
+            <a href="https://github.com/alsacreations/KNACSS/blob/master/css/knacss-unminified.css#L538" hreflang="en">dans Knacss</a>,
+            <a href="https://github.com/nico3333fr/ROCSSTI/blob/master/src/sass/rocssti-fr/05-layout-modules.scss#L5" hreflang="en">dans Röcssti</a> et,
+            certes un peu mieux caché, <a hreflang="en" href="https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css#L1118">dans Bootstrap</a>.
+          </p>
+          <h3>Ma suggestion</h3>
+          <pre>
+            <code class="language-css">
+              img[alt] {
+                  max-width: 100%;
+              }
+            </code>
+          </pre>
+          <p>Là aussi, ça devrait quelque peu altérer le web devant vos yeux. Et croyez-moi, <strong>plus personne dans votre équipe n&apos;omettra une alternative</strong>. :)</p>
+        </section>
 
         <section class="slide">
           <h2>Slide de base</h2>
