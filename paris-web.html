@@ -101,17 +101,35 @@
             <li class="Cmasque">Les sélecteurs d&apos;adjacence et de parenté <code>* + *, * > *, * ~ *</code></li>
             <li class="Cmasque">Les sélecteurs d&apos;élément surqualifiés <code>html[class*=""]</code></li>
           </ol>
-          <p class="Cmasque">Moi, je les aime beaucoup. Ils sont rigolos. Allez, jetons-y un œil.</p>
+          <p class="Cmasque">Moi, je les aime beaucoup. <strong>Ils sont rigolos</strong>. Allez, jetons-y un œil.</p>
         </section>
 
         <section class="slide">
-          <h2 lang="de">Ach, ja&nbsp;!</h2>
+          <h2>Les micro-données</h2>
           <p>
-            S&apos;appliquer à respecter un motif de conception, ça vous parle&nbsp;?
-            Ceux d&apos;<abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr> sont particulièrement chatouilleux.
-            Alors si comme moi vous préférez que votre script n&apos;ait pas à tartiner des classes
-            à tout bout de champ, les sélecteurs d&apos;attributs sont vos amis&nbsp;:
+            Les <i lang="es">aficionados</i> du <abbr lang="en" title="Search Engine Optimization">SEO</abbr> les connaissent bien&nbsp;:
+            elles ont vocation à enrichir la sémantique d&apos;un document pour compléter la sémantique HTML.
           </p>
+          <p class="small">La tendance actuelle est plutôt le format <code>JSON-LD</code> dans une balise <code>script</code>, mais je favorise HTML.</p>
+          <pre>
+            <code class="language-css">
+              [itemprop="author"] {
+                  font-variant: small-caps;
+              }
+            </code>
+          </pre>
+          <p>
+            ce sélecteur présente les mêmes avantages que si vous employiez une classe <code>.author</code>
+            (poids du sélecteur, indépendance vis-à-vis de la balise), mais vous y ajoutez <strong>une dimension sémantique</strong>.
+          </p>
+        </section>
+
+        <section class="slide">
+          <h2><abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr></h2>
+          <p>
+            <abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr> est un ensemble d&apos;attributs qui permet de rendre accessibles certains motifs de conception et les interactions qui y sont associées.
+          </p>
+          <p class="small">C&apos;est la version bio des plugins jQuery de votre enfance.</p>
           <pre>
             <code class="language-css">
               [role="tabpanel"][aria-hidden="true"] {
@@ -119,7 +137,7 @@
               }
             </code>
           </pre>
-          <p>Et voilà&nbsp;! Pourquoi utiliser des classes —&nbsp;que vous manipulez en <abbr lang="en" title="JavaScript">JS</abbr> de toute façon&nbsp;— quand vous disposez d&nbsp;une panoplie complète d&apos;attributs&nbsp;?</p>
+          <p>Et voilà&nbsp;! Pourquoi utiliser des classes —&nbsp;que vous manipulez en <abbr lang="en" title="JavaScript">JS</abbr> de toute façon&nbsp;— quand vous disposez d&apos;<strong>une panoplie complète d&apos;attributs</strong>&nbsp;?</p>
         </section>
 
         <section class="slide">
