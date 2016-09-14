@@ -61,7 +61,7 @@
 
         <section class="slide couv">
           <h2>Il n&apos;y a pas que class et id dans la vie</h2>
-          <h3>Les autres sélecteurs sont bios, aussi</h3>
+          <h3>Étudions les sélecteurs du terroir</h3>
           <footer class="table">
             <p>animé par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
           </footer>
@@ -71,8 +71,8 @@
           <h2>Démythifions</h2>
           <h3>La contre-performance des sélecteurs</h3>
           <p>La rumeur court depuis plusieurs années que les sélecteurs universels, d&apos;attributs ou d&apos;adjacence ne seraient pas performants&nbsp;— et sont par conséquent à éviter.</p>
-          <p><strong>C&apos;est faux.</strong> Et <a href="https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/" hreflang="en">c&apos;est prouvé par Ben Frain en 2014</a>.</p>
-          <p class="small">La différence &nbsp;— qui, certes, existe&nbsp;— est absolument <strong>négligeable</strong>. En revanche, soyez prudents avec <strong>les propriétés</strong> que vous utilisez.</p>
+          <p><strong>C&apos;est faux.</strong> Et <a href="https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/" hreflang="en">c&apos;est prouvé par Ben Frain en 2014</a>&nbsp;<span aria-hidden="true">&#10004;</span>.</p>
+          <p>La différence &nbsp;— qui, certes, existe&nbsp;— est absolument <strong>négligeable</strong>. En revanche, soyez prudents avec <strong>les propriétés</strong> que vous utilisez.</p>
         </section>
 
         <section class="slide">
@@ -82,23 +82,25 @@
             C&apos;est devenu un <strong>axiome</strong> désormais.
             Pourtant dans le web, sa seule portée pratique pertinente est de <strong>ne pas utiliser d&apos;attributs de présentation dans le HTML ni de balises sémantiques pour leur aspect visuel</strong>.
           </p>
-          <p class="small">Et si on prône ça, c&apos;est juste parce que sinon le fond devient inintelligible.</p>
           <p>
-            Pour tous les autres cas, c&apos;est simple&nbsp;: <strong>la forme dépend du fond</strong>.
+            Pour tous les autres cas&nbsp;: <strong>la forme dépend du fond</strong><span aria-hidden="true">&nbsp;&#128162;</span>.
           </p>
           <p class="small">J&apos;en ai parlé plus en détail dans «&nbsp;<a href="http://www.ffoodd.fr/le-sens-de-la-semantique/">Le sens de la sémantique</a>&nbsp;».</p>
         </section>
 
         <section class="slide">
           <h2>Les sélecteurs pestiférés</h2>
-          <p>La mode en ce moment est de n&apos;utiliser que des classes. Des classes partout&nbsp;!</p>
-          <p class="small">Dommage, c&apos;est moins coloré syntaxiquement dans mon éditeur.</p>
-          <p>Voyons nos vilains petits canards&nbsp;:</p>
+          <p>
+            La mode en ce moment est de n&apos;utiliser que des classes. Des classes <strong>pour tout</strong>&nbsp;!
+            Les autres sélecteurs sont, paraît-il, périmés.
+          </p>
+          <p>Voyons nos vilains petits canards&nbsp;<span aria-hidden="true">🐔&nbsp;</span>:</p>
           <ol>
-            <li class="Cmasque">Le sélecteur universel <code>*</code></li>
-            <li class="Cmasque">Les sélecteurs d&apos;attributs complexes <code>[attr*=""]</code></li>
-            <li class="Cmasque">Les sélecteurs d&apos;adjacence et de parenté <code>* + *, * > *, * ~ *</code></li>
-            <li class="Cmasque">Les sélecteurs d&apos;élément surqualifiés <code>html[class*=""]</code></li>
+            <li class="Cmasque">Le sélecteur universel&nbsp;: <code>*</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;éléments&nbsp;: <code>body</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;attributs complexes&nbsp;: <code>[attr*=""]</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;adjacence et de parenté&nbsp;: <code>* + *</code>, <code>* > *</code>, <code>* ~ *</code></li>
+            <li class="Cmasque">Les sélecteurs d&apos;élément surqualifiés&nbsp;: <code>html[class*=""]</code></li>
           </ol>
           <p class="Cmasque">
             Moi, je les aime beaucoup. <strong>Ils sont rigolos</strong>.
@@ -122,7 +124,7 @@
 </pre>
           <p>
             Ce sélecteur présente les mêmes avantages que si vous employiez une classe <code>.author</code>
-            (poids du sélecteur, indépendance vis-à-vis de la balise), mais vous y ajoutez <strong>une dimension sémantique</strong>.
+            (poids du sélecteur, indépendance vis-à-vis de la balise), mais vous y ajoutez <strong>une dimension sémantique</strong><span aria-hidden="true">&nbsp;&#127881;</span>.
           </p>
         </section>
 
@@ -131,7 +133,7 @@
           <p>
             <abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr> est un ensemble d&apos;attributs qui permet de rendre accessibles certains motifs de conception et les interactions qui y sont associées.
           </p>
-          <p class="small">C&apos;est un peu la version bio des plugins jQuery de votre enfance.</p>
+          <p class="small">C&apos;est un peu la version bio <span aria-hidden="true">&#9852;</span> des plugins jQuery de votre enfance.</p>
 <pre>
   <code class="language-css">
     [role="tabpanel"][aria-hidden="true"] {
@@ -139,18 +141,16 @@
     }
   </code>
 </pre>
-          <p>Et voilà&nbsp;! Pourquoi utiliser des classes —&nbsp;que vous manipulez en <abbr lang="en" title="JavaScript">JS</abbr> de toute façon&nbsp;— quand vous disposez d&apos;<strong>une panoplie complète d&apos;attributs</strong>&nbsp;?</p>
+          <p>Et voilà&nbsp;! Pourquoi utiliser des classes —&nbsp;que vous manipulez en <abbr lang="en" title="JavaScript">JS</abbr> de toute façon&nbsp;— quand vous disposez d&apos;<strong>une panoplie complète d&apos;attributs</strong><span aria-hidden="true">&nbsp;	&#128131;</span>&nbsp;?</p>
         </section>
 
         <section class="slide">
           <h2>L&apos;économique de répétition</h2>
           <p>
             Les sélecteurs d&apos;attributs peuvent fonctionner <strong>comme des expressions régulières</strong>. Et ça, c&apos;est vachement pratique
-            pour mettre en place des motifs.
+            pour mettre en place des motifs&nbsp;— et s&apos;appliquer à nommer et abstraire son barda.
           </p>
-          <p class="small">Ce que vous faites déjà avec des méthodologies comme <a href="https://en.bem.info/methodology/" hreflang="en-US">BEM</a>, <a href="https://smacss.com/" hreflang="en">SMACSS</a> ou <a href="http://oocss.org/" hreflang="en">OOCSS</a>.</p>
-          <div class="col-50">
-<pre class="language-css">
+<pre>
   <code class="language-css">
     [class*="btn"] {
       border-width: .25em;
@@ -166,21 +166,11 @@
     }
   </code>
 </pre>
-          </div>
-          <div class="col-50">
-              <style scoped>[class*="btn"]{border-width:.25em}[class*="primary"]{background-color:#032c36;color:#efeee3}[class*="-xs"]{font-size:smaller}</style>
-              <button class="btn-primary-xs" type="button">Yihaaa!</button>
-              <br>
-              <button class="btn-xs" type="button">Yihaaa!</button>
-              <br>
-              <button class="btn-primary" type="button">Yihaaa!</button>
-          </div>
-          <p>Ça permet de s&apos;appliquer à nommer et abstraire son barda pour en faire des motifs de conception viables.</p>
+          <p class="small">Vous le faites déjà avec des méthodologies comme <a href="https://en.bem.info/methodology/" hreflang="en-US">BEM</a>, <a href="https://smacss.com/" hreflang="en">SMACSS</a> ou <a href="http://oocss.org/" hreflang="en">OOCSS</a>.</p>
         </section>
 
         <section class="slide">
           <h2>La chouette lobotomisée</h2>
-          <p class="small">Crédit à <a href="http://alistapart.com/article/axiomatic-css-and-lobotomized-owls" hreflang="en">Heydon Pickering sur AListApart</a>.</p>
           <p>Ces smileys vont sûrement vous faire crier, mais honnêtement pourquoi galérer à gérer vos espacements sur des classes, quand ce sélecteur fait le job pour vous&nbsp;?</p>
 <pre>
   <code class="language-css">
@@ -189,6 +179,7 @@
     }
   </code>
 </pre>
+          <p class="small">Crédit à <a href="http://alistapart.com/article/axiomatic-css-and-lobotomized-owls" hreflang="en">Heydon Pickering sur AListApart</a>.</p>
         </section>
 
         <section class="slide">
@@ -233,7 +224,7 @@
     }
   </code>
 </pre>
-            <p>Une des erreurs d&apos;accessibilité les plus courantes serait tout à coup <strong>menacée d&apos;extinction</strong>&nbsp;!</p>
+            <p>Une des erreurs d&apos;accessibilité les plus courantes serait tout à coup <strong>menacée d&apos;extinction</strong><span aria-hidden="true">&nbsp;&#128074;</span>&nbsp;!</p>
         </div>
         </section>
 
@@ -261,31 +252,33 @@
     }
   </code>
 </pre>
-            <p>Croyez-moi, <strong>plus personne dans votre équipe n&apos;omettra une alternative</strong>. :)</p>
+            <p>Croyez-moi, <strong>plus personne dans votre équipe n&apos;omettra une alternative</strong><span aria-hidden="true">&nbsp;&#128079;</span>.</p>
           </div>
         </section>
 
         <section class="slide">
           <h2>Une armée de gardes-fous&nbsp;!</h2>
-          <div class="col-50">
-            <p>Voici quelques idées de sélecteurs permettant de protéger des attributs maltraités&nbsp;:</p>
-            <ul>
-              <li class="Cmasque"><code>label[for]</code></li>
-              <li class="Cmasque"><code>abbr[title]</code></li>
-              <li class="Cmasque"><code>iframe[title]</code></li>
-              <li class="Cmasque"><code>video[controls]</code></li>
-              <li class="Cmasque"><code>audio[controls]</code></li>
-            </ul>
+          <div class="table">
+            <div class="col-50">
+              <p>Voici quelques idées de sélecteurs permettant de protéger des attributs maltraités&nbsp;:</p>
+              <ul>
+                <li class="Cmasque"><code>label[for]</code></li>
+                <li class="Cmasque"><code>abbr[title]</code></li>
+                <li class="Cmasque"><code>iframe[title]</code></li>
+                <li class="Cmasque"><code>video[controls]</code></li>
+                <li class="Cmasque"><code>audio[controls]</code></li>
+              </ul>
+            </div>
+            <div class="col-50">
+              <p class="Cmasque">Et je relance avec les balises sensibles&nbsp;:</p>
+              <ul>
+                <li class="Cmasque"><code>figure > figcaption</code></li>
+                <li class="Cmasque"><code>table > caption:first-child</code></li>
+                <li class="Cmasque"><code>fieldset > legend:first-child</code></li>
+              </ul>
+            </div>
           </div>
-          <div class="col-50">
-            <p class="Cmasque">Et je relance avec les balises sensibles&nbsp;:</p>
-            <ul>
-              <li class="Cmasque"><code>figure > figcaption</code></li>
-              <li class="Cmasque"><code>table > caption:first-child</code></li>
-              <li class="Cmasque"><code>fieldset > legend:first-child</code></li>
-            </ul>
-          </div>
-          <p class="Cmasque">Et je suis persuadé que vous pourrez en trouver plein d&apos;autres. :)</p>
+          <p class="Cmasque">Et je suis persuadé que vous pourrez en trouver plein d&apos;autres&nbsp;<span aria-hidden="true">&#128161;&nbsp;</span>!</p>
         </section>
 
         <section class="slide">
@@ -296,6 +289,7 @@
             <a href="https://github.com/dropbox/scooter/pull/4" hreflang="en">à une implémentation par Dan Eden pour Scooter</a>,
             terriblement simple —&nbsp;et donc géniale&nbsp;:
           </p>
+          <div class="table">
 <pre class="col-50">
   <code class="language-css">
     .c-btn {
@@ -313,7 +307,8 @@
     }
   </code>
 </pre>
-          <p class="small">
+          </div>
+          <p>
             Vous pouvez également appeler une feuille de styles dédiée sur votre environnement de développement ou dans votre navigateur&nbsp;:
             c&apos;est l&apos;objectif d&apos;<a href="http://ffoodd.github.io/a11y.css/" hreflang="en">a11y.css</a>, par exemple.
           </p>
@@ -322,10 +317,10 @@
         <section class="slide">
           <h2>Conclusion</h2>
           <p>
-            J&apos;y vois un excellent moyen de <strong>communiquer</strong> avec mes collègues&nbsp;:
+            J&apos;y vois un excellent moyen de <strong>communiquer</strong><span aria-hidden="true">&nbsp;&#128491;</span> avec mes collègues&nbsp;:
             un commentaire bien placé avant lesdits sélecteurs auront tôt fait d&apos;expliquer au lecteur de la feuille de styles le pourquoi du comment.
           </p>
-          <h3>Moralité</h3>
+          <h3>Moralité<span aria-hidden="true">&nbsp;&#128165;</span></h3>
           <p>
             Ces attributs sont <strong>indispensables</strong> dans le HTML, <strong>pourquoi s&apos;en passer dans le CSS&nbsp;?</strong>
           </p>
