@@ -854,6 +854,10 @@ code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;fon
     width: 50%;
   }
 
+  .v-top {
+    vertical-align: top;
+  }
+
   .col-left {
     float: left;
     width: 50%;
