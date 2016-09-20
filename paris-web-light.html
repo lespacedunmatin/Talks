@@ -253,6 +253,22 @@
         </section>
 
         <section class="slide">
+          <h2>Mise en œuvre</h2>
+          <ol>
+            <li>Un <i lang="en">mixin</i> compilé sous condition, d&apos;après l&apos;idée de Dan Eden <a href="https://github.com/dropbox/scooter/pull/4" hreflang="en">dans Scooter</a>&nbsp;:
+<pre>
+  <code class="language-css">
+    html {
+      @include assert-selector( '[lang]' );
+    }
+  </code>
+</pre>
+            </li>
+            <li>Une feuille de styles dédiée, à la manière d&apos;<a href="http://ffoodd.github.io/a11y.css/" hreflang="en">a11y.css</a>.</li>
+          </ol>
+        </section>
+
+        <section class="slide">
           <h2>Conclusion<span aria-hidden="true">&nbsp;&#128165;</span></h2>
           <p>
             Certains attributs et motifs sont <strong>indispensables</strong> dans le HTML,
