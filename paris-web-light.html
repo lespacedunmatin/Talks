@@ -62,14 +62,6 @@
         <section class="slide couv">
           <h2>Il n&apos;y a pas que class et id dans la vie</h2>
           <h3><i>Quid</i> des autres sélecteurs&nbsp;?</h3>
-          <p>
-            Les sélecteurs d&apos;attributs et de parenté sont rarement employés.
-            Ce sont pourtant de puissants sélecteurs, maniables, lisibles —&nbsp;parfois bien <strong>plus pertinents</strong> que des classes et <strong>moins stricts</strong> que des <abbr title="identifiants">ID</abbr>.
-          </p>
-          <p>
-            Ce sont également de merveilleux <strong>obstacles pédagogiques</strong>, générant des situations d&apos;apprentissage intéressantes en induisant
-            une corrélation entre le <abbr lang="en" title="HyperText Markup Language">HTML</abbr> et le <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>.
-          </p>
           <footer class="table">
             <p>animé par <a href="http://www.ffoodd.fr">Gaël Poupard</a></p>
           </footer>
@@ -79,8 +71,7 @@
           <h2>À contre-courant</h2>
           <div class="table">
             <p class="col-50 v-top">
-              Mais la tendance va vers l&apos;utilisation de classes partout, pour tout.
-              <br>Avec un objectif&nbsp;:
+              La tendance est l&apos;utilisation de classes, avec un objectif&nbsp;:
               <a hreflang="en" href="http://csswizardry.com/2014/10/the-specificity-graph/">un graphique de spécificité</a> qu&apos;on devrait confondre avec un électro-encéphalogramme plat.
               <br><strong>Genre, la mort.</strong>
             </p>
@@ -94,54 +85,34 @@
         <section class="slide">
           <h2>Démystifions</h2>
           <h3>La contre-performance des sélecteurs</h3>
-          <p>La rumeur court depuis plusieurs années que les sélecteurs universels, d&apos;attributs ou d&apos;adjacence seraient mauvais pour les performances&nbsp;— et seraient par conséquent à éviter.</p>
           <p><strong>C&apos;est faux.</strong> Et <a href="https://benfrain.com/css-performance-revisited-selectors-bloat-expensive-styles/" hreflang="en">c&apos;est prouvé par Ben Frain en 2014</a>&nbsp;<span aria-hidden="true">&#10004;</span>.</p>
-          <p>La différence &nbsp;— qui, certes, existe&nbsp;— est absolument <strong>négligeable</strong>. En revanche, soyez prudents avec <strong>les propriétés</strong> que vous utilisez.</p>
         </section>
 
         <section class="slide">
           <h2>Démystifions encore</h2>
           <h3>La séparation du fond et de la forme</h3>
           <p>
-            C&apos;est devenu un <strong>axiome</strong> désormais.
-            Pourtant dans le web, sa seule portée pratique pertinente est de <strong>ne pas utiliser d&apos;attributs de présentation dans le HTML ni de balises sémantiques pour leur aspect visuel</strong>.
-          </p>
-          <p>
+            Ça signifie seulement de <strong>ne pas utiliser d&apos;attributs de présentation dans le HTML ni de balises sémantiques pour leur aspect visuel</strong>.
             Pour tous les autres cas&nbsp;: <strong>la forme dépend du fond</strong><span aria-hidden="true">&nbsp;&#128162;</span>.
           </p>
           <p class="small">J&apos;en ai parlé plus en détail dans «&nbsp;<a href="http://www.ffoodd.fr/le-sens-de-la-semantique/">Le sens de la sémantique</a>&nbsp;».</p>
         </section>
 
         <section class="slide">
-          <h2>Les sélecteurs pestiférés</h2>
-          <p>
-            Or donc, la mode en ce moment est de n&apos;utiliser que des classes.<br>
-            Les autres sélecteurs sont «&nbsp;à manipuler avec précaution&nbsp;»<span aria-hidden="true">&nbsp;&#9763;</span>.
-          </p>
-          <p>Voyons nos vilains petits canards&nbsp;:</p>
+          <h2>Les sélecteurs pestiférés<span aria-hidden="true">&nbsp;&#9763;</span></h2>
+          <p>Échantillon gratuit&nbsp;:</p>
           <ol>
             <li class="Cmasque">Le sélecteur universel&nbsp;: <code>*</code>&nbsp;;</li>
             <li class="Cmasque">Les sélecteurs d&apos;attributs complexes&nbsp;: <code>[attr*=""]</code>&nbsp;;</li>
             <li class="Cmasque">Les sélecteurs d&apos;adjacence et de parenté&nbsp;: <code>* + *</code>, <code>* > *</code>, <code>* ~ *</code>&nbsp;;</li>
             <li class="Cmasque">Les sélecteurs d&apos;élément surqualifiés&nbsp;: <code>html[class=""]</code>.</li>
           </ol>
-          <p class="Cmasque">
-            Moi, je les aime beaucoup. <strong>Ils sont rigolos</strong>.
-            <br>
-            Allez, jetons un œil à quelques exemples que j&apos;espère pertinents, et voyons comment on peut s&apos;en servir de manière intelligentes.
-          </p>
+          <p class="Cmasque">Voyons comment on peut <strong>s&apos;en servir de manière intelligente</strong>.</p>
         </section>
 
         <section class="slide">
-          <h2>Les micro-données</h2>
-          <p>
-            Les <i lang="es">aficionados</i> du <abbr lang="en" title="Search Engine Optimization">SEO</abbr> les connaissent bien&nbsp;:
-            elles ont vocation à <strong>enrichir la sémantique HTML</strong>.
-          </p>
-          <p>
-            Si d&apos;aventure vous les utilisez, ne perdez pas de temps à définir des classes qui signifieraient la même chose&nbsp;:
-            <strong>ciblez les directement</strong>.
-          </p>
+          <h2>Les micro-données<span aria-hidden="true">&nbsp;&#127881;</span></h2>
+          <p>Si vous les utilisez dans leur version <abbr lang="en" title="HyperText Markup Language">HTML</abbr>, <strong>ciblez les directement</strong>.</p>
 <pre>
   <code class="language-css">
     [itemprop="author"] {
@@ -149,20 +120,12 @@
     }
   </code>
 </pre>
-          <p>
-            Ce sélecteur présente les mêmes avantages que si vous employiez une classe <code>.author</code>,
-            mais vous y ajoutez <strong>une dimension sémantique</strong> utile au <abbr lang="en" title="Search Engine Optimization">SEO</abbr><span aria-hidden="true">&nbsp;&#127881;</span>.
-          </p>
           <p class="small">Notez qu&apos;à l&apos;origine, <code>[class]</code> devait servir à étendre la sémantique. Je vous invite à lire <a href="http://www.la-grange.net/2013/07/24/html">l&apos;article de Karl Dubost sur le sujet</a>.
         </section>
 
         <section class="slide">
-          <h2><abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr></h2>
-          <p>
-            <abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr> est <strong>un ensemble d&apos;attributs</strong> qui permet de rendre accessibles certains motifs de conception et les interactions qui y sont associées.
-          </p>
-          <p class="small">C&apos;est un peu la version bio <span aria-hidden="true">&#9852;</span> des plugins jQuery de votre enfance.</p>
-          <p>Pourquoi utiliser des classes quand vous disposez d&apos;<strong>une panoplie complète d&apos;attributs</strong> —&nbsp;que vous manipulez en <abbr lang="en" title="JavaScript">JS</abbr> de toute façon&nbsp;?</p>
+          <h2><abbr lang="en" title="Accessible Rich Internet Application">ARIA</abbr><span aria-hidden="true">&nbsp;&#9852;</span></h2>
+          <p>Pourquoi utiliser des classes quand vous disposez d&apos;<strong>une panoplie complète d&apos;attributs</strong>&nbsp;?</p>
 <pre>
   <code class="language-css">
     [role="tabpanel"][aria-hidden="true"] {
@@ -170,15 +133,13 @@
     }
   </code>
 </pre>
-          <p>Et voilà&nbsp;! Avec ça, un nouvel intervenant comprendra que le motif <strong>repose sur ces attributs</strong> et pourra s&apos;y <strong>familiariser</strong> plus facilement.</p>
+          <p>Et voilà&nbsp;!</p>
+          <p class="small">Avec ça, un nouvel intervenant comprendra que le motif <strong>repose sur ces attributs</strong> et pourra se <strong>familiariser</strong> avec plus facilement.</p>
         </section>
 
         <section class="slide">
           <h2>L&apos;économique de répétition</h2>
-          <p>
-            Les sélecteurs d&apos;attributs peuvent fonctionner <strong>comme des expressions régulières</strong>. Et ça, c&apos;est vachement pratique
-            pour mettre en place des motifs&nbsp;— et s&apos;appliquer à nommer et abstraire son barda.
-          </p>
+          <p>Les sélecteurs d&apos;attributs peuvent fonctionner <strong>comme des expressions régulières</strong>.</p>
 <pre>
   <code class="language-css">
     [class*="btn"] {
@@ -200,7 +161,7 @@
 
         <section class="slide">
           <h2>La chouette lobotomisée</h2>
-          <p>Ces smileys vont sûrement vous faire crier, mais ils s&apos;avèrent utiles si vous mettez en place un système graphique défini, par exemple.</p>
+          <p>En guise d&apos;échauffement&nbsp;:</p>
 <pre>
   <code class="language-css">
     main * + * {
@@ -212,13 +173,8 @@
         </section>
 
         <section class="slide">
-          <h2>La chouette dubitative et la chouette <i lang="en">duck face</i></h2>
-          <p>
-            Le sélecteur d&apos;adjacence directe est pratique,
-            mais celui d&apos;adjacence indirecte également (<code>* ~ *</code>)
-            —&nbsp;et celui de parenté (<code>* > *</code>), je vous raconte même pas&nbsp;!
-            Utile lorsque l&apos;affichage d&apos;un enfant direct dépend de celui d&apos;un prédécesseur, par ex.&nbsp;:
-          </p>
+          <h2>La chouette dubitative <small>et la chouette <i lang="en">duck face</i></small></h2>
+          <p><code>* ~ *</code> et <code>* > *</code>. Démonstration&nbsp;:</p>
 <pre>
   <code class="language-css">
     main > *:target ~ * {
@@ -226,24 +182,20 @@
     }
   </code>
 </pre>
-          <p>Ici le mécanisme d&apos;affichage repose autant sur CSS que sur JS, ce que je pense bénéfique pour l&apos;accessibilité.</p>
-          <p class="small">Devinez quoi&nbsp;? Cet exemple aussi est d&apos;<a href=" https://www.smashingmagazine.com/2015/12/reimagining-single-page-applications-progressive-enhancement/" hreflang="en">Heydon Pickering, sur SmashingMagazine</a> cette fois.</p>
+          <p class="small">Cet exemple aussi est d&apos;<a href=" https://www.smashingmagazine.com/2015/12/reimagining-single-page-applications-progressive-enhancement/" hreflang="en">Heydon Pickering, sur SmashingMagazine</a> cette fois.</p>
         </section>
 
         <section class="slide">
           <h2>Le garde-fous</h2>
-          <p>Progressons dans l&apos;hérésie&nbsp;: et si nous ajoutions <del>futilement</del> du poids à nos sélecteurs, pour rigoler&nbsp;?</p>
           <div class="Cmasque">
             <h3>L&apos;astuce du <code>box-sizing</code> sur <code>html</code></h3>
             <p class="small">
               Vous la trouvez par exemple dans
               <a href="https://github.com/zurb/foundation-sites/blob/develop/dist/foundation.css#L370)" hreflang="en">Foundation</a>
               et dans <a href="https://github.com/twbs/bootstrap/blob/v4-dev/dist/css/bootstrap.css#L301)" hreflang="en">Bootstrap V4</a>.
-            <p>
-              Imaginez un peu si ces <i lang="en">frameworks</i> ne copiaient pas bêtement cette astuce,
-              mais y ajoutaient un seul, tout petit attribut <code>[lang]</code>.
             </p>
-<pre>
+        </div>
+<pre class="Cmasque">
   <code class="language-css">
     html[lang] {
       box-sizing: border-box;
@@ -254,43 +206,33 @@
     }
   </code>
 </pre>
-            <p>Une des erreurs d&apos;accessibilité les plus courantes serait tout à coup <strong>menacée d&apos;extinction</strong><span aria-hidden="true">&nbsp;&#128074;</span>&nbsp;!</p>
-        </div>
         </section>
 
         <section class="slide">
           <h2>L&apos;autre garde-fous</h2>
-          <p>
-            Les images sont un point particulièrement sensible du web&nbsp;:
-            vecteur d&apos;information, mode d&apos;affichage, <abbr lang="en" title="Responsive WebDesign">RWD</abbr>&hellip;
-          </p>
           <div class="Cmasque">
             <h3>Le coup du <code>max-width: 100%;</code> sur <code>img</code></h3>
             <p class="small">
               On le trouve
               <a href="https://github.com/alsacreations/KNACSS/blob/master/css/knacss-unminified.css#L538" hreflang="en">dans Knacss</a>,
-              <a href="https://github.com/nico3333fr/ROCSSTI/blob/master/src/sass/rocssti-fr/05-layout-modules.scss#L5" hreflang="en">dans Röcssti</a> et,
-              certes un peu mieux caché, <a hreflang="en" href="https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css#L1118">dans Bootstrap</a>.
+              <a href="https://github.com/nico3333fr/ROCSSTI/blob/master/src/sass/rocssti-fr/05-layout-modules.scss#L5" hreflang="en">dans Röcssti</a> et
+              <a hreflang="en" href="https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap.css#L1118">dans Bootstrap</a>.
             </p>
-            <p>
-              Mes deux centimes&nbsp;: ne l&apos;appliquer que si l&apos;attribut <code>alt</code> est présent&nbsp;:
-            </p>
-<pre>
+          </div>
+<pre class="Cmasque">
   <code class="language-css">
     img[alt] {
         max-width: 100%;
     }
   </code>
 </pre>
-            <p>Croyez-moi, <strong>plus personne dans votre équipe n&apos;omettra une alternative</strong><span aria-hidden="true">&nbsp;&#128079;</span>.</p>
-          </div>
         </section>
 
         <section class="slide">
-          <h2>Une armée de gardes-fous&nbsp;!</h2>
+          <h2>Une armée de gardes-fous<span aria-hidden="true">&nbsp;&#128161;</span></h2>
           <div class="table">
             <div class="col-50">
-              <p>Voici quelques idées de sélecteurs permettant de protéger des attributs maltraités&nbsp;:</p>
+              <p>Quelques idées, en vrac&nbsp;:</p>
               <ul>
                 <li class="Cmasque"><code>label[for]</code></li>
                 <li class="Cmasque"><code>abbr[title]</code></li>
@@ -308,49 +250,14 @@
               </ul>
             </div>
           </div>
-          <p class="Cmasque">Et je suis persuadé que vous pourrez en trouver plein d&apos;autres&nbsp;<span aria-hidden="true">&#128161;&nbsp;</span>!</p>
         </section>
 
         <section class="slide">
-          <h2>Mise en œuvre</h2>
-          <h3>Sans alourdir la prod</h3>
-          <p>Une idée simple est de n&apos;utiliser ces sélecteurs que sur un environnement de développement.</p>
+          <h2>Conclusion<span aria-hidden="true">&nbsp;&#128165;</span></h2>
           <p>
-            Je tire mon chapeau
-            <a href="https://github.com/dropbox/scooter/pull/4" hreflang="en">à une implémentation par Dan Eden pour Scooter</a>,
-            terriblement simple —&nbsp;et donc géniale&nbsp;:
+            Certains attributs et motifs sont <strong>indispensables</strong> dans le HTML,
+            <strong>pourquoi s&apos;en passer dans le CSS&nbsp;?</strong>
           </p>
-<pre>
-  <code class="language-css">
-    html {
-      @include assert-selector(
-        '[lang]'
-      );
-      box-sizing: border-box;
-    }
-  </code>
-</pre>
-          <p>
-            Vous pouvez également appeler une feuille de styles dédiée sur votre environnement de développement ou dans votre navigateur&nbsp;:
-            c&apos;est l&apos;objectif d&apos;<a href="http://ffoodd.github.io/a11y.css/" hreflang="en">a11y.css</a>, par exemple.
-          </p>
-        </section>
-
-        <section class="slide">
-          <h2>Conclusion</h2>
-          <p>
-            J&apos;y vois un excellent moyen <strong>d&apos;attirer l&apos;attention sur le HTML</strong>
-            en communiquant<span aria-hidden="true">&nbsp;&#128491;</span> avec mes collègues.
-            C&apos;est aussi une façon détournée d&apos;enseigner le HTML et le CSS —&nbsp;et l&apos;accessibilité, sans la mettre en avant&nbsp;;
-            un commentaire bien placé avant lesdits sélecteurs auront tôt fait d&apos;expliquer au lecteur de la feuille de styles <strong>le pourquoi du comment</strong>.
-          </p>
-          <div class="Cmasque">
-            <h3>Le mot de la fin<span aria-hidden="true">&nbsp;&#128165;</span></h3>
-            <p>
-              Certains attributs et motifs sont <strong>indispensables</strong> dans le HTML,
-              <strong>pourquoi s&apos;en passer dans le CSS&nbsp;?</strong>
-            </p>
-          </div>
         </section>
 
         <section  class="slide end noprint">
