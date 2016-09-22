@@ -1,32 +1,32 @@
 /*
 Index
 ======
- 1. GENERIC STYLE
-   1.1 TABLE
- 2. TYPO
-   2.1 HEADINGS
-   2.2 TEXT
- 3. HEADER
- 4. VOLET
- 5. TOOLBAR
-   5.1 NAVIGATION ELEMENTS
-   5.2 RELATED LINKS
- 6. PAGINATION SLIDE LINEAR LAYOUT
- 7. SLIDES
-   7.1 COLUMN
-   7.2 FREAKY DISC
- 8. TOOL BLOCK (SUMMARY & CONFIG)
-   8.1 TOOLS ELEMENTS
- 9. CSS TRANSITIONS
+1. GENERIC STYLE
+1.1 TABLE
+2. TYPO
+2.1 HEADINGS
+2.2 TEXT
+3. HEADER
+4. VOLET
+5. TOOLBAR
+5.1 NAVIGATION ELEMENTS
+5.2 RELATED LINKS
+6. PAGINATION SLIDE LINEAR LAYOUT
+7. SLIDES
+7.1 COLUMN
+7.2 FREAKY DISC
+8. TOOL BLOCK (SUMMARY & CONFIG)
+8.1 TOOLS ELEMENTS
+9. CSS TRANSITIONS
 10. PRISM
 11. MQs
 */
 
 /**
- * -------------------------
- * @section 1. GENERIC STYLE
- * -------------------------
- */
+* -------------------------
+* @section 1. GENERIC STYLE
+* -------------------------
+*/
 #screen {
   height: 100vh;
 }
@@ -80,7 +80,7 @@ button {
   font-size: 90%;
   margin-bottom: 2px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
-               2px 2px 2px rgba(0, 0, 0, .2);
+  2px 2px 2px rgba(0, 0, 0, .2);
   transition: all .6s ease-in;
 }
 
@@ -112,12 +112,12 @@ h3 kbd {
   background: inherit;
 }
 
-  pre code {
-    border: 0;
-    white-space: pre-wrap;
-  }
+pre code {
+  border: 0;
+  white-space: pre-wrap;
+}
 
-    pre code span { line-height: 1; }
+pre code span { line-height: 1; }
 
 b,
 strong {
@@ -131,28 +131,28 @@ blockquote {
   z-index: 1;
 }
 
-  blockquote::before {
-    color: #c42419;
-    content: open-quote;
-    font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "Pacifico", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    left: -.88em;
-    position: absolute;
-    top: -.1em;
-    z-index: -1;
-  }
+blockquote::before {
+  color: #c42419;
+  content: open-quote;
+  font: 300 3em / .2em "bello-pro-1", "bello-pro-2", "Pacifico", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  left: -.88em;
+  position: absolute;
+  top: -.1em;
+  z-index: -1;
+}
 
-  blockquote p {
-    font-style: italic;
-    font-weight: 500;
-    font-size: 1em;
-    line-height: 1.25;
-  }
+blockquote p {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.25;
+}
 
-    blockquote p::after {
-      color: #c42419;
-      content: close-quote;
-      font: 300 1em "bello-pro-1", "bello-pro-2", "Pacifico", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-    }
+blockquote p::after {
+  color: #c42419;
+  content: close-quote;
+  font: 300 1em "bello-pro-1", "bello-pro-2", "Pacifico", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
 
 cite {
   display: block;
@@ -217,10 +217,10 @@ td {
 }
 
 /**
- * -------------------------
- * @section 2. TYPO
- * -------------------------
- */
+* -------------------------
+* @section 2. TYPO
+* -------------------------
+*/
 /** @subsection 2.1 HEADINGS **/
 h1, h2, h3, h4, h5, h6 {
   color: #032c36;
@@ -240,12 +240,12 @@ h3 {
   font: 500 italic 1.4em "museo-slab-1", "museo-slab-2", "Roboto", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-  h2 i,
-  h3 i,
-  h2 em,
-  h3 em {
-    font-style: normal;
-  }
+h2 i,
+h3 i,
+h2 em,
+h3 em {
+  font-style: normal;
+}
 
 h4,
 h5,
@@ -275,14 +275,14 @@ h6 {
   margin: 2em 0 2em 2em;
 }
 
-  .slide blockquote h3 {
-    font-size: .75em;
-    font-style: normal;
-  }
+.slide blockquote h3 {
+  font-size: .75em;
+  font-style: normal;
+}
 
-  .slide blockquote p {
-    font-size: .86em;
-  }
+.slide blockquote p {
+  font-size: .86em;
+}
 
 .slide ul {
   list-style: none;
@@ -335,10 +335,10 @@ h6 {
 
 
 /**
- * -------------------------
- * @section 3. HEADER
- * -------------------------
- */
+* -------------------------
+* @section 3. HEADER
+* -------------------------
+*/
 
 .main-header a,
 .main-header h1 {
@@ -366,20 +366,20 @@ h6 {
 
 
 /**
- * -------------------------
- * @section 4. VOLET
- * -------------------------
- */
+* -------------------------
+* @section 4. VOLET
+* -------------------------
+*/
 
 #volet {
   background: #fff;
 }
 
 /**
- * -------------------------
- * @section 5. TOOLBAR
- * -------------------------
- */
+* -------------------------
+* @section 5. TOOLBAR
+* -------------------------
+*/
 
 /** @subsection 5.1 NAVIGATION ELEMENTS **/
 
@@ -505,10 +505,10 @@ button.tool-bar-elt {
 }
 
 /**
- * -------------------------
- * @section 6. PAGINATION SLIDE LINEAR LAYOUT
- * -------------------------
- */
+* -------------------------
+* @section 6. PAGINATION SLIDE LINEAR LAYOUT
+* -------------------------
+*/
 
 .index {
   padding-top: 15px;
@@ -522,10 +522,10 @@ button.tool-bar-elt {
 }
 
 /**
- * -------------------------
- * @section 7. SLIDES
- * -------------------------
- */
+* -------------------------
+* @section 7. SLIDES
+* -------------------------
+*/
 .modeplan #wrapper,
 body > :not(.modeplan) .slide {
   background: #efeee3;
@@ -563,10 +563,10 @@ button.disc1:focus {
 }
 
 /**
- * -------------------------
- * @section 8. TOOL BLOCK (SUMMARY & CONFIG)
- * -------------------------
- */
+* -------------------------
+* @section 8. TOOL BLOCK (SUMMARY & CONFIG)
+* -------------------------
+*/
 
 .tool-block {
   background-color: #b31d14;
@@ -579,7 +579,7 @@ button.disc1:focus {
   padding: 1em;
   position: absolute;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
-               2px 2px 2px rgba(0, 0, 0, .2);
+  2px 2px 2px rgba(0, 0, 0, .2);
   top: 0;
   transition: outline .3s ease-in;
   width: 15vw;
@@ -632,7 +632,7 @@ button.disc1:focus {
 
 .tool-block button {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
-               2px 2px 2px rgba(0, 0, 0, .2);
+  2px 2px 2px rgba(0, 0, 0, .2);
   transition: all .3s ease-in;
   vertical-align: top;
 }
@@ -642,7 +642,7 @@ button.disc1:focus {
   color: #fff;
   text-decoration: none;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .5),
-               2px 2px 2px rgba(0, 0, 0, .5);
+  2px 2px 2px rgba(0, 0, 0, .5);
   transition: all .3s ease-out;
 }
 
@@ -718,10 +718,10 @@ button.disc1:focus {
 }
 
 /**
- * -------------------------
- * @section 9. CSS TRANSITIONS
- * -------------------------
- */
+* -------------------------
+* @section 9. CSS TRANSITIONS
+* -------------------------
+*/
 
 /** @subsection 9.1 KEYFRAMES **/
 @-webkit-keyframes move-up {
@@ -740,7 +740,7 @@ button.disc1:focus {
 
 [data-effect="ffoodd"] #wrapper {
   -webkit-animation: move-up .8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-          animation: move-up .8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  animation: move-up .8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 /** @subsection 9.2 SLIDING **/
@@ -752,11 +752,11 @@ button.disc1:focus {
     top: 0 !important;
     visibility: hidden;
     -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    transform-style: preserve-3d;
     transition: transform-origin .8s cubic-bezier(.26, .86, .44, .985),
-                transform .8s cubic-bezier(.26, .86, .44, .985),
-                visibility .8s cubic-bezier(.26, .86, .44, .985),
-                opacity .8s cubic-bezier(.26, .86, .44, .985);
+    transform .8s cubic-bezier(.26, .86, .44, .985),
+    visibility .8s cubic-bezier(.26, .86, .44, .985),
+    opacity .8s cubic-bezier(.26, .86, .44, .985);
   }
 
   [data-effect="ffoodd"] .slide[style*="display: none"] {
@@ -764,7 +764,7 @@ button.disc1:focus {
     pointer-events: none;
     position: absolute;
     -webkit-transform: translate3d(-150%, 0, 0);
-            transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0);
     visibility: hidden;
   }
 
@@ -776,25 +776,25 @@ button.disc1:focus {
 
   [data-effect="ffoodd"] .slide[style*="display: block"] ~ .slide[style*="display: none"] {
     -webkit-transform: translate3d(150%, 0, 0);
-            transform: translate3d(150%, 0, 0);
+    transform: translate3d(150%, 0, 0);
   }
 }
 /* fin des transitions made by ffoodd */
 
 
 /**
- * -------------------------
- * @section 10. PRISM
- * -------------------------
- */
+* -------------------------
+* @section 10. PRISM
+* -------------------------
+*/
 code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;font-family:"Consolas","Monaco","Andale Mono",monospace;font-size:1rem;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;-moz-tab-size:2;tab-size:2;text-align:left;text-shadow:0 1px white;white-space:pre;word-spacing:normal}pre[class*="language-"]{margin:0;overflow:auto;padding:0}:not(pre)>code[class*="language-"]{padding:.1em;border-radius:.3em}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray}.token.punctuation{color:#676767}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol{color:#905}.token.selector,.token.attr-name,.token.string,.token.builtin{color:#52770a}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string,.token.variable{color:#896541}.token.atrule,.token.attr-value,.token.keyword{color:#02749f}.token.regex,.token.important{color:#d50900}.token.important{font-weight:bold}.token.entity{cursor:help}.token a{color:inherit}.namespace{opacity:.7}
 
 
 /**
- * -------------------------
- * @section 11. MQs
- * -------------------------
- */
+* -------------------------
+* @section 11. MQs
+* -------------------------
+*/
 @media screen and (max-width: 24em) {
   #toggle-nav,
   #navbar li:nth-child(4) {
@@ -828,7 +828,7 @@ code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;fon
 
 
 @media screen and (max-width: 48em)
-              and (min-width:24em) {
+and (min-width:24em) {
   .list-disc li {
     float: left;
     width: 50%;
