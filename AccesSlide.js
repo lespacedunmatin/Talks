@@ -192,7 +192,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0,
     group: 'Gaccess'
   } ,
@@ -203,7 +203,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0,
     group: 'Gaccess'
   },
@@ -214,7 +214,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0,
     group: 'Gaccess'
   },
@@ -225,7 +225,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0,
     group: 'Gaccess'
   },
@@ -236,7 +236,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0,
     group: 'Gaccess'
   },
@@ -247,7 +247,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0,
     group : 'Gaccess'
   },
@@ -258,7 +258,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-sound',
     //IconClass: 'icon icon-setting-sound',
-    IconSrc: 'img/sound.svg',
+    IconSrc: 'img/sound.svg?2',
     val: 0 ,
     group: 'Gaccess'
   },
@@ -269,7 +269,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-next',
     //IconClass: 'icon icon-setting-next',
-    IconSrc: 'img/next.svg',
+    IconSrc: 'img/next.svg?2',
     val: 0,
     group: 'Gaccess'
   },
@@ -281,7 +281,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-mouse',
     //IconClass: 'icon icon-setting-mouse',
-    IconSrc: 'img/click.svg',
+    IconSrc: 'img/click.svg?2',
     val: 1,
     group: 'Gaccess'
   },
@@ -295,7 +295,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-summary',
     //IconClass: 'icon icon-setting-summary',
-    IconSrc: 'img/summary.svg',
+    IconSrc: 'img/summary.svg?2',
     val: 1,
     group: 'Gslide'
   },
@@ -306,7 +306,7 @@ var config = {
     classHelpSetting: 'help',
     classLabelSetting: 'label-setting setting-plan',
     //IconClass: 'icon icon-setting-plan',
-    IconSrc: 'img/plan.svg',
+    IconSrc: 'img/plan.svg?2',
     val: 0,
     group: 'Gslide'
   },
@@ -327,7 +327,7 @@ var config = {
     classSetting: 'btn-close',
     iconClass: 'icon icon-close',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/close.svg'
+    fallBackSrcImg:'img/close.svg?2'
   },
   /** Setting navbar
     Setting navbar button and select
@@ -339,14 +339,14 @@ var config = {
     classSetting: 'tool-bar-elt btn btn-prev',
     iconClass: 'icon icon-prev',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/prev.svg'
+    fallBackSrcImg:'img/prev.svg?2'
   },
   Bnext: {
     id: 'next',
     classSetting: 'tool-bar-elt btn btn-next',
     iconClass: 'icon icon-next',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/next.svg'
+    fallBackSrcImg:'img/next.svg?2'
   },
   Select:{
     id: 'tocP',
@@ -357,21 +357,21 @@ var config = {
     classSetting: 'btn btn-goto',
     iconClass: 'icon icon-goto',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/goto.svg'
+    fallBackSrcImg:'img/goto.svg?2'
   },
   Btoc: {
     id: 'toc',
     classSetting: 'tool-bar-elt btn btn-block-summary',
     iconClass: 'icon icon-summary',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/summary.svg'
+    fallBackSrcImg:'img/summary.svg?2'
   },
   Bconfig: {
     id: 'set',
     classSetting: 'tool-bar-elt btn btn-block-settings',
     iconClass: 'icon icon-settings',
     fallbackClass : 'text',
-    fallBackSrcImg:'img/settings.svg'
+    fallBackSrcImg:'img/settings.svg?2'
   },
   SelectWrapper: {
     id: 'Fgo',
