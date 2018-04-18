@@ -725,6 +725,10 @@ button.disc1:focus {
 * -------------------------
 */
 
+.Cmasque a {
+  transition: none !important;
+}
+
 /** @subsection 9.1 KEYFRAMES **/
 @-webkit-keyframes move-up {
   from {

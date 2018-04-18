@@ -121,45 +121,139 @@
 
         <section class="slide">
           <h2>Les bons plans</h2>
-          <div class="table">
-            <div class="Cmasque col-50">
-              <blockquote>
-                <p>Le bon plan&nbsp;?<br>C’est un plan, il a un test, il voit une erreur, il <i lang="en">crash</i>…</p>
-                <cite class="col-left">Source inconnue</cite>
-              </blockquote>
-            </div>
-            <div class="Cmasque col-50">
-              <p>Deux axes pour un bon plan&nbsp;:</p>
-              <ol>
-                <li>Les résultats doivent être <strong>intelligibles</strong>&nbsp;;</li>
-                <li>un <strong>référent</strong> doit être identifiable.</li>
-              </ol>
-              <p>Sans ça, vous pissez dans un <span class="sr">violon</span><span aria-hidden="true">&nbsp;&#127931;</span>.
-            </div>
-          <div>
+          <div class="Cmasque">
+            <blockquote>
+              <p>Le bon plan&nbsp;?<br>C’est un plan, il a un test, il voit une erreur, il <i lang="en">crash</i>…</p>
+              <cite>Source inconnue</cite>
+            </blockquote>
+          </div>
+          <div class="Cmasque">
+            <p>Deux axes pour un bon plan&nbsp;:</p>
+            <ol>
+              <li>Les résultats doivent être <strong>intelligibles</strong>&nbsp;;</li>
+              <li>un <strong>référent</strong> doit être identifiable.</li>
+            </ol>
+            <p>Sans ça, vous pissez dans un <span class="sr">violon</span><span aria-hidden="true">&nbsp;&#127931;</span>.
+          </div>
         </section>
         
         <section class="slide">
-          <h2>Le cambouis</h2>
+          <h2>Le cambouis<span aria-hidden="true">&nbsp;&#9881;</span></h2>
           <h3>Par l’axe du <strong>quoi</strong></h3>
-          <p>
-            Pour chaque domaine, je proposerai mon outil favori et son mode d’emploi, 
-            et mentionnerai quelques alternatives. Précisions&nbsp;:
-          </p>
+          <p>Précisions&nbsp;:</p>
           <ul>
-            <li class="Cmasque"><strong>Où tester</strong>&nbsp;: dans le navigateur (décapité&nbsp;?), dans l’<abbr lang="en" title="Integrated Development Environment">IDE</abbr>, dans les tâches automatisées, dans une <abbr lang="en" title="Virtual Machine">VM</abbr>, etc.</li>
-            <li class="Cmasque"><strong>Quand tester</strong>&nbsp;: dès la modification du code, au <i lang="en">commit</i>, au <i lang="en">merge</i>, au déploiement, en continu sur la prod…</li>
-            <li class="Cmasque"><strong>Avec quoi tester</strong>&nbsp;: un outil par domaine, un <abbr lang="en" title="Software as a service">SaaS</abbr> tout-en-un…</li>
+            <li class="Cmasque"><strong>Où</strong>&nbsp;: dans le navigateur (décapité&nbsp;?), dans l’<abbr lang="en" title="Integrated Development Environment">IDE</abbr>, dans les tâches automatisées, dans une <abbr lang="en" title="Virtual Machine">VM</abbr>, etc.</li>
+            <li class="Cmasque"><strong>Quand</strong>&nbsp;: dès la modification du code, au <i lang="en">commit</i>, au <i lang="en">merge</i>, au déploiement, en continu sur la prod…</li>
+            <li class="Cmasque"><strong>Avec quoi</strong>&nbsp;: un outil par domaine, un <abbr lang="en" title="Software as a service">SaaS</abbr> tout-en-un…</li>
             <li class="Cmasque"><strong>Comment gérer les résultats</strong>&nbsp;: flux <abbr lang="en" title="JavaScript Object Notation">JSON</abbr>, rapports <abbr lang="en" title="Portable Document Format">PDF</abbr> ou <i lang="en">markdown</i>, création de tickets à la volée, alerte Slack, etc.</li>
           </ul>          
-          <p class="Cmasque">
-            L’important dans les plans de tests est de les exécuter et de trouver des choses&nbsp;!<br>
-            <small>Alors, on y va&nbsp;?</small>
-          </p>
+          <p class="Cmasque"><strong>Entrons dans le vif du sujet&nbsp;!</strong></p>
         </section>
         
         <section class="slide">
-          <h2>Qualité de code</h2>
+          <h2>Qualité de code<span aria-hidden="true">&nbsp;&#129302;</span></h2>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3>Validator</h3>
+              <p>Fourni par le <abbr lang="en" title="World Wide Web Consortium">w3c</abbr> &nbsp;:</p>
+              <ul>
+                <li><a href="https://validator.w3.org/nu/" hreflang="en">Validation <abbr lang="en" title="HyperText Markup Language">HTML</abbr></a>&nbsp;;</li>
+                <li><a href="https://jigsaw.w3.org/css-validator/" >Validation <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></a>&nbsp;;</li>
+                <li><a href="https://validator.w3.org/feed/" hreflang="en">Validation <abbr lang="en" title="Really Simple Syndication">RSS</abbr></a>&nbsp;;</li>
+                <li><a href="https://validator.w3.org/checklink" hreflang="en">Validation des liens</a>&nbsp;;</li>
+                <li><a href="https://validator.w3.org/i18n-checker/" hreflang="en">Validation de l’<abbr title="Internationalisation">i18n</abbr></a>.</li>
+              </ul>
+              <p>
+                Il existe aussi des interfaces Node&nbsp;: <a href="https://github.com/zrrrzzt/html-validator" hreflang="en">pour HTML</a> 
+                et <a href="https://www.npmjs.com/package/w3c-css" hreflang="en">pour CSS</a>.
+              </p>
+              <img src="img_slide/I_heart_validator_lg.png" width="101" height="46" alt=""/>
+            </div>
+            <div class="Cmasque col-50">
+              <h3>Statistiques</h3>
+              <p>
+                Des indicateurs secondaires pour évaluer la complexité du code <abbr lang="en" title="HyperText Markup Language">HTML</abbr> 
+                et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>&nbsp;:
+              </p>
+              <ul>
+                <li><a href="https://github.com/johno/dom-stats" hreflang="en"><abbr lang="en" title="Document Object Model">DOM</abbr> Stats</a> par John Otander&nbsp;;</li>
+                <li><a href="https://github.com/t32k/stylestats" hreflang="en">StyleStats</a> par Koji Ishimoto.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section class="slide">
+          <h2>Accessibilité<span aria-hidden="true">&nbsp;&#128125;</span></h2>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3><a href="https://www.deque.com/axe/" hreflang="en">
+                <img src="img_slide/aXe.png" width="150" height="140" alt="aXe" class="obs"/>
+              </a></h3>
+              <p>Disponible&nbsp;:</p>
+              <ul>
+                <li>en <abbr lang="en" title="Command Line Interface">cli</abbr>&nbsp;;</li>
+                <li>en extension navigateur&nbsp;;</li>
+                <li>branché à votre intégration continue&nbsp;;</li>
+                <li>dans LightHouse, Protractor…</li>
+              </ul>
+            </div>
+            <div class="col-50 v-top">
+              <div class="Cmasque">
+                <h3><a href="https://tenon.io/" hreflang="en" lang="en">Tenon</a> et <a href="https://wordpress.org/plugins/access-monitor/" hreflang="en">Access Monitor</a></h3>
+                <p>
+                  Service payant, via <abbr lang="en" title="Application Programming Interface">api</abbr>.
+                  Access Monitor permet d’intégrer Tenon à WordPress&nbsp;:
+                </p>
+                <ul>
+                  <li>un <abbr lang="en" title="Custom Post Type">cpt</abbr> pour les rapports&nbsp;;</li>
+                  <li>planification&nbsp;;</li>
+                  <li>maintenu par Joe Dolson.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="slide">
+          <h2>Sécurité<span aria-hidden="true">&nbsp;&#128274;</span></h2>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3>
+                <a href="https://www.owasp.org/index.php/ZAP" hreflang="en">
+                  <abbr lang="en" title="Zed Attack Proxy">ZAP</abbr>
+                </a>
+                <span aria-hidden="true">&nbsp;&#9889;</span>
+              </h3>
+              <p>
+                Logiciel développé par l’<abbr lang="en" title="Open Web Application Security Project">owasp</abbr>.
+                Il dispose d’une <abbr lang="en" title="Application Programming Interface">api</abbr> qu’on peut
+                consommer <a hreflang="en" href="https://www.npmjs.com/package/zaproxy">grâce à un client Node</a>.            
+              </p>
+              <p><span aria-hidden="true">&#128680;&nbsp;</span><strong>Attention</strong>, ça pique&nbsp;!</p>
+            </div>
+            <div class="Cmasque col-50">
+              <h3><a href="https://observatory.mozilla.org/" hreflang="en">Observatory</a></h3>
+              <p>
+                Mozilla propose un scanner qui vérifier les certificats <abbr lang="en" title="Secure Sockets Layer">SSL</abbr>
+                et les entêtes <abbr lang="en" title="HyperText Transfert Protocol">HTTP</abbr>.
+              </p>
+              <p>Il existe <a href="https://github.com/mozilla/observatory-cli" hreflang="en">une interface de commande Node</a>.</p>
+            </div>
+          </div>
+        </section>
+        
+        <section class="slide">
+          <h2>Performances<span aria-hidden="true">&nbsp;&#128640;</span></h2>
+          <h3><a href="https://github.com/macbre/phantomas" hreflang="en">Phantomas</a></h3>
+          <p>C’est un collecteur de métriques<span aria-hidden="true">&nbsp;&#128207;</span> en <abbr lang="en" title="Command Line Interface">cli</abbr>, qui utilise PhantomJS<span aria-hidden="true">&nbsp;&#128123;</span>.</p>
+          <p><a href="https://www.npmjs.com/package/gulp-louis" hreflang="en">Louis</a> est une tâche Gulp basée sur Phantomas qui compare un métrique à un <strong>budget</strong> défini.</p>
+          <p class="small"><a href="https://yellowlab.tools/" hreflang="en">Yellow Lab Tools</a> s’appuie sur Phantomas.</p>
+          <h3>Alternative</h3>
+          <p>
+            <a href="https://github.com/addyosmani/psi" hreflang="en">psi</a> est une version <abbr lang="en" title="Command Line Interface">cli</abbr>
+            du <em lang="en">Page Speed Insight</em>, il vous donne même les notes&nbsp;!
+          </p>
         </section>
         
         <section class="slide">
