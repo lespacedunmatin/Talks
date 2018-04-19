@@ -142,7 +142,7 @@
           <h3>Par l’axe du <strong>quoi</strong></h3>
           <p>Précisions&nbsp;:</p>
           <ul>
-            <li class="Cmasque"><strong>Où</strong>&nbsp;: dans le navigateur (décapité&nbsp;?), dans l’<abbr lang="en" title="Integrated Development Environment">IDE</abbr>, dans les tâches automatisées, dans une <abbr lang="en" title="Virtual Machine">VM</abbr>, etc.</li>
+            <li class="Cmasque"><strong>Où</strong>&nbsp;: dans le navigateur (<em lang="en">headless</em>&nbsp;?), dans l’<abbr lang="en" title="Integrated Development Environment">IDE</abbr>, dans les tâches automatisées, dans une <abbr lang="en" title="Virtual Machine">VM</abbr>, etc.</li>
             <li class="Cmasque"><strong>Quand</strong>&nbsp;: dès la modification du code, au <i lang="en">commit</i>, au <i lang="en">merge</i>, au déploiement, en continu sur la prod…</li>
             <li class="Cmasque"><strong>Avec quoi</strong>&nbsp;: un outil par domaine, un <abbr lang="en" title="Software as a service">SaaS</abbr> tout-en-un…</li>
             <li class="Cmasque"><strong>Comment gérer les résultats</strong>&nbsp;: flux <abbr lang="en" title="JavaScript Object Notation">JSON</abbr>, rapports <abbr lang="en" title="Portable Document Format">PDF</abbr> ou <i lang="en">markdown</i>, création de tickets à la volée, alerte Slack, etc.</li>
@@ -251,9 +251,78 @@
           <p class="small"><a href="https://yellowlab.tools/" hreflang="en">Yellow Lab Tools</a> s’appuie sur Phantomas.</p>
           <h3>Alternative</h3>
           <p>
-            <a href="https://github.com/addyosmani/psi" hreflang="en">psi</a> est une version <abbr lang="en" title="Command Line Interface">cli</abbr>
-            du <em lang="en">Page Speed Insight</em>, il vous donne même les notes&nbsp;!
+            <a href="https://github.com/addyosmani/psi" hreflang="en">PSI</a> est une version <abbr lang="en" title="Command Line Interface">cli</abbr>
+            du <em lang="en">PageSpeed Insights</em> de Google, il vous donne même les scores&nbsp;!
           </p>
+        </section>
+        
+        <section class="slide">
+          <h2>Compatibilité<span aria-hidden="true">&nbsp;&#128675;</span></h2>
+          <p>
+            Il existe des outils de vérifications du HTML, CSS et JS pour déceler les incompatibilités techniques.
+            Je joue encore avec…
+          </p>
+          <p>
+            Je me sers de <a href="https://www.browsersync.io/" hreflang="en">BrowserSync</a>
+            pour la navigation synchronisée.<br>
+            <small>Rien à voir avec la natation synchronisée…</small>
+          </p>   
+          <div class="Cmasque">                
+            <h3><abbr lang="en" title="Platform as a service">PaaS</abbr></h3>
+            <p>Certaines plateformes mettent à disposition des <abbr lang="en" title="Virtual Machine">VM</abbr>&nbsp;:</p>
+            <ul>
+              <li><a href="http://saucelabs.com/">SauceLabs</a></li>
+              <li><a href="http://browserstack.com/">BrowserStack</a></li>
+            </ul>
+          </div>
+        </section>
+        
+        <section class="slide">
+          <h2>Non-rég. visuelle<span aria-hidden="true">&nbsp;&#128526;</span></h2>
+          <dl>
+            <dt><em lang="en">Webdriver</em></dt>
+            <dd><a href="http://orange-opensource.github.io/Eagle/" hreflang="en">Eagle</a> par Orange</dd>
+            <dd><a href="http://bbc-news.github.io/wraith/" hreflang="en">Wraith</a> par la <abbr lang="en" title="British Broadcasting Corporation">BBC</abbr></dd>
+            <dt>Navigateur <em lang="en">headless</em><span aria-hidden="true">&nbsp;&#129301;</span></dt>
+            <dd><a href="https://meowni.ca/posts/2017-puppeteer-tests/" hreflang="en">Un exemple avec Puppeteer et PixelMatch</a> par Monica Dinculescu</dd>
+            <dd>Avec <a href="https://developer.mozilla.org/fr/Firefox/Headless_mode">Firefox</a>&nbsp;: <code>firefox -screenshot 1024×768.png https://ffoodd.fr --window-size=1024,768</code>
+            <dt>Outils de comparaison</dt>
+            <dd>En JavaScript&nbsp;: PixelMatch et Ressemble.js</dd>
+            <dd><code>git status</code> pour indiquer un changement</dd>
+          </dl>
+        </section>
+        
+        <section class="slide">
+          <h2>Référencement naturel<span aria-hidden="true">&nbsp;&#128202;</span></h2>
+          <p>
+            On vérifie la base&nbsp;: <code>title</code>, description, auteur, <code>h1</code>, liens brisés…
+            Le reste est —&nbsp;plus ou moins&nbsp;— couvert par les tests de performances et d’accessibilité.
+          </p>
+          <p>
+            Vous pouvez tester ça vous même, mais <a href="https://www.npmjs.com/package/seo-checker" hreflang="en">SEO checker</a> 
+            fait ça très bien en <abbr lang="en" title="Command Line Interface">cli</abbr> Node.
+          </p>
+          <p class="small">Pour plus d’infos, trouvez Daniel, <abbr lang="en" title="Also know as">aka</abbr> <a href="https://www.seomix.fr/">SeoMix</a>.</p>
+        </section>
+        
+        <section class="slide">
+          <h2>Les génériques<span aria-hidden="true">&nbsp;&#128137;</span></h2>
+          <p class="Cmasque">C’est pas automatique.</p>
+          <p class="Cmasque small">Mais c’est automatisé…</p>
+          <div class="Cmasque">
+            <ul>
+              <li><a href="https://www.dareboost.com/fr/home">Dareboost</a>&nbsp;;</li>
+              <li><a href="https://sonarwhal.com/">Sonarwhal</a>, peut se lancer en <abbr lang="en" title="Command Line Interface">cli</abbr>&nbsp;;</li>
+              <li><a href="https://www.npmjs.com/package/lighthouse" hreflang="en">Lightouse</a>, embarqué dans Chrome —&nbsp;peut aussi se lancer en <abbr lang="en" title="Command Line Interface">cli</abbr>.</li>
+            </ul>
+            <h3>
+              <img src="img_slide/opquast.png" widht="61" height="51" alt="" class="v-middle"/>
+              Opquast
+            </h3>
+            <p>
+              La <strong>qualité web</strong> au sens large. Leur outil de <em lang="en">reporting</em>
+              est très complet. Mais démarrez par <a href="https://checklists.opquast.com/fr/">les <em lang="en">checklists</em></a><span aria-hidden="true">&nbsp;&#9989;</span>&nbsp;!</p>
+          </div>
         </section>
         
         <section class="slide">
