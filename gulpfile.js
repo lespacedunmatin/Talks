@@ -22,9 +22,8 @@ gulp.task('sass', function () {
       .pipe(prefix({
           browsers: ['last 1 versions']
       }))
-      .pipe(rename({suffix: '.min'}))
-      .pipe(maps.write())
-      .pipe(gulp.dest(paths.dest + '/css'))
+      .pipe(maps.write('./'))
+      .pipe(gulp.dest(paths.dev + '/css'))
       .pipe(browser.stream());
 });
 
@@ -41,17 +40,8 @@ gulp.task('js', function () {
         this.emit('end');
       }))
       .pipe(rename({suffix: '.min'}))
-      .pipe(gulp.dest(paths.dest + '/js'))
+      .pipe(gulp.dest(paths.dev + '/js'))
       .pipe(browser.stream());
-});
-
-
-/**
- * @section Watch
- * Watch Sass and JavaScript files
- */
-gulp.task('watch', function () {
-    gulp.watch(paths.dev, ['sass', 'js']);
 });
 
 
@@ -67,7 +57,7 @@ gulp.task('sync', ['sass', 'js'], function() {
     });
 
     gulp.watch(paths.dev + '/scss/**/*.scss', ['sass']);
-    gulp.watch(paths.dev + '/js/**/*.js', ['js']);
+    gulp.watch(paths.dev + '/*.js', ['js']);
 });
 
 
