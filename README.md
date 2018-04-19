@@ -28,13 +28,6 @@ Comme vous le voyez je désactive les effets en JS, pour [gérer la transition u
 Ça ressemble à ça :
 
 ```css
-@-webkit-keyframes move-up {
-  from {
-    -webkit-transform: translateY( 100% ) translateZ( 0 );
-    opacity: 0;
-  }
-}
-
 @keyframes move-up {
   from {
     transform: translateY( 100% ) translateZ( 0 );
@@ -43,8 +36,7 @@ Comme vous le voyez je désactive les effets en JS, pour [gérer la transition u
 }
 
 [data-effect="ffoodd"] #wrapper {
-  -webkit-animation: move-up .8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-          animation: move-up .8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  animation: move-up .8s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 /** @subsection 9.2 SLIDING **/
@@ -55,8 +47,7 @@ Comme vous le voyez je désactive les effets en JS, pour [gérer la transition u
     position: absolute;
     top: 0 !important;
     visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    transform-style: preserve-3d;
     transition: transform-origin .8s cubic-bezier(.26, .86, .44, .985),
                 transform .8s cubic-bezier(.26, .86, .44, .985),
                 visibility .8s cubic-bezier(.26, .86, .44, .985),
@@ -67,8 +58,7 @@ Comme vous le voyez je désactive les effets en JS, pour [gérer la transition u
     opacity: 0;
     pointer-events: none;
     position: absolute;
-    -webkit-transform: translate3d(-150%, 0, 0);
-            transform: translate3d(-150%, 0, 0);
+    transform: translate3d(-150%, 0, 0);
     visibility: hidden;
   }
 
@@ -79,8 +69,7 @@ Comme vous le voyez je désactive les effets en JS, pour [gérer la transition u
   }
 
   [data-effect="ffoodd"] .slide[style*="display: block"] ~ .slide[style*="display: none"] {
-    -webkit-transform: translate3d(150%, 0, 0);
-            transform: translate3d(150%, 0, 0);
+    transform: translate3d(150%, 0, 0);
   }
 }
 ```
