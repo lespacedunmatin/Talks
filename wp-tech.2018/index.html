@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Un plan de tests automatisés pour votre front-end</title>  
+  <title>Un plan de tests automatisés pour votre front-end</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Un plan de tests automatisés pour votre front-end — Conférence donnée lors du WP Tech 2018 par Gaël Poupard">
   <meta name="author" content="Gaël Poupard">
@@ -82,7 +82,7 @@
           </ol>
           <p class="Cmasque">Bref, c’est bien. Testez.</p>
         </section>
-        
+
         <section class="slide">
           <h2>Définitions</h2>
           <dl>
@@ -96,7 +96,7 @@
             </dd>
             <dt><span aria-hidden="true">&#128506;&nbsp;</span>Plan de test</dt>
             <dd>
-              <strong>Stratégie</strong> adoptée pour déterminer quels sont les tests à effectuer, la qualité ciblée, les intervenants, les outils, 
+              <strong>Stratégie</strong> adoptée pour déterminer quels sont les tests à effectuer, la qualité ciblée, les intervenants, les outils,
               le cycle de vie, les livrables, le référentiel… <strong>en fonction d’un objectif précis</strong>.
             </dd>
             <dt><span aria-hidden="true">&#128200;&nbsp;</span>Budget</dt>
@@ -105,7 +105,7 @@
             </dd>
           </dl>
         </section>
-        
+
         <section class="slide">
           <h2>Tabous<span aria-hidden="true">&nbsp;&#129296;</span></h2>
           <h3>Ce dont on ne parlera pas.</h3>
@@ -134,7 +134,7 @@
             <p>Sans ça, vous pissez dans un <span class="sr">violon</span><span aria-hidden="true">&nbsp;&#127931;</span>.
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Le cambouis<span aria-hidden="true">&nbsp;&#9881;</span></h2>
           <h3>Par l’axe du <strong>quoi</strong></h3>
@@ -144,10 +144,10 @@
             <li class="Cmasque"><strong>Quand</strong>&nbsp;: dès la modification du code, au <i lang="en">commit</i>, au <i lang="en">merge</i>, au déploiement, en continu sur la prod…</li>
             <li class="Cmasque"><strong>Avec quoi</strong>&nbsp;: un outil par domaine, un <abbr lang="en" title="Software as a service">SaaS</abbr> tout-en-un…</li>
             <li class="Cmasque"><strong>Comment gérer les résultats</strong>&nbsp;: flux <abbr lang="en" title="JavaScript Object Notation">JSON</abbr>, rapports <abbr lang="en" title="Portable Document Format">PDF</abbr> ou <i lang="en">markdown</i>, création de tickets à la volée, alerte Slack, etc.</li>
-          </ul>          
+          </ul>
           <p class="Cmasque"><strong>Entrons dans le vif du sujet&nbsp;!</strong></p>
         </section>
-        
+
         <section class="slide">
           <h2>Qualité de code<span aria-hidden="true">&nbsp;&#129302;</span></h2>
           <div class="table">
@@ -162,7 +162,7 @@
                 <li><a href="https://validator.w3.org/i18n-checker/" hreflang="en">Validation de l’<abbr title="Internationalisation">i18n</abbr></a>.</li>
               </ul>
               <p>
-                Il existe aussi des interfaces Node&nbsp;: <a href="https://github.com/zrrrzzt/html-validator" hreflang="en">pour HTML</a> 
+                Il existe aussi des interfaces Node&nbsp;: <a href="https://github.com/zrrrzzt/html-validator" hreflang="en">pour HTML</a>
                 et <a href="https://www.npmjs.com/package/w3c-css" hreflang="en">pour CSS</a>.
               </p>
               <img src="img_slide/I_heart_validator_lg.png" width="101" height="46" alt=""/>
@@ -170,7 +170,7 @@
             <div class="Cmasque col-50">
               <h3>Statistiques</h3>
               <p>
-                Des indicateurs secondaires pour évaluer la complexité du code <abbr lang="en" title="HyperText Markup Language">HTML</abbr> 
+                Des indicateurs secondaires pour évaluer la complexité du code <abbr lang="en" title="HyperText Markup Language">HTML</abbr>
                 et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>&nbsp;:
               </p>
               <ul>
@@ -180,7 +180,7 @@
             </div>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Accessibilité<span aria-hidden="true">&nbsp;&#128125;</span></h2>
           <div class="table">
@@ -212,7 +212,7 @@
             </div>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Sécurité<span aria-hidden="true">&nbsp;&#128274;</span></h2>
           <div class="table">
@@ -226,7 +226,7 @@
               <p>
                 Logiciel développé par l’<abbr lang="en" title="Open Web Application Security Project">owasp</abbr>.
                 Il dispose d’une <abbr lang="en" title="Application Programming Interface">api</abbr> qu’on peut
-                consommer <a hreflang="en" href="https://www.npmjs.com/package/zaproxy">grâce à un client Node</a>.            
+                consommer <a hreflang="en" href="https://www.npmjs.com/package/zaproxy">grâce à un client Node</a>.
               </p>
               <p><span aria-hidden="true">&#128680;&nbsp;</span><strong>Attention</strong>, ça pique&nbsp;!</p>
             </div>
@@ -240,7 +240,7 @@
             </div>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Performances<span aria-hidden="true">&nbsp;&#128640;</span></h2>
           <h3><a href="https://github.com/macbre/phantomas" hreflang="en">Phantomas</a></h3>
@@ -253,7 +253,7 @@
             du <em lang="en">PageSpeed Insights</em> de Google.
           </p>
         </section>
-        
+
         <section class="slide">
           <h2>Compatibilité<span aria-hidden="true">&nbsp;&#128675;</span></h2>
           <p>
@@ -264,17 +264,18 @@
             Je me sers de <a href="https://www.browsersync.io/" hreflang="en">BrowserSync</a>
             pour la navigation synchronisée.<br>
             <small>Rien à voir avec la natation synchronisée…</small>
-          </p>   
-          <div class="Cmasque">                
+          </p>
+          <div class="Cmasque">
             <h3><abbr lang="en" title="Platform as a service">PaaS</abbr></h3>
             <p>Certaines plateformes mettent à disposition des <abbr lang="en" title="Virtual Machine">VM</abbr>&nbsp;:</p>
             <ul>
               <li><a href="http://saucelabs.com/">SauceLabs</a></li>
               <li><a href="http://browserstack.com/">BrowserStack</a></li>
+              <li><a href="https://crossbrowsertesting.com/" hreflang="en">CrossBrowserTesting</a></li>
             </ul>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Non-rég. visuelle<span aria-hidden="true">&nbsp;&#128526;</span></h2>
           <dl>
@@ -289,7 +290,7 @@
             <dd><code>git status</code> pour indiquer un changement</dd>
           </dl>
         </section>
-        
+
         <section class="slide">
           <h2>Référencement naturel<span aria-hidden="true">&nbsp;&#128202;</span></h2>
           <p>
@@ -297,12 +298,12 @@
             Le reste est —&nbsp;plus ou moins&nbsp;— couvert par les tests de performances et d’accessibilité.
           </p>
           <p>
-            Vous pouvez tester ça vous même, mais <a href="https://www.npmjs.com/package/seo-checker" hreflang="en">SEO checker</a> 
+            Vous pouvez tester ça vous même, mais <a href="https://www.npmjs.com/package/seo-checker" hreflang="en">SEO checker</a>
             fait ça très bien en <abbr lang="en" title="Command Line Interface">cli</abbr> Node.
           </p>
           <p class="small">Pour plus d’infos, trouvez Daniel, <abbr lang="en" title="Also know as">aka</abbr> <a href="https://www.seomix.fr/">SeoMix</a>.</p>
         </section>
-        
+
         <section class="slide">
           <h2>Les génériques<span aria-hidden="true">&nbsp;&#128137;</span></h2>
           <p class="Cmasque">C’est pas automatique.</p>
@@ -322,18 +323,18 @@
               est très complet. Mais démarrez par <a href="https://checklists.opquast.com/fr/">les <em lang="en">checklists</em></a><span aria-hidden="true">&nbsp;&#9989;</span>&nbsp;!</p>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Insérez ici une démo…</h2>
         </section>
-        
+
         <section class="slide">
           <h2>Exploitation<span aria-hidden="true">&nbsp;&#128679;</span></h2>
           <p class="small">Bin oui, on ne fait pas tout ça pour rien&nbsp;!</p>
           <p>
             À chaque déroulement des tests, prenez du temps pour corriger <strong>une</strong> erreur.
             Pour ça, il vous faudra&nbsp;:
-          </p> 
+          </p>
           <ul>
             <li><strong>lire</strong> le message,</li>
             <li>parcourir la <strong>documentation</strong> correspondante,</li>
@@ -343,7 +344,7 @@
             <li>et ne ne plus commettre cette erreur.</p>
           </ul>
         </section>
-        
+
         <section class="slide">
           <h2>Conclusion<span aria-hidden="true">&nbsp;&#128519;</span></h2>
           <div class="Cmasque">
