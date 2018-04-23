@@ -720,10 +720,6 @@ button.disc1:focus {
 * -------------------------
 */
 
-.Cmasque a {
-  transition: none !important;
-}
-
 /** @subsection 9.1 KEYFRAMES **/
 @keyframes move-up {
   from {
@@ -827,9 +823,6 @@ and (min-width:24em) {
 
 
 @media screen and (min-width: 48em) {
-  a,
-  a:hover,
-  a:focus,
   .btn,
   .btn:hover,
   .btn:focus,
