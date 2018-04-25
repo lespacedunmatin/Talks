@@ -336,7 +336,56 @@
         </section>
 
         <section class="slide">
-          <h2>Insérez ici une démo…</h2>
+          <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
+          <div class="table">
+            <div class="col-50">
+              <h3 class="Cmasque">Dans l’environnement</h3>
+              <div class="Cmasque">
+                <h4>Tâches Gulp</h4>
+<pre>
+  <code class="language-javascript">
+gulp.task('test', ['validator', 'louis', 'axe']);
+  </code>
+</pre>
+              </div>
+              <div class="Cmasque">
+                <h4>Accroché aux événements npm</h4>
+<pre>
+  <code class="language-javascript">
+"scripts": {
+  "test": "gulp test",
+  "prepublish": "gulp test"
+}
+  </code>
+</pre>
+              </div>
+            </div>
+            <div class="col-50 Cmasque">
+              <h3>Dans Travis</h3>
+<pre>
+  <code class="language-javascript">
+language: node_js
+node_js:
+  - "7"
+before_script:
+  - npm install -g gulp-cli
+script: gulp build && gulp travis
+  </code>
+</pre>
+              <p>
+                Par exemple, on peut
+                <a href="https://github.com/ffoodd/sseeeedd/pull/26" hreflang="en">bloquer une <abbr lang="en" title="Pull Request">PR</abbr></a>
+                en cas de HTML invalide.
+              </p>
+            <div class="Cmasque">
+              <h3>En prod</h3>
+  <pre>
+    <code class="language-javascript">
+  staats 2018.wptech.fr
+    </code>
+  </pre>
+            </div>
+          </div>
         </section>
 
         <section class="slide">
