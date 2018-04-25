@@ -53,13 +53,12 @@
       <main role="main" id="main">
 
         <section class="slide couv">
-          <h2>Un plan de tests automatisés pour votre <i lang="en">front-end</i></h2>
+          <h2>Un plan de tests automatisés<br>pour votre <i lang="en">front-end</i></h2>
           <div class="col-50">
             <blockquote>
-              <p>Tester c’est douter.</p>
+              <p>Le <abbr lang="en" title="HyperText Markup Language">HTML</abbr>, c’est la vie.</p>
             </blockquote>
           </div>
-          <h1 aria-hidden="true" class="col-50">&nbsp;&#128299;</h1>
           <footer class="table">
             <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
             <p class="col-50 col-t-right">
@@ -72,13 +71,14 @@
 
         <section class="slide">
           <h2>Pourquoi tester&nbsp;?</h2>
-          <h3 class="Cmasque">Améliorer la qualité</h3>
-          <p class="Cmasque">Tester, c’est <strong>explorer</strong> de nouveaux domaines et acquérir de nouvelles <strong>compétences</strong>.</p>
-          <p class="Cmasque">
-            Et tout ça pour le Graal de nos métiers&nbsp;: <strong>un utilisateur satisfait</strong>
-            —&nbsp;et par conséquent, un client heureux<span aria-hidden="true">&nbsp;&#127752;</span>.
-          </p>
-          <p class="Cmasque small">Bref, c’est bien. Testez.</p>
+          <div class="Cmasque">
+            <h3>Améliorer la qualité</h3>
+            <p>Tester, c’est <strong>explorer</strong> de nouveaux domaines et acquérir de nouvelles <strong>compétences</strong>.</p>
+            <p>
+              Et tout ça pour le Graal de nos métiers&nbsp;: <strong>un utilisateur satisfait</strong>
+              —&nbsp;et par conséquent, un client heureux<span aria-hidden="true">&nbsp;&#127752;</span>.
+            </p>
+          </div>
         </section>
 
         <section class="slide">
@@ -94,9 +94,7 @@
             <dd><a href="https://ngrok.com/" hreflang="en">ngrok</a> permet de créer des tunnels sécurisés vers <code>localhost</code>.</dd>
             <dt><span aria-hidden="true">&#128506;&nbsp;</span>Plan de test</dt>
             <dd>
-              <strong>Stratégie</strong> adoptée <strong>en fonction d’un objectif précis</strong>.<br>
-              <small>Les tests à effectuer, la qualité ciblée, les intervenants, les outils,
-              le cycle de vie, les livrables, le référentiel…</small>
+              <strong>Stratégie</strong> adoptée <strong>en fonction d’un objectif précis</strong>.
             </dd>
             <dt><span aria-hidden="true">&#128200;&nbsp;</span>Budget</dt>
             <dd>
@@ -120,24 +118,18 @@
 
         <section class="slide">
           <h2>Les bons plans</h2>
-          <blockquote class="small">
-            <p>Le bon plan&nbsp;?<br>C’est un plan, il a un test, il voit une erreur, il <i lang="en">crash</i>…</p>
-            <cite>Source inconnue</cite>
-          </blockquote>
-          <div class="Cmasque">
-            <p>Deux axes pour un bon plan&nbsp;:</p>
-            <ol>
-              <li>Les résultats doivent être <strong>intelligibles</strong>&nbsp;;</li>
-              <li>un <strong>référent</strong> doit être identifiable.</li>
-            </ol>
-            <p>Sans ça, vous pissez dans un <span class="sr">violon</span><span aria-hidden="true">&nbsp;&#127931;</span>.
-          </div>
+          <p>Deux axes pour un bon plan&nbsp;:</p>
+          <ol>
+            <li>Les résultats doivent être <strong>intelligibles</strong>&nbsp;;</li>
+            <li>un <strong>référent</strong> doit être identifiable.</li>
+          </ol>
+          <p>Sans ça, vous pissez dans un <span class="sr">violon</span><span aria-hidden="true">&nbsp;&#127931;</span>.</p>
         </section>
 
         <section class="slide">
           <h2>Le cambouis<span aria-hidden="true">&nbsp;&#9881;</span></h2>
           <h3>Par l’axe du <strong>quoi</strong></h3>
-          <p>Précisions&nbsp;:</p>
+          <p>Les autres axes&nbsp;:</p>
           <ul>
             <li class="Cmasque"><strong>Où</strong>&nbsp;: dans le navigateur (<em lang="en">headless</em>&nbsp;?), dans l’<abbr lang="en" title="Integrated Development Environment">IDE</abbr>, dans les tâches automatisées, dans une <abbr lang="en" title="Virtual Machine">VM</abbr>, etc.</li>
             <li class="Cmasque"><strong>Quand</strong>&nbsp;: dès la modification du code, au <i lang="en">commit</i>, au <i lang="en">merge</i>, au déploiement, en continu sur la prod…</li>
@@ -318,7 +310,7 @@
 
         <section class="slide">
           <h2>Les génériques<span aria-hidden="true">&nbsp;&#128137;</span></h2>
-          <p class="Cmasque">C’est pas automatique.</p>
+          <p>C’est pas automatique.</p>
           <div class="Cmasque">
             <ul>
               <li><a href="https://www.dareboost.com/fr/home">Dareboost</a>&nbsp;;</li>
@@ -339,7 +331,7 @@
           <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
           <div class="table">
             <div class="col-50">
-              <h3 class="Cmasque">Dans l’environnement</h3>
+              <h3>Dans l’environnement</h3>
               <div class="Cmasque">
                 <h4>Tâches Gulp</h4>
 <pre>
@@ -390,7 +382,6 @@ script: gulp build && gulp travis
 
         <section class="slide">
           <h2>Exploitation<span aria-hidden="true">&nbsp;&#128679;</span></h2>
-          <p class="small">Bin oui, on ne fait pas tout ça pour rien&nbsp;!</p>
           <p>
             À chaque déroulement des tests, prenez du temps pour corriger <strong>une</strong> erreur.
             Pour ça, il vous faudra&nbsp;:
@@ -411,12 +402,12 @@ script: gulp build && gulp travis
             <h3>Démarrez</h3>
             <p>
               Le plus important est de commencer. Restez indulgent&nbsp;:
-              vos plans de test s’étofferont <strong>au fil du temps</strong>, et vos résultats s’amélioreront&nbsp;!</p></div>
-          <div class="Cmasque">
-            <h3>Les tests manuels aussi</h3>
+              vos plans de test s’étofferont <strong>au fil du temps</strong>, et vos résultats s’amélioreront&nbsp;!
+            </p>
             <p>
-              Dans la plupart des domaines, les tests manuels demeurent indispensables&nbsp;:
-              performances <strong>perçues</strong> et contenus <strong>pertinents</strong> notamment.
+              <abbr title="Post Scriptum">PS</abbr>&nbsp;:
+              Dans la plupart des domaines, les tests manuels demeurent indispensables.
+              Performances <strong>perçues</strong>, contenus <strong>pertinents</strong>…
             </p>
           </div>
         </section>
