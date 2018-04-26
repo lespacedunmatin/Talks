@@ -331,17 +331,20 @@
           <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
           <div class="table">
             <div class="col-50">
-              <h3>Dans l’environnement</h3>
               <div class="Cmasque">
-                <h4>Tâches Gulp</h4>
+                <h3>Tâches Gulp</h3>
 <pre>
   <code class="language-javascript">
-gulp.task('test', ['validator', 'louis', 'axe']);
+gulp.task('test', [
+  'validator', 
+  'louis',
+  'axe'
+]);
   </code>
 </pre>
               </div>
               <div class="Cmasque">
-                <h4>Accroché aux événements npm</h4>
+                <h3>Événements</h3>
 <pre>
   <code class="language-javascript">
 "scripts": {
