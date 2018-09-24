@@ -155,7 +155,7 @@ blockquote p::after {
   font: 300 1em "bello-pro-1", "DejaVu Sans", sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-cite {
+blockquote cite {
   display: block;
   font-style: normal;
   font-size: .75em;
