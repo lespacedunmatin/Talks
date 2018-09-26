@@ -109,25 +109,54 @@
             proposés par <cite>Tim Berners-Lee</cite> en 1998 
             —&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
             modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
-            <br>
-            Le mantra de l’<strong>amélioration progressive</strong>, en somme.
           </p>
+          <p class="small">Le mantra de l’<strong>amélioration progressive</strong>, en somme.</p>
         </section>
 
         <section class="slide">
           <h2>Définition</h2>
           <p>Un <dfn>graphique de données</dfn><span aria-hidden="true">&nbsp;&#128200;</span> est&nbsp;:</p>
           <ol>
-            <li class="Cmasque">un ensemble de clés<span aria-hidden="true">&nbsp;&#128273;</span>,</li>
-            <li class="Cmasque">associées à une ou plusieurs valeurs<span aria-hidden="true">&nbsp;&#128182;</span>,</li>
-            <li class="Cmasque">disposées sur une échelle<span aria-hidden="true">&nbsp;&#128207;</span>.</li>
+            <li class="Cmasque">un ensemble de clés,<span aria-hidden="true">&nbsp;&#128273;</span></li>
+            <li class="Cmasque">associées à une ou plusieurs valeurs,<span aria-hidden="true">&nbsp;&#128182;</span></li>
+            <li class="Cmasque">disposées sur une échelle,<span aria-hidden="true">&nbsp;&#128207;</span></li>
+            <li>et un <i lang="en">design</i> facilitant la compréhension.<span aria-hidden="true">&nbsp;&#128396;</span></li>
           </ol>
           <p class="Cmasque small">
-            En mode expert, il est parfois utile de représenter plusieurs ensembles 
-            ou de multiplier les échelles… C’est une véritable spécialité —&nbsp;pas la mienne&nbsp;—
-            mais vous pourrez en apprendre plus sur 
+            Vous pourrez en apprendre plus sur 
             <a href="https://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es">la représentation graphique de données sur Wikipédia</a>.
           </p>
+        </section>
+          
+        <section class="slide">
+          <h2>Piqûre de rappel<span aria-hidden="true">&nbsp;&#128137;</span></h2>
+          <p>
+            Le plus important, c’est le contenu —&nbsp;et par extension, sa sémantique.<br>
+            Pour <strong>décrire</strong> un ensemble de clés et valeurs en <abbr lang="en" title="HyperText Markup Language" aria-label="HyperText Markup Language">html</abbr>, il n’existe pas moult choix —&nbsp;en fait, deux&nbsp;:
+          </p>
+          <ol>
+            <li>les listes de définitions&nbsp;: <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code>&nbsp;;</li>
+            <li>les <strong>tableaux de données</strong>, solution plébiscitée.</li>
+          </ol>
+          <p class="small">Et oui, ça sert à ça en vrai.</p>
+        </section>
+          
+        <section class="slide">
+          <h2>Le chantier<span aria-hidden="true">&nbsp;&#128119;</span></h2>
+          <p>
+            <abbr lang="en" title="Cascading StyleSheet" aria-label="Cascading StyleSheet">CSS</abbr> 
+            est notre boîte à outils.<span aria-hidden="true">&nbsp;&#128296;</span>
+          </p>
+          <ul>
+            <li><code>@supports</code>,</li>
+            <li>Propriétés personnalisées,</li>
+            <li><code>grid</code> avec <code>repeat()</code> et <code>minmax()</code>,</li>
+            <li><code>clip-path</code> et <code>polygon()</code>,</li>
+            <li><code>background-*</code> et <code>*-gradient</code>,</li>
+            <li><code>mask</code>.</li>
+          </ul>
+            <p class="Cmasque small">Et pas mal de <code>calc()</code> —&nbsp;y compris de la trigonométrie…<span aria-hidden="true">&nbsp;	
+&#8895;</span></p>
         </section>
 
         <section class="slide">
