@@ -182,41 +182,6 @@ blockquote cite {
   height: 10vh;
 }
 
-/** @subsection 1.1 TABLE **/
-
-table {
-  width: auto;
-  min-width: 70%;
-  margin: auto;
-}
-
-caption {
-  padding: 5px;
-  font-size: 150%;
-  font-weight: 700;
-  text-align: left;
-  background: #efeee3;
-}
-
-thead {
-  border-bottom: 1px solid #032c36;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #efeee3;
-}
-
-th {
-  padding: 10px;
-  font-weight: bold;
-  text-align: center;
-}
-
-td {
-  padding: 10px;
-  text-align: center;
-}
-
 /**
 * -------------------------
 * @section 2. TYPO

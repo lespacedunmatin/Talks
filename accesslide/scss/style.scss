@@ -402,23 +402,6 @@ optgroup {
 	font-weight: bold;
 }
 
-/* Tables
-   ========================================================================== */
-
-/**
- * Remove most spacing between table cells.
- */
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-td,
-th {
-	padding: 0;
-}
-
 /**
  * AccessSlide
  *
@@ -589,7 +572,8 @@ img.center {
 	display: none;
 }
 
-.sr {
+.sr,
+.sr-only {
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 	position: absolute;
