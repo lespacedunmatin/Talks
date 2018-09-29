@@ -12,17 +12,20 @@
 /* == Tables
 /* ==================== */
 
-table,
+table {
+  font-size: 1.25rem;
+  margin: auto;
+}
+
 pre code[class*="language-"] {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .table-ffoodd {
   background: palette( default, contrast );
   border-collapse: collapse;
   caption-side: top;
-  font-feature-settings: "tnum";  
-  margin-bottom: $gutter * 1.5;
+  font-feature-settings: "tnum";
   width: 100%;
   vertical-align: top;
 

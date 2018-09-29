@@ -113,6 +113,10 @@ h3 kbd {
   background: inherit;
 }
 
+h3 span[aria-hidden] {
+  font-style: normal;
+}
+
 pre code {
   border: 0;
   white-space: pre-wrap;
