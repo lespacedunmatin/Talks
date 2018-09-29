@@ -162,7 +162,8 @@
             —&nbsp;y compris de la trigonométrie…<span aria-hidden="true">&nbsp;&#8895;</span>
           </p>
         </section>
-
+          
+        <!-- Step 1 -->
         <section class="slide">
           <h2>Au travail<span aria-hidden="true">&nbsp;&#128119;</span></h2>
 <pre class="language-markup">
@@ -187,7 +188,6 @@
   </code>
 </pre>
         </section>
-          
         <section class="slide">
             <h3>Le tableau nu<span aria-hidden="true">&nbsp;&#128293;</span></h3>
             <table style="--scale: 3000">
@@ -268,7 +268,8 @@
         </tbody>
       </table>
         </section>
-        
+          
+        <!-- Step 2 -->
         <section class="slide">
           <h3>Un peu d’habillage<span aria-hidden="true">&nbsp;&#129510;</span></h3>
 <pre class="language-css">
@@ -294,8 +295,7 @@
 }
   </code>
 </pre>
-        </section>
-          
+        </section>    
         <section class="slide">
           <h3>Le tableau en slip<span aria-hidden="true">&nbsp;&#129500;</span></h3>
           <table class="table-ffoodd table-charts" style="--scale: 3000">
@@ -376,9 +376,35 @@
             </tbody>
           </table>
         </section>
-        
+          
+        <!-- Step 3 -->
         <section class="slide">
-          <h2>Une grille<span aria-hidden="true">&nbsp;	&#9637;</span></h2>
+          <h3>Un habillage structuré<span aria-hidden="true">&nbsp;	&#9637;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+@supports (grid-template-columns: repeat(var(--scale, 100), minmax(0, 1fr))) {
+    tr {
+      display: grid;
+      grid-auto-rows: 1fr;  
+      grid-row-gap: .5rem;
+      grid-template-columns: 
+        minmax(min-content, 15em) 
+        repeat(var(--scale, 100), minmax(0, 1fr)) 10ch;
+    }
+
+    th {
+      grid-column: 1 / 1;
+    }
+
+    td {
+      grid-column: 2 / var(--value, 0);
+    }
+}
+  </code>
+</pre>
+        </section>
+        <section class="slide">
+          <h3>Un tableau en jeans<span aria-hidden="true">&nbsp;&#128086;</span></h3>
           <table class="table-ffoodd table-charts bar step-1" style="--scale: 3000">
             <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
             <thead class="sr-only">
@@ -456,27 +482,25 @@
               </tr>
             </tbody>
           </table>
+        </section>
+          
+        <!-- Step 4 -->
+        <section class="slide">
+          <h3>Un détail<span aria-hidden="true">&nbsp;&#128083;</span></h3>
 <pre class="language-css">
   <code class="language-css">
-tr {
-  display: grid;
-  grid-auto-rows: 1fr;  grid-row-gap: $gutter / 2;
-  grid-template-columns: minmax(min-content, 15em) repeat(var(--scale, 100), minmax(0, 1fr)) 10ch;
-}
-
-th {
-  grid-column: 1 / 1;
-}
-
-td {
-  grid-column: 2 / var(--value, 0);
+td span {
+  background: inherit;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  left: 100%;
+  position: absolute;
 }
   </code>
 </pre>
         </section>
-        
         <section class="slide">
-          <h2>De la couleur<span aria-hidden="true">&nbsp;&#128397;</span></h2>
+          <h3>Un tableau décemment vêtu<span aria-hidden="true">&nbsp;&#128085;</span></h3>
           <table class="table-ffoodd table-charts bar step-1 step-2" style="--scale: 3000">
             <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
             <thead class="sr-only">
@@ -554,7 +578,11 @@ td {
               </tr>
             </tbody>
           </table>
-
+        </section>
+        
+        <!-- Step 5 -->
+        <section class="slide">
+          <h3>Un peu de classe<span aria-hidden="true">&nbsp;&#128188;</span></h3>
 <pre class="language-css">
   <code class="language-css">
 td {
@@ -573,10 +601,9 @@ tr:nth-child(5n+5) td {
 }
   </code>
 </pre>
-        </section>
-        
+        </section>   
         <section class="slide">
-          <h2>Un fond de calage<span aria-hidden="true">&nbsp;&#11216;</span></h2>
+          <h3>Un tableau bien sapé<span aria-hidden="true">&nbsp;&#128084;</span></h3>
           <table class="table-ffoodd table-charts bar step-1 step-2 step-3" style="--scale: 3000">
             <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
             <thead class="sr-only">
@@ -654,20 +681,211 @@ tr:nth-child(5n+5) td {
               </tr>
             </tbody>
           </table>
-
+        </section>
+        
+        <!-- Step 6 -->
+        <section class="slide">
+          <h3>On peaufine les détails<span aria-hidden="true">&nbsp;&#128133;</span></h3>
 <pre class="language-css">
   <code class="language-css">
-td span {
-  background: inherit;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  font-weight: bold;
-  left: 100%;
-  position: absolute;
+table:hover tr {
+  opacity: .5;
+}
+
+table:hover tr:hover {
+  opacity: 1;
+}
+          
+@media screen and (-ms-high-contrast: active) {
+  tr:nth-child(5n + 5) td {
+     background-image: 
+       linear-gradient(to right, Window, ButtonFace, ButtonShadow, ButtonText, highlight),
+       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E");
+  }
 }
   </code>
 </pre>
+        </section>   
+        <section class="slide">
+          <h3>Un tableau du samedi soir<span aria-hidden="true">&nbsp;&#128378;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4" style="--scale: 3000">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
+          
+        <!-- Step 7 -->
+        <section class="slide">
+          <h3>On fait des vagues<span aria-hidden="true">&nbsp;&#127754;</span></h3>
+          <h4>Dans le HTML</h4>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188;">
+  </code>
+</pre>
+            <h4>Dans le CSS</h4>
+<pre class="language-css">
+  <code class="language-css">
+tr:nth-of-type(5) td {
+  grid-column: var(--4, 0) / var(--value, 0);
+}
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <h3>Un tableau du Niagara<span aria-hidden="true">&nbsp;&#127748;</span></h3>
+          <table class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall" style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
+            <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <td></td>
+                <th scope="col">Temps de chargement cumulé</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Temps&nbsp;: backend</th>
+                <td style="--value: 4">
+                  <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Temps&nbsp;: Frontend</th>
+                <td style="--value: 96">
+                  <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier octet</th>
+                <td style="--value: 102">
+                  <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: dernier octet</th>
+                <td style="--value: 129">
+                  <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: première image</th>
+                <td style="--value: 188">
+                  <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier CSS</th>
+                <td style="--value: 194">
+                  <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Délai&nbsp;: premier JS</th>
+                <td style="--value: 326">
+                  <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM Interactif</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Chargement du DOM</th>
+                <td style="--value: 836">
+                  <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">DOM complet</th>
+                <td style="--value: 2561">
+                  <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Trafic HTTP terminé</th>
+                <td style="--value: 2980">
+                  <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
         
         <section class="slide">
           <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>

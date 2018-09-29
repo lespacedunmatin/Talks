@@ -13,7 +13,7 @@
 /* ==================== */
 
 table {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin: auto;
 }
 
@@ -136,15 +136,26 @@ pre code[class*="language-"] {
             }
             
             td {
-              background: #efeee3;
+              background: currentColor;
               grid-column: 2 / var(--value, 0);
               margin: $gutter / 2 0 0;
               position: relative;
             }
           }
         }
-        
+          
         &.step-2 {
+          tbody tr td span {
+            background: inherit;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            font-weight: bold;
+            left: 100%;
+            position: absolute;
+          }
+        }
+        
+        &.step-3 {
           tbody tr {
             td {
               --size: calc(var(--scale, 100) * 100%);
@@ -170,17 +181,6 @@ pre code[class*="language-"] {
                   url($pattern); /* 1 */
               }
             }
-          }
-        }
-
-        &.step-3 {
-          tbody tr td span {
-            background: inherit;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            font-weight: bold;
-            left: 100%;
-            position: absolute;
           }
         }
 
@@ -217,12 +217,12 @@ pre code[class*="language-"] {
               }
             }
           }
-        }
-
-        &.waterfall {
-          @each $number in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 {
-            tr:nth-of-type(#{$number}) td {
-              grid-column: var(--#{$number - 1}, 0) / var(--value, 0);
+            
+          &.waterfall {
+            @each $number in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 {
+              tr:nth-of-type(#{$number}) td {
+                grid-column: var(--#{$number - 1}, 0) / var(--value, 0);
+              }
             }
           }
         }
