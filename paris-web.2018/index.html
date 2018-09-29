@@ -1066,17 +1066,20 @@ table::after {
             <h3>Un tracé<span aria-hidden="true">&nbsp;&#128393;</span></h3>
 <pre class="language-css">
   <code class="language-css">
-table::before {
-    background: linear-gradient(to top, blue, red 75%);
-    clip-path: polygon(
-        0% calc(100% - (var(--1) / var(--y) * 100%)),
-        var(--offset) calc(100% - (var(--1) / var(--y) * 100%)),
-        calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
-        calc((100% / var(--x) * 11) + var(--offset)) calc(100% - (var(--12) / var(--y) * 100%)),
-        100% calc(100% - (var(--12) / var(--y) * 100%)),
-        100% 100%,
-        0% 100%
-    );
+@supports (clip-path: polygon(0% calc(100% - (var(--1) * 100% / var(--y))))) {
+    table::before {
+        --offset: calc((100% / var(--x)) / 2);
+        background: linear-gradient(to top, blue, red 75%);
+        clip-path: polygon(
+            0% calc(100% - (var(--1) / var(--y) * 100%)),
+            var(--offset) calc(100% - (var(--1) / var(--y) * 100%)),
+            calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
+            calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--3) / var(--y) * 100%)),
+            100% calc(100% - (var(--12) / var(--y) * 100%)),
+            100% 100%,
+            0% 100%
+        );
+    }
 }
   </code>
 </pre>
@@ -1209,8 +1212,272 @@ table::before {
           </table>
         </section>
           
+        
+        <!-- Step 1 -->
+        <section class="slide">
+            <h2>Un diagramme en tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;table>
+    &lt;caption>Répartition du poids des ressources pour ffoodd.fr&lt;/caption>
+    &lt;thead>
+        &lt;tr>
+            &lt;th scope="col">Ressource&lt;/th>
+            &lt;th scope="col">Proportion&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr style="--color: #734BF9">
+            &lt;th scope="row">HTML&lt;/th> 
+            &lt;td>
+                2&nbsp;%
+                &lt;span role="presentation" style="--value: 2; --start: 0;">&lt;/span>
+            &lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row" style="--color: #734BF9">HTML</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
+                  </td> 
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #E11A81">CSS</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #0172F0">JS</th>
+                  <td>
+                    32&nbsp;%
+                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
+                  </td>      
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FDC02F">Json</th>
+                  <td>
+                    1&nbsp;%
+                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #39CA74">Images</th>
+                  <td>
+                    44&nbsp;%
+                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
+                  <td>
+                    17&nbsp;%
+                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
+                  </td>  
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #585462">Autres</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
           
-          
+        <!-- Step 2 -->
+        <section class="slide">
+            <h2>Devenir légende<span aria-hidden="true">&nbsp;&#129502;</span></h2>
+<pre class="language-css">
+  <code class="language-css">
+tbody {
+    display: table-row;
+}
+
+tbody tr {
+    display: table-cell;
+}
+
+tbody th::before {
+    background: var(--color, currentColor);
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    transform: translate3d(-.2rem, .1rem, 0);
+    width: 1rem;
+}
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie step-1">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row" style="--color: #734BF9">HTML</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
+                  </td> 
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #E11A81">CSS</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #0172F0">JS</th>
+                  <td>
+                    32&nbsp;%
+                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
+                  </td>      
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FDC02F">Json</th>
+                  <td>
+                    1&nbsp;%
+                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #39CA74">Images</th>
+                  <td>
+                    44&nbsp;%
+                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
+                  <td>
+                    17&nbsp;%
+                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
+                  </td>  
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #585462">Autres</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+        
+        <!-- Step 3 -->
+        <section class="slide">
+            <h2>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+<pre class="language-css">
+  <code class="language-css">
+@supports (--position: calc(var(--start, 0) * .01turn)) {
+    [role="presentation"] {
+        --position: calc(var(--start, 0) * .01turn);
+        clip-path: circle(50% at 0% 50%);
+        overflow: hidden;
+        transform: rotate(var(--position)) scale(.75);
+        transform-origin: left center;
+        transition: transform .2s ease-in-out;
+    }
+
+    [role="presentation"]::before {
+        --position: calc(var(--value, 0) * .01turn + 1deg);
+        background-color: var(--color, currentColor);
+        content: "";
+        transform: rotate(var(--position));
+        transform-origin: right center;
+    }
+}
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie step-1 step-2">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row" style="--color: #734BF9">HTML</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
+                  </td> 
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #E11A81">CSS</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #0172F0">JS</th>
+                  <td>
+                    32&nbsp;%
+                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
+                  </td>      
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FDC02F">Json</th>
+                  <td>
+                    1&nbsp;%
+                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #39CA74">Images</th>
+                  <td>
+                    44&nbsp;%
+                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
+                  <td>
+                    17&nbsp;%
+                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
+                  </td>  
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #585462">Autres</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+        
           
         <section class="slide">
           <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>

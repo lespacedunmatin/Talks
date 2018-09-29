@@ -408,7 +408,7 @@ pre code[class*="language-"] {
             }
           }
         }
-      }
+      
 
       /**
        * @note Custom color palette for WHCM
@@ -426,85 +426,86 @@ pre code[class*="language-"] {
     @supports (--position: calc(var(--start, 0) * .01turn)) {
       &.pie {
         margin: 0 auto;
-        padding-top: calc(100% + #{$gutter * 2});
         position: relative;
+        
+        &.step-1 {
+            tbody {
+              display: table-row;
+            }
 
-        tbody {
-          display: table-row;
+            tbody tr {
+              display: table-cell;
+            }
+            
+            tbody th {
+              padding-right: $gutter / 2;
+
+              &::before {
+                background: var(--color, currentColor);
+                content: "";
+                display: inline-block;
+                height: 1rem;
+                transform: translate3d(-.2rem, .1rem, 0);
+                width: 1rem;
+              }
+            }
+            
+            @each $name, $pattern in $patterns {
+              $i: index($patterns, ($name $pattern));
+
+              tr:nth-child(#{$i}n + #{$i}) th::before,
+              tr:nth-child(#{$i}n + #{$i}) [role="presentation"]::before  {
+                background-image: url($pattern); /* 1 */
+              }
+            }
         }
 
-        tbody tr {
-          display: table-cell;
-        }
+        &.step-2 {
+            padding-top: calc(#{$width / 2} - #{$gutter * 2});
+          
+            /**
+             * @note Pie chart based on:
+             * @link https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/
+             * @author Lea Verou
+             */
+            [role="presentation"] {
+              --position: calc(var(--start, 0) * .01turn);
+              --zoom: .75;
+              clip-path: circle(50% at 0% 50%);
+              display: block;
+              height: 100%;
+              left: 50%;
+              overflow: hidden;
+              pointer-events: none;
+              position: absolute;
+              top: $gutter * -4;
+              transform:
+                rotate(var(--position))
+                scale(var(--zoom));
+              transform-origin: left center;
+              transition: transform .2s map-get( $timing-functions, 'move' );
+              width: $width / 2;
 
-        tbody th {
-          padding-right: $gutter / 2;
+              &::before {
+                --position: calc(var(--value, 0) * .01turn + 1deg);
+                background-color: var(--color, currentColor);
+                content: "";
+                display: initial;
+                height: 100%;
+                left: -100%;
+                margin: initial;
+                pointer-events: auto;
+                position: inherit;
+                top: 0;
+                transform: rotate(var(--position));
+                transform-origin: right center;
+                width: 100%;
+              }
+            }
 
-          &::before {
-            background: var(--color, currentColor);
-            content: "";
-            display: inline-block;
-            height: 1rem;
-            transform: translate3d(-.2rem, .1rem, 0);
-            width: 1rem;
-          }
-        }
-
-        @media screen and (min-width: em(480)) {
-          padding-top: calc(#{$width / 2} - #{$gutter * 2});
-        }
-
-        /**
-         * @note Pie chart based on:
-         * @link https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/
-         * @author Lea Verou
-         */
-        [role="presentation"] {
-          --position: calc(var(--start, 0) * .01turn);
-          --zoom: .75;
-          clip-path: circle(50% at 0% 50%);
-          display: block;
-          height: 100%;
-          left: 50%;
-          overflow: hidden;
-         	pointer-events: none;
-          position: absolute;
-          top: $gutter * -4;
-          transform:
-            rotate(var(--position))
-            scale(var(--zoom));
-          transform-origin: left center;
-          transition: transform .2s map-get( $timing-functions, 'move' );
-          width: $width / 2;
-
-          &::before {
-            --position: calc(var(--value, 0) * .01turn + 1deg);
-            background-color: var(--color, currentColor);
-            content: "";
-            display: initial;
-            height: 100%;
-            left: -100%;
-            margin: initial;
-            pointer-events: auto;
-            position: inherit;
-            top: 0;
-            transform: rotate(var(--position));
-            transform-origin: right center;
-            width: 100%;
-          }
-        }
-
-        tr:hover [role="presentation"] {
-          --zoom: .8;
-        }
-
-        @each $name, $pattern in $patterns {
-          $i: index($patterns, ($name $pattern));
-
-          tr:nth-child(#{$i}n + #{$i}) th::before,
-          tr:nth-child(#{$i}n + #{$i}) [role="presentation"]::before  {
-            background-image: url($pattern); /* 1 */
-          }
+            tr:hover [role="presentation"] {
+              --zoom: .8;
+            }
         }
       }
 
@@ -519,17 +520,6 @@ pre code[class*="language-"] {
        * @link https://caniuse.com/#search=mask
        */
       @supports (mask: var(--mask)) {
-         &.donut {
-           mask-image: radial-gradient(
-             circle at 50% calc(50% - #{$gutter * 2}),
-             transparent 0%,
-             transparent calc(var(--offset) / 2),
-             palette( default, contrast) calc(var(--offset) / 2 + 1px),
-             palette( default, contrast) 100%
-           );
-         }
-
-         @media screen and (min-width: em(480)) {
            &.donut {
              mask-image: radial-gradient(
                circle at 50% calc(50% - #{$gutter * 2.5}),
@@ -539,7 +529,6 @@ pre code[class*="language-"] {
                palette( default, contrast) 100%
              );
            }
-         }
        }
 
       /**
@@ -561,4 +550,5 @@ pre code[class*="language-"] {
         }
       }
     }
+  }
 }
