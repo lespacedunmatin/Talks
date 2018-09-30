@@ -507,29 +507,29 @@ pre code[class*="language-"] {
               --zoom: .8;
             }
         }
-      }
-
-      /**
-       * Using mask-image to make a Donut
-       *
-       * @note Based on Ana Tudor's work
-       * @link https://css-tricks.com/1-html-element-5-css-properties-magic/
-       * @author Ana Tudor
-       *
-       * @note Mask support:
-       * @link https://caniuse.com/#search=mask
-       */
-      @supports (mask: var(--mask)) {
-           &.donut {
-             mask-image: radial-gradient(
-               circle at 50% calc(50% - #{$gutter * 2.5}),
-               transparent 0%,
-               transparent var(--offset),
-               palette( default, contrast) calc(var(--offset) + 1px),
-               palette( default, contrast) 100%
-             );
+        
+         /**
+           * Using mask-image to make a Donut
+           *
+           * @note Based on Ana Tudor's work
+           * @link https://css-tricks.com/1-html-element-5-css-properties-magic/
+           * @author Ana Tudor
+           *
+           * @note Mask support:
+           * @link https://caniuse.com/#search=mask
+           */
+          @supports (mask: var(--mask)) {
+               &.donut {
+                 mask-image: radial-gradient(
+                   circle at 50% calc(50% - #{$gutter * 2.5}),
+                   transparent 0%,
+                   transparent var(--offset),
+                   palette( default, contrast) calc(var(--offset) + 1px),
+                   palette( default, contrast) 100%
+                 );
+               }
            }
-       }
+      }
 
       /**
        * @note Custom color palette for WHCM

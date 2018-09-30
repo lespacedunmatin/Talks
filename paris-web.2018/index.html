@@ -380,6 +380,9 @@
         <!-- Step 3 -->
         <section class="slide">
           <h3>Un habillage structuré<span aria-hidden="true">&nbsp;	&#9637;</span></h3>
+            <p class="small">
+                Basé sur <a href="https://css-tricks.com/css-charts-grid-custom-properties/" hreflang="en">un article de <cite>Miriam Suzanne</cite> sur <abbr lang="en" title="Cascading StyleSheet">CSS</abbr> Tricks</a>.
+            </p>
 <pre class="language-css">
   <code class="language-css">
 @supports (grid-template-columns: repeat(var(--scale, 100), minmax(0, 1fr))) {
@@ -1147,6 +1150,7 @@ table::after {
             </tbody>
           </table>
         </section>
+          
         <!-- Step 4 -->
         <section class="slide">
           <table class="table-ffoodd table-charts line step-1 step-2 points" style="--y: 32; --x: 12; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
@@ -1392,6 +1396,9 @@ tbody th::before {
         <!-- Step 3 -->
         <section class="slide">
             <h2>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+            <p class="small">
+                Basé sur <a hreflang="en" href="https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/">un article de <cite>Léa Verou</cite> sur Smashing Magazine</a>.
+            </p>
 <pre class="language-css">
   <code class="language-css">
 @supports (--position: calc(var(--start, 0) * .01turn)) {
@@ -1417,6 +1424,183 @@ tbody th::before {
         </section>   
         <section class="slide">
           <table class="table-ffoodd table-charts pie step-1 step-2">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row" style="--color: #734BF9">HTML</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
+                  </td> 
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #E11A81">CSS</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #0172F0">JS</th>
+                  <td>
+                    32&nbsp;%
+                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
+                  </td>      
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FDC02F">Json</th>
+                  <td>
+                    1&nbsp;%
+                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #39CA74">Images</th>
+                  <td>
+                    44&nbsp;%
+                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
+                  <td>
+                    17&nbsp;%
+                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
+                  </td>  
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #585462">Autres</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+        
+          <!-- Step 3 -->
+        <section class="slide">
+            <h2>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+            <p class="small">
+                Basé sur <a hreflang="en" href="https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/">un article de <cite>Léa Verou</cite> sur Smashing Magazine</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+@supports (--position: calc(var(--start, 0) * .01turn)) {
+    [role="presentation"] {
+        --position: calc(var(--start, 0) * .01turn);
+        clip-path: circle(50% at 0% 50%);
+        overflow: hidden;
+        transform: rotate(var(--position)) scale(.75);
+        transform-origin: left center;
+        transition: transform .2s ease-in-out;
+    }
+
+    [role="presentation"]::before {
+        --position: calc(var(--value, 0) * .01turn + 1deg);
+        background-color: var(--color, currentColor);
+        content: "";
+        transform: rotate(var(--position));
+        transform-origin: right center;
+    }
+}
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie step-1 step-2">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <th scope="row" style="--color: #734BF9">HTML</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
+                  </td> 
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #E11A81">CSS</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #0172F0">JS</th>
+                  <td>
+                    32&nbsp;%
+                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
+                  </td>      
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FDC02F">Json</th>
+                  <td>
+                    1&nbsp;%
+                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #39CA74">Images</th>
+                  <td>
+                    44&nbsp;%
+                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
+                  <td>
+                    17&nbsp;%
+                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
+                  </td>  
+                </tr>
+                <tr>
+                  <th scope="row" style="--color: #585462">Autres</th>
+                  <td>
+                    2&nbsp;%
+                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+          
+        <!-- Step 4 -->
+        <section class="slide">
+            <h2>Devenir donut<span aria-hidden="true">&nbsp;&#127849;</span></h2>
+            <p class="small">
+                Inspiré par <a href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask" hreflang="en">les expérimentations d’<cite>Ana Tudor</cite> avec <code>mask-*</code> sur CodePen</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+@supports (mask: var(--mask)) {
+   table {
+     mask-image: radial-gradient(
+       circle at 50% calc(50% - 2.5rem),
+       transparent 0%,
+       transparent var(--offset),
+       white calc(var(--offset) + 1px),
+       white 100%
+     );
+   }
+}
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts pie step-1 step-2 donut" style="--offset: 8rem;">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
             <thead class="sr-only">
               <tr>
