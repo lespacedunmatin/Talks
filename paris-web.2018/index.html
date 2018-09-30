@@ -1308,7 +1308,7 @@ table::after {
           
         <!-- Step 2 -->
         <section class="slide">
-            <h2>Devenir légende<span aria-hidden="true">&nbsp;&#129502;</span></h2>
+            <h3>Devenir légende<span aria-hidden="true">&nbsp;&#129502;</span></h3>
 <pre class="language-css">
   <code class="language-css">
 tbody {
@@ -1395,7 +1395,7 @@ tbody th::before {
         
         <!-- Step 3 -->
         <section class="slide">
-            <h2>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
+            <h3>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h3>
             <p class="small">
                 Basé sur <a hreflang="en" href="https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/">un article de <cite>Léa Verou</cite> sur Smashing Magazine</a>.
             </p>
@@ -1487,7 +1487,7 @@ tbody th::before {
         
         <!-- Step 4 -->
         <section class="slide">
-            <h2>Devenir doughnut<span aria-hidden="true">&nbsp;&#127849;</span></h2>
+            <h3>Devenir doughnut<span aria-hidden="true">&nbsp;&#127849;</span></h3>
             <p class="small">
                 Inspiré par <a href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask" hreflang="en">les expérimentations d’<cite>Ana Tudor</cite> avec <code>mask-*</code> sur CodePen</a>.
             </p>
@@ -1570,7 +1570,7 @@ tbody th::before {
             </table>
         </section>
         
-        <!-- Step 4 -->
+        <!-- Step 1 -->
         <section class="slide">
             <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
 <pre class="language-markup">
@@ -1586,6 +1586,72 @@ tbody th::before {
     &lt;/dl>
     &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
 &lt;/figure>
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <figure role="group">
+            <dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
+                <dfn>Accessibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
+              </dd>
+              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
+                <dfn>Référencement</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
+              </dd>
+              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
+                <dfn>Performance</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
+              </dd>
+              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
+                <dfn>Compatibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
+              </dd>
+              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
+                <dfn>Sécurité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
+              </dd>
+              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
+                <dfn>Qualité de code</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
+              </dd>
+              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
+                <dfn>Test</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
+              </dd>
+            </dl>
+            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
+          </figure>
+        </section>
+          
+        <!-- Step 2 -->
+        <section class="slide">
+            <h3>Étalonnage<span aria-hidden="true">&nbsp;&#128907;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+dl {
+    --radius: 10em;
+    --size: calc( var(--radius) / var(--scale) );
+    --part: calc( 360deg / var(--items) );
+    background-image:
+    repeating-radial-gradient(
+      circle at 50%, black, black 2px, white 2px, white calc(var(--size) * var(--step))
+    ),
+    repeating-radial-gradient(
+      circle at 50%, grey, grey 2px, white 2px, white var(--size)
+    );
+    border-radius: 50%;
+    height: calc( var(--radius) * 2 );
+    width: calc( var(--radius) * 2 );
+}
   </code>
 </pre>
         </section>   
@@ -1631,6 +1697,264 @@ tbody th::before {
             <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
           </figure>
         </section>
+          
+        <!-- Step 3 -->
+        <section class="slide">
+            <h3>Encerclement<span aria-hidden="true">&nbsp;&#128262;</span></h3>
+            <p class="small">
+                Basé sur <a hreflang="en" href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">une explication d’<cite>Ana Tudor</cite></a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+dt {
+    --index:
+    --away: calc( (var(--radius) * -1) - 50% );
+    left: 50%;
+    margin: initial;
+    position: absolute;
+    top: 50%;
+    transform:
+      translate3d(-50%, -50%, 0)
+      rotate( calc(var(--part) * var(--index, 1)) )
+      translate( var(--away) )
+      rotate( calc(var(--part) * var(--index, 1) * -1) );
+}
+</code>
+</pre>
+        </section>   
+        <section class="slide">
+          <figure role="group">
+            <dl role="list" class="charts-radar step-1" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
+                <dfn>Accessibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
+              </dd>
+              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
+                <dfn>Référencement</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
+              </dd>
+              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
+                <dfn>Performance</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
+              </dd>
+              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
+                <dfn>Compatibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
+              </dd>
+              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
+                <dfn>Sécurité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
+              </dd>
+              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
+                <dfn>Qualité de code</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
+              </dd>
+              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
+                <dfn>Test</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
+              </dd>
+            </dl>
+            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
+          </figure>
+        </section>
+          
+        <!-- Step 4 -->
+        <section class="slide">
+            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;figure role="group">
+    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
+        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
+            &lt;dfn>Accessibilité&lt;/dfn>
+        &lt;/dt>
+        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
+            &lt;span>14&lt;/span>
+        &lt;/dd>
+    &lt;/dl>
+    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
+&lt;/figure>
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <figure role="group">
+            <dl role="list" class="charts-radar step-1 step-2" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
+                <dfn>Accessibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
+              </dd>
+              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
+                <dfn>Référencement</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
+              </dd>
+              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
+                <dfn>Performance</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
+              </dd>
+              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
+                <dfn>Compatibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
+              </dd>
+              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
+                <dfn>Sécurité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
+              </dd>
+              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
+                <dfn>Qualité de code</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
+              </dd>
+              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
+                <dfn>Test</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
+              </dd>
+            </dl>
+            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
+          </figure>
+        </section>
+         
+        <!-- Step 5 -->
+        <section class="slide">
+            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;figure role="group">
+    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
+        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
+            &lt;dfn>Accessibilité&lt;/dfn>
+        &lt;/dt>
+        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
+            &lt;span>14&lt;/span>
+        &lt;/dd>
+    &lt;/dl>
+    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
+&lt;/figure>
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <figure role="group">
+            <dl role="list" class="charts-radar step-1 step-2 step-3" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
+                <dfn>Accessibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
+              </dd>
+              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
+                <dfn>Référencement</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
+              </dd>
+              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
+                <dfn>Performance</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
+              </dd>
+              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
+                <dfn>Compatibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
+              </dd>
+              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
+                <dfn>Sécurité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
+              </dd>
+              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
+                <dfn>Qualité de code</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
+              </dd>
+              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
+                <dfn>Test</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
+              </dd>
+            </dl>
+            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
+          </figure>
+        </section>
+         
+        <!-- Step 6 -->
+        <section class="slide">
+            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;figure role="group">
+    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
+        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
+            &lt;dfn>Accessibilité&lt;/dfn>
+        &lt;/dt>
+        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
+            &lt;span>14&lt;/span>
+        &lt;/dd>
+    &lt;/dl>
+    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
+&lt;/figure>
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <figure role="group">
+            <dl role="list" class="charts-radar step-1 step-2 step-3 step-4" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
+                <dfn>Accessibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
+              </dd>
+              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
+                <dfn>Référencement</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
+              </dd>
+              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
+                <dfn>Performance</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
+              </dd>
+              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
+                <dfn>Compatibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
+              </dd>
+              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
+                <dfn>Sécurité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
+              </dd>
+              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
+                <dfn>Qualité de code</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
+              </dd>
+              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
+                <dfn>Test</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
+              </dd>
+            </dl>
+            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
+          </figure>
+        </section>
+         
+          
+          
+          
+          
         <section class="slide">
           <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
           <div class="Cmasque">
