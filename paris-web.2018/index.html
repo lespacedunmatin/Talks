@@ -1640,7 +1640,6 @@ tbody th::before {
 dl {
     --radius: 10em;
     --size: calc( var(--radius) / var(--scale) );
-    --part: calc( 360deg / var(--items) );
     background-image:
     repeating-radial-gradient(
       circle at 50%, black, black 2px, white 2px, white calc(var(--size) * var(--step))
@@ -1700,17 +1699,19 @@ dl {
           
         <!-- Step 3 -->
         <section class="slide">
-            <h3>Encerclement<span aria-hidden="true">&nbsp;&#128262;</span></h3>
+            <h3>Encerclement<span aria-hidden="true">&nbsp;&#128158;</span></h3>
             <p class="small">
                 Basé sur <a hreflang="en" href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">une explication d’<cite>Ana Tudor</cite></a>.
             </p>
 <pre class="language-css">
   <code class="language-css">
+dl {
+    --part: calc( 360deg / var(--items) );
+}
+
 dt {
-    --index:
     --away: calc( (var(--radius) * -1) - 50% );
     left: 50%;
-    margin: initial;
     position: absolute;
     top: 50%;
     transform:
@@ -1718,6 +1719,10 @@ dt {
       rotate( calc(var(--part) * var(--index, 1)) )
       translate( var(--away) )
       rotate( calc(var(--part) * var(--index, 1) * -1) );
+}
+
+dt::after {
+    content: attr(data-value) "\A0/\A0" attr(data-scale);
 }
 </code>
 </pre>
@@ -1767,20 +1772,21 @@ dt {
           
         <!-- Step 4 -->
         <section class="slide">
-            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
-<pre class="language-markup">
-  <code class="language-markup">
-&lt;figure role="group">
-    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
-        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
-            &lt;dfn>Accessibilité&lt;/dfn>
-        &lt;/dt>
-        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
-            &lt;span>14&lt;/span>
-        &lt;/dd>
-    &lt;/dl>
-    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
-&lt;/figure>
+            <h3>Placer les points<span aria-hidden="true">&nbsp;&#9862;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+dd:nth-of-type(2) span {
+    --pos: calc( 100% - (var(--3) * 100% / (var(--scale) ) ) );
+    background: linear-gradient( to top left, rebeccapurple 10%, indigo 75% );
+    clip-path: polygon(
+        100% var(--pos),
+        calc( 100% - ( var(--2) * 100% / var(--scale) ) ) 100%,
+        100% 100%
+    );
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
   </code>
 </pre>
         </section>   
@@ -1829,20 +1835,20 @@ dt {
          
         <!-- Step 5 -->
         <section class="slide">
-            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
-<pre class="language-markup">
-  <code class="language-markup">
-&lt;figure role="group">
-    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
-        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
-            &lt;dfn>Accessibilité&lt;/dfn>
-        &lt;/dt>
-        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
-            &lt;span>14&lt;/span>
-        &lt;/dd>
-    &lt;/dl>
-    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
-&lt;/figure>
+            <h3>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h3>
+            <p class="small">
+                Détournement d’<a hreflang="en" href="https://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/">une technique publiée par <cite>Sara Soueidan</cite> sur Codrops</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+dd {
+    --skew: calc( 90deg - var(--part) );
+    border-bottom: 1px solid rebeccapurple;
+    transform:
+        rotate( calc(var(--part) * var(--index, 1)) )
+        skew( var(--skew) );
+    transform-origin: 100% 100%;
+}
   </code>
 </pre>
         </section>   
@@ -1891,20 +1897,29 @@ dt {
          
         <!-- Step 6 -->
         <section class="slide">
-            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
-<pre class="language-markup">
-  <code class="language-markup">
-&lt;figure role="group">
-    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
-        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
-            &lt;dfn>Accessibilité&lt;/dfn>
-        &lt;/dt>
-        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
-            &lt;span>14&lt;/span>
-        &lt;/dd>
-    &lt;/dl>
-    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
-&lt;/figure>
+            <h3>Un peu trigonométrie<span aria-hidden="true">&nbsp;&#8894;</span></h3>
+            <p class="small">
+                Figurez-vous que <a hreflang="en" href="https://gist.github.com/stereokai/7666bfe93929b14c2dced148c79e0e97"><cite>Stereokai</cite> a implémenté plusieurs fonctions de trigonométrie</a>
+                pour calculer les <strong>sinus</strong>, cosinus et tangente d’un angle.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+dd span {
+    --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
+    /* get opposite angle in radians */
+    --angle: calc( var(--opposite) * 0.01745329251 );
+    /* calc() sin, dark wizardry! */
+    --sin-term1: var(--angle);
+    --sin-term2: calc((var(--angle) * var(--angle) * var(--angle)) / 6);
+    --sin-term3: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 120);
+    --sin-term4: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 5040);
+    --sin-term5: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 362880);
+    --sin: calc(var(--sin-term1) - var(--sin-term2) + var(--sin-term3) - var(--sin-term4) + var(--sin-term5));
+    /* calc() hypothenuse: initial width / opposite angle's sinus */
+    --hypo: calc( var(--unitless-radius) / var(--sin) );
+    /* get the ratio: skewed / initial width */
+    --ratio: calc( var(--hypo) / var(--unitless-radius) );
+}
   </code>
 </pre>
         </section>   
@@ -1951,24 +1966,11 @@ dt {
           </figure>
         </section>
          
-          
-          
-          
-          
+             
+        <!-- a11y -->  
         <section class="slide">
-          <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
-          <div class="Cmasque">
-            <h3>Tâches Gulp</h3>
-<pre>
-  <code class="language-javascript">
-gulp.task('test', [
-  'validator', 
-  'louis',
-  'axe'
-]);
-  </code>
-</pre>
-          </div>
+          <h2>Interrupteur de styles<span aria-hidden="true">&nbsp;&#9745;</span></h2>
+
         </section>
           
         <section class="slide">
