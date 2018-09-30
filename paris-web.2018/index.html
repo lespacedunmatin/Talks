@@ -1485,101 +1485,9 @@ tbody th::before {
             </table>
         </section>
         
-          <!-- Step 3 -->
-        <section class="slide">
-            <h2>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h2>
-            <p class="small">
-                Basé sur <a hreflang="en" href="https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/">un article de <cite>Léa Verou</cite> sur Smashing Magazine</a>.
-            </p>
-<pre class="language-css">
-  <code class="language-css">
-@supports (--position: calc(var(--start, 0) * .01turn)) {
-    [role="presentation"] {
-        --position: calc(var(--start, 0) * .01turn);
-        clip-path: circle(50% at 0% 50%);
-        overflow: hidden;
-        transform: rotate(var(--position)) scale(.75);
-        transform-origin: left center;
-        transition: transform .2s ease-in-out;
-    }
-
-    [role="presentation"]::before {
-        --position: calc(var(--value, 0) * .01turn + 1deg);
-        background-color: var(--color, currentColor);
-        content: "";
-        transform: rotate(var(--position));
-        transform-origin: right center;
-    }
-}
-  </code>
-</pre>
-        </section>   
-        <section class="slide">
-          <table class="table-ffoodd table-charts pie step-1 step-2">
-            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
-            <thead class="sr-only">
-              <tr>
-                <th scope="col">Ressource</th>
-                <th scope="col">Proportion</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <th scope="row" style="--color: #734BF9">HTML</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
-                  </td> 
-                </tr>
-                <tr>
-                  <th scope="row" style="--color: #E11A81">CSS</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="--color: #0172F0">JS</th>
-                  <td>
-                    32&nbsp;%
-                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
-                  </td>      
-                </tr>
-                <tr>
-                  <th scope="row" style="--color: #FDC02F">Json</th>
-                  <td>
-                    1&nbsp;%
-                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="--color: #39CA74">Images</th>
-                  <td>
-                    44&nbsp;%
-                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
-                  <td>
-                    17&nbsp;%
-                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
-                  </td>  
-                </tr>
-                <tr>
-                  <th scope="row" style="--color: #585462">Autres</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-        </section>
-          
         <!-- Step 4 -->
         <section class="slide">
-            <h2>Devenir donut<span aria-hidden="true">&nbsp;&#127849;</span></h2>
+            <h2>Devenir doughnut<span aria-hidden="true">&nbsp;&#127849;</span></h2>
             <p class="small">
                 Inspiré par <a href="https://codepen.io/thebabydino/pens/tags/?selected_tag=mask" hreflang="en">les expérimentations d’<cite>Ana Tudor</cite> avec <code>mask-*</code> sur CodePen</a>.
             </p>
@@ -1662,7 +1570,67 @@ tbody th::before {
             </table>
         </section>
         
-          
+        <!-- Step 4 -->
+        <section class="slide">
+            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+&lt;figure role="group">
+    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
+        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
+            &lt;dfn>Accessibilité&lt;/dfn>
+        &lt;/dt>
+        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
+            &lt;span>14&lt;/span>
+        &lt;/dd>
+    &lt;/dl>
+    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
+&lt;/figure>
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          <figure role="group">
+            <dl role="list" class="charts-radar" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
+                <dfn>Accessibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
+              </dd>
+              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
+                <dfn>Référencement</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
+              </dd>
+              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
+                <dfn>Performance</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
+              </dd>
+              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
+                <dfn>Compatibilité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
+              </dd>
+              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
+                <dfn>Sécurité</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
+              </dd>
+              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
+                <dfn>Qualité de code</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
+              </dd>
+              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
+                <dfn>Test</dfn>
+              </dt>
+              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
+              </dd>
+            </dl>
+            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
+          </figure>
+        </section>
         <section class="slide">
           <h2 lang="en">Show time<span aria-hidden="true">&nbsp;&#127881;</span></h2>
           <div class="Cmasque">
