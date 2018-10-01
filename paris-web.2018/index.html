@@ -63,14 +63,10 @@
             La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr> 
             et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
           </h2>
-          <div class="col-50">
-            <blockquote>
-              <p>
-                Le <abbr lang="en" title="HyperText Markup Language">HTML</abbr>, c’est la vie.<br />
-                Le <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>, aussi. En plus joli.
-              </p>
-            </blockquote>
-          </div>
+          <p>
+            Retrovuez les slides en ligne sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2018/">ffoodd.fr/paris-web.2018</a>.
+          </p>
           <footer class="table">
             <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
             <p class="col-50 col-t-right">
@@ -79,26 +75,6 @@
               </a>
             </p>
           </footer>
-        </section>
-
-        <section class="slide">
-          <h2>Préambule<span aria-hidden="true">&nbsp;&#128480;</span></h2>
-          <div class="Cmasque">
-            <h3>Les librairires</h3>
-            <p>
-              <a hreflang="en" lang="en" href="https://www.highcharts.com/">HighCharts</a> ou 
-              <a hreflang="en" lang="en" href="https://www.amcharts.com/">AmCharts</a> —&nbsp;pour ne citer qu’elles&nbsp;—
-              permettent moult choses, et sont le bon choix&nbsp;: 
-            </p>
-            <ul>
-              <li>si vous utilisez des <strong>sources de données dynamiques</strong>&nbsp;;</li>
-              <li>ou si vous visez des <strong>interactions complexes</strong>.</li>
-            </ul>
-            <p>
-              Pourtant en pensant «&nbsp;amélioration progressive&nbsp;», 
-              il est possible de s’en passer —&nbsp;et c’est vraiment amusant&nbsp;!
-            </p>
-          </div>
         </section>
         
         <section class="slide">
@@ -141,26 +117,6 @@
             <li>les <strong>tableaux de données</strong>, solution plébiscitée.</li>
           </ol>
           <p class="small">Et oui, ça sert à ça en vrai.</p>
-        </section>
-          
-        <section class="slide">
-          <h2>Le chantier<span aria-hidden="true">&nbsp;&#128119;</span></h2>
-          <p>
-            <abbr lang="en" title="Cascading StyleSheet" aria-label="Cascading StyleSheet">CSS</abbr> 
-            est notre boîte à outils.<span aria-hidden="true">&nbsp;&#128296;</span>
-          </p>
-          <ul>
-            <li><code>@supports</code>,</li>
-            <li>Propriétés personnalisées,</li>
-            <li><code>grid</code> avec <code>repeat()</code> et <code>minmax()</code>,</li>
-            <li><code>clip-path</code> et <code>polygon()</code>,</li>
-            <li><code>background-*</code> et <code>*-gradient</code>,</li>
-            <li><code>mask</code>.</li>
-          </ul>
-          <p class="Cmasque small">
-            Et pas mal de <code>calc()</code> 
-            —&nbsp;y compris de la trigonométrie…<span aria-hidden="true">&nbsp;&#8895;</span>
-          </p>
         </section>
           
         <!-- Step 1 -->
@@ -287,10 +243,6 @@
   td {
     border: 0;
     padding: 0;
-  }
-  
-  td:empty {
-    display: none;
   }
 }
   </code>
@@ -1408,7 +1360,6 @@ tbody th::before {
         overflow: hidden;
         transform: rotate(var(--position)) scale(.75);
         transform-origin: left center;
-        transition: transform .2s ease-in-out;
     }
 
     [role="presentation"]::before {
@@ -1897,7 +1848,7 @@ dd {
          
         <!-- Step 6 -->
         <section class="slide">
-            <h3>Un peu trigonométrie<span aria-hidden="true">&nbsp;&#8894;</span></h3>
+            <h3>Un peu de trigonométrie<span aria-hidden="true">&nbsp;&#8894;</span></h3>
             <p class="small">
                 Figurez-vous que <a hreflang="en" href="https://gist.github.com/stereokai/7666bfe93929b14c2dced148c79e0e97"><cite>Stereokai</cite> a implémenté plusieurs fonctions de trigonométrie</a>
                 pour calculer les <strong>sinus</strong>, cosinus et tangente d’un angle.
@@ -1971,15 +1922,9 @@ dd span {
           <h2>Interrupteur de styles<span aria-hidden="true">&nbsp;&#9745;</span></h2>
           <p>
               <cite>Adrian Roselli</cite> a découvert que <a hreflang="en" href="http://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">
-              tripatouiller le <code>display</code> des tableaux est du plus mauvais effet pour sa sémantique exposée.
-            </a>
+              tripatouiller le <code>display</code> des tableaux abime sa sémantique exposée</a>.
+             —&nbsp;c’est pourquoi j’implémente <a hreflang="en" href="https://inclusive-components.design/toggle-button/"> le composant inclusif du <em lang="en">toggle button</em></a> conçu par <cite>Heydon Pickering</cite> pour désactiver les styles à volonté.
           </p>
-          <p>
-            C’est pourquoi j’implémente <a hreflang="en" href="https://inclusive-components.design/toggle-button/">
-            le composant inclusif du <em lang="en">toggle button</em></a> conçu par <cite>Heydon Pickering</cite>
-            pour désactiver les styles à volonté.
-          </p>
-          <h3>Mon petit bout de JS</h3>
 <pre class="language-javascript">
   <code class="language-javascript">
 document.addEventListener( "DOMContentLoaded", function () {
@@ -2011,9 +1956,6 @@ document.addEventListener( "DOMContentLoaded", function () {
             <li class="Cmasque">
               les <code>shapes</code>, <code>regions</code> et <code>exclusions</code> pour explorer
               d’autres types de graphiques&nbsp;;
-            </li>
-            <li class="Cmasque">
-              des <strong>styles alternatifs</strong>, avec un moyen de permuter les styles ou les désactiver&nbsp;;
             </li>
             <li class="Cmasque">
               <strong>Houdini</strong>, un ensemble de spécifications du futur —&nbsp;jetez donc un œil aux 
