@@ -1965,12 +1965,37 @@ dd span {
             <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
           </figure>
         </section>
-         
              
         <!-- a11y -->  
         <section class="slide">
           <h2>Interrupteur de styles<span aria-hidden="true">&nbsp;&#9745;</span></h2>
+          <p>
+              <cite>Adrian Roselli</cite> a découvert que <a hreflang="en" href="http://adrianroselli.com/2018/02/tables-css-display-properties-and-aria.html">
+              tripatouiller le <code>display</code> des tableaux est du plus mauvais effet pour sa sémantique exposée.
+            </a>
+          </p>
+          <p>
+            C’est pourquoi j’implémente <a hreflang="en" href="https://inclusive-components.design/toggle-button/">
+            le composant inclusif du <em lang="en">toggle button</em></a> conçu par <cite>Heydon Pickering</cite>
+            pour désactiver les styles à volonté.
+          </p>
+          <h3>Mon petit bout de JS</h3>
+<pre class="language-javascript">
+  <code class="language-javascript">
+document.addEventListener( "DOMContentLoaded", function () {
+  var switches = document.querySelectorAll( '[role="switch"]' );
 
+  Array.prototype.forEach.call( switches, function( el, i ) {
+    el.addEventListener( 'click', function() {
+      var checked = this.getAttribute( 'aria-checked' ) === 'true' || false;
+      this.setAttribute( 'aria-checked', !checked );
+      
+      var chart = this.parentNode.nextElementSibling;
+      chart.classList.toggle( 'table-charts' );
+    });
+  });
+});</code>
+</pre>
         </section>
           
         <section class="slide">
@@ -1989,6 +2014,10 @@ dd span {
             </li>
             <li class="Cmasque">
               des <strong>styles alternatifs</strong>, avec un moyen de permuter les styles ou les désactiver&nbsp;;
+            </li>
+            <li class="Cmasque">
+              <strong>Houdini</strong>, un ensemble de spécifications du futur —&nbsp;jetez donc un œil aux 
+              <a hreflang="en" href="https://css-houdini.rocks/">essais de <cite>Vincent De Oliveira</cite></a>&nbsp;;
             </li>
             <li class="Cmasque">et probablement beaucoup d’autres idées et techniques à découvrir…</li>
           </ul>

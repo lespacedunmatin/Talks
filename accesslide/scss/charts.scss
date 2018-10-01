@@ -305,7 +305,9 @@ pre code[class*="language-"] {
 
             th {
               &::after {
-                background: palette( default, contrast );
+                background-color: palette( default, contrast );
+                background-image: url( map-get( $patterns, 'stripes' ) );
+                background-blend-mode: exclusion;
                 bottom: $gutter * 4;
                 content: "";
                 height: calc(100% - #{$gutter * 4});
@@ -324,7 +326,7 @@ pre code[class*="language-"] {
               }
 
               &:hover::after {
-                opacity: .5;
+                opacity: .75;
               }
             }
         }
@@ -401,7 +403,7 @@ pre code[class*="language-"] {
               }
 
               &::after {
-                mix-blend-mode: difference;
+                mix-blend-mode: multiply;
               }
 
               &:hover {
@@ -410,7 +412,7 @@ pre code[class*="language-"] {
                 }
 
                 &::after {
-                  opacity: .05;
+                  opacity: .5;
                 }
               }
             }
