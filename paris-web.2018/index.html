@@ -11,7 +11,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
   <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css" type="text/css" media="screen">
-  <link rel="stylesheet" href="../accesslide/css/charts.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?3" type="text/css" media="screen">
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
@@ -138,6 +138,7 @@
         &lt;span>2980&nbsp;ms&lt;/span>
       &lt;/td>
     &lt;/tr>
+    &lt;tr>[…]&lt;/tr>
   &lt;/tbody>
 &lt;/table>
   </code>
@@ -540,12 +541,10 @@ td span {
 <pre class="language-css">
   <code class="language-css">
 td {
-  --size: calc(var(--scale, 100) * 100%);
-  --position: calc(var(--value, 0) / var(--scale, 100) * 100%);
   background-blend-mode: hard-light;
   background-color: transparent;
-  background-position: var(--position) 0%, center;
-  background-size:  var(--size) 100%, contain;
+  background-position: calc(var(--value, 0) / var(--scale, 100) * 100%) 0%, center;
+  background-size: calc(var(--scale, 100) * 100%) 100%, contain;
 }
 
 tr:nth-child(5n+5) td {
@@ -2071,7 +2070,14 @@ document.addEventListener( "DOMContentLoaded", function () {
           <h2>Conclusion</h2>
           <p>Les avantages sont multiples —&nbsp;tout comme les inconvénients&nbsp;:</p>
           <ul>
-            <li><strong>pas de JavaScript</strong>&nbsp;: on économise une requête et une adhérence technique&nbsp;;</li>
+            <li>
+              <strong>pas de JavaScript pour l’aspect graphique</strong>&nbsp;: 
+              on économise une requête conséquente et une adhérence technique&nbsp;;
+            </li>
+            <li>
+              mais <strong>une portion de JavaScript est requise</strong> 
+              pour l’accessibilité, afin de permettre de désactiver les styles&nbsp;;
+            </li>
             <li>le <strong>balisage</strong> est libre et maîtrisable&nbsp;;</li>
             <li>
               <strong>grâce à CSS</strong>, <abbr lang="en" title="responsive WebDesign" aria-label="Responsive WebDesign">RWD</abbr>,
