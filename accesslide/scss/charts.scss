@@ -3,9 +3,16 @@
 /* ==================== */
 @import "sseeeedd-func";
 @import "sseeeedd-vars";
+@import "switch";
 
 .pl-5 {
   padding-left: 5rem;
+}
+
+.fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body > :not(.modeplan) .slide {
