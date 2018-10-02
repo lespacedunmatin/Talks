@@ -15,8 +15,21 @@
   justify-content: center;
 }
 
+.illustration[role="group"] {
+  margin: $gutter * 3 auto;
+  max-width: min-content;
+  
+  img {
+    max-width: none;
+  }
+}
+
 body > :not(.modeplan) .slide {
-    overflow:hidden !important;
+    overflow: hidden !important;
+    
+    &[id="white-slide"] {
+      background: palette( default, contrast );
+    }
 }
 
 /* ==================== */
