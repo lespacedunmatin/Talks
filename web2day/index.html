@@ -844,89 +844,64 @@ tr:nth-of-type(5) td {
             <h2>Un diagramme linéaire<span aria-hidden="true">&nbsp;&#128480;</span></h2>
 <pre class="language-markup">
   <code class="language-markup">
-&lt;table style="--y: 32; --x: 12; --1: 8; --2: 6; --3: 9;">
-    &lt;caption>Température mensuelle moyenne en 2017&lt;/caption>
-    &lt;thead>
-        &lt;tr>
-            &lt;th scope="row">Mois&lt;/th>
-            &lt;th scope="col">Jan.&lt;/th>
-        &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-        &lt;tr>
-            &lt;th scope="row" class="sr-only">Température&lt;/th> 
-            &lt;td style="--value: 8">
-                &lt;span>8&nbsp;°C&lt;/span>
-            &lt;/td>
-        &lt;/tr>
-    &lt;/tbody>
-&lt;/table>
-  </code>
+&lt;table style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; […]">
+  &lt;caption>Température mensuelle moyenne en 2017&lt;/caption>
+  &lt;thead>
+    &lt;tr>
+      &lt;th scope="col">Année&lt;/th>
+      &lt;th scope="col">Jan.&lt;/th>
+      &lt;th scope="col">[…]&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+      &lt;th scope="row">2017&lt;/th>
+      &lt;td>8 °C&lt;/td>
+      &lt;td>[…]&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
 </pre>
         </section>   
         <section class="slide">
           <h3>Le tableau linéaire<span aria-hidden="true">&nbsp;&#8863;</span></h3>
-          <table class="table-ffoodd table-charts line" style="--y: 32; --x: 12; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
-            <caption>Température mensuelle moyenne en 2017</caption>
-            <thead>
-              <tr>
-                <th scope="row" class="sr-only">Mois</th>
-                <th scope="col">Jan.</th>
-                <th scope="col">Fév.</th>
-                <th scope="col">Mars</th>
-                <th scope="col">Avr.</th>
-                <th scope="col">Mai</th>
-                <th scope="col">Juin</th>
-                <th scope="col">Juil.</th>
-                <th scope="col">Août</th>
-                <th scope="col">Sep.</th>
-                <th scope="col">Oct.</th>
-                <th scope="col">Nov.</th>
-                <th scope="col">Déc.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                  <th scope="row" class="sr-only">Température</th> 
-                  <td style="--value: 8">
-                    <span>8&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 6">
-                    <span>6&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 12">
-                    <span>12&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 15">
-                    <span>15&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 21">
-                    <span>21&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 24">
-                    <span>24&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 25">
-                    <span>25&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 22">
-                    <span>22&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>        
-                  <td style="--value: 19">
-                    <span>19&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 14">
-                    <span>14&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>       
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
+          <table class="table-ffoodd table-charts line" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
         </section>
           
         <!-- Step 2 -->
@@ -939,79 +914,54 @@ table {
 }
         
 table::after {
-  --scale: calc(100% / var(--y));
+  --scale: calc( ( 100% - ( var(--y) * 1px) ) / var(--y) );
   background-image: repeating-linear-gradient(
       to bottom, 
       white, 
       white var(--scale), 
       rgba(0, 0, 0, .25) calc(var(--scale) + .25rem)
   );
-}
-  </code>
+}</code>
 </pre>
         </section>   
         <section class="slide">
-          <table class="table-ffoodd table-charts line step-1" style="--y: 32; --x: 12; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
-            <caption>Température mensuelle moyenne en 2017</caption>
-            <thead>
-              <tr>
-                <th scope="row" class="sr-only">Mois</th>
-                <th scope="col">Jan.</th>
-                <th scope="col">Fév.</th>
-                <th scope="col">Mars</th>
-                <th scope="col">Avr.</th>
-                <th scope="col">Mai</th>
-                <th scope="col">Juin</th>
-                <th scope="col">Juil.</th>
-                <th scope="col">Août</th>
-                <th scope="col">Sep.</th>
-                <th scope="col">Oct.</th>
-                <th scope="col">Nov.</th>
-                <th scope="col">Déc.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                  <th scope="row" class="sr-only">Température</th> 
-                  <td style="--value: 8">
-                    <span>8&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 6">
-                    <span>6&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 12">
-                    <span>12&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 15">
-                    <span>15&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 21">
-                    <span>21&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 24">
-                    <span>24&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 25">
-                    <span>25&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 22">
-                    <span>22&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>        
-                  <td style="--value: 19">
-                    <span>19&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 14">
-                    <span>14&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>       
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
+          <table class="table-ffoodd table-charts line step-1" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
         </section>
           
         <!-- Step 3 -->
@@ -1019,153 +969,302 @@ table::after {
             <h3>Un tracé<span aria-hidden="true">&nbsp;&#128393;</span></h3>
 <pre class="language-css">
   <code class="language-css">
-@supports (clip-path: polygon(0% calc(100% - (var(--1) * 100% / var(--y))))) {
-    table::before {
+@supports (clip-path: polygon(0% calc( 100% - ( var(--1) * 100% / var(--y))))) {
+    table {
         --offset: calc((100% / var(--x)) / 2);
+    }
+    
+    table [style]::before {
         background: linear-gradient(to top, blue, red 75%);
         clip-path: polygon(
-            0% calc(100% - (var(--1) / var(--y) * 100%)),
-            var(--offset) calc(100% - (var(--1) / var(--y) * 100%)),
-            calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
-            calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--3) / var(--y) * 100%)),
+            0% 100%,
+            calc((100% / var(--x) * 1)) 100%,
+            calc((100% / var(--x) * 1)) calc(100% - (var(--1) / var(--y) * 100%)),
+            calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--1) / var(--y) * 100%)),
+            calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
             100% calc(100% - (var(--12) / var(--y) * 100%)),
             100% 100%,
             0% 100%
         );
     }
+}</code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts line step-1 step-2" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+          
+          <!-- Step 3 : tooltip -->
+        <section class="slide">
+            <h3>Un tracé<span aria-hidden="true">&nbsp;&#128393;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+td {
+    --value: var(--1);
+    --term: var(--t-1);
+    --top: calc((var(--height) - (var(--value) / var(--y) * 100%)));
 }
+
+td::after {
+    counter-reset: value var(--value);
+    content: var(--term) " " var(--year) "\A " counter(value) "\A0°C";
+    will-change: opacity, transform;
+    white-space: pre;
+}</code>
+</pre>
+        </section>   
+        <section class="slide">
+          <table class="table-ffoodd table-charts line step-1 step-2 step-3" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+          
+        <!-- Step 5 : points -->
+        <section class="slide">
+           <table class="table-ffoodd table-charts line step-1 step-2 step-3 points" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+          
+        <!-- Step 6 : multiples -->
+        <section class="slide">
+           <table class="table-ffoodd table-charts line step-1 step-2 step-3 points multiple" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+      <caption>Température mensuelle moyenne en 2017</caption>
+      <thead>
+        <tr>
+          <th scope="col">Année</th>
+          <th scope="col">Jan.</th>
+          <th scope="col">Fév.</th>
+          <th scope="col">Mars</th>
+          <th scope="col">Avr.</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Juin</th>
+          <th scope="col">Juil.</th>
+          <th scope="col">Août</th>
+          <th scope="col">Sep.</th>
+          <th scope="col">Oct.</th>
+          <th scope="col">Nov.</th>
+          <th scope="col">Déc.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+          <th scope="row">2017</th>
+          <td>8&nbsp;°C</td>
+          <td>6&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+          <td>12&nbsp;°C</td>
+          <td>15&nbsp;°C</td>
+          <td>21&nbsp;°C</td>
+          <td>24&nbsp;°C</td>
+          <td>25&nbsp;°C</td>
+          <td>22&nbsp;°C</td>
+          <td>19&nbsp;°C</td>
+          <td>14&nbsp;°C</td>
+          <td>9&nbsp;°C</td>
+        </tr>
+      </tbody>
+    </table>
+        </section>
+          
+        <!-- Step 1 -->
+        <section class="slide">
+            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
+<pre class="language-markup">
+  <code class="language-markup">
+@todo
   </code>
 </pre>
         </section>   
         <section class="slide">
-          <table class="table-ffoodd table-charts line step-1 step-2" style="--y: 32; --x: 12; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
-            <caption>Température mensuelle moyenne en 2017</caption>
-            <thead>
-              <tr>
-                <th scope="row" class="sr-only">Mois</th>
-                <th scope="col">Jan.</th>
-                <th scope="col">Fév.</th>
-                <th scope="col">Mars</th>
-                <th scope="col">Avr.</th>
-                <th scope="col">Mai</th>
-                <th scope="col">Juin</th>
-                <th scope="col">Juil.</th>
-                <th scope="col">Août</th>
-                <th scope="col">Sep.</th>
-                <th scope="col">Oct.</th>
-                <th scope="col">Nov.</th>
-                <th scope="col">Déc.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                  <th scope="row" class="sr-only">Température</th> 
-                  <td style="--value: 8">
-                    <span>8&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 6">
-                    <span>6&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 12">
-                    <span>12&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 15">
-                    <span>15&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 21">
-                    <span>21&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 24">
-                    <span>24&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 25">
-                    <span>25&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 22">
-                    <span>22&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>        
-                  <td style="--value: 19">
-                    <span>19&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 14">
-                    <span>14&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>       
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
+@todo
+        </section>
+          
+        <!-- Step 2 -->
+        <section class="slide">
+            <h3>Étalonnage<span aria-hidden="true">&nbsp;&#128907;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+@todo
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+ @todo
+        </section>
+          
+        <!-- Step 3 -->
+        <section class="slide">
+            <h3>Encerclement<span aria-hidden="true">&nbsp;&#128158;</span></h3>
+            <p class="small">
+                Basé sur <a hreflang="en" href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">une explication d’<cite>Ana Tudor</cite></a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+@todo
+</code>
+</pre>
+        </section>   
+        <section class="slide">
+@todo
         </section>
           
         <!-- Step 4 -->
         <section class="slide">
-          <table class="table-ffoodd table-charts line step-1 step-2 points" style="--y: 32; --x: 12; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
-            <caption>Température mensuelle moyenne en 2017</caption>
-            <thead>
-              <tr>
-                <th scope="row" class="sr-only">Mois</th>
-                <th scope="col">Jan.</th>
-                <th scope="col">Fév.</th>
-                <th scope="col">Mars</th>
-                <th scope="col">Avr.</th>
-                <th scope="col">Mai</th>
-                <th scope="col">Juin</th>
-                <th scope="col">Juil.</th>
-                <th scope="col">Août</th>
-                <th scope="col">Sep.</th>
-                <th scope="col">Oct.</th>
-                <th scope="col">Nov.</th>
-                <th scope="col">Déc.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                  <th scope="row" class="sr-only">Température</th> 
-                  <td style="--value: 8">
-                    <span>8&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 6">
-                    <span>6&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 12">
-                    <span>12&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 15">
-                    <span>15&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 21">
-                    <span>21&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 24">
-                    <span>24&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 25">
-                    <span>25&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 22">
-                    <span>22&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>        
-                  <td style="--value: 19">
-                    <span>19&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td> 
-                  <td style="--value: 14">
-                    <span>14&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>       
-                  <td style="--value: 9">
-                    <span>9&nbsp;<abbr title="Degré Celsius" aria-label="Degré Celsius">°C</abbr></span>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
+            <h3>Placer les points<span aria-hidden="true">&nbsp;&#9862;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+@todo
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+          @todo
         </section>
-          
+         
+        <!-- Step 5 -->
+        <section class="slide">
+            <h3>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h3>
+            <p class="small">
+                Détournement d’<a hreflang="en" href="https://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/">une technique publiée par <cite>Sara Soueidan</cite> sur Codrops</a>.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+  @todo
+</code>
+</pre>
+        </section>   
+        <section class="slide">
+     @todo
+        </section>
+         
+        <!-- Step 6 -->
+        <section class="slide">
+          <h3 lang="en">Houston<span aria-hidden="true">&nbsp;&#128225;</span></h3>
+          <figure role="group" class="illustration">
+            <img src="img_slide/hypothénuse.png" alt="" width="333" height="243" />
+            <figcaption class="small">Illustration de la déformation du carré par la valeur <code>skew()</code></figcaption>
+          </figure>
+        </section>
+        <section class="slide">
+            <h3>Un peu de trigonométrie<span aria-hidden="true">&nbsp;&#8894;</span></h3>
+            <p class="small">
+                Figurez-vous que <a hreflang="en" href="https://gist.github.com/stereokai/7666bfe93929b14c2dced148c79e0e97"><cite>Stereokai</cite> a implémenté plusieurs fonctions de trigonométrie</a>
+                pour calculer les <strong>sinus</strong>, cosinus et tangente d’un angle.
+            </p>
+<pre class="language-css">
+  <code class="language-css">
+@todo
+  </code>
+</pre>
+        </section>   
+        <section class="slide">
+@todo
+        </section>
         
         <!-- Step 1 -->
         <section class="slide">
@@ -1173,24 +1272,21 @@ table::after {
 <pre class="language-markup">
   <code class="language-markup">
 &lt;table>
-    &lt;caption>Répartition du poids des ressources pour ffoodd.fr&lt;/caption>
-    &lt;thead>
-        &lt;tr>
-            &lt;th scope="col">Ressource&lt;/th>
-            &lt;th scope="col">Proportion&lt;/th>
-        &lt;/tr>
-    &lt;/thead>
-    &lt;tbody>
-        &lt;tr style="--color: #734BF9">
-            &lt;th scope="row">HTML&lt;/th> 
-            &lt;td>
-                2&nbsp;%
-                &lt;span role="presentation" style="--value: 2; --start: 0;">&lt;/span>
-            &lt;/td>
-        &lt;/tr>
-    &lt;/tbody>
-&lt;/table>
-  </code>
+  &lt;caption>Répartition du poids des ressources pour ffoodd.fr&lt;/caption>
+  &lt;thead class="sr-only">
+    &lt;tr>
+      &lt;th scope="col">Ressource&lt;/th>
+      &lt;th scope="col">Proportion&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr style="--color: #734bf9">
+      &lt;th scope="row">HTML&lt;/th>
+      &lt;td style="--value: 2; --start: 0; ">2 %&lt;/td>
+    &lt;/tr>
+    &lt;tr>[…]&lt;/tr>
+  &lt;/tbody>
+&lt;/table></code>
 </pre>
         </section>   
         <section class="slide">
@@ -1203,54 +1299,33 @@ table::after {
               </tr>
             </thead>
             <tbody>
-                <tr>
-                  <th scope="row" style="--color: #734BF9">HTML</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
-                  </td> 
+                <tr style="--color: #734BF9">
+                  <th scope="row">HTML</th>
+                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #E11A81">CSS</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
-                  </td>
+                <tr style="--color: #E11A81">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #0172F0">JS</th>
-                  <td>
-                    32&nbsp;%
-                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
-                  </td>      
+                <tr style="--color: #0172F0">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FDC02F">Json</th>
-                  <td>
-                    1&nbsp;%
-                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
-                  </td>
+                <tr style="--color: #FDC02F">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #39CA74">Images</th>
-                  <td>
-                    44&nbsp;%
-                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
-                  </td>
+                <tr style="--color: #39CA74">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
-                  <td>
-                    17&nbsp;%
-                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
-                  </td>  
+                <tr style="--color: #FF2D40">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #585462">Autres</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
-                  </td>
+                <tr style="--color: #585462">
+                  <th scope="row">Autres</th>
+                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
@@ -1269,7 +1344,7 @@ tbody tr {
     display: table-cell;
 }
 
-tbody th::before {
+tbody [scope="row"]::before {
     background: var(--color, currentColor);
     content: "";
     display: inline-block;
@@ -1290,54 +1365,33 @@ tbody th::before {
               </tr>
             </thead>
             <tbody>
-                <tr>
-                  <th scope="row" style="--color: #734BF9">HTML</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
-                  </td> 
+                <tr style="--color: #734BF9">
+                  <th scope="row">HTML</th>
+                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #E11A81">CSS</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
-                  </td>
+                <tr style="--color: #E11A81">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #0172F0">JS</th>
-                  <td>
-                    32&nbsp;%
-                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
-                  </td>      
+                <tr style="--color: #0172F0">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FDC02F">Json</th>
-                  <td>
-                    1&nbsp;%
-                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
-                  </td>
+                <tr style="--color: #FDC02F">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #39CA74">Images</th>
-                  <td>
-                    44&nbsp;%
-                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
-                  </td>
+                <tr style="--color: #39CA74">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
-                  <td>
-                    17&nbsp;%
-                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
-                  </td>  
+                <tr style="--color: #FF2D40">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #585462">Autres</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
-                  </td>
+                <tr style="--color: #585462">
+                  <th scope="row">Autres</th>
+                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
@@ -1346,28 +1400,9 @@ tbody th::before {
         <!-- Step 3 -->
         <section class="slide">
             <h3>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h3>
-            <p class="small">
-                Basé sur <a hreflang="en" href="https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/">un article de <cite>Léa Verou</cite> sur Smashing Magazine</a>.
-            </p>
 <pre class="language-css">
   <code class="language-css">
-@supports (--position: calc(var(--start, 0) * .01turn)) {
-    [role="presentation"] {
-        --position: calc(var(--start, 0) * .01turn);
-        clip-path: circle(50% at 0% 50%);
-        overflow: hidden;
-        transform: rotate(var(--position)) scale(.75);
-        transform-origin: left center;
-    }
-
-    [role="presentation"]::before {
-        --position: calc(var(--value, 0) * .01turn + 1deg);
-        background-color: var(--color, currentColor);
-        content: "";
-        transform: rotate(var(--position));
-        transform-origin: right center;
-    }
-}
+@todo
   </code>
 </pre>
         </section>   
@@ -1381,54 +1416,33 @@ tbody th::before {
               </tr>
             </thead>
             <tbody>
-                <tr>
-                  <th scope="row" style="--color: #734BF9">HTML</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
-                  </td> 
+                <tr style="--color: #734BF9">
+                  <th scope="row">HTML</th>
+                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #E11A81">CSS</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
-                  </td>
+                <tr style="--color: #E11A81">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #0172F0">JS</th>
-                  <td>
-                    32&nbsp;%
-                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
-                  </td>      
+                <tr style="--color: #0172F0">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FDC02F">Json</th>
-                  <td>
-                    1&nbsp;%
-                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
-                  </td>
+                <tr style="--color: #FDC02F">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #39CA74">Images</th>
-                  <td>
-                    44&nbsp;%
-                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
-                  </td>
+                <tr style="--color: #39CA74">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
-                  <td>
-                    17&nbsp;%
-                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
-                  </td>  
+                <tr style="--color: #FF2D40">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #585462">Autres</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
-                  </td>
+                <tr style="--color: #585462">
+                  <th scope="row">Autres</th>
+                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
@@ -1466,460 +1480,36 @@ tbody th::before {
               </tr>
             </thead>
             <tbody>
-                <tr>
-                  <th scope="row" style="--color: #734BF9">HTML</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 0; --color: #734BF9"></span>
-                  </td> 
+                <tr style="--color: #734BF9">
+                  <th scope="row">HTML</th>
+                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #E11A81">CSS</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 2; --color: #E11A81"></span>
-                  </td>
+                <tr style="--color: #E11A81">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #0172F0">JS</th>
-                  <td>
-                    32&nbsp;%
-                    <span role="presentation" style="--value: 32; --start: 4; --color: #0172F0"></span>
-                  </td>      
+                <tr style="--color: #0172F0">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FDC02F">Json</th>
-                  <td>
-                    1&nbsp;%
-                    <span role="presentation" style="--value: 1; --start: 36; --color: #FDC02F"></span>
-                  </td>
+                <tr style="--color: #FDC02F">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #39CA74">Images</th>
-                  <td>
-                    44&nbsp;%
-                    <span role="presentation" style="--value: 44; --start: 37; --color: #39CA74"></span>
-                  </td>
+                <tr style="--color: #39CA74">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #FF2D40">Webfonts</th>
-                  <td>
-                    17&nbsp;%
-                    <span role="presentation" style="--value: 17; --start: 81; --color: #FF2D40"></span>
-                  </td>  
+                <tr style="--color: #FF2D40">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
                 </tr>
-                <tr>
-                  <th scope="row" style="--color: #585462">Autres</th>
-                  <td>
-                    2&nbsp;%
-                    <span role="presentation" style="--value: 2; --start: 98; --color: #585462"></span>
-                  </td>
+                <tr style="--color: #585462">
+                  <th scope="row">Autres</th>
+                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
-        </section>
-        
-        <!-- Step 1 -->
-        <section class="slide">
-            <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
-<pre class="language-markup">
-  <code class="language-markup">
-&lt;figure role="group">
-    &lt;dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --8: var(--1);">
-        &lt;dt role="term listitem" id="def_a11y" data-value="14" data-scale="20">
-            &lt;dfn>Accessibilité&lt;/dfn>
-        &lt;/dt>
-        &lt;dd role="definition listitem" aria-labelledby="def_a11y" data-scale="20">
-            &lt;span>14&lt;/span>
-        &lt;/dd>
-    &lt;/dl>
-    &lt;figcaption>Niveau d’intérêt par domaine, sur 20&lt;/figcaption>
-&lt;/figure>
-  </code>
-</pre>
-        </section>   
-        <section class="slide">
-          <figure role="group">
-            <dl role="list" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
-                <dfn>Accessibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
-              </dd>
-              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
-                <dfn>Référencement</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
-              </dd>
-              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
-                <dfn>Performance</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
-              </dd>
-              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
-                <dfn>Compatibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
-              </dd>
-              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
-                <dfn>Sécurité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
-              </dd>
-              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
-                <dfn>Qualité de code</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
-              </dd>
-              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
-                <dfn>Test</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
-              </dd>
-            </dl>
-            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
-          </figure>
-        </section>
-          
-        <!-- Step 2 -->
-        <section class="slide">
-            <h3>Étalonnage<span aria-hidden="true">&nbsp;&#128907;</span></h3>
-<pre class="language-css">
-  <code class="language-css">
-dl {
-    --radius: 10em;
-    --size: calc( var(--radius) / var(--scale) );
-    background-image:
-    repeating-radial-gradient(
-      circle at 50%, black, black 2px, white 2px, white calc(var(--size) * var(--step))
-    ),
-    repeating-radial-gradient(
-      circle at 50%, grey, grey 2px, white 2px, white var(--size)
-    );
-    border-radius: 50%;
-    height: calc( var(--radius) * 2 );
-    width: calc( var(--radius) * 2 );
-}
-  </code>
-</pre>
-        </section>   
-        <section class="slide">
-          <figure role="group">
-            <dl role="list" class="charts-radar" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
-                <dfn>Accessibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
-              </dd>
-              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
-                <dfn>Référencement</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
-              </dd>
-              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
-                <dfn>Performance</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
-              </dd>
-              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
-                <dfn>Compatibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
-              </dd>
-              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
-                <dfn>Sécurité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
-              </dd>
-              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
-                <dfn>Qualité de code</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
-              </dd>
-              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
-                <dfn>Test</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
-              </dd>
-            </dl>
-            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
-          </figure>
-        </section>
-          
-        <!-- Step 3 -->
-        <section class="slide">
-            <h3>Encerclement<span aria-hidden="true">&nbsp;&#128158;</span></h3>
-            <p class="small">
-                Basé sur <a hreflang="en" href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">une explication d’<cite>Ana Tudor</cite></a>.
-            </p>
-<pre class="language-css">
-  <code class="language-css">
-dl {
-    --part: calc( 360deg / var(--items) );
-}
-
-dt {
-    --away: calc( (var(--radius) * -1) - 50% );
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform:
-      translate3d(-50%, -50%, 0)
-      rotate( calc(var(--part) * var(--index, 1)) )
-      translate( var(--away) )
-      rotate( calc(var(--part) * var(--index, 1) * -1) );
-}
-
-dt::after {
-    content: attr(data-value) "\A0/\A0" attr(data-scale);
-}
-</code>
-</pre>
-        </section>   
-        <section class="slide">
-          <figure role="group">
-            <dl role="list" class="charts-radar step-1" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
-                <dfn>Accessibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
-              </dd>
-              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
-                <dfn>Référencement</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
-              </dd>
-              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
-                <dfn>Performance</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
-              </dd>
-              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
-                <dfn>Compatibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
-              </dd>
-              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
-                <dfn>Sécurité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
-              </dd>
-              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
-                <dfn>Qualité de code</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
-              </dd>
-              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
-                <dfn>Test</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
-              </dd>
-            </dl>
-            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
-          </figure>
-        </section>
-          
-        <!-- Step 4 -->
-        <section class="slide">
-            <h3>Placer les points<span aria-hidden="true">&nbsp;&#9862;</span></h3>
-<pre class="language-css">
-  <code class="language-css">
-dd:nth-of-type(2) span {
-    --pos: calc( 100% - (var(--3) * 100% / (var(--scale) ) ) );
-    background: linear-gradient( to top left, rebeccapurple 10%, indigo 75% );
-    clip-path: polygon(
-        100% var(--pos),
-        calc( 100% - ( var(--2) * 100% / var(--scale) ) ) 100%,
-        100% 100%
-    );
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-  </code>
-</pre>
-        </section>   
-        <section class="slide">
-          <figure role="group">
-            <dl role="list" class="charts-radar step-1 step-2" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
-                <dfn>Accessibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
-              </dd>
-              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
-                <dfn>Référencement</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
-              </dd>
-              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
-                <dfn>Performance</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
-              </dd>
-              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
-                <dfn>Compatibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
-              </dd>
-              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
-                <dfn>Sécurité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
-              </dd>
-              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
-                <dfn>Qualité de code</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
-              </dd>
-              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
-                <dfn>Test</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
-              </dd>
-            </dl>
-            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
-          </figure>
-        </section>
-         
-        <!-- Step 5 -->
-        <section class="slide">
-            <h3>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h3>
-            <p class="small">
-                Détournement d’<a hreflang="en" href="https://tympanus.net/codrops/2013/08/09/building-a-circular-navigation-with-css-transforms/">une technique publiée par <cite>Sara Soueidan</cite> sur Codrops</a>.
-            </p>
-<pre class="language-css">
-  <code class="language-css">
-dd {
-    --skew: calc( 90deg - var(--part) );
-    border-bottom: 1px solid rebeccapurple;
-    transform:
-        rotate( calc(var(--part) * var(--index, 1)) )
-        skew( var(--skew) );
-    transform-origin: 100% 100%;
-}
-  </code>
-</pre>
-        </section>   
-        <section class="slide">
-          <figure role="group">
-            <dl role="list" class="charts-radar step-1 step-2 step-3" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
-                <dfn>Accessibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
-              </dd>
-              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
-                <dfn>Référencement</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
-              </dd>
-              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
-                <dfn>Performance</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
-              </dd>
-              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
-                <dfn>Compatibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
-              </dd>
-              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
-                <dfn>Sécurité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
-              </dd>
-              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
-                <dfn>Qualité de code</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
-              </dd>
-              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
-                <dfn>Test</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
-              </dd>
-            </dl>
-            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
-          </figure>
-        </section>
-         
-        <!-- Step 6 -->
-        <section class="slide">
-          <h3 lang="en">Houston<span aria-hidden="true">&nbsp;&#128225;</span></h3>
-          <figure role="group" class="illustration">
-            <img src="img_slide/hypothénuse.png" alt="" width="333" height="243" />
-            <figcaption class="small">Illustration de la déformation du carré par la valeur <code>skew()</code></figcaption>
-          </figure>
-        </section>
-        <section class="slide">
-            <h3>Un peu de trigonométrie<span aria-hidden="true">&nbsp;&#8894;</span></h3>
-            <p class="small">
-                Figurez-vous que <a hreflang="en" href="https://gist.github.com/stereokai/7666bfe93929b14c2dced148c79e0e97"><cite>Stereokai</cite> a implémenté plusieurs fonctions de trigonométrie</a>
-                pour calculer les <strong>sinus</strong>, cosinus et tangente d’un angle.
-            </p>
-<pre class="language-css">
-  <code class="language-css">
-dd span {
-    --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
-    /* get opposite angle in radians */
-    --angle: calc( var(--opposite) * 0.01745329251 );
-    /* calc() sin, dark wizardry! */
-    --sin-term1: var(--angle);
-    --sin-term2: calc((var(--angle) * var(--angle) * var(--angle)) / 6);
-    --sin-term3: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 120);
-    --sin-term4: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 5040);
-    --sin-term5: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 362880);
-    --sin: calc(var(--sin-term1) - var(--sin-term2) + var(--sin-term3) - var(--sin-term4) + var(--sin-term5));
-    /* calc() hypothenuse: initial width / opposite angle's sinus */
-    --hypo: calc( var(--unitless-radius) / var(--sin) );
-    /* get the ratio: skewed / initial width */
-    --ratio: calc( var(--hypo) / var(--unitless-radius) );
-}
-  </code>
-</pre>
-        </section>   
-        <section class="slide">
-          <figure role="group">
-            <dl role="list" class="charts-radar step-1 step-2 step-3 step-4" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-              <dt role="term listitem" id="def_accessibilite" data-value="14" data-scale="20">
-                <dfn>Accessibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_accessibilite" data-scale="20">       <span>14</span>
-              </dd>
-              <dt role="term listitem" id="def_referencement" data-value="11" data-scale="20">
-                <dfn>Référencement</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_referencement" data-scale="20">       <span>11</span>
-              </dd>
-              <dt role="term listitem" id="def_performance" data-value="13" data-scale="20">
-                <dfn>Performance</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_performance" data-scale="20">         <span>13</span>
-              </dd>
-              <dt role="term listitem" id="def_compatibilite" data-value="16" data-scale="20">
-                <dfn>Compatibilité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_compatibilite" data-scale="20">       <span>16</span>
-              </dd>
-              <dt role="term listitem" id="def_securite" data-value="10" data-scale="20">
-                <dfn>Sécurité</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_securite" data-scale="20">           <span>10</span>
-              </dd>
-              <dt role="term listitem" id="def_qualite-de-code" data-value="12" data-scale="20">
-                <dfn>Qualité de code</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_qualite-de-code" data-scale="20">     <span>12</span>
-              </dd>
-              <dt role="term listitem" id="def_test" data-value="4" data-scale="20">
-                <dfn>Test</dfn>
-              </dt>
-              <dd role="definition listitem" aria-labelledby="def_test" data-scale="20">               <span>4</span>
-              </dd>
-            </dl>
-            <figcaption>Niveau d’intérêt par domaine, sur 20</figcaption>
-          </figure>
         </section>
              
         <!-- a11y -->  
