@@ -112,6 +112,7 @@ pre code[class*="language-"] {
 
 .table-charts {
   caption-side: bottom;
+  contain: content;
   empty-cells: hide;
   margin: 1.5em auto;
   overflow: hidden;
