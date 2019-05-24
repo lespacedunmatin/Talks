@@ -92,9 +92,8 @@ pre code[class*="language-"] {
 /* ==================== */
 /* == Charts
 /* ==================== */
-
 [class*="charts"] {
-  dd[role="presentation"] {
+  [role="presentation"] {
     display: none;
   }
 
@@ -918,7 +917,7 @@ table:not(.table-charts) .sr-only {
             }
         }
           
-      &.step-4 {
+        &.step-4 {
           span {
             --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
             // get opposite angle in radians
