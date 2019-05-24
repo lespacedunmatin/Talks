@@ -761,7 +761,7 @@ table:not(.table-charts) .sr-only {
       }
 
       &.radar {
-        --radius: 20rem;
+        --radius: 14rem;
         --unitless-radius: calc( 1024 / 16 / 5 );
         --size: calc( var(--radius) / var(--scale) );
         --part: calc( 360deg / var(--items) );
@@ -826,7 +826,31 @@ table:not(.table-charts) .sr-only {
               --index: #{$number};
             }
           }
-
+            
+        [scope="col"] {
+            &::after {
+              color: palette( accent );
+              display: block;
+              font-size: small;
+              font-weight: 400;
+            }
+        
+            /**
+             * 1.
+             * @note Display CSS integers custom properties with a trick using counters
+             * @author Cassie Evans
+             * @link https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab
+             */
+            @each $number in 1, 2, 3, 4, 5, 6, 7 {
+              &:nth-child(#{$number})::after {
+                counter-reset: value var(--#{$number});           /* 1 */
+                content: counter(value) "\A0/\A0" counter(scale); /* 1 */
+              }
+            }
+          }
+        }
+          
+        &.step-2 {
           /**
            * This is quite sophisticated, we're mixing multiple techniques
            *
@@ -852,10 +876,6 @@ table:not(.table-charts) .sr-only {
             margin: 0;
             position: absolute;
             top: 0;
-            transform:
-              rotate( calc(var(--part) * var(--index, 1)) )
-              skew( var(--skew) );
-            transform-origin: 100% 100%;
             width: 50%;
 
             @each $number in 1, 2, 3, 4, 5, 6, 7 {
@@ -874,17 +894,9 @@ table:not(.table-charts) .sr-only {
               display: none;
             }
           }
-      
+            
           span {
-            --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
-            // get opposite angle in radians
-            --angle: calc( var(--opposite) * 0.01745329251 );
-            // calc() sin, dark wizardry!
-            @include sin(angle);
-            // calc() hypothenuse
-            --hypo: calc( var(--unitless-radius) / var(--sin-angle) );
-            // get the ratio: skewed / initial width
-            --ratio: calc( var(--hypo) / var(--unitless-radius) );
+            --ratio: 1;
             background: linear-gradient(
               to top left,
               palette( accent, light ) 10%,
@@ -895,32 +907,37 @@ table:not(.table-charts) .sr-only {
             position: absolute;
             width: 100%;
           }
-
-           [scope="col"] {
-            &::after {
-              color: palette( accent );
-              display: block;
-              font-size: small;
-              font-weight: 400;
+        }
+            
+        &.step-3 {
+            td {
+                transform:
+                  rotate( calc(var(--part) * var(--index, 1)) )
+                  skew( var(--skew) );
+                transform-origin: 100% 100%;
             }
-        
-            /**
-             * 1.
-             * @note Display CSS integers custom properties with a trick using counters
-             * @author Cassie Evans
-             * @link https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab
-             */
-            @each $number in 1, 2, 3, 4, 5, 6, 7 {
-              &:nth-child(#{$number})::after {
-                counter-reset: value var(--#{$number});           /* 1 */
-                content: counter(value) "\A0/\A0" counter(scale); /* 1 */
-              }
-            }
-          }
+        }
+          
+      &.step-4 {
+          span {
+            --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
+            // get opposite angle in radians
+            --angle: calc( var(--opposite) * 0.01745329251 );
+            // calc() sin, dark wizardry!
+            @include sin(angle);
+            // calc() hypothenuse
+            --hypo: calc( var(--unitless-radius) / var(--sin-angle) );
+            // get the ratio: skewed / initial width
+            --ratio: calc( var(--hypo) / var(--unitless-radius) );
+        }
       }
 
         &.radar-multiple {
           margin-bottom: $gutter * 12;
+            
+            [scope="col"]::after {
+                display: none;
+            }
 
           tbody {
             columns: var(--areas);
