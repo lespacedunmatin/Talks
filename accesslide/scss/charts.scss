@@ -109,14 +109,27 @@ pre code[class*="language-"] {
 /* ==================== */
 /* == Table based Charts
 /* ==================== */
+.table-container .fieldset {
+  display: none !important;
+}
 
 .table-charts {
   caption-side: bottom;
-  contain: content;
   empty-cells: hide;
   margin: 1.5em auto;
   overflow: hidden;
   padding: 1em;
+
+  /**
+   * @note Defining a CSS custom property for each inlined SVG pattern
+   * @author Trys Mudford
+   * @link https://www.trysmudford.com/blog/using-css-custom-properties/
+   * @via Jeremy Keith
+   * @link https://adactio.com/journal/15075
+   */
+  @each $name, $pattern in $patterns {
+    --#{$name}: url("#{$pattern}");
+  }
 
   > caption:first-child {
     background: inherit;
@@ -125,10 +138,25 @@ pre code[class*="language-"] {
   }
 }
 
+table:not(.table-charts) .sr-only {
+  clip: auto !important;
+	clip-path: none !important;
+	height: auto !important;
+	overflow: visible !important;
+  position: static !important;
+	width: auto !important;
+	white-space: normal !important;
+}
+
 @media screen and (min-width: em(480)) {
   .table-charts {
     border-collapse: separate;
     border-spacing: 0;
+    /**
+     * @note Trying to improve paint & layout performances
+     * @link https://developer.mozilla.org/fr/docs/Web/CSS/contain
+     */
+    contain: content;
 
     th,
     td {
@@ -136,7 +164,7 @@ pre code[class*="language-"] {
       padding: 0;
 
       &:empty {
-        display: none;
+        display: none !important;
       }
     }
 
@@ -180,6 +208,7 @@ pre code[class*="language-"] {
             -webkit-background-clip: text;
             font-weight: bold;
             left: 100%;
+            line-height: 1.5;
             position: absolute;
           }
         }
@@ -207,7 +236,7 @@ pre code[class*="language-"] {
                     palette( accent ),
                     palette( alert )
                   ),
-                  url($pattern); /* 1 */
+                  var(--#{$name}); /* 1 */
               }
             }
           }
@@ -242,7 +271,7 @@ pre code[class*="language-"] {
                     ButtonText,
                     highlight
                   ),
-                  url($pattern);
+                  var(--#{$name});
               }
             }
           }
@@ -264,26 +293,39 @@ pre code[class*="language-"] {
     @supports (clip-path: polygon(0% calc(100% - (var(--1) * 100% / var(--y))))) {
       &.line {
         --offset: calc((100% / var(--x)) / 2);
+        --height: calc( #{$width / 2} - #{$gutter * 2} );
+        --bottom: calc( 100% - var(--height) );
         position: relative;
         transition:
           background .3s map-get( $timing-functions, 'move' ),
           color .3s map-get( $timing-functions, 'move' );
 
-        &::after,
-        &::before {
-          bottom: $gutter * 8;
+        &::after {
+          bottom: var(--bottom);
           content: "";
           position: absolute;
           top: 0;
           width: 100%;
+          z-index: 1;
+        }
+        
+        tr::before {
+          content: "";
+          position: absolute;
+        }
+        
+        [scope="row"],
+        thead th:first-child {
+            color: var(--color, currentColor);
+            text-align: left;
         }
         
         th,
         td {
+          background: palette( default, contrast );
           font-weight: bold;
           text-align: center;
           width: calc( 100% / var(--x) );
-          width: 8.3%; /* 1 */
 
           &:hover {
             color: palette( secondary );
@@ -291,43 +333,60 @@ pre code[class*="language-"] {
         }
 
         &.step-1 {
-            padding: calc(#{$width / 2} - #{$gutter * 2}) 0 $gutter;
+            padding: var(--height) 0 $gutter;
         
             &::after {
-              --scale: calc(100% / var(--y));
-              background: repeating-linear-gradient(to bottom, white, white var(--scale), rgba(0, 0, 0, .25) calc(var(--scale) + #{$gutter / 8}));
+              --scale: calc( ( 100% - (var(--y) * 1px) ) / var(--y) );
+              background:
+                repeating-linear-gradient(
+                  to bottom,
+                  white, white var(--scale),
+                  rgba(0, 0, 0, .25) calc(var(--scale) + 1px)
+                );
+              bottom: var(--bottom);
+              content: "";
+              position: absolute;
+              top: 0;
+              width: 100%;
               z-index: 1;
             }
         }
 
         &.step-2 {
-            &::before {
+            [style]::before {
+              bottom: var(--bottom);
               background: linear-gradient(to top, palette( secondary, light ), palette( alert ) 75%);
               clip-path: polygon(
-                0% calc(100% - (var(--1) / var(--y) * 100%)),
-                var(--offset) calc(100% - (var(--1) / var(--y) * 100%)),
-                calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
-                calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--3) / var(--y) * 100%)),
-                calc((100% / var(--x) * 3) + var(--offset)) calc(100% - (var(--4) / var(--y) * 100%)),
-                calc((100% / var(--x) * 4) + var(--offset)) calc(100% - (var(--5) / var(--y) * 100%)),
-                calc((100% / var(--x) * 5) + var(--offset)) calc(100% - (var(--6) / var(--y) * 100%)),
-                calc((100% / var(--x) * 6) + var(--offset)) calc(100% - (var(--7) / var(--y) * 100%)),
-                calc((100% / var(--x) * 7) + var(--offset)) calc(100% - (var(--8) / var(--y) * 100%)),
-                calc((100% / var(--x) * 8) + var(--offset)) calc(100% - (var(--9) / var(--y) * 100%)),
-                calc((100% / var(--x) * 9) + var(--offset)) calc(100% - (var(--10) / var(--y) * 100%)),
-                calc((100% / var(--x) * 10) + var(--offset)) calc(100% - (var(--11) / var(--y) * 100%)),
-                calc((100% / var(--x) * 11) + var(--offset)) calc(100% - (var(--12) / var(--y) * 100%)),
+                0% 100%,
+                calc((100% / var(--x) * 1)) 100%,
+                calc((100% / var(--x) * 1)) calc(100% - (var(--1) / var(--y) * 100%)),
+                calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--1) / var(--y) * 100%)),
+                calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
+                calc((100% / var(--x) * 3) + var(--offset)) calc(100% - (var(--3) / var(--y) * 100%)),
+                calc((100% / var(--x) * 4) + var(--offset)) calc(100% - (var(--4) / var(--y) * 100%)),
+                calc((100% / var(--x) * 5) + var(--offset)) calc(100% - (var(--5) / var(--y) * 100%)),
+                calc((100% / var(--x) * 6) + var(--offset)) calc(100% - (var(--6) / var(--y) * 100%)),
+                calc((100% / var(--x) * 7) + var(--offset)) calc(100% - (var(--7) / var(--y) * 100%)),
+                calc((100% / var(--x) * 8) + var(--offset)) calc(100% - (var(--8) / var(--y) * 100%)),
+                calc((100% / var(--x) * 9) + var(--offset)) calc(100% - (var(--9) / var(--y) * 100%)),
+                calc((100% / var(--x) * 10) + var(--offset)) calc(100% - (var(--10) / var(--y) * 100%)),
+                calc((100% / var(--x) * 11) + var(--offset)) calc(100% - (var(--11) / var(--y) * 100%)),
+                calc((100% / var(--x) * 12) + var(--offset)) calc(100% - (var(--12) / var(--y) * 100%)),
                 100% calc(100% - (var(--12) / var(--y) * 100%)),
                 100% 100%,
                 0% 100%
               );
+              content: "";
+              position: absolute;
+              top: 0;
+              width: 100%;
               z-index: 2;
             }
 
-            th {
-              &::after {
+            [scope="col"] {
+              &:not(:first-child)::after {
                 background-color: palette( default, contrast );
-                background-image: url( map-get( $patterns, 'stripes' ) );
+                background-image: var(--stripes);
                 background-blend-mode: exclusion;
                 bottom: $gutter * 4;
                 content: "";
@@ -339,103 +398,216 @@ pre code[class*="language-"] {
                 width: inherit;
                 z-index: 3;
               }
-
-              @each $number in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
-                &:nth-child(#{$number + 1})::after {
+       
+              @each $number in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 {
+                &:nth-child(#{$number})::after {
                   left: calc(100% / var(--x) * #{$number - 1});
                 }
               }
-
+       
               &:hover::after {
                 opacity: .75;
               }
             }
         }
+        
+        &.step-3 {
+          td {
+            --value: var(--1);
+            --term: var(--t-1);
+            --top: calc( (var(--height) - ( var(--value) / var(--y) * 100% ) ) );
+            line-height: 1.5;
+     
+            &::before {
+              content: '';
+              height: 1.5rem;
+              position: absolute;
+              transform: translateX(-50%);
+              width: inherit;
+              z-index: 10;
+            }
+     
+            /**
+             * 1.
+             * @note Using white-space and:
+             ** `\A` to make a line-break
+             ** `\A0` for a non-breakable space
+             * @note Based on CSS Secrets by
+             * @author Lea Verou
+             * @link https://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/
+             *
+             * 2.
+             * @note Display CSS integers custom properties with a trick using counters
+             * @author Cassie Evans
+             * @link https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab
+             */
+            &::after {
+              --arrow: calc(100% - #{$gutter / 4});
+              background-color: palette( dominant );
+              clip-path: polygon(
+                0% 0%,
+                100% 0%,
+                100% var(--arrow),
+                calc(50% - #{$gutter / 4}) var(--arrow),
+                50% 100%,
+                calc(50% + #{$gutter / 4}) var(--arrow),
+                0% var(--arrow)
+              );
+              color: palette( dominant, contrast );
+              content: var(--term) " " var(--year) "\A " counter(value) "\A0°C"; /* 1 */
+              counter-reset: value var(--value);                                 /* 2 */
+              opacity: 0;
+              padding: $gutter / 2;
+              left: calc( var(--offset) * 3 );
+              pointer-events: none;
+              position: absolute;
+              top: var(--top, 100);
+              transform-origin: 50% calc(100% + 10px);
+              transform:
+                translate3d(-50%, -125%, 0)
+                perspective(1000px)
+                rotate3d(1, 0, 0, 45deg);
+              transition:
+                opacity .2s map-get( $timing-functions, 'enter' ),
+                transform .2s map-get( $timing-functions, 'enter' );
+              will-change: opacity, transform;
+              white-space: pre;
+              z-index: 5;
+            }
+     
+            @each $number in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 {
+              &:nth-child(#{$number})::after {
+                --value: var(--#{$number - 1});
+                --term: var(--t-#{$number - 1});
+                --top: calc( (var(--height) - ( var(--value) / var(--y) * var(--height) ) ) );
+                left: calc( ( 100% / var(--x) * #{$number - 1} ) + var(--offset) );
+              }
+            }
+     
+            &:hover::after {
+              opacity: 1;
+              transform:
+                translate3d(-50%, -125%, 0)
+                perspective(1000px)
+                rotate3d(1, 0, 0, 0deg);
+              transition:
+                opacity .2s map-get( $timing-functions, 'exit' ),
+                transform .2s map-get( $timing-functions, 'exit' );
+            }
+          }
+        }
 
         &.points {
-            &::before {
-              clip-path: polygon(
-                0% calc(100% - (var(--1) / var(--y) * 100%)),
-                var(--offset) calc(100% - (var(--1) / var(--y) * 100%)),
-                calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
-                calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--3) / var(--y) * 100%)),
-                calc((100% / var(--x) * 3) + var(--offset)) calc(100% - (var(--4) / var(--y) * 100%)),
-                calc((100% / var(--x) * 4) + var(--offset)) calc(100% - (var(--5) / var(--y) * 100%)),
-                calc((100% / var(--x) * 5) + var(--offset)) calc(100% - (var(--6) / var(--y) * 100%)),
-                calc((100% / var(--x) * 6) + var(--offset)) calc(100% - (var(--7) / var(--y) * 100%)),
-                calc((100% / var(--x) * 7) + var(--offset)) calc(100% - (var(--8) / var(--y) * 100%)),
-                calc((100% / var(--x) * 8) + var(--offset)) calc(100% - (var(--9) / var(--y) * 100%)),
-                calc((100% / var(--x) * 9) + var(--offset)) calc(100% - (var(--10) / var(--y) * 100%)),
-                calc((100% / var(--x) * 10) + var(--offset)) calc(100% - (var(--11) / var(--y) * 100%)),
-                calc((100% / var(--x) * 11) + var(--offset)) calc(100% - (var(--12) / var(--y) * 100%)),
-                100% calc(100% - (var(--12) / var(--y) * 100%)),
-                100% calc((100% + #{$gutter / 4}) - (var(--12) / var(--y) * 100%)),
-                calc((100% / var(--x) * 11) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--12) / var(--y) * 100%)),
-                calc((100% / var(--x) * 10) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--11) / var(--y) * 100%)),
-                calc((100% / var(--x) * 9) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--10) / var(--y) * 100%)),
-                calc((100% / var(--x) * 8) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--9) / var(--y) * 100%)),
-                calc((100% / var(--x) * 7) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--8) / var(--y) * 100%)),
-                calc((100% / var(--x) * 6) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--7) / var(--y) * 100%)),
-                calc((100% / var(--x) * 5) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--6) / var(--y) * 100%)),
-                calc((100% / var(--x) * 4) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--5) / var(--y) * 100%)),
-                calc((100% / var(--x) * 3) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--4) / var(--y) * 100%)),
-                calc((100% / var(--x) * 2) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--3) / var(--y) * 100%)),
-                calc((100% / var(--x) * 1) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--2) / var(--y) * 100%)),
-                var(--offset) calc((100% + #{$gutter / 4}) - (var(--1) / var(--y) * 100%)),
-                0% calc((100% + #{$gutter / 4}) - (var(--1) / var(--y) * 100%))
-              );
-              z-index: 2;
-            }
-
-            th {
+          [style] {
               &::before {
-                --height: calc(100% - 8rem);
-                --size: #{$gutter};
-                background-image: linear-gradient(to top, palette( secondary, light ), palette( alert ) 50%);
-                background-position-x: 0;
-                background-size: 100% calc(var(--y) * 200%);
-                border: 2px solid palette( default, contrast );
-                border-radius: 50%;
-                box-shadow: 0 0 #{$gutter / 4} rgba(0, 0, 0, .5);
-                content: "";
-                height: var(--size);
-                position: absolute;
-                transform: translate3d(calc(var(--size) / -2), calc(var(--size) / -2), 0);
-                transition: transform .3s map-get( $timing-functions, 'move' );
-                width: var(--size);
-                z-index: 4;
+                background-color: var(--color, currentColor);
+                clip-path: polygon(
+                  calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--1) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 3) + var(--offset)) calc(100% - (var(--3) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 4) + var(--offset)) calc(100% - (var(--4) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 5) + var(--offset)) calc(100% - (var(--5) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 6) + var(--offset)) calc(100% - (var(--6) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 7) + var(--offset)) calc(100% - (var(--7) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 8) + var(--offset)) calc(100% - (var(--8) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 9) + var(--offset)) calc(100% - (var(--9) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 10) + var(--offset)) calc(100% - (var(--10) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 11) + var(--offset)) calc(100% - (var(--11) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 12) + var(--offset)) calc(100% - (var(--12) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 13) + var(--offset)) calc(100% - (var(--12) / var(--y) * 100%)),
+                  100% calc(100% - (var(--12) / var(--y) * 100%)),
+                  100% calc((100% + #{$gutter / 4}) - (var(--12) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 13) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--12) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 12) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--12) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 11) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--11) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 10) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--10) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 9) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--9) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 8) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--8) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 7) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--7) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 6) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--6) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 5) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--5) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 4) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--4) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 3) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--3) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 2) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--2) / var(--y) * 100%)),
+                  calc((100% / var(--x) * 1) + var(--offset)) calc((100% + #{$gutter / 4}) - (var(--1) / var(--y) * 100%))
+                );
+                transition: opacity .3s map-get( $timing-functions, 'move' );
               }
-
-              @each $name, $pattern in $patterns {
-                $i: index($patterns, ($name $pattern));
-
-                tr:nth-child(#{$i}n + #{$i}) th::before,
-                tr:nth-child(#{$i}n + #{$i}) [role="presentation"]::before  {
-                  background-image: url($pattern); /* 1 */
-                }
+   
+              th::before {
+                 background-color: var(--color, currentColor);
+                 content: "";
+                 display: inline-block;
+                 height: 1rem;
+                 transform: translate3d(-.2rem, .1rem, 0);
+                 width: 1rem;
               }
-
-              @each $number in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
-                &:nth-of-type(#{$number + 1})::before {
-                  background-position-y: calc((var(--height) - (var(--#{$number}) / var(--y) * var(--height))));
-                  left: calc((100% / var(--x) * #{$number - 1}) + var(--offset));
-                  top: calc((var(--height) - (var(--#{$number}) / var(--y) * var(--height))));
-                }
-              }
-
-              &::after {
-                mix-blend-mode: multiply;
-              }
-
-              &:hover {
+   
+              td {
+                --top: calc( (var(--height) - ( var(--value) / var(--y) * var(--height) ) ) );
+   
                 &::before {
-                  transform: translate3d(calc(var(--size) / -2), calc(var(--size) / -2), 0) scale(1.5);
+                  --size: #{$gutter};
+                  background-color: var(--color, currentColor);
+                  border: 2px solid palette( default, contrast );
+                  border-radius: 50%;
+                  box-shadow: 0 0 #{$gutter / 4} rgba(0, 0, 0, .5);
+                  content: "";
+                  height: var(--size);
+                  left: calc( var(--offset) * 3 );
+                  position: absolute;
+                  top: var(--top, 100);
+                  transform: translate3d(calc(var(--size) / -2), calc(var(--size) / -2), 0);
+                  transition:
+                      opacity .3s map-get( $timing-functions, 'move' ),
+                      transform .3s map-get( $timing-functions, 'move' );
+                  width: var(--size);
+                  z-index: 4;
                 }
-
-                &::after {
-                  opacity: .5;
+   
+                @each $number in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
+                  &:nth-of-type(#{$number})::before {
+                    --value: var(--#{$number});
+                    --top: calc( (var(--height) - ( var(--value) / var(--y) * var(--height) ) ) );
+                    left: calc( ( 100% / var(--x) * #{$number} ) + var(--offset) );
+                  }
                 }
               }
+          }
+   
+          @each $name, $pattern in $patterns {
+           $i: index($patterns, ($name $pattern));
+   
+           [style]:nth-child(#{$i}n + #{$i})::before,
+           [style]:nth-child(#{$i}n + #{$i}) th::before,
+           [style]:nth-child(#{$i}n + #{$i}) td::before {
+             background-image: var(--#{$name}); /* 1 */
+           }
+         }
+   
+          tbody:hover [style]::before,
+          tbody:hover [style] td::before {
+              opacity: .25;
+          }
+   
+          tbody:hover [style]:hover::before,
+          tbody:hover [style]:hover td::before {
+              opacity: 1;
+          }
+   
+          tbody:hover [style]:hover td::before {
+              transform:
+                  translate3d(calc(var(--size) / -2), calc(var(--size) / -2), 0)
+                  scale(1.25);
+          }
+   
+          [scope="col"]:not(:first-child) {
+            &::after {
+              mix-blend-mode: multiply;
+            }
+   
+            &:hover::after {
+             opacity: .5;
             }
           }
         }
@@ -447,7 +619,7 @@ pre code[class*="language-"] {
        * @link http://www.gwhitworth.com/blog/2017/04/how-to-use-ms-high-contrast
        */
       @media screen and (-ms-high-contrast: active) {
-        &.line::before {
+        &.line [style]::before {
           background: linear-gradient(to top, ButtonHighlight, Highlight 75%);
         }
       }
@@ -581,110 +753,51 @@ pre code[class*="language-"] {
         }
       }
     }
-  }
 
-
-    /* ==================== */
-    /* == Radar Charts
-    /* ==================== */
-    figure[role="group"] {
-        background: white;
-        display: block;
-        margin: 0 auto;
-        overflow: hidden;
-        padding: 1rem;
-        
-        figcaption {
-            display: block;
-            padding: 1rem 0;
-        }
-    }
-
-    .slide {
-        dl,
-        dd {
-          font-size: 1rem;
-          margin: 0 auto;
-        }
-
-        dd + dt {
-          margin: $gutter 0 0;
-        }
-
-        dt dfn {
-          font-style: normal;
-        }
-
-        figure {
-          text-align: left;
-            
-          dt {
-            clear: left;
-            float: left;
-            margin: 0 0 $gutter;
-          }
-
-          dd {
-            display: flex;
-            margin: 0 0 $gutter;
-              
-            &::before {
-                border-top: 1px dotted;
-                content: "";
-                flex: 1;
-                margin: 0 .5rem;
-                transform: translateY(.9rem);
-            }
-              
-            &::after {
-                color: palette( muted );
-                content: "\A0/\A0" attr(data-scale);
-            }
-          }
-
-          dl + figcaption {
-            font-size: 1rem;
-            text-align: center;
-          }
-        }   
-    }
-
+    /** Radar Charts */
     @supports(clip-path: polygon(calc( 0% 0%, 100% - ( var(--1) * 100% / var(--scale) ) ) 100%, 100% 100%)) {
-    .charts-radar {
-      --radius: #{$width / 6};
-      --size: calc( var(--radius) / var(--scale) );
-      --part: calc( 360deg / var(--items) );
-      background-image:
-        repeating-radial-gradient(
-          circle at 50%,
-          rgba(0, 0, 0, .2),
-          rgba(0, 0, 0, .2) 2px,
-          transparent 2px,
-          transparent calc(var(--size) * var(--step))
-        ),
-        repeating-radial-gradient(
-          circle at 50%,
-          rgba(0, 0, 0, .1),
-          rgba(0, 0, 0, .1) 2px,
-          transparent 2px,
-          transparent var(--size)
-        );
-      border: 2px solid;
-      border-radius: 50%;
-      height: calc( var(--radius) * 2 );
-      margin: 0 auto $gutter * 6 !important;
-      position: relative;
-      width: calc( var(--radius) * 2 );
-        
-        dd {
-          &::after,
-          &::before {
-              display: none;
-          }
-        }
+      .radar-container .fieldset {
+        display: flex !important;
+      }
 
+      &.radar {
+        --radius: 20rem;
+        --unitless-radius: calc( 1024 / 16 / 5 );
+        --size: calc( var(--radius) / var(--scale) );
+        --part: calc( 360deg / var(--items) );
+        background-image:
+          repeating-radial-gradient(
+            circle at 50%,
+            rgba(0, 0, 0, .2),
+            rgba(0, 0, 0, .2) 2px,
+            transparent 2px,
+            transparent calc(var(--size) * var(--step))
+          ),
+          repeating-radial-gradient(
+            circle at 50%,
+            rgba(0, 0, 0, .1),
+            rgba(0, 0, 0, .1) 2px,
+            transparent 2px,
+            transparent var(--size)
+          );
+        border: 2px solid;
+        border-radius: 50%;
+        contain: layout;
+        counter-reset: scale var(--scale);
+        display: block;
+        height: calc( var(--radius) * 2 );
+        margin: 1rem auto;
+        overflow: visible;
+        position: relative;
+        width: calc( var(--radius) * 2 );
+
+        caption {
+          background: none;
+          bottom: $gutter * -10;
+          position: absolute;
+        }
+        
         &.step-1 {
-            margin: $gutter * 6 auto !important;
           /**
            * Placing items around a circle based on:
            * @link https://stackoverflow.com/questions/12813573/position-icons-into-circle
@@ -693,10 +806,10 @@ pre code[class*="language-"] {
            *
            * @note Negative values for radius helps to start at the top left corner
            */
-          dt {
+          [scope="col"] {
             --away: calc( (var(--radius) * -1) - 50% );
             left: 50%;
-            margin: initial;
+            margin: 0;
             padding: 0 $gutter;
             position: absolute;
             top: 50%;
@@ -705,68 +818,15 @@ pre code[class*="language-"] {
               rotate( calc(var(--part) * var(--index, 1)) )
               translate( var(--away) )
               rotate( calc(var(--part) * var(--index, 1) * -1) );
-
-            &::after {
-              content: attr(data-value) "\A0/\A0" attr(data-scale);
-              color: palette( accent );
-              display: block;
-              font-size: small;
-              font-weight: 400;
-            }
-
-            @each $number in 1, 2, 3, 4, 5, 6, 7 {
-              &:nth-of-type(#{$number}) {
-                --index: #{$number};
-              }
+          }
+      
+          @each $number in 1, 2, 3, 4, 5, 6, 7 {
+            td:nth-of-type(#{$number}),
+            [scope="col"]:nth-of-type(#{$number}) {
+              --index: #{$number};
             }
           }
-            
-            dd {
-                color: transparent;
-            }
-        }
-            
-        &.step-2 {
-            dd {
-                color: inherit;
-                height: 50%;
-                left: 0;
-                margin: initial;
-                position: absolute;
-                top: 0;
-                width: 50%;
-                
-              span {
-                  background: linear-gradient(
-                    to top left,
-                    palette( accent, light ) 10%,
-                    palette( secondary, dark ) 75%
-                  );
-                  filter: drop-shadow( 0 0 $gutter palette( accent, dark ) );
-                  height: 100%;
-                  position: absolute;
-                  width: 100%;
-              }
-              
-              @each $number in 1, 2, 3, 4, 5, 6, 7 {
-                  &:nth-of-type(#{$number}) {
-                    --index: #{$number};
 
-                    span {
-                      --pos: calc( 100% - (var(--#{$number + 1}) * 100% / (var(--scale) ) ) );
-                      clip-path: polygon(
-                        100% var(--pos),
-                        calc( 100% - ( var(--#{$number}) * 100% / var(--scale) ) ) 100%,
-                        100% 100%
-                      );
-                  }
-                }
-          }
-        }
-        
-            }
-        
-        &.step-3 {
           /**
            * This is quite sophisticated, we're mixing multiple techniques
            *
@@ -784,52 +844,179 @@ pre code[class*="language-"] {
            * @link https://gist.github.com/stereokai/7666bfe93929b14c2dced148c79e0e97
            * @author Stereokai
            */
-          dd {
+          td {
             --skew: calc( 90deg - var(--part) );
             border-bottom: 1px solid palette( accent, light );
+            height: 50%;
+            left: 0;
+            margin: 0;
+            position: absolute;
+            top: 0;
             transform:
               rotate( calc(var(--part) * var(--index, 1)) )
               skew( var(--skew) );
             transform-origin: 100% 100%;
-          }
-        }
-
-        &.step-4 dd {
-            --unitless-radius: calc( 980 / 16 / 6 );
-            
-            span {
-              --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
-              // get opposite angle in radians
-              --angle: calc( var(--opposite) * 0.01745329251 );
-              // calc() sin, dark wizardry!
-              --sin-term1: var(--angle);
-              --sin-term2: calc((var(--angle) * var(--angle) * var(--angle)) / 6);
-              --sin-term3: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 120);
-              --sin-term4: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 5040);
-              --sin-term5: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 362880);
-              --sin: calc(var(--sin-term1) - var(--sin-term2) + var(--sin-term3) - var(--sin-term4) + var(--sin-term5));
-              // calc() hypothenuse
-              --hypo: calc( var(--unitless-radius) / var(--sin) );
-              // get the ratio: skewed / initial width
-              --ratio: calc( var(--hypo) / var(--unitless-radius) );
-            }
+            width: 50%;
 
             @each $number in 1, 2, 3, 4, 5, 6, 7 {
-              &:nth-of-type(#{$number}) {
-                --index: #{$number};
-
-                span {
-                  --pos: calc( 100% - (var(--#{$number + 1}) * 100% / (var(--scale) * var(--ratio) ) ) );
-                  clip-path: polygon(
-                    100% var(--pos),
-                    calc( 100% - ( var(--#{$number}) * 100% / var(--scale) ) ) 100%,
-                    100% 100%
-                  );
-                }
+              &:nth-of-type(#{$number}) span {
+                --pos: calc( 100% - (var(--#{$number + 1}) * 100% / (var(--scale) * var(--ratio) ) ) );
+                clip-path: polygon(
+                  100% var(--pos),
+                  calc( 100% - ( var(--#{$number}) * 100% / var(--scale) ) ) 100%,
+                  100% 100%
+                );
               }
             }
+
+            &::after,
+            &::before {
+              display: none;
+            }
+          }
+      
+          span {
+            --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
+            // get opposite angle in radians
+            --angle: calc( var(--opposite) * 0.01745329251 );
+            // calc() sin, dark wizardry!
+            @include sin(angle);
+            // calc() hypothenuse
+            --hypo: calc( var(--unitless-radius) / var(--sin-angle) );
+            // get the ratio: skewed / initial width
+            --ratio: calc( var(--hypo) / var(--unitless-radius) );
+            background: linear-gradient(
+              to top left,
+              palette( accent, light ) 10%,
+              palette( secondary, dark ) 75%
+            );
+            filter: drop-shadow( 0 0 $gutter palette( accent, dark ) );
+            height: 100%;
+            position: absolute;
+            width: 100%;
+          }
+
+           [scope="col"] {
+            &::after {
+              color: palette( accent );
+              display: block;
+              font-size: small;
+              font-weight: 400;
+            }
+        
+            /**
+             * 1.
+             * @note Display CSS integers custom properties with a trick using counters
+             * @author Cassie Evans
+             * @link https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab
+             */
+            @each $number in 1, 2, 3, 4, 5, 6, 7 {
+              &:nth-child(#{$number})::after {
+                counter-reset: value var(--#{$number});           /* 1 */
+                content: counter(value) "\A0/\A0" counter(scale); /* 1 */
+              }
+            }
+          }
+      }
+
+        &.radar-multiple {
+          margin-bottom: $gutter * 12;
+
+          tbody {
+            columns: var(--areas);
+            vertical-align: bottom;
+          }
+
+          [scope="row"] {
+            bottom: $gutter * -8;
+            height: $gutter * 2;
+            left: $gutter;
+            position: absolute;
+
+            &::before {
+              background: var(--color, currentColor);
+              content: "";
+              display: inline-block;
+              height: $gutter;
+              margin-right: $gutter / 4;
+              transform: translate3d(0, .1rem, 0);
+              width: $gutter;
+            }
+          }
+
+          // Allowing more areas :)
+          @each $number in 1 {
+            tr:nth-child(#{$number + 1}) [scope="row"] {
+              left: calc( #{$gutter} + (100% / var(--areas)) * #{$number});
+            }
+          }
+
+          td {
+            align-items: flex-end;
+            border-color: var(--color, currentColor);
+            display: flex;
+            justify-content: flex-end;
+            opacity: .5;
+            pointer-events: none;
+            transition: opacity .2s map-get( $timing-functions, 'move' );
+            will-change: opacity;
+            z-index: 0;
+
+            &::after {
+              color: var(--color, currentColor);
+              display: block;
+              font-size: small;
+              font-weight: 700;
+              text-indent: #{$gutter / -2};
+              transform:
+                skew( calc( var(--skew) * -1 ) )
+                rotate( calc( var(--part) * var(--index, 1) * -1 ) );
+              transform-origin: 0 0;
+              transition: inherit;
+              width: 100%;
+              will-change: inherit;
+              white-space: nowrap;
+            }
+      
+            @each $number in 1, 2, 3, 4, 5, 6, 7 {
+              &:nth-of-type(#{$number})::after {
+                counter-reset: value var(--#{$number}); /* 1 */
+                content: counter(value);                /* 1 */
+                width: calc( var(--#{$number}) * 100% / var(--scale) );
+              }
+            }
+          }
+      
+          span {
+            background: var(--color, currentColor);
+            pointer-events: auto;
+      
+            @supports ( mask-image: url() ) {
+              mask-image: radial-gradient(circle at bottom right, rgba(0,0,0,1), rgba(0,0,0,.5));
+            }
+          }
+
+          @media (hover: hover) {
+            td {
+              opacity: .25;
+
+              &::after {
+                opacity: 0;
+              }
+            }
+
+            tr:hover td {
+              opacity: 1;
+              z-index: 1;
+
+              &::after {
+                opacity: inherit;
+              }
+            }
+          }
         }
       }
     }
-
+  }
+}
 }

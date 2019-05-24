@@ -876,7 +876,7 @@ tr:nth-of-type(5) td {
         </section>   
         <section class="slide">
           <h3>Le tableau linéaire<span aria-hidden="true">&nbsp;&#8863;</span></h3>
-          <table class="table-ffoodd table-charts line" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
+          <table class="table-ffoodd table-charts" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
       <caption>Température mensuelle moyenne en 2017</caption>
       <thead>
         <tr>
@@ -991,7 +991,9 @@ table::after {
             0% 100%,
             calc((100% / var(--x) * 1)) 100%,
             calc((100% / var(--x) * 1)) calc(100% - (var(--1) / var(--y) * 100%)),
+            /* Premier point */
             calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--1) / var(--y) * 100%)),
+            /* Deuxième point */
             calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
             100% calc(100% - (var(--12) / var(--y) * 100%)),
             100% 100%,
@@ -1125,7 +1127,7 @@ td::after {
         </tr>
       </thead>
       <tbody>
-        <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+        <tr style="--color: #0172f0; --year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
           <th scope="row">2017</th>
           <td>8&nbsp;°C</td>
           <td>6&nbsp;°C</td>
@@ -1166,7 +1168,7 @@ td::after {
               </tr>
             </thead>
             <tbody>
-              <tr style="--year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
+              <tr style="--color: #0172f0; --year: '2017'; --1: 8; --2: 6; --3: 9; --4: 12; --5: 15; --6: 21; --7: 24; --8: 25; --9: 22; --10: 19; --11: 14; --12: 9;">
                 <th scope="row">2017</th>
                 <td>8&nbsp;°C</td>
                 <td>6&nbsp;°C</td>
@@ -1180,6 +1182,21 @@ td::after {
                 <td>19&nbsp;°C</td>
                 <td>14&nbsp;°C</td>
                 <td>9&nbsp;°C</td>
+              </tr>
+              <tr style="--color: #ff2d40; --year: '2018'; --1: 10; --2: 4; --3: 7; --4: 13; --5: 17; --6: 20; --7: 22; --8: 23; --9: 26; --10: 17; --11: 14; --12: 10;">
+                <th scope="row">2018</th>
+                <td>10&nbsp;°C</td>
+                <td>4&nbsp;°C</td>
+                <td>7&nbsp;°C</td>
+                <td>13&nbsp;°C</td>
+                <td>17&nbsp;°C</td>
+                <td>20&nbsp;°C</td>
+                <td>22&nbsp;°C</td>
+                <td>23&nbsp;°C</td>
+                <td>26&nbsp;°C</td>
+                <td>17&nbsp;°C</td>
+                <td>14&nbsp;°C</td>
+                <td>10&nbsp;°C</td>
               </tr>
             </tbody>
           </table>
@@ -1209,7 +1226,7 @@ td::after {
 </pre>
         </section>   
         <section class="slide">
-          <table class="table-ffoodd table-charts radar" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+          <table class="table-ffoodd table-charts" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
             <thead>
               <tr>
@@ -1245,21 +1262,21 @@ table {
     --radius: 10em;
     --size: calc( var(--radius) / var(--scale) );
     background-image:
-    repeating-radial-gradient(
-      circle at 50%, black, black 2px, white 2px, white calc(var(--size) * var(--step))
-    ),
-    repeating-radial-gradient(
-      circle at 50%, grey, grey 2px, white 2px, white var(--size)
-    );
+      repeating-radial-gradient(
+        circle at 50%, black, black 2px, white 2px, white calc(var(--size) * var(--step))
+      ),
+      repeating-radial-gradient(
+        circle at 50%, grey, grey 2px, white 2px, white var(--size)
+      );
     border-radius: 50%;
     height: calc( var(--radius) * 2 );
     width: calc( var(--radius) * 2 );
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
-          <table class="table-ffoodd table-charts radar step-1" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+          <table class="table-ffoodd table-charts radar" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
             <thead>
               <tr>
