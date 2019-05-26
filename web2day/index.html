@@ -551,17 +551,17 @@ table {
   --zig: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E");
 }
 
-td {
-  background-blend-mode: hard-light;
-  background-color: transparent;
-  background-position: calc(var(--value, 0) / var(--scale, 100) * 100%) 0%, center;
-  background-size: calc(var(--scale, 100) * 100%) 100%, contain;
+tr:nth-child(5n+5) {
+  --background: var(--stripes);
 }
 
-tr:nth-child(5n+5) td {
-  background-image: 
-    linear-gradient(to right, #3cb371, #444, #0000cd, #639, crimson),
-    var(--stripes);
+td {  
+  background: 
+    linear-gradient(to right, #3cb371, #444, #0000cd, #639, crimson) 
+    calc(var(--value, 0) / var(--scale, 100) * 100%) 0% / 
+    calc(var(--scale, 100) * 100%) 100%,
+    transparent var(--background) center / contain;
+  background-blend-mode: hard-light;
 }
   </code>
 </pre>
@@ -661,10 +661,10 @@ table:hover tr:hover {
 }
           
 @media screen and (-ms-high-contrast: active) {
-  tr:nth-child(5n + 5) td {
+  td {
      background-image: 
        linear-gradient(to right, Window, ButtonFace, ButtonShadow, ButtonText, highlight),
-       var(--stripes);
+       var(--background);
   }
 }
   </code>
@@ -1263,10 +1263,10 @@ table {
     --size: calc( var(--radius) / var(--scale) );
     background-image:
       repeating-radial-gradient(
-        circle at 50%, black, black 2px, white 2px, white calc(var(--size) * var(--step))
+        circle at 50%, black, black 2px, white 0, white calc(var(--size) * var(--step))
       ),
       repeating-radial-gradient(
-        circle at 50%, grey, grey 2px, white 2px, white var(--size)
+        circle at 50%, grey, grey 2px, white 0, white var(--size)
       );
     border-radius: 50%;
     height: calc( var(--radius) * 2 );

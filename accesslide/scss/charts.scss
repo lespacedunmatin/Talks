@@ -217,25 +217,23 @@ table:not(.table-charts) .sr-only {
             td {
               --size: calc(var(--scale, 100) * 100%);
               --position: calc(var(--value, 0) / var(--scale, 100) * 100%);
-              background-blend-mode: hard-light;
-              background-color: transparent;
-              background-position: var(--position) 0%, center;
-              background-size:  var(--size) 100%, contain;
-            }
-            
-            @each $name, $pattern in $patterns {
-              $i: index($patterns, ($name $pattern));
-
-              &:nth-child(#{$i}n + #{$i}) td {
-                background-image:
+              background:
                   linear-gradient(to right,
                     palette( success, dark ),
                     palette( dominant ),
                     palette( secondary ),
                     palette( accent ),
                     palette( alert )
-                  ),
-                  var(--#{$name}); /* 1 */
+                  ) var(--position) 0% / var(--size) 100%,
+                  transparent var(--background) center / contain;
+              background-blend-mode: hard-light;
+            }
+            
+            @each $name, $pattern in $patterns {
+              $i: index($patterns, ($name $pattern));
+
+              &:nth-child(#{$i}n + #{$i}) {
+                --background: var(--#{$name}); /* 1 */
               }
             }
           }
@@ -258,20 +256,16 @@ table:not(.table-charts) .sr-only {
            * @link http://www.gwhitworth.com/blog/2017/04/how-to-use-ms-high-contrast
            */
           @media screen and (-ms-high-contrast: active) {
-            @each $name, $pattern in $patterns {
-              $i: index($patterns, ($name $pattern));
-
-              &:nth-child(#{$i}n + #{$i}) td {
-                background-image:
-                  linear-gradient(to right,
-                    Window,
-                    ButtonFace,
-                    ButtonShadow,
-                    ButtonText,
-                    highlight
-                  ),
-                  var(--#{$name});
-              }
+            td {
+              background-image:
+                linear-gradient(to right,
+                  Window,
+                  ButtonFace,
+                  ButtonShadow,
+                  ButtonText,
+                  highlight
+                ),
+                var(--background);
             }
           }
             
@@ -497,7 +491,7 @@ table:not(.table-charts) .sr-only {
         &.points {
           [style] {
               &::before {
-                background-color: var(--color, currentColor);
+                background: var(--color, currentColor) var(--background);
                 clip-path: polygon(
                   calc((100% / var(--x) * 1) + var(--offset)) calc(100% - (var(--1) / var(--y) * 100%)),
                   calc((100% / var(--x) * 2) + var(--offset)) calc(100% - (var(--2) / var(--y) * 100%)),
@@ -532,7 +526,7 @@ table:not(.table-charts) .sr-only {
               }
    
               th::before {
-                 background-color: var(--color, currentColor);
+                 background: var(--color, currentColor) var(--background);
                  content: "";
                  display: inline-block;
                  height: 1rem;
@@ -545,7 +539,7 @@ table:not(.table-charts) .sr-only {
    
                 &::before {
                   --size: #{$gutter};
-                  background-color: var(--color, currentColor);
+                  background: var(--color, currentColor) var(--background);
                   border: 2px solid palette( default, contrast );
                   border-radius: 50%;
                   box-shadow: 0 0 #{$gutter / 4} rgba(0, 0, 0, .5);
@@ -575,10 +569,8 @@ table:not(.table-charts) .sr-only {
           @each $name, $pattern in $patterns {
            $i: index($patterns, ($name $pattern));
    
-           [style]:nth-child(#{$i}n + #{$i})::before,
-           [style]:nth-child(#{$i}n + #{$i}) th::before,
-           [style]:nth-child(#{$i}n + #{$i}) td::before {
-             background-image: var(--#{$name}); /* 1 */
+           [style]:nth-child(#{$i}n + #{$i}) {
+             --background: var(--#{$name}); /* 1 */
            }
          }
    
@@ -639,14 +631,14 @@ table:not(.table-charts) .sr-only {
             circle at 50%,
             rgba(0, 0, 0, .2),
             rgba(0, 0, 0, .2) 2px,
-            transparent 2px,
+            transparent 0,
             transparent calc(var(--size) * var(--step))
           ),
           repeating-radial-gradient(
             circle at 50%,
             rgba(0, 0, 0, .1),
             rgba(0, 0, 0, .1) 2px,
-            transparent 2px,
+            transparent 0,
             transparent var(--size)
           );
         border: 2px solid;
@@ -932,7 +924,7 @@ table:not(.table-charts) .sr-only {
                   padding-right: $gutter / 2;
 
                   &::before {
-                    background: var(--color, currentColor);
+                    background: var(--color, currentColor) var(--background);
                     content: "";
                     display: inline-block;
                     height: $gutter;
@@ -981,7 +973,7 @@ table:not(.table-charts) .sr-only {
                   --A: calc( var(--hypo) * var(--sin-α) );
                   --pos-B: calc( ( var(--B) * 100 / var(--hypo) ) / 2 );
                   --pos-A: calc( ( var(--A) * 100 / var(--hypo) ) / 2 );
-                  background-color: var(--color, currentColor);
+                  background: var(--color, currentColor) var(--background);
                   clip-path: polygon(
                     50% 50%,
                     50% 0%,
@@ -1019,8 +1011,8 @@ table:not(.table-charts) .sr-only {
                 @each $name, $pattern in $patterns {
                   $i: index($patterns, ($name $pattern));
 
-                  tr:nth-child(#{$i}n + #{$i}) *::before {
-                    background-image: var(--#{$name}); /* 1 */
+                  tr:nth-child(#{$i}n + #{$i}) {
+                    --background: var(--#{$name}); /* 1 */
                   }
                 }
 
