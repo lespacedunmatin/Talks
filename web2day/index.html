@@ -1318,8 +1318,6 @@ table {
 [scope="col"] {
     --away: calc( (var(--radius) * -1) - 50% );
     left: 50%;
-    margin: 0;
-    padding: 0 1rem;
     position: absolute;
     top: 50%;
     transform:
@@ -1459,7 +1457,7 @@ td {
           <h3 lang="en">Houston<span aria-hidden="true">&nbsp;&#128225;</span></h3>
           <figure role="group" class="illustration">
             <img src="img_slide/hypothénuse.png" alt="" width="333" height="243" />
-            <figcaption class="small">Illustration de la déformation du carré par la valeur <code>skew()</code></figcaption>
+            <figcaption class="small">Illustration de la déformation du carré par la fonction <code>skew()</code></figcaption>
           </figure>
         </section>
         <section class="slide">
@@ -1481,7 +1479,7 @@ td span {
       --sin-term4: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 5040);
       --sin-term5: calc((var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle) * var(--angle)) / 362880);
       --sin: calc(var(--sin-term1) - var(--sin-term2) + var(--sin-term3) - var(--sin-term4) + var(--sin-term5));
-      /* calc()uler hypothénuse: largeur initiale / sinus de l’angle opposé */
+      /* calc()uler l’hypothénuse : largeur initiale / sinus de l’angle opposé */
       --hypo: calc( var(--unitless-radius) / var(--sin) );
       /* trouver le ratio : largeur après déformation / largeur initiale */
       --ratio: calc( var(--hypo) / var(--unitless-radius) );
@@ -1591,33 +1589,33 @@ td span {
               </tr>
             </thead>
             <tbody>
-                <tr style="--color: #734BF9">
+                <tr style="--color: #734BF9;--term: 'HTML';">
                   <th scope="row">HTML</th>
-                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #E11A81">
+                <tr style="--color: #E11A81;--term: 'CSS';">
                   <th scope="row">CSS</th>
                   <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #0172F0">
+                <tr style="--color: #0172F0;--term: 'JS';">
                   <th scope="row">JS</th>
-                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FDC02F">
+                <tr style="--color: #FDC02F;--term: 'Json';">
                   <th scope="row">Json</th>
                   <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr style="--color: #39CA74">
+                <tr style="--color: #39CA74;--term: 'Images';">
                   <th scope="row">Images</th>
-                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FF2D40">
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
-                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
-                </tr>
-                <tr style="--color: #585462">
-                  <th scope="row">Autres</th>
-                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>         
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
@@ -1657,33 +1655,33 @@ tbody [scope="row"]::before {
               </tr>
             </thead>
             <tbody>
-                <tr style="--color: #734BF9">
+                <tr style="--color: #734BF9;--term: 'HTML';">
                   <th scope="row">HTML</th>
-                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #E11A81">
+                <tr style="--color: #E11A81;--term: 'CSS';">
                   <th scope="row">CSS</th>
                   <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #0172F0">
+                <tr style="--color: #0172F0;--term: 'JS';">
                   <th scope="row">JS</th>
-                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FDC02F">
+                <tr style="--color: #FDC02F;--term: 'Json';">
                   <th scope="row">Json</th>
                   <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr style="--color: #39CA74">
+                <tr style="--color: #39CA74;--term: 'Images';">
                   <th scope="row">Images</th>
-                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FF2D40">
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
-                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
-                </tr>
-                <tr style="--color: #585462">
-                  <th scope="row">Autres</th>
-                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>         
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
@@ -1734,39 +1732,39 @@ td::before {
               </tr>
             </thead>
             <tbody>
-                <tr style="--color: #734BF9">
+                <tr style="--color: #734BF9;--term: 'HTML';">
                   <th scope="row">HTML</th>
-                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #E11A81">
+                <tr style="--color: #E11A81;--term: 'CSS';">
                   <th scope="row">CSS</th>
                   <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #0172F0">
+                <tr style="--color: #0172F0;--term: 'JS';">
                   <th scope="row">JS</th>
-                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FDC02F">
+                <tr style="--color: #FDC02F;--term: 'Json';">
                   <th scope="row">Json</th>
                   <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr style="--color: #39CA74">
+                <tr style="--color: #39CA74;--term: 'Images';">
                   <th scope="row">Images</th>
-                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FF2D40">
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
-                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
-                </tr>
-                <tr style="--color: #585462">
-                  <th scope="row">Autres</th>
-                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>         
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
         </section>
         
-        <!-- Step 4 -->
+        <!-- Step 4 : dougnut -->
         <section class="slide">
             <h3>Devenir doughnut<span aria-hidden="true">&nbsp;&#127849;</span></h3>
             <p class="small">
@@ -1788,7 +1786,7 @@ td::before {
   </code>
 </pre>
         </section>   
-        <section class="slide" id="white-slide">
+        <section class="slide">
           <table class="table-ffoodd table-charts pie step-1 step-2 donut" style="--offset: 8rem;">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
             <thead class="sr-only">
@@ -1798,33 +1796,90 @@ td::before {
               </tr>
             </thead>
             <tbody>
-                <tr style="--color: #734BF9">
+                <tr style="--color: #734BF9;--term: 'HTML';">
                   <th scope="row">HTML</th>
-                  <td  style="--value: 2; --start: 0;">2&nbsp;%</td> 
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #E11A81">
+                <tr style="--color: #E11A81;--term: 'CSS';">
                   <th scope="row">CSS</th>
                   <td style="--value: 2; --start: 2;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #0172F0">
+                <tr style="--color: #0172F0;--term: 'JS';">
                   <th scope="row">JS</th>
-                  <td style="--value: 32; --start: 4;">32&nbsp;%</td>      
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FDC02F">
+                <tr style="--color: #FDC02F;--term: 'Json';">
                   <th scope="row">Json</th>
                   <td style="--value: 1; --start: 36;">1&nbsp;%</td>
                 </tr>
-                <tr style="--color: #39CA74">
+                <tr style="--color: #39CA74;--term: 'Images';">
                   <th scope="row">Images</th>
-                  <td style="--value: 44; --start: 37;">44&nbsp;%</td>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
                 </tr>
-                <tr style="--color: #FF2D40">
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
-                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>  
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>         
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
-                <tr style="--color: #585462">
-                  <th scope="row">Autres</th>
-                  <td style="--value: 2; --start: 98;">2&nbsp;%</td>
+              </tbody>
+            </table>
+        </section>
+          
+        <!-- Step 5 : polar -->
+        <section class="slide">
+            <h3>Devenir polaire<span aria-hidden="true">&nbsp;&#9731;</span></h3>
+<pre class="language-css">
+  <code class="language-css">
+td::before {
+  --zoom: 50;
+  transform:
+    translate3d(-50%, -50%, 0)
+    rotate( var(--position) )
+    scale( calc((var(--zoom) + (var(--value) / (100 / var(--zoom)))) / 100) );
+}
+  </code>
+</pre>
+        </section>   
+        <section class="slide" id="white-slide">
+          <table class="table-ffoodd table-charts pie step-1 step-2 polar" style="--offset: 8rem;">
+            <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+            <thead class="sr-only">
+              <tr>
+                <th scope="col">Ressource</th>
+                <th scope="col">Proportion</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr style="--color: #734BF9;--term: 'HTML';">
+                  <th scope="row">HTML</th>
+                  <td style="--value: 2; --start: 0;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #E11A81;--term: 'CSS';">
+                  <th scope="row">CSS</th>
+                  <td style="--value: 2; --start: 2;">2&nbsp;%</td>
+                </tr>
+                <tr style="--color: #0172F0;--term: 'JS';">
+                  <th scope="row">JS</th>
+                  <td style="--value: 32; --start: 4; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">32&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FDC02F;--term: 'Json';">
+                  <th scope="row">Json</th>
+                  <td style="--value: 1; --start: 36;">1&nbsp;%</td>
+                </tr>
+                <tr style="--color: #39CA74;--term: 'Images';">
+                  <th scope="row">Images</th>
+                  <td style="--value: 44; --start: 37; --lt-25: 0; --gt-25: 1; --lt-50: 1; --gt-50: 0;">44&nbsp;%</td>
+                </tr>
+                <tr style="--color: #FF2D40;--term: 'Webfonts';">
+                  <th scope="row">Webfonts</th>
+                  <td style="--value: 17; --start: 81;">17&nbsp;%</td>
+                </tr>         
+                <tr style="--color: #585462;--term: 'Autres';">
+                    <th scope="row">Autres</th>
+                    <td style="--value: 2; --start: 98;">2&nbsp;%</td>
                 </tr>
               </tbody>
             </table>
