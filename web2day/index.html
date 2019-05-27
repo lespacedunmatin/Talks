@@ -65,7 +65,9 @@
           </h2>
           <p>
             Retrouvez les slides en ligne sur<br>
-            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/web2day/">ffoodd.fr/web2day</a>.
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/web2day/">ffoodd.fr/web2day</a><br>
+            et la documentation complète sur<br>
+            <span aria-hidden="true">→&nbsp;</span><a href="https://ffoodd.github.io/sseeeedd/graphiques.html">ffoodd.github.io</a>.
           </p>
           <footer class="table">
             <p class="col-50">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
@@ -1048,7 +1050,9 @@ table::after {
             <h3>Des infobulles<span aria-hidden="true">&nbsp;&#128712;</span></h3>
             <p class="small">
               Reposant sur <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab">une
-              astuce de <cite>Cassie Evans</cite> utilisant les compteurs CSS</a>.</p>
+              astuce de <cite>Cassie Evans</cite> utilisant les compteurs CSS</a> et 
+              <a hreflang="en" href="https://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/">
+                une idée de <cite>Lea Verou</cite> pour gérer le retour à la ligne</a>.</p>
 <pre class="language-css">
   <code class="language-css">
 td {
@@ -1517,7 +1521,7 @@ td span {
         
         <!-- Step 7 : multiples -->
         <section class="slide">
-          <table class="table-food table-charts radar step-1 step-2 step-3 step-4 radar-multiple" style="--scale: 20; --step: 5; --items: 7; --areas: 2;">
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4 radar-multiple" style="--scale: 20; --step: 5; --items: 7; --areas: 2;">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
             <thead>
               <tr>
@@ -1570,7 +1574,7 @@ td span {
     &lt;/tr>
   &lt;/thead>
   &lt;tbody>
-    &lt;tr style="--color: #734bf9">
+    &lt;tr style="--color: #734bf9; --term: 'HTML';">
       &lt;th scope="row">HTML&lt;/th>
       &lt;td style="--value: 2; --start: 0; ">2 %&lt;/td>
     &lt;/tr>
@@ -1635,7 +1639,7 @@ tbody tr {
 }
 
 tbody [scope="row"]::before {
-    background: var(--color, currentColor);
+    background: var(--color, currentColor) var(--background);
     content: "";
     display: inline-block;
     height: 1rem;
@@ -1709,13 +1713,13 @@ td::before {
       50% 50%,
       50% 0%,
       100% 0%,
-      calc( 50% + ( var(--pos-B) * 1% * var(--lt-25, 1) ) + ( var(--gt-25, 0) * 50% ) ) calc( 50% - ( var(--pos-A) * 1% * var(--lt-25, 1) ) ),
-      calc( 50% + ( var(--gt-25, 0) * 50% ) )                                           calc( 50% + ( var(--gt-25, 0) * 50% ) ),
-      calc( 50% + ( var(--pos-A) * 1% * var(--lt-50, 1) ) + ( var(--gt-50, 0) * 50% ) ) calc( 50% + ( var(--pos-B) * 1% * var(--lt-50, 1) ) + ( var(--gt-50, 0) * 50% ) ),
-      calc( 50% - ( var(--gt-50, 0) * 50% ) )                                           calc( 50% + ( var(--gt-50, 0) * 50% ) ),
-      calc( 50% - ( var(--pos-B) * 1% * var(--lt-75, 1) ) - ( var(--gt-75, 0) * 50% ) ) calc( 50% + ( var(--pos-A) * 1% * var(--lt-75, 1) ) ),
-      calc( 50% - ( var(--gt-75, 0) * 50% ) )                                           calc( 50% - ( var(--gt-75, 0) * 50% ) ),
-      calc( 50% - ( var(--pos-A) * 1% * var(--gt-75, 0) ) )                             calc( 50% - ( var(--pos-B) * 1% * var(--gt-75, 0) ) ),
+      calc(50% + (var(--pos-B) * 1% * var(--lt-25, 1)) + (var(--gt-25, 0) * 50%)) calc(50% - (var(--pos-A) * 1% * var(--lt-25, 1))),
+      calc(50% + (var(--gt-25, 0) * 50% ))                                        calc(50% + (var(--gt-25, 0) * 50%)),
+      calc(50% + (var(--pos-A) * 1% * var(--lt-50, 1)) + (var(--gt-50, 0) * 50%)) calc(50% + (var(--pos-B) * 1% * var(--lt-50, 1)) + (var(--gt-50, 0) * 50%)),
+      calc(50% - (var(--gt-50, 0) * 50% ))                                        calc(50% + (var(--gt-50, 0) * 50%)),
+      calc(50% - (var(--pos-B) * 1% * var(--lt-75, 1)) - (var(--gt-75, 0) * 50%)) calc(50% + (var(--pos-A) * 1% * var(--lt-75, 1))),
+      calc(50% - (var(--gt-75, 0) * 50% ))                                        calc(50% - (var(--gt-75, 0) * 50%)),
+      calc(50% - (var(--pos-A) * 1% * var(--gt-75, 0)))                           calc(50% - (var(--pos-B) * 1% * var(--gt-75, 0))),
       50% 50%
     );
 }
@@ -1786,7 +1790,7 @@ td::before {
   </code>
 </pre>
         </section>   
-        <section class="slide">
+        <section class="slide" style="background: #fff;">
           <table class="table-ffoodd table-charts pie step-1 step-2 donut" style="--offset: 8rem;">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
             <thead class="sr-only">

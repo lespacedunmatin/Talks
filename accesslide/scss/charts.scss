@@ -919,6 +919,14 @@ table:not(.table-charts) .sr-only {
                   transition: opacity .3s map-get( $timing-functions, 'move' );
                   will-change: opacity;
                 }
+                
+                @each $name, $pattern in $patterns {
+                  $i: index($patterns, ($name $pattern));
+
+                  tr:nth-child(#{$i}n + #{$i}) {
+                    --background: var(--#{$name}); /* 1 */
+                  }
+                }
 
                 [scope="row"] {
                   padding-right: $gutter / 2;
@@ -1006,14 +1014,6 @@ table:not(.table-charts) .sr-only {
 
                 tr:hover td::before {
                   --zoom: .8;
-                }
-
-                @each $name, $pattern in $patterns {
-                  $i: index($patterns, ($name $pattern));
-
-                  tr:nth-child(#{$i}n + #{$i}) {
-                    --background: var(--#{$name}); /* 1 */
-                  }
                 }
 
                 td::after {
