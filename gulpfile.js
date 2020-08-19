@@ -14,24 +14,22 @@ let paths = {
     node: './node_modules/'
 };
 
-gulp.task('sass', function () {
+/**
+ * @section Build
+ * Compile JS & CSS files for theme
+ */
+ 
+gulp.task('css', function () {
     return gulp.src(paths.dev + '/scss/*.scss')
       .pipe(newer(paths.dev + '/css'))
       .pipe(maps.init())
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-      .pipe(prefix({
-          browsers: ['last 1 versions']
-      }))
+      .pipe(prefix())
       .pipe(maps.write('./'))
       .pipe(gulp.dest(paths.dev + '/css'))
       .pipe(browser.stream());
 });
 
-
-/**
- * @section Build
- * Compile JavaScript files for theme
- */
 gulp.task('js', function () {
     return gulp.src(paths.dev + '/*.js')
       .pipe(newer(paths.dev + '/js'))
@@ -44,25 +42,34 @@ gulp.task('js', function () {
       .pipe(browser.stream());
 });
 
+gulp.task('build', gulp.parallel('css', 'js'));
+
 
 /**
  * @section Sync
  * BrowserSync
  */
-gulp.task('sync', ['sass', 'js'], function() {
+function reload(done) {
+    browser.reload();
+    done();
+}
+
+function sync(done) {
     browser.init({
-        server: {
-           baseDir: "./"
-        }
+      server: {
+         baseDir: "./"
+      },
+      https: true,
+      cors: true
     });
+    done();
+}
 
-    gulp.watch('./**/*.html');
-    gulp.watch(paths.dev + '/scss/**/*.scss', ['sass']);
-    gulp.watch(paths.dev + '/*.js', ['js']);
-});
+function watch() {
+    gulp.watch('./**/*.html', gulp.series(reload));
+    gulp.watch(paths.dev + '/scss/**/*.scss', gulp.series('css', reload));
+    gulp.watch(paths.dev + '/*.js', gulp.series('js', reload));
+}
 
-
-/**
- * @section default: sync
- */
-gulp.task('default', ['sync']);
+exports.watch   = watch;
+exports.default = gulp.series( 'build', sync, watch );

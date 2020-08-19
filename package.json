@@ -11,20 +11,19 @@
   "style": "accesslide/css/styles.min.css",
   "sass": "accesslide/scss/styles.scss",
   "main": "accesslide/js/AccesSlide.min.js",
-  "ignore": [
-    "node_modules"
-  ],
+  "ignore": ["node_modules"],
   "scripts": {
     "gulp": "node node_modules/gulp/bin/gulp.js",
     "start": "npm run gulp"
   },
+  "browserslist": ["last 1 versions"],
   "devDependencies": {
-    "browser-sync": "^2.24.7",
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.1",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.0"
   }
