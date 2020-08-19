@@ -117,6 +117,11 @@ h3 span[aria-hidden] {
   font-style: normal;
 }
 
+.slide h2 small {
+  display: inline;
+  font: italic 300 .3em 'museo-slab-1';
+}
+
 pre code {
   border: 0;
   white-space: pre-wrap;
@@ -834,7 +839,7 @@ and (min-width:24em) {
   }
   
   .mt-auto {
-    margin-top: auto;
+    margin-top: auto !important;
   }
 
   .col-left {
