@@ -90,17 +90,59 @@
 
         <section class="slide full">
           <h2>Cascade<span aria-hidden="true">&nbsp;&#127752;</span></h2>
-          <p class="h3">Hop, galipette<span aria-hidden="true">&nbsp;*</span>&nbsp;!</p>
+          <h3>Hop, galipette<span aria-hidden="true">&nbsp;*</span>&nbsp;!</h3>
           <p>La <dfn id="def-cascade">cascade</dfn> est l’algorithme décidant quel style est <strong>finalement</strong> appliqué.</p>
-          <p><a href="https://wattenberger.com/blog/css-cascade" hreflang="en"><cite>Amelia Wattenberger</cite> a rédigé un billet de blog interactif expliquant à merveille la cascade.</a></p>
+          <p>
+            <a href="https://wattenberger.com/blog/css-cascade" hreflang="en"><cite>Amelia Wattenberger</cite> a rédigé un billet de blog interactif expliquant à merveille la cascade</a>,
+            mais vous pouvez aussi lire <a href="https://www.w3.org/TR/css-cascade-3/" hreflang="en">la spécification du module <q lang="en">Cascading and inheritance</q> du
+            <abbr lang="en" title="World Wide Web Consortium" aria-label="World Wide Web Consortium">W3C</a>, si vous préférez&nbsp;!
+          </p>
+          <p>Les propriétés personnalisées respectent la cascade, au même titre que les autres propriétés.</p>
           <p class="small mt-auto"><span aria-hidden="true">*&nbsp;</span>Galipette réalisée par un professionnel, ne tentez pas ça chez vous.</p>
         </section>
         
         <section class="slide">
           <h2>L’héritage <small>(Mitsouko)</small><span aria-hidden="true">&nbsp;&#128131;</span></h2>
-          <br>
           <h3><q>C’est comme ça-aaaaaa</q></h3>
-          <p>Toutes les propriétés ne sont pas héritables&nbsp;!</p>
+          <p>
+            <strong>L’héritage intervient quand la cascade n’aboutit à aucune valeur</strong>
+            —&nbsp;une sombre histoire de succession, donc…
+          </p>
+          <p>
+            Mais <strong>toutes les propriétés ne sont pas héritées</strong>&nbsp;! Ça concerne presque exclusivement les propriétés liées au texte
+            —&nbsp;imaginez un peu le chantier, sinon…
+          </p>
+          <p>
+            <span aria-hidden="true">&#128712;&nbsp;</span>
+            Cependant <strong>les propriétés personnalisées sont héritées</strong>, au cas où elles servent dans des propriétés liées au texte. Intéressant, non&nbsp;?
+          </p>
+        </section>
+        
+        <section class="slide">
+          <h2>Valeur de repli <span aria-hidden="true">&nbsp;&#128281;</span></h2>
+          <h3>Rien à voir avec l’origami</h3>
+          <p>Quand une valeur ou une propriété n’est pas supportée, elle est ignorée.</p>
+          <p>
+            On peut en définir une autre en amont, mieux supportée&nbsp;;
+            ou vérifier sa prise en charge à l’aide de <code>@supports</code>.
+          </p>
+          <p>
+            Mais le navigateur ne sait pas s’il va prendre en charge votre variable
+            et son usage dans une propriété&nbsp;! On définit donc une valeur de repli&nbsp;:
+            <code>var(--color, currentColor)</code>.
+          </p>
+        </section>
+        
+        <section class="slide">
+          <h2>Les particularités</h2>
+          <h3>Une sorte de définition</h3>
+          <ul>
+            <li>Une propriété personnalisée ne sert à rien si elle n’est pas utilisée dans une valeur&nbsp;!</li>
+            <li>Chaque propriété personnalisée peut avoir plusieurs valeurs au même moment, en fonction de l’élément qui s’en sert —&nbsp;cascade, héritage, repli… suivez, un peu&nbsp;!</li>
+            <li>Les propriétés personnalisées sont déclaratives, comme l’ensemble de CSS&nbsp;: si vous changez une valeur, elle changera pour tout l’arbre du document concerné —&nbsp;indépendamment de la position de la définition de la valeur dans vos CSS&nbsp;;</li>
+            <li>Les propriétés personnalisées ne sont pas affectées par la propriéte <code>all</code>.</li>
+          </ul>
+          <p class="small">Rien à voir avec <a hreflang="en" href="https://sass-lang.com/documentation/variables">les variables Sass</a>, donc<span aria-hidden="true">&nbsp;&#128520;</span>&nbsp;!</p>
         </section>
 
         <section class="slide">
