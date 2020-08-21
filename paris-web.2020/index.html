@@ -131,26 +131,78 @@
             et son usage dans une propriété&nbsp;! On définit donc une valeur de repli&nbsp;:
             <code>var(--color, currentColor)</code>.
           </p>
+          <p class="small">
+            La valeur de repli est inutile si votre propriété personnalisée est définie pour <code>:root</code>,
+            sauf si vous avez eu la bonne idée de la «&nbsp;vidanger&nbsp;» quelque part dans votre feuille de styles…
+          </p>
         </section>
         
         <section class="slide">
           <h2>Les particularités</h2>
           <h3>Une sorte de définition</h3>
+          <p>Les propriétés personnalisées&nbsp;:</p>
           <ul>
-            <li>Une propriété personnalisée ne sert à rien si elle n’est pas utilisée dans une valeur&nbsp;!</li>
-            <li>Chaque propriété personnalisée peut avoir plusieurs valeurs au même moment, en fonction de l’élément qui s’en sert —&nbsp;cascade, héritage, repli… suivez, un peu&nbsp;!</li>
-            <li>Les propriétés personnalisées sont déclaratives, comme l’ensemble de CSS&nbsp;: si vous changez une valeur, elle changera pour tout l’arbre du document concerné —&nbsp;indépendamment de la position de la définition de la valeur dans vos CSS&nbsp;;</li>
-            <li>Les propriétés personnalisées ne sont pas affectées par la propriéte <code>all</code>.</li>
+            <li>ne servent à rien si elles ne sont pas <strong>utilisées</strong> dans une valeur&nbsp;!</li>
+            <li>peuvent avoir <strong>plusieurs valeurs au même moment</strong>, en fonction de l’élément qui s’en sert —&nbsp;cascade, héritage, repli… suivez, un peu&nbsp;!</li>
+            <li>sont <strong>déclaratives</strong>, comme l’ensemble de CSS&nbsp;: si vous changez une valeur, elle changera pour tout l’arbre du document concerné —&nbsp;indépendamment de la position de la définition de la valeur dans vos CSS&nbsp;;</li>
+            <li>ne sont <strong>pas affectées</strong> par la propriéte <code>all</code>.</li>
           </ul>
           <p class="small">Rien à voir avec <a hreflang="en" href="https://sass-lang.com/documentation/variables">les variables Sass</a>, donc<span aria-hidden="true">&nbsp;&#128520;</span>&nbsp;!</p>
         </section>
 
         <section class="slide">
-          <h2>Conclusion</h2>
-          <br>
-          <h3 lang="en">Learning is fun<span aria-hidden="true">&nbsp;&#128131;</span></h3>
-          <p>J’espère que vous aurez appris un ou deux trucs&nbsp;!</p>
+          <h2>Les capacités</h2>
+          <h3>Qu’est-ce qu’on va bien pouvoir faire de ça<span aria-hidden="true">&nbsp;&#128519;</span>&nbsp;?</h3>
         </section>
+
+        <section class="slide">
+          <h2>Une palette de couleurs<span aria-hidden="true">&nbsp;&#127912;</span></h2>
+          <p>
+            <a hreflang="en" href="https://www.sarasoueidan.com/blog/hex-rgb-to-hsl/"><cite>Sara Soueidan</cite>
+            explique l’utilisation des propriétés personnalisées combinées à <code>hsl()</code></a>
+            pour gérer une palette de couleurs —&nbsp;et <a hreflang="en" href="https://una.im/css-color-theming/"><cite>Une Kravets</cite>
+            pousse la réflexion encore plus loin</a>.
+          </p>
+          <p>J’ai implémenté une telle palette dans <a hreflang="en" href="https://github.com/ffoodd/sseeeedd/blob/243cacb8b226974206b64d7a1c527016499b34c6/src/scss/abstracts/_variables.scss#L39">sseeeedd (sur GitHub)</a>&nbsp;:</p>
+          <ul>
+            <li>en prenant comme couleur de départ <a hreflang="en" href="https://meyerweb.com/eric/thoughts/2014/06/19/rebeccapurple/"><code>rebbecapurple</code></a>,</li>
+            <li>puis <a hreflang="en" href="https://stackoverflow.com/questions/14095849/calculating-the-analog-color-with-python">son analogue</a>,</li>
+            <li><a hreflang="en" href="https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/">en gérant les contrastes avec <code>calc()</code></a>,</li>
+            <li>puis les variantes claires et sombres, déterminées grâce <a href="https://fr.wikipedia.org/wiki/Nombre_d%27or">au nombre d’or</a>.</li>
+          </ul>
+          <p>
+            Vous pouvez ainsi changer la palette de couleurs en modifiant la seule propriété personnalisée <code>--hue</code>
+            ou basculer vers une palette complémentaire en modifiant <code>--rotation</code> pour ajouter <var>180</var> au lieu de <var>30</var>.
+          </p>
+          <p class="small">
+            Vous pouvez aussi augmenter les contrastes et la luminosité en fonction du <em lang="en">viewport</em> ou gérer
+            <code>prefers-color-scheme</code> en quelques lignes&nbsp;!
+          </p>
+        </section>
+
+        <section class="slide">
+          <h2>De la configuration globale<span aria-hidden="true">&nbsp;&#9881;</span></h2>
+          <h3><q>Je s’appelle <code>:root</code></q></h3>
+          <p>
+            Vous pouvez utiliser les propriétés personnalisées comme une <abbr lang="en" title="Application Programming Interface" aria-label="Application Programming Interface">API</abbr>
+            de surface avec vos styles&nbsp;:
+          </p>
+          <ul>
+            <li>
+              <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
+              pour (dé)sactiver des éléments de styles&nbsp;;
+            </li>
+            <li>
+              <a hreflang="en" href="https://hugogiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/"><cite>Hugo Giraudel</cite> suggère de réduire les animations globalement</a>
+              en se basant sur une unique propriété personnalisée&nbsp;;
+            </li>
+            <li>
+              <a hreflang="en" href="https://www.sarasoueidan.com/blog/style-settings-with-css-variables/"><cite>Sara Soueidan</cite> théorise même une organisation complète</a> autour
+              des propriétés personnalisées.
+            </li>
+          </ul>
+        </section>
+
 
         <section  class="slide end noprint">
           <h2 class="end-title">Merci</h2>
