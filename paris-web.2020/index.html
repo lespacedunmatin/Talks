@@ -203,7 +203,62 @@
           </ul>
         </section>
 
-
+        <section  class="slide">
+          <h2>Une cascade personnalisée</h2>
+          <h3>Hop, sans les mains<span aria-hidden="true">&nbsp;&#129335;</span></h3>
+          <p>
+            <a hreflang="en" href="https://codepen.io/mirisuzanne/full/vYNgodb"><cite>Miriam Suzanne</cite>
+            a conceptualisé les cascades personnalisées</a>, une sucession de propriétés personnalisées
+            dans les valeurs de replis de propriéts personnalisées.
+          </p>
+          <ul>
+            <li>Fini les <strong>interférences</strong> entre pseudo-classes (ou presque),</li>
+            <li>Facile de personnaliser <strong>en fonction du contexte</strong>,</li>
+            <li>Permet de <strong>mitiger l’importance</strong> des styles en ligne&nbsp;!</li>
+          <ul>
+        </section>
+        
+        <section class="slide">
+          <h2>Convertir un entier en chaîne<span aria-hidden="true">&nbsp;&#128279;</span></h2>
+          <h3>Ce n’est <em>que</em> du CSS</h3>
+          <p>
+            <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab"><cite>Cassie Evans</cite>
+            utilise <strong>les compteurs CSS</strong> pour afficher un entier dans la propiété <code>content</code></a>,
+            ce qui n’est pas possible autrement.
+          </p>
+        </section>
+        
+        <section class="slide">
+          <h2>De la pseudo-logique<span aria-hidden="true">&nbsp;&#129300;</span></h2>
+          <h3>Ce n’est <em>toujours</em> que du CSS</h3>
+          <p>
+            <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/"><cite>Roman Komarov</cite>
+            propose d’utiliser des propriétés personnalisées pseudo-booléennes</a> pour qu’une propriété bascule 
+            d’une valeur calculée à une autre.
+          </p>
+          <p>
+            <a hreflang="en" href="https://css-tricks.com/dry-switching-with-css-variables-the-difference-of-one-declaration/"><cite>Ana Tudor</cite> 
+            décortique des exemples concrets de ce qu’elle baptise <em lang="en"><abbr title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr> switching</em></a>.
+          </p>
+          <p class="small">
+            On peut par exemple <a href="https://ffoodd.github.io/chaarts/camembert.html">basculer d’un point à un autre dans un tracé <code>clip-path</code></a>.
+          </p>
+        </section>
+        
+        <section class="slide">
+          <h2>Factoriser votre code<span aria-hidden="true">&nbsp;&#128238;</span></h2>
+          <h3><abbr lang="en" title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr></h3>
+          <p>
+            Certaines valeurs peuvent être très, très longues&nbsp;: les <code>font-family</code>, les images (URL, dégradés, etc.),
+            ou encore les tracés complexes dans <code>polygon()</code>.
+          </p>
+          <p>
+            Si la même valeur à rallonge est utilisée plusieurs fois, simplifiez-vous la vie&nbsp;:
+            <strong>utilisez des propriétés personnalisées</strong>&nbsp;!
+          </p>
+          <code>background: white var(--stripes);</code>
+        </section>
+        
         <section  class="slide end noprint">
           <h2 class="end-title">Merci</h2>
           <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
