@@ -92,6 +92,11 @@
           <h2>Cascade<span aria-hidden="true">&nbsp;&#127752;</span></h2>
           <h3>Hop, galipette<span aria-hidden="true">&nbsp;*</span>&nbsp;!</h3>
           <p>La <dfn id="def-cascade">cascade</dfn> est l’algorithme décidant quel style est <strong>finalement</strong> appliqué.</p>
+          <p>
+            <a href="https://wattenberger.com/blog/css-cascade" hreflang="en"><cite>Amelia Wattenberger</cite> a rédigé un billet de blog interactif expliquant à merveille la cascade</a>,
+            mais vous pouvez aussi lire <a href="https://www.w3.org/TR/css-cascade-3/" hreflang="en">la spécification du module <q lang="en">Cascading and inheritance</q> du
+            <abbr lang="en" title="World Wide Web Consortium" aria-label="World Wide Web Consortium">W3C</abbr></a>, si vous préférez&nbsp;!
+          </p>
           <p>Les propriétés personnalisées respectent la cascade, au même titre que les autres propriétés.</p>
           <p class="small mt-auto"><span aria-hidden="true">*&nbsp;</span>Galipette réalisée par un professionnel, ne tentez pas ça chez vous.</p>
         </section>
@@ -99,32 +104,36 @@
         <section class="slide">
           <h2>L’héritage <small>(Mitsouko)</small><span aria-hidden="true">&nbsp;&#128131;</span></h2>
           <h3><q>C’est comme ça-aaaaaa</q></h3>
-          <p><strong>L’héritage intervient quand la cascade n’aboutit à aucune valeur</strong>.</p>
-          <ol>
-            <li>Toutes les propriétés ne sont pas héritées&nbsp;!</li>
-            <li>Les propriétés personnalisées sont héritées.</li>
-          </ol>
+          <p>
+            <strong>L’héritage intervient quand la cascade n’aboutit à aucune valeur</strong>
+            —&nbsp;une sombre histoire de succession, donc…
+          </p>
+          <p>
+            Mais <strong>toutes les propriétés ne sont pas héritées</strong>&nbsp;! Ça concerne presque exclusivement les propriétés liées au texte
+            —&nbsp;imaginez un peu le chantier, sinon…
+          </p>
+          <p>
+            <span aria-hidden="true">&#128712;&nbsp;</span>
+            Cependant <strong>les propriétés personnalisées sont héritées</strong>, au cas où elles servent dans des propriétés liées au texte. Intéressant, non&nbsp;?
+          </p>
         </section>
 
         <section class="slide">
           <h2>Valeur de repli <span aria-hidden="true">&nbsp;&#128281;</span></h2>
           <p>Quand une valeur n’est pas supportée&nbsp;:</p>
           <ol>
-            <li class="Cmasque">elle est ignorée,</li>
-            <li class="Cmasque">la cascade choit,</li>
-            <li class="Cmasque">et l’héritage est transmis…</li>
-            <li class="Cmasque">À moins que…</li>
+            <li>elle est ignorée,</li>
+            <li>la cascade choit,</li>
+            <li>et l’héritage est transmis.</li>
           </ol>
-          <div class="table">
-            <pre class="language-css col-50 Cmasque">
-              <code class="language-css">
-html {
-  color: var(--color);
-}</code>
-            </pre>
-            <p class="Cmasque col-50" style="vertical-align:middle"><code>--color: color(display-p3 1 .5 0);</code></p>
-          </div>
-          <p class="Cmasque">On définit donc une valeur de repli&nbsp;: <code>var(--color, currentColor)</code>.</p>
+          <p>
+            Mais ceci se produit lors du <em lang="en">parsing</em>.
+            Le navigateur ne sait pas encore s’il va savoir appliquer votre variable&nbsp;!
+          </p>
+          <p class="small">
+            La valeur de repli est inutile si votre propriété personnalisée est définie pour <code>:root</code>,
+            sauf si vous avez eu la bonne idée de la «&nbsp;vidanger&nbsp;» quelque part dans votre feuille de styles…
+          </p>
         </section>
 
         <section class="slide">
@@ -132,8 +141,9 @@ html {
           <h3>Une sorte de définition</h3>
           <p>Les propriétés personnalisées&nbsp;:</p>
           <ul>
-            <li>peuvent avoir <strong>plusieurs valeurs au même moment</strong>&nbsp;;</li>
-            <li>sont <strong>déclaratives</strong>, comme l’ensemble de CSS&nbsp;;</li>
+            <li>ne servent à rien si elles ne sont pas <strong>utilisées</strong> dans une valeur&nbsp;!</li>
+            <li>peuvent avoir <strong>plusieurs valeurs au même moment</strong>, en fonction de l’élément qui s’en sert —&nbsp;cascade, héritage, repli… suivez, un peu&nbsp;!</li>
+            <li>sont <strong>déclaratives</strong>, comme l’ensemble de CSS&nbsp;: si vous changez une valeur, elle changera pour tout l’arbre du document concerné —&nbsp;indépendamment de la position de la définition de la valeur dans vos CSS&nbsp;;</li>
             <li>ne sont <strong>pas affectées</strong> par la propriéte <code>all</code>.</li>
           </ul>
           <p class="small">Rien à voir avec <a hreflang="en" href="https://sass-lang.com/documentation/variables">les variables Sass</a>, donc<span aria-hidden="true">&nbsp;&#128520;</span>&nbsp;!</p>
@@ -151,6 +161,21 @@ html {
             explique l’utilisation des propriétés personnalisées combinées à <code>hsl()</code></a>
             pour gérer une palette de couleurs —&nbsp;et <a hreflang="en" href="https://una.im/css-color-theming/"><cite>Une Kravets</cite>
             pousse la réflexion encore plus loin</a>.
+          </p>
+          <p>J’ai implémenté une telle palette dans <a hreflang="en" href="https://github.com/ffoodd/sseeeedd/blob/243cacb8b226974206b64d7a1c527016499b34c6/src/scss/abstracts/_variables.scss#L39">sseeeedd (sur GitHub)</a>&nbsp;:</p>
+          <ul>
+            <li>en prenant comme couleur de départ <a hreflang="en" href="https://meyerweb.com/eric/thoughts/2014/06/19/rebeccapurple/"><code>rebbecapurple</code></a>,</li>
+            <li>puis <a hreflang="en" href="https://stackoverflow.com/questions/14095849/calculating-the-analog-color-with-python">son analogue</a>,</li>
+            <li><a hreflang="en" href="https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/">en gérant les contrastes avec <code>calc()</code></a>,</li>
+            <li>puis les variantes claires et sombres, déterminées grâce <a href="https://fr.wikipedia.org/wiki/Nombre_d%27or">au nombre d’or</a>.</li>
+          </ul>
+          <p>
+            Vous pouvez ainsi changer la palette de couleurs en modifiant la seule propriété personnalisée <code>--hue</code>
+            ou basculer vers une palette complémentaire en modifiant <code>--rotation</code> pour ajouter <var>180</var> au lieu de <var>30</var>.
+          </p>
+          <p class="small">
+            Vous pouvez aussi augmenter les contrastes et la luminosité en fonction du <em lang="en">viewport</em> ou gérer
+            <code>prefers-color-scheme</code> en quelques lignes&nbsp;!
           </p>
         </section>
 
@@ -185,6 +210,11 @@ html {
             a conceptualisé les cascades personnalisées</a>, une sucession de propriétés personnalisées
             dans les valeurs de replis de propriéts personnalisées.
           </p>
+          <ul>
+            <li>Fini les <strong>interférences</strong> entre pseudo-classes (ou presque),</li>
+            <li>Facile de personnaliser <strong>en fonction du contexte</strong>,</li>
+            <li>Permet de <strong>mitiger l’importance</strong> des styles en ligne&nbsp;!</li>
+          </ul>
         </section>
 
         <section class="slide">
@@ -192,7 +222,8 @@ html {
           <h3>Ce n’est <em>que</em> du CSS</h3>
           <p>
             <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab"><cite>Cassie Evans</cite>
-            utilise <strong>les compteurs CSS</strong> pour afficher un entier dans la propiété <code>content</code></a>.
+            utilise <strong>les compteurs CSS</strong> pour afficher un entier dans la propiété <code>content</code></a>,
+            ce qui n’est pas possible autrement.
           </p>
         </section>
 
@@ -208,6 +239,9 @@ html {
             <a hreflang="en" href="https://css-tricks.com/dry-switching-with-css-variables-the-difference-of-one-declaration/"><cite>Ana Tudor</cite>
             décortique des exemples concrets de ce qu’elle baptise <em lang="en"><abbr title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr> switching</em></a>.
           </p>
+          <p class="small">
+            On peut par exemple <a href="https://ffoodd.github.io/chaarts/camembert.html">basculer d’un point à un autre dans un tracé <code>clip-path</code></a>.
+          </p>
         </section>
 
         <section class="slide">
@@ -218,11 +252,21 @@ html {
             utilise une astuce qu’il nomme <em lang="en">space toggler</em> pour se passer des <em lang="en">media queries</em></a>
             dans son CSS —&nbsp;ou presque.
           </p>
+          <p class="small">
+            Si vous cherchez à vous passer de <code>@media</code>, je vous conseille plutôt
+            <a href="https://emails.hteumeuleu.fr/2016/02/fab-four-emails-responsive-sans-media-queries/">la technique des Fab Four par Rémi Parmentier</a>,
+            les modules <em lang="en">Grid</em> et <em lang="en">Flexbox</em> de CSS, et quelques exemples chez
+            Heydon Pickering notamment.
+          </p>
         </section>
 
         <section class="slide">
           <h2>Factoriser votre code<span aria-hidden="true">&nbsp;&#128238;</span></h2>
           <h3><abbr lang="en" title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr></h3>
+          <p>
+            Certaines valeurs peuvent être très, très longues&nbsp;: les <code>font-family</code>, les images (URL, dégradés, etc.),
+            ou encore les tracés complexes dans <code>polygon()</code>.
+          </p>
           <p>
             Si la même valeur à rallonge est utilisée plusieurs fois, simplifiez-vous la vie&nbsp;:
             <strong>utilisez des propriétés personnalisées</strong>&nbsp;!
@@ -235,10 +279,23 @@ html {
           <h3>Les fausses bonnes idées<span aria-hidden="true">&nbsp;&#128161;</span></h3>
           <p>Ça envoie du rêve, mais ça devrait pas…</p>
           <ul>
-            <li class="Cmasque"><a hreflang="en" href="https://adactio.com/journal/16993">Hors cascade, pas de repli possible —&nbsp;chez <cite>Jeremy Keith</cite></a>.</li>
-            <li class="Cmasque"><a hreflang="en" href="https://lisilinhart.info/posts/css-variables-performance/">Le changement, c’est pas forcément maintenant —&nbsp;par <cite>Lisi Linhardt</cite></a>.</li>
-            <li class="Cmasque"><a href="https://en.wikipedia.org/wiki/KISS_principle"><abbr lang="en" title="Keep It Simple, Stupid">KISS</abbr></a>&nbsp;: pour une seule valeur, aucun intérêt.</li>
-            <li class="Cmasque">Si vous gagnez du temps mais prenez du poids, <strong>vous faites fausse route</strong>.</li>
+            <li class="Cmasque">
+              <a hreflang="en" href="https://adactio.com/journal/16993">Hors cascade, pas de repli possible —&nbsp;chez <cite>Jeremy Keith</cite></a>&nbsp;:
+              les propriétés personnalisées sont des liens symboliques. Si la cible n’est pas là, le lien symbolique reste&nbsp;!
+            </li>
+            <li class="Cmasque">
+              <a hreflang="en" href="https://lisilinhart.info/posts/css-variables-performance/">Le changement, c’est pas forcément maintenant —&nbsp;par <cite>Lisi Linhardt</cite></a>&nbsp;:
+              changer à un seul endroit une valeur appliquée à des centaines d’endroits, super&nbsp;? <strong>Non</strong>,
+              c’est extrêmement coûteux en <em lang="en">repaint</em> et <em lang="en">layout</em>.
+            </li>
+            <li class="Cmasque">
+              <a href="https://en.wikipedia.org/wiki/KISS_principle"><abbr lang="en" title="Keep It Simple, Stupid">KISS</abbr></a>&nbsp;: pour une seule valeur, aucun intérêt.
+              <code>color: var(--color);</code> avec <code>--color: #000;</code>, sérieusement&nbsp;?
+            </li>
+            <li class="Cmasque">
+              Si vous gagnez du temps mais prenez du poids, <strong>vous faites fausse route</strong>.
+              <strong>Pensez à vos utilisateurs.</strong>
+            </li>
           </ul>
         </section>
 
