@@ -120,20 +120,32 @@
 
         <section class="slide">
           <h2>Valeur de repli <span aria-hidden="true">&nbsp;&#128281;</span></h2>
-          <p>Quand une valeur n’est pas supportée&nbsp;:</p>
-          <ol>
-            <li>elle est ignorée,</li>
-            <li>la cascade choit,</li>
-            <li>et l’héritage est transmis.</li>
-          </ol>
-          <p>
-            Mais ceci se produit lors du <em lang="en">parsing</em>.
-            Le navigateur ne sait pas encore s’il va savoir appliquer votre variable&nbsp;!
-          </p>
-          <p class="small">
-            La valeur de repli est inutile si votre propriété personnalisée est définie pour <code>:root</code>,
-            sauf si vous avez eu la bonne idée de la «&nbsp;vidanger&nbsp;» quelque part dans votre feuille de styles…
-          </p>
+          <p>Quand une valeur n’est pas supportée, elle est ignorée et la cascade puis l’héritage interviennent.</p>
+          <div class="table">
+            <div class="Cmasque col-50">
+              <h3>Cascade</h3>
+              <pre class="language-css">
+                <code class="language-css">
+main {
+  color: red;
+  color: color(display-p3 1 .5 0);
+}</code>
+              </pre>
+            </div>
+            <div class="Cmasque col-50">
+              <h3>Héritage</h3>
+              <pre class="language-css">
+                <code class="language-css">
+html {
+  color: red;
+}
+
+main {
+  color: color(display-p3 1 .5 0);
+}</code>
+              </pre>
+            </div>
+          </div>
         </section>
 
         <section class="slide">
@@ -179,27 +191,51 @@
           </p>
         </section>
 
-        <section class="slide">
+        <section class="slide full">
           <h2>De la configuration globale<span aria-hidden="true">&nbsp;&#9881;</span></h2>
           <h3><q>Je s’appelle <code>:root</code></q></h3>
           <p>
             Vous pouvez utiliser les propriétés personnalisées comme une <abbr lang="en" title="Application Programming Interface" aria-label="Application Programming Interface">API</abbr>
             de surface avec vos styles&nbsp;:
           </p>
-          <ul>
-            <li>
-              <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
-              pour (dé)sactiver des éléments de styles&nbsp;;
-            </li>
-            <li>
-              <a hreflang="en" href="https://hugogiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/"><cite>Hugo Giraudel</cite> suggère de réduire les animations globalement</a>
-              en se basant sur une unique propriété personnalisée&nbsp;;
-            </li>
-            <li>
-              <a hreflang="en" href="https://www.sarasoueidan.com/blog/style-settings-with-css-variables/"><cite>Sara Soueidan</cite> théorise même une organisation complète</a> autour
-              des propriétés personnalisées.
-            </li>
-          </ul>
+          <div>
+            <figure class="Cmasque col-left">
+              <pre class="language-css">
+                <code class="language-css">
+:root {
+  --enable-shadows: none;
+}
+
+.component {
+  box-shadow: var(--enable-shadows, 0 .5rem 1rem black);
+}</code>
+              </pre>
+              <figcaption class="small text-left">
+                <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
+                pour (dé)sactiver des éléments de styles.
+              </figcaption>
+            </figure>
+            <figure class="Cmasque col-right">
+              <pre class="language-css">
+                <code class="language-css">
+:root {
+  --duration: 1;
+}
+
+.foobar {
+  transition-duration: calc(var(--duration) * 250ms);
+}</code>
+              </pre>
+              <figcaption class="small text-left">
+                <a hreflang="en" href="https://hugogiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/"><cite>Hugo Giraudel</cite> suggère de réduire les animations globalement</a>
+                en se basant sur une unique propriété personnalisée.
+              </figcaption>
+            </figure>
+          </div>
+          <p class="mt-auto">
+            <a hreflang="en" href="https://www.sarasoueidan.com/blog/style-settings-with-css-variables/"><cite>Sara Soueidan</cite> théorise même une organisation complète</a> autour
+            des propriétés personnalisées.
+          </p>
         </section>
 
         <section  class="slide">

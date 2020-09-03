@@ -99,7 +99,7 @@
         <section class="slide">
           <h2>L’héritage <small>(Mitsouko)</small><span aria-hidden="true">&nbsp;&#128131;</span></h2>
           <h3><q>C’est comme ça-aaaaaa</q></h3>
-          <p><strong>L’héritage intervient quand la cascade n’aboutit à aucune valeur</strong>.</p>
+          <p>L’héritage intervient <strong>quand la cascade n’aboutit à aucune valeur</strong>.</p>
           <ol>
             <li>Toutes les propriétés ne sont pas héritées&nbsp;!</li>
             <li>Les propriétés personnalisées sont héritées.</li>
@@ -108,26 +108,35 @@
 
         <section class="slide">
           <h2>Valeur de repli <span aria-hidden="true">&nbsp;&#128281;</span></h2>
-          <p>Quand une valeur n’est pas supportée&nbsp;:</p>
-          <ol>
-            <li class="Cmasque">elle est ignorée,</li>
-            <li class="Cmasque">la cascade choit,</li>
-            <li class="Cmasque">et l’héritage est transmis…</li>
-            <li class="Cmasque">À moins que…</li>
-          </ol>
+          <p>Quand une valeur n’est pas supportée, elle est ignorée et la cascade puis l’héritage interviennent.</p>
           <div class="table">
-            <pre class="language-css col-50 Cmasque">
-              <code class="language-css">
-html {
-  color: var(--color);
+            <div class="Cmasque col-50">
+              <h3>Cascade</h3>
+              <pre class="language-css">
+                <code class="language-css">
+main {
+  color: red;
+  color: color(display-p3 1 .5 0);
 }</code>
-            </pre>
-            <p class="Cmasque col-50" style="vertical-align:middle"><code>--color: color(display-p3 1 .5 0);</code></p>
+              </pre>
+            </div>
+            <div class="Cmasque col-50">
+              <h3>Héritage</h3>
+              <pre class="language-css">
+                <code class="language-css">
+html {
+  color: red;
+}
+
+main {
+  color: color(display-p3 1 .5 0);
+}</code>
+              </pre>
+            </div>
           </div>
-          <p class="Cmasque">On définit donc une valeur de repli&nbsp;: <code>var(--color, currentColor)</code>.</p>
         </section>
 
-        <section class="slide">
+        <section class="slide full">
           <h2>Les particularités</h2>
           <h3>Une sorte de définition</h3>
           <p>Les propriétés personnalisées&nbsp;:</p>
@@ -136,7 +145,7 @@ html {
             <li>sont <strong>déclaratives</strong>, comme l’ensemble de CSS&nbsp;;</li>
             <li>ne sont <strong>pas affectées</strong> par la propriéte <code>all</code>.</li>
           </ul>
-          <p class="small">Rien à voir avec <a hreflang="en" href="https://sass-lang.com/documentation/variables">les variables Sass</a>, donc<span aria-hidden="true">&nbsp;&#128520;</span>&nbsp;!</p>
+          <p class="small mt-auto">Rien à voir avec <a hreflang="en" href="https://sass-lang.com/documentation/variables">les variables Sass</a>, donc<span aria-hidden="true">&nbsp;&#128520;</span>&nbsp;!</p>
         </section>
 
         <section class="slide">
@@ -152,29 +161,64 @@ html {
             pour gérer une palette de couleurs —&nbsp;et <a hreflang="en" href="https://una.im/css-color-theming/"><cite>Une Kravets</cite>
             pousse la réflexion encore plus loin</a>.
           </p>
+          <pre class="language-css">
+            <code class="language-css">
+:root {
+  --hue: 240;
+  --lightness: 30%;
+}
+
+main {
+  color: hsl(var(--hue), 100%, var(--lightness));
+}</code>
+          </pre>
         </section>
 
-        <section class="slide">
+        <section class="slide full">
           <h2>De la configuration globale<span aria-hidden="true">&nbsp;&#9881;</span></h2>
           <h3><q>Je s’appelle <code>:root</code></q></h3>
           <p>
             Vous pouvez utiliser les propriétés personnalisées comme une <abbr lang="en" title="Application Programming Interface" aria-label="Application Programming Interface">API</abbr>
             de surface avec vos styles&nbsp;:
           </p>
-          <ul>
-            <li>
-              <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
-              pour (dé)sactiver des éléments de styles&nbsp;;
-            </li>
-            <li>
-              <a hreflang="en" href="https://hugogiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/"><cite>Hugo Giraudel</cite> suggère de réduire les animations globalement</a>
-              en se basant sur une unique propriété personnalisée&nbsp;;
-            </li>
-            <li>
-              <a hreflang="en" href="https://www.sarasoueidan.com/blog/style-settings-with-css-variables/"><cite>Sara Soueidan</cite> théorise même une organisation complète</a> autour
-              des propriétés personnalisées.
-            </li>
-          </ul>
+          <div>
+            <figure class="Cmasque col-left">
+              <pre class="language-css">
+                <code class="language-css">
+:root {
+  --enable-shadows: none;
+}
+
+.component {
+  box-shadow: var(--enable-shadows, 0 .5rem 1rem #000);
+}</code>
+              </pre>
+              <figcaption class="small text-left">
+                <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
+                pour (dé)sactiver des éléments de styles.
+              </figcaption>
+            </figure>
+            <figure class="Cmasque col-right">
+              <pre class="language-css">
+                <code class="language-css">
+:root {
+  --duration: 1;
+}
+
+.foobar {
+  transition-duration: calc(var(--duration) * 250ms);
+}</code>
+              </pre>
+              <figcaption class="small text-left">
+                <a hreflang="en" href="https://hugogiraudel.com/2018/03/19/implementing-a-reduced-motion-mode/"><cite>Hugo Giraudel</cite> suggère de réduire les animations globalement</a>
+                en se basant sur une unique propriété personnalisée.
+              </figcaption>
+            </figure>
+          </div>
+          <p class="mt-auto">
+            <a hreflang="en" href="https://www.sarasoueidan.com/blog/style-settings-with-css-variables/"><cite>Sara Soueidan</cite> théorise même une organisation complète</a> autour
+            des propriétés personnalisées.
+          </p>
         </section>
 
         <section  class="slide">
