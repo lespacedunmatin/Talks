@@ -110,7 +110,7 @@
           </p>
           <p>
             Mais <strong>toutes les propriétés ne sont pas héritées</strong>&nbsp;! Ça concerne presque exclusivement les propriétés liées au texte
-            —&nbsp;imaginez un peu le chantier, sinon…
+            —&nbsp;cependant on peut influer sur ce comportement avec les valeurs <code>inherit</code>, <code>initial</code>, <code>revert</code> ou <code>unset</code>.
           </p>
           <p>
             <span aria-hidden="true">&#128712;&nbsp;</span>
@@ -261,6 +261,18 @@ main {
             utilise <strong>les compteurs CSS</strong> pour afficher un entier dans la propiété <code>content</code></a>,
             ce qui n’est pas possible autrement.
           </p>
+          <pre class="language-css">
+                <code class="language-css">
+.icon {
+  --number-var: 23;
+}
+
+.icon::before {
+  counter-reset: number var(--number-var);
+  content: counter(number);
+}</code>
+          </pre>
+          <p class="small mt-auto">Ce n’est que du CSS, mais y’a quand même des données typées.<span aria-hidden="true">&nbsp;&#128519;</span></p>
         </section>
 
         <section class="slide">

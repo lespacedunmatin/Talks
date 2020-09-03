@@ -229,15 +229,39 @@ main {
             a conceptualisé les cascades personnalisées</a>, une sucession de propriétés personnalisées
             dans les valeurs de replis de propriéts personnalisées.
           </p>
+          <pre class="language-css">
+                <code class="language-css">
+button {
+  background: var(--btn-bg--state,
+    var(--btn-bg,
+      var(--btn-bg--type,
+        var(--btn-bg--default)
+      )
+    )
+  );
+}</code>
+          </pre>
         </section>
 
-        <section class="slide">
+        <section class="slide full">
           <h2>Convertir un entier en chaîne<span aria-hidden="true">&nbsp;&#128279;</span></h2>
           <h3>Ce n’est <em>que</em> du CSS</h3>
           <p>
             <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab"><cite>Cassie Evans</cite>
             utilise <strong>les compteurs CSS</strong> pour afficher un entier dans la propiété <code>content</code></a>.
           </p>
+          <pre class="language-css">
+                <code class="language-css">
+.icon {
+  --number-var: 23;
+}
+
+.icon::before {
+  counter-reset: number var(--number-var);
+  content: counter(number);
+}</code>
+          </pre>
+          <p class="small mt-auto">Ce n’est que du CSS, mais y’a quand même des données typées.<span aria-hidden="true">&nbsp;&#128519;</span></p>
         </section>
 
         <section class="slide">
