@@ -181,6 +181,33 @@ main {
             <li><a hreflang="en" href="https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/">en gérant les contrastes avec <code>calc()</code></a>,</li>
             <li>puis les variantes claires et sombres, déterminées grâce <a href="https://fr.wikipedia.org/wiki/Nombre_d%27or">au nombre d’or</a>.</li>
           </ul>
+          <div class="table">
+            <pre class="language-css col-50">
+              <code class="language-css">
+:root {
+  --hue: 240;
+  --lightness: 30%;
+}
+
+main {
+  color: hsl(var(--hue), 100%, var(--lightness));
+}</code>
+            </pre>
+            <pre class="language-css col-50 Cmasque">
+              <code class="language-css">
+@media screen and (min-width: 32em) {
+  :root {
+    --lightness: 40%;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --lightness: 80%;
+  }
+}</code>
+            </pre>
+          </div>
           <p>
             Vous pouvez ainsi changer la palette de couleurs en modifiant la seule propriété personnalisée <code>--hue</code>
             ou basculer vers une palette complémentaire en modifiant <code>--rotation</code> pour ajouter <var>180</var> au lieu de <var>30</var>.
@@ -244,8 +271,32 @@ main {
           <p>
             <a hreflang="en" href="https://codepen.io/mirisuzanne/full/vYNgodb"><cite>Miriam Suzanne</cite>
             a conceptualisé les cascades personnalisées</a>, une sucession de propriétés personnalisées
-            dans les valeurs de replis de propriéts personnalisées.
+            dans les valeurs de replis de propriétés personnalisées.
           </p>
+          <div class="table">
+            <pre class="language-css col-50">
+                  <code class="language-css">
+button {
+  background: var(--btn-bg--state,
+    var(--btn-bg,
+      var(--btn-bg--type,
+        var(--btn-bg--default)
+      )
+    )
+  );
+}</code>
+            </pre>
+            <pre class="language-css col-50 Cmasque">
+                  <code class="language-css">
+[disabled] {
+  --btn-bg--state: darkgray;
+}
+
+.warn {
+  --btn-bg--type: maroon;
+}</code>
+            </pre>
+          </div>
           <ul>
             <li>Fini les <strong>interférences</strong> entre pseudo-classes (ou presque),</li>
             <li>Facile de personnaliser <strong>en fonction du contexte</strong>,</li>
@@ -282,11 +333,30 @@ main {
             <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/"><cite>Roman Komarov</cite>
             propose d’utiliser des propriétés personnalisées pseudo-booléennes</a> pour qu’une propriété bascule
             d’une valeur calculée à une autre.
-          </p>
-          <p>
             <a hreflang="en" href="https://css-tricks.com/dry-switching-with-css-variables-the-difference-of-one-declaration/"><cite>Ana Tudor</cite>
             décortique des exemples concrets de ce qu’elle baptise <em lang="en"><abbr title="Don’t repeat Yourself" aria-label="Don’t repeat Yourself">DRY</abbr> switching</em></a>.
           </p>
+          <div class="table">
+            <pre class="language-css col-50">
+              <code class="language-css">
+:root {
+  --is-big: 0;
+}
+
+.is-big {
+  --is-big: 1;
+}</code>
+            </pre>
+            <pre class="language-css col-50">
+              <code class="language-css Cmasque">
+.block {
+  padding: calc(
+    25px * var(--is-big) +
+    10px * (1 - var(--is-big))
+  );
+}</code>
+            </pre>
+          </div>
           <p class="small">
             On peut par exemple <a href="https://ffoodd.github.io/chaarts/camembert.html">basculer d’un point à un autre dans un tracé <code>clip-path</code></a>.
           </p>
@@ -300,12 +370,79 @@ main {
             utilise une astuce qu’il nomme <em lang="en">space toggler</em> pour se passer des <em lang="en">media queries</em></a>
             dans son CSS —&nbsp;ou presque.
           </p>
+          <div class="table">
+            <pre class="language-css col-50">
+              <code class="language-css">
+:root {
+  --media-lte-sm: initial;
+}
+
+div {
+  --small-borders: var(--media-lte-sm) 2px;
+  border: var(--small-borders, 15px) solid;
+}</code>
+            </pre>
+            <pre class="language-css col-50 Cmasque">
+              <code class="language-css">
+@media (min-width: 56.25em) {
+  :root {
+    --media-lte-sm: ;
+  }
+}</code>
+            </pre>
+          </div>
+          <p>
+            Ce mécanisme vous intrigue&nbsp;?
+            <a hreflang="en" href="https://drafts.csswg.org/css-variables/#guaranteed-invalid-value">La spécification du W3C explique très bien ce comportement</a>, 
+            et le concept de «&nbsp;valeur invalide garantie&nbsp;»&nbsp;:jetez-y un œil&nbsp;!
+          </p>
           <p class="small">
             Si vous cherchez à vous passer de <code>@media</code>, je vous conseille plutôt
-            <a href="https://emails.hteumeuleu.fr/2016/02/fab-four-emails-responsive-sans-media-queries/">la technique des Fab Four par Rémi Parmentier</a>,
+            <a href="https://emails.hteumeuleu.fr/2016/02/fab-four-emails-responsive-sans-media-queries/">la technique des Fab Four par <cite>Rémi Parmentier</cite></a>,
             les modules <em lang="en">Grid</em> et <em lang="en">Flexbox</em> de CSS, et quelques exemples chez
-            Heydon Pickering notamment.
+            Heydon Pickering ou <a hreflang="en" href="https://css-tricks.com/how-to-make-a-media-query-less-card-component/"><cite>Geoffrey Crofte</cite> (sur CSS-Tricks)</a> notamment.
           </p>
+        </section>
+        
+        <section class="slide">
+          <h2>Styler votre <em lang="en">shadow DOM</em><span aria-hidden="true">&nbsp;&#128101;</span></h2>
+          <h3>Une variable pour les gouverner tous, et dans les ténèbres les lier…</h3>
+          <p>
+            Pousser des styles vers le <em lang="en">shadow DOM</em> est impossible… mais hériter des propriétés personnalisées fonctionne&nbsp;!
+            <a hreflang="en" href="https://frontstuff.io/multi-colored-svg-symbol-icons-with-css-variables"><cite>Sarah Dayan</cite> donne un exemple
+            de symbôle SVG multicolore</a> conçu pour appeler des propriétés personnalisées définies hors de l’hôte.
+          </p>
+          <div class="table">
+            <pre class="language-markup col-66">
+              <code class="language-markup">
+&lt;svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  &lt;symbol id="my-first-icon" viewBox="0 0 20 20">
+    &lt;path fill="var(--color-1, red)" d="…"/>
+    &lt;path fill="var(--color-2, blue)" d="…"/>
+    &lt;path fill="var(--color-3, green)" d="…"/>
+  &lt;/symbol>
+&lt;/svg>
+
+&lt;svg class="icon icon-colors">
+  &lt;use xlink:href="#my-first-icon"/>
+&lt;/svg>
+</code>
+            </pre>
+            <pre class="language-css col-33">
+              <code class="language-css">
+.icon-colors {
+  --color-1: #c13127;
+  --color-2: #ef5b49;
+  --color-3: #cacaea;
+}
+</code>
+            </pre>
+          </div>
+        </section>
+        
+        <section class="slide">
+          <h2>Des styles réactifs<span aria-hidden="true">&nbsp;&#128165;</span></h2>
+          
         </section>
 
         <section class="slide">
@@ -319,7 +456,21 @@ main {
             Si la même valeur à rallonge est utilisée plusieurs fois, simplifiez-vous la vie&nbsp;:
             <strong>utilisez des propriétés personnalisées</strong>&nbsp;!
           </p>
-          <code>background: white var(--stripes);</code>
+          <pre class="language-css">
+            <code class="language-css">
+:root {
+  --stripes: url("data:image/svg+xml,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff99'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+tr:nth-child(odd) {
+  background: white var(--stripes);
+}
+
+.hero {
+  background: rebeccapurple var(--stripes);
+}
+</code>
+          </pre>
         </section>
 
         <section class="slide">
@@ -329,7 +480,9 @@ main {
           <ul>
             <li class="Cmasque">
               <a hreflang="en" href="https://adactio.com/journal/16993">Hors cascade, pas de repli possible —&nbsp;chez <cite>Jeremy Keith</cite></a>&nbsp;:
-              les propriétés personnalisées sont des liens symboliques. Si la cible n’est pas là, le lien symbolique reste&nbsp;!
+              vous pouvez obtenir <a hreflang="en" href="https://drafts.csswg.org/css-variables/#invalid-at-computed-value-time">une valeur invalide au moment du calcul</a>
+              car les variables ne peuvent pas «&nbsp;échouer tôt&nbsp;».
+              Le navigateur ne sait pas encore s’il supportera votre valeur, mais a déjà exclus les valeurs issues de la cascade ou de l’héritage&nbsp;!
             </li>
             <li class="Cmasque">
               <a hreflang="en" href="https://lisilinhart.info/posts/css-variables-performance/">Le changement, c’est pas forcément maintenant —&nbsp;par <cite>Lisi Linhardt</cite></a>&nbsp;:

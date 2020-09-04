@@ -825,6 +825,11 @@ and (min-width:24em) {
     display: table-cell;
     width: calc( 100% / 3 );
   }
+  
+  .col-66 {
+    display: table-cell;
+    width: calc( (100% / 3) * 2 );
+  }
 
   .col-t-right {
     text-align: right;
