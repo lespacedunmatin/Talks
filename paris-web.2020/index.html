@@ -11,7 +11,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
   <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?2" type="text/css" media="screen">
-  <link rel="stylesheet" href="../accesslide/css/charts.css?34" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?35" type="text/css" media="screen">
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
@@ -211,7 +211,7 @@ main {
               </pre>
               <figcaption class="small text-left">
                 <a hreflang="en" href="https://markdotto.com/2020/05/20/global-css-options-custom-properties/"><cite>Mark Otto</cite> propose des options globales</a>
-                pour (dé)sactiver des éléments de styles.
+                pour (dés)activer des éléments de styles.
               </figcaption>
             </figure>
             <figure class="Cmasque col-right">
@@ -355,7 +355,7 @@ div {
             </pre>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Styler votre <em lang="en">shadow DOM</em><span aria-hidden="true">&nbsp;&#128101;</span></h2>
           <h3>Une variable pour les gouverner tous, et dans les ténèbres les lier…</h3>
@@ -391,7 +391,7 @@ div {
             </pre>
           </div>
         </section>
-        
+
         <section class="slide">
           <h2>Des styles réactifs<span aria-hidden="true">&nbsp;&#128165;</span></h2>
           <p>
@@ -405,7 +405,7 @@ div {
           <div class="table">
             <pre class="language-markup col-33">
               <code class="language-markup">
-&lt;table class="chaarts" 
+&lt;table class="chaarts"
        style="--scale: 3000">
   […]
     &lt;td style="--value: 4">
@@ -427,6 +427,91 @@ div {
 </code>
             </pre>
           </div>
+        </section>
+
+        <section class="slide">
+            <div class="col-t-right small">
+                <button type="button" id="random">Random</button>
+                https://vanseodesign.com/css/custom-properties-and-javascript/
+            </div>
+            <table id="waterfall" class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall"
+                   style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
+                <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
+                <thead class="sr-only">
+                <tr>
+                    <td></td>
+                    <th scope="col">Temps de chargement cumulé</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Temps&nbsp;: backend</th>
+                    <td style="--value: 4">
+                        <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Temps&nbsp;: Frontend</th>
+                    <td style="--value: 96">
+                        <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Délai&nbsp;: premier octet</th>
+                    <td style="--value: 102">
+                        <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Délai&nbsp;: dernier octet</th>
+                    <td style="--value: 129">
+                        <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Délai&nbsp;: première image</th>
+                    <td style="--value: 188">
+                        <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Délai&nbsp;: premier CSS</th>
+                    <td style="--value: 194">
+                        <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Délai&nbsp;: premier JS</th>
+                    <td style="--value: 326">
+                        <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">DOM Interactif</th>
+                    <td style="--value: 836">
+                        <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Chargement du DOM</th>
+                    <td style="--value: 836">
+                        <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">DOM complet</th>
+                    <td style="--value: 2561">
+                        <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Trafic HTTP terminé</th>
+                    <td style="--value: 2980">
+                        <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </section>
 
         <section class="slide">
@@ -490,5 +575,25 @@ tr:nth-child(odd) {
 
   <script src="../accesslide/js/slide.min.js"></script>
   <script src="../accesslide/js/prism.min.js"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          let min = 0;
+          const chart = document.getElementById('waterfall');
+          const max = getComputedStyle(charts).getPropertyValue('--scale');
+          let rows = chart.querySelector('tbody').childElementCount;
+          let items = chart.querySelectorAll('tbody tr');
+
+          function randomBetween(min, max) {
+              return Math.floor(Math.random() * (max - min + 1) + min);
+          }
+
+          document.getElementById('random').addEventListener('click', () => {
+              while (rows > 0) {
+                  console.log(items[rows]);
+                  rows--;
+              }
+          });
+      });
+  </script>
 </body>
 </html>
