@@ -432,7 +432,6 @@ div {
         <section class="slide">
             <div class="col-t-right small">
                 <button type="button" id="random">Random</button>
-                https://vanseodesign.com/css/custom-properties-and-javascript/
             </div>
             <table id="waterfall" class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall"
                    style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
@@ -576,24 +575,31 @@ tr:nth-child(odd) {
   <script src="../accesslide/js/slide.min.js"></script>
   <script src="../accesslide/js/prism.min.js"></script>
   <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          let min = 0;
-          const chart = document.getElementById('waterfall');
-          const max = getComputedStyle(charts).getPropertyValue('--scale');
-          let rows = chart.querySelector('tbody').childElementCount;
-          let items = chart.querySelectorAll('tbody tr');
+    document.addEventListener('DOMContentLoaded', () => {
+      const chart = document.getElementById('waterfall'),
+            count = waterfall.querySelector('tbody').childElementCount,
+            unit = '<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr>',
+            max = parseInt(getComputedStyle(chart).getPropertyValue('--scale'));
+      let rows = waterfall.querySelectorAll('tbody > tr > td'),
+          min = 0;
+      
+      function randomBetween(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      
+      document.getElementById('random').addEventListener('click', () => {
+        let min = 0;
 
-          function randomBetween(min, max) {
-              return Math.floor(Math.random() * (max - min + 1) + min);
-          }
-
-          document.getElementById('random').addEventListener('click', () => {
-              while (rows > 0) {
-                  console.log(items[rows]);
-                  rows--;
-              }
-          });
+        rows.forEach( (row, index) => {
+          let value = randomBetween(min, max);
+          row.style.setProperty('--value', ' '+ value);
+          row.innerHTML = `<span>${value} ${unit}</span>`;
+          waterfall.style.setProperty(`--${index +1}`, ' ' + value);
+          
+          min = value;
+        });
       });
+    });
   </script>
 </body>
 </html>
