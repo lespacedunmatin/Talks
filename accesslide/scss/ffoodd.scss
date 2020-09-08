@@ -80,9 +80,15 @@ button {
   color: #efeee3;
   font-size: 90%;
   margin-bottom: 2px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .2),
-  2px 2px 2px rgba(0, 0, 0, .2);
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, .2),
+    2px 2px 2px rgba(0, 0, 0, .2);
   transition: all .6s ease-in;
+
+  span[aria-hidden="true"] {
+    color: inherit;
+    line-height: 1;
+  }
 }
 
 .slide button:hover,
@@ -184,6 +190,12 @@ blockquote cite {
   overflow-x: hidden;
   padding: 0;
   width: 84vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+
+  .slide {
+    scroll-snap-align: start;
+  }
 }
 
 .modeplan .tool-bar,
@@ -820,12 +832,12 @@ and (min-width:24em) {
     display: table-cell;
     width: 50%;
   }
-  
+
   .col-33 {
     display: table-cell;
     width: calc( 100% / 3 );
   }
-  
+
   .col-66 {
     display: table-cell;
     width: calc( (100% / 3) * 2 );
@@ -834,7 +846,7 @@ and (min-width:24em) {
   .col-t-right {
     text-align: right;
   }
-  
+
   .text-left {
     text-align: left;
   }
@@ -846,7 +858,7 @@ and (min-width:24em) {
   .v-middle {
     vertical-align: middle;
   }
-  
+
   .mt-auto {
     margin-top: auto !important;
   }
@@ -906,9 +918,14 @@ and (min-width:24em) {
     padding: 1em;
     top: 2vh;
     width: 100%;
-    
+
     &.full {
       height: 82vh;
     }
+  }
+
+  .modeplan .slide.full {
+    height: auto;
+    min-height: 82vh;
   }
 }

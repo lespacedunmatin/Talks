@@ -18,7 +18,7 @@
 .illustration[role="group"] {
   margin: $gutter * 3 auto;
   max-width: min-content;
-  
+
   img {
     max-width: none;
   }
@@ -26,7 +26,7 @@
 
 body > :not(.modeplan) .slide {
     overflow: hidden !important;
-    
+
     &[id="white-slide"] {
       background: palette( default, contrast );
     }
@@ -62,7 +62,7 @@ pre code[class*="language-"] {
     margin: 0;
     padding: rem( 40 ) $gutter;
   }
-  
+
   th,
   td {
     padding: $gutter / 2 rem( 12 );
@@ -139,12 +139,12 @@ pre code[class*="language-"] {
 
 table:not(.table-charts) .sr-only {
   clip: auto !important;
-	clip-path: none !important;
-	height: auto !important;
-	overflow: visible !important;
+  clip-path: none !important;
+  height: auto !important;
+  overflow: visible !important;
   position: static !important;
-	width: auto !important;
-	white-space: normal !important;
+  width: auto !important;
+  white-space: normal !important;
 }
 
 @media screen and (min-width: em(480)) {
@@ -170,13 +170,13 @@ table:not(.table-charts) .sr-only {
     /** Bar charts */
     @supports (grid-template-columns: repeat(var(--scale, 100), minmax(0, 1fr))) {
       &.bar {
-        
+
         &.step-1 {
           caption {
             text-align: initial;
             text-indent: em( 256 );
           }
-          
+
           tbody tr {
             display: grid;
             grid-auto-rows: 1fr;
@@ -190,7 +190,7 @@ table:not(.table-charts) .sr-only {
               padding: 0 $gutter 0 0;
               text-align: right;
             }
-            
+
             td {
               background: currentColor;
               grid-column: 2 / var(--value, 0);
@@ -199,7 +199,7 @@ table:not(.table-charts) .sr-only {
             }
           }
         }
-          
+
         &.step-2 {
           tbody tr td span {
             background: inherit;
@@ -211,7 +211,7 @@ table:not(.table-charts) .sr-only {
             position: absolute;
           }
         }
-        
+
         &.step-3 {
           tbody tr {
             td {
@@ -228,7 +228,7 @@ table:not(.table-charts) .sr-only {
                   transparent var(--background) center / contain;
               background-blend-mode: hard-light;
             }
-            
+
             @each $name, $pattern in $patterns {
               $i: index($patterns, ($name $pattern));
 
@@ -268,7 +268,7 @@ table:not(.table-charts) .sr-only {
                 var(--background);
             }
           }
-            
+
           &.waterfall {
             @each $number in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 {
               tr:nth-of-type(#{$number}) td {
@@ -299,18 +299,18 @@ table:not(.table-charts) .sr-only {
           width: 100%;
           z-index: 1;
         }
-        
+
         tr::before {
           content: "";
           position: absolute;
         }
-        
+
         [scope="row"],
         thead th:first-child {
             color: var(--color, currentColor);
             text-align: left;
         }
-        
+
         th,
         td {
           background: palette( default, contrast );
@@ -325,7 +325,7 @@ table:not(.table-charts) .sr-only {
 
         &.step-1 {
             padding: var(--height) 0 $gutter;
-        
+
             &::after {
               --scale: calc( ( 100% - (var(--y) * 1px) ) / var(--y) );
               background:
@@ -389,26 +389,26 @@ table:not(.table-charts) .sr-only {
                 width: inherit;
                 z-index: 3;
               }
-       
+
               @each $number in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 {
                 &:nth-child(#{$number})::after {
                   left: calc(100% / var(--x) * #{$number - 1});
                 }
               }
-       
+
               &:hover::after {
                 opacity: .75;
               }
             }
         }
-        
+
         &.step-3 {
           td {
             --value: var(--1);
             --term: var(--t-1);
             --top: calc( (var(--height) - ( var(--value) / var(--y) * 100% ) ) );
             line-height: 1.5;
-     
+
             &::before {
               content: '';
               height: 1.5rem;
@@ -417,7 +417,7 @@ table:not(.table-charts) .sr-only {
               width: inherit;
               z-index: 10;
             }
-     
+
             /**
              * 1.
              * @note Using white-space and:
@@ -465,7 +465,7 @@ table:not(.table-charts) .sr-only {
               white-space: pre;
               z-index: 5;
             }
-     
+
             @each $number in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 {
               &:nth-child(#{$number})::after {
                 --value: var(--#{$number - 1});
@@ -474,7 +474,7 @@ table:not(.table-charts) .sr-only {
                 left: calc( ( 100% / var(--x) * #{$number - 1} ) + var(--offset) );
               }
             }
-     
+
             &:hover::after {
               opacity: 1;
               transform:
@@ -524,7 +524,7 @@ table:not(.table-charts) .sr-only {
                 );
                 transition: opacity .3s map-get( $timing-functions, 'move' );
               }
-   
+
               th::before {
                  background: var(--color, currentColor) var(--background);
                  content: "";
@@ -533,10 +533,10 @@ table:not(.table-charts) .sr-only {
                  transform: translate3d(-.2rem, .1rem, 0);
                  width: 1rem;
               }
-   
+
               td {
                 --top: calc( (var(--height) - ( var(--value) / var(--y) * var(--height) ) ) );
-   
+
                 &::before {
                   --size: #{$gutter};
                   background: var(--color, currentColor) var(--background);
@@ -555,7 +555,7 @@ table:not(.table-charts) .sr-only {
                   width: var(--size);
                   z-index: 4;
                 }
-   
+
                 @each $number in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
                   &:nth-of-type(#{$number})::before {
                     --value: var(--#{$number});
@@ -565,42 +565,42 @@ table:not(.table-charts) .sr-only {
                 }
               }
           }
-   
+
           @each $name, $pattern in $patterns {
            $i: index($patterns, ($name $pattern));
-   
+
            [style]:nth-child(#{$i}n + #{$i}) {
              --background: var(--#{$name}); /* 1 */
            }
          }
-   
+
           tbody:hover [style]::before,
           tbody:hover [style] td::before {
               opacity: .25;
           }
-   
+
           tbody:hover [style]:hover::before,
           tbody:hover [style]:hover td::before {
               opacity: 1;
           }
-   
+
           tbody:hover [style]:hover td::before {
               transform:
                   translate3d(calc(var(--size) / -2), calc(var(--size) / -2), 0)
                   scale(1.25);
           }
-   
+
           [scope="col"]:not(:first-child) {
             &::after {
               mix-blend-mode: multiply;
             }
-   
+
             &:hover::after {
              opacity: .5;
             }
           }
         }
-      
+
 
       /**
        * @note Custom color palette for WHCM
@@ -622,7 +622,7 @@ table:not(.table-charts) .sr-only {
       }
 
       &.radar {
-        --radius: 14rem;
+        --radius: 10rem;
         --unitless-radius: calc( 1024 / 16 / 5 );
         --size: calc( var(--radius) / var(--scale) );
         --part: calc( 360deg / var(--items) );
@@ -645,9 +645,8 @@ table:not(.table-charts) .sr-only {
         border-radius: 50%;
         contain: layout;
         counter-reset: scale var(--scale);
-        display: block;
         height: calc( var(--radius) * 2 );
-        margin: 1rem auto;
+        margin: auto;
         overflow: visible;
         position: relative;
         width: calc( var(--radius) * 2 );
@@ -657,7 +656,7 @@ table:not(.table-charts) .sr-only {
           bottom: $gutter * -10;
           position: absolute;
         }
-        
+
         &.step-1 {
           /**
            * Placing items around a circle based on:
@@ -680,14 +679,14 @@ table:not(.table-charts) .sr-only {
               translate( var(--away) )
               rotate( calc(var(--part) * var(--index, 1) * -1) );
           }
-      
+
           @each $number in 1, 2, 3, 4, 5, 6, 7 {
             td:nth-of-type(#{$number}),
             [scope="col"]:nth-of-type(#{$number}) {
               --index: #{$number};
             }
           }
-            
+
         [scope="col"] {
             &::after {
               color: palette( accent );
@@ -695,7 +694,7 @@ table:not(.table-charts) .sr-only {
               font-size: small;
               font-weight: 400;
             }
-        
+
             /**
              * 1.
              * @note Display CSS integers custom properties with a trick using counters
@@ -710,7 +709,7 @@ table:not(.table-charts) .sr-only {
             }
           }
         }
-          
+
         &.step-2 {
           /**
            * This is quite sophisticated, we're mixing multiple techniques
@@ -755,7 +754,7 @@ table:not(.table-charts) .sr-only {
               display: none;
             }
           }
-            
+
           span {
             --ratio: 1;
             background: linear-gradient(
@@ -769,7 +768,7 @@ table:not(.table-charts) .sr-only {
             width: 100%;
           }
         }
-            
+
         &.step-3 {
             td {
                 transform:
@@ -778,7 +777,7 @@ table:not(.table-charts) .sr-only {
                 transform-origin: 100% 100%;
             }
         }
-          
+
         &.step-4 {
           span {
             --opposite: calc( 180 - (90 + (90 - (360 / var(--items)))) );
@@ -790,13 +789,14 @@ table:not(.table-charts) .sr-only {
             --hypo: calc( var(--unitless-radius) / var(--sin-angle) );
             // get the ratio: skewed / initial width
             --ratio: calc( var(--hypo) / var(--unitless-radius) );
+            will-change: clip-path;
             transition: clip-path .5s ease-in-out;
         }
       }
 
         &.radar-multiple {
           margin-bottom: $gutter * 12;
-            
+
             [scope="col"]::after {
                 display: none;
             }
@@ -856,7 +856,7 @@ table:not(.table-charts) .sr-only {
               will-change: inherit;
               white-space: nowrap;
             }
-      
+
             @each $number in 1, 2, 3, 4, 5, 6, 7 {
               &:nth-of-type(#{$number})::after {
                 counter-reset: value var(--#{$number}); /* 1 */
@@ -865,11 +865,11 @@ table:not(.table-charts) .sr-only {
               }
             }
           }
-      
+
           span {
             background: var(--color, currentColor);
             pointer-events: auto;
-      
+
             @supports ( mask-image: url() ) {
               mask-image: radial-gradient(circle at bottom right, rgba(0,0,0,1), rgba(0,0,0,.5));
             }
@@ -896,7 +896,7 @@ table:not(.table-charts) .sr-only {
         }
       }
     }
-    
+
     /** Pie charts */
         @supports (clip-path: polygon( 50% calc( 50% + ( var(--gt-25, 0) ) ) )) {
           .pie-container .fieldset {
@@ -920,7 +920,7 @@ table:not(.table-charts) .sr-only {
                   transition: opacity .3s map-get( $timing-functions, 'move' );
                   will-change: opacity;
                 }
-                
+
                 @each $name, $pattern in $patterns {
                   $i: index($patterns, ($name $pattern));
 
@@ -942,7 +942,7 @@ table:not(.table-charts) .sr-only {
                   }
                 }
             }
-            
+
             &.step-2 {
                 td {
                   --position: calc(var(--start, 0) * .01turn);
