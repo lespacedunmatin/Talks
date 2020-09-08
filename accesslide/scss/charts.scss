@@ -790,6 +790,7 @@ table:not(.table-charts) .sr-only {
             --hypo: calc( var(--unitless-radius) / var(--sin-angle) );
             // get the ratio: skewed / initial width
             --ratio: calc( var(--hypo) / var(--unitless-radius) );
+            transition: clip-path .5s ease-in-out;
         }
       }
 

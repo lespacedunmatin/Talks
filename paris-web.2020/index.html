@@ -403,26 +403,27 @@ div {
             les propriétés personnalisées en JavaScript —&nbsp;de préférence à l’aide de la méthode <code>.setProperty</code>.
           </p>
           <div class="table">
-            <pre class="language-markup col-33">
+            <pre class="language-markup col-50">
               <code class="language-markup">
-&lt;table class="chaarts"
-       style="--scale: 3000">
+&lt;table class="chaarts radar"
+       style="--scale: 20; --step: 5; --items: 7; 
+       --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; 
+       --6: 12; --7: 4; --8: var(--1);">
   […]
-    &lt;td style="--value: 4">
-    &lt;/td>
+    &lt;td>&lt;span>14&lt;/span>&lt;/td>
   […]
 &lt;/table>
 </code>
             </pre>
-            <pre class="language-css col-66">
+            <pre class="language-css col-50">
               <code class="language-css">
-.chaarts tr {
-  display: grid;
-  grid-template-columns: 10rem repeat( var(--scale, 100), 1fr ) 10ch;
-}
-
-.chaarts td {
-  grid-column: 2 / var(--value, 0);
+.chaarts[class*="radar"] td:nth-of-type(2) span {
+  --position: calc(100% - (var(--3) * 100% / (var(--scale) * var(--ratio))));
+  clip-path: polygon(
+    100% var(--position),
+    calc(100% - (var(--2) * 100% / var(--scale))) 100%,
+    100% 100%
+  );
 }
 </code>
             </pre>
@@ -430,90 +431,38 @@ div {
         </section>
 
         <section class="slide">
-            <div class="col-t-right small">
-                <button type="button" id="random">
-                  <span class="sr-only">Random</span>
-                  <span aria-hidden="true">&#128256;</span>
-                </button>
-            </div>
-            <table id="waterfall" class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall"
-                   style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
-                <caption>Temps de chargement pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
-                <thead class="sr-only">
-                <tr>
-                    <td></td>
-                    <th scope="col">Temps de chargement cumulé</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">Temps&nbsp;: backend</th>
-                    <td style="--value: 4">
-                        <span>4&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Temps&nbsp;: Frontend</th>
-                    <td style="--value: 96">
-                        <span>96&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Délai&nbsp;: premier octet</th>
-                    <td style="--value: 102">
-                        <span>102&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Délai&nbsp;: dernier octet</th>
-                    <td style="--value: 129">
-                        <span>129&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Délai&nbsp;: première image</th>
-                    <td style="--value: 188">
-                        <span>188&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Délai&nbsp;: premier CSS</th>
-                    <td style="--value: 194">
-                        <span>194&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Délai&nbsp;: premier JS</th>
-                    <td style="--value: 326">
-                        <span>326&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">DOM Interactif</th>
-                    <td style="--value: 836">
-                        <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Chargement du DOM</th>
-                    <td style="--value: 836">
-                        <span>836&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">DOM complet</th>
-                    <td style="--value: 2561">
-                        <span>2561&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Trafic HTTP terminé</th>
-                    <td style="--value: 2980">
-                        <span>2980&nbsp;<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr></span>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+          <div class="col-t-right small">
+            <button type="button" id="random">
+              <span class="sr-only">Random</span>
+              <span aria-hidden="true">&#128256;</span>
+            </button>
+          </div>
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" id="radar" 
+                 style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+             <tr>
+              <th scope="col">Accessibilité</th>
+              <th scope="col">Référencement</th>
+              <th scope="col">Performance</th>
+              <th scope="col">Compatibilité</th>
+              <th scope="col">Sécurité</th>
+              <th scope="col">Qualité de code</th>
+              <th scope="col">Test</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <td><span>14</span></td>
+              <td><span>11</span></td>
+              <td><span>13</span></td>
+              <td><span>16</span></td>
+              <td><span>10</span></td>
+              <td><span>12</span></td>
+              <td><span>4</span></td>
+             </tr>
+            </tbody>
+           </table>
         </section>
 
         <section class="slide">
@@ -579,27 +528,21 @@ tr:nth-child(odd) {
   <script src="../accesslide/js/prism.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const chart = document.getElementById('waterfall'),
-            count = chart.querySelector('tbody').childElementCount,
-            unit = '<abbr title="Milliseconde" aria-label="Milliseconde">ms</abbr>',
-            max = parseInt(getComputedStyle(chart).getPropertyValue('--scale'));
-      let rows = waterfall.querySelectorAll('tbody > tr > td'),
-          min = 0;
+      const min = 0,
+            chart = document.getElementById('radar'),
+            rows  = chart.querySelectorAll('tbody > tr > td'),
+            items = parseInt(getComputedStyle(chart).getPropertyValue('--items')),
+            scale = parseInt(getComputedStyle(chart).getPropertyValue('--scale'));
       
       function randomBetween(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
       }
       
       document.getElementById('random').addEventListener('click', () => {
-        let min = 0;
-
         rows.forEach( (row, index) => {
-          let value = randomBetween(min, max);
-          row.style.setProperty('--value', ' '+ value);
-          row.innerHTML = `<span>${value} ${unit}</span>`;
-          waterfall.style.setProperty(`--${index +1}`, ' ' + value);
-          
-          min = value;
+          let value = randomBetween(min, scale);
+          row.innerHTML = `<span>${value}</span>`;
+          chart.style.setProperty(`--${index +1}`, ' ' + value);
         });
       });
     });
