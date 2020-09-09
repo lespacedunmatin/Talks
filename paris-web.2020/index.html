@@ -244,8 +244,8 @@ main {
           <h3>Hop, sans les mains<span aria-hidden="true">&nbsp;&#129335;</span></h3>
           <p>
             <a hreflang="en" href="https://codepen.io/mirisuzanne/full/vYNgodb"><cite>Miriam Suzanne</cite>
-            a conceptualisé les cascades personnalisées</a>, une sucession de propriétés personnalisées
-            dans les valeurs de replis de propriétés personnalisées.
+            a conceptualisé les cascades personnalisées</a>, une imbrication de propriétés personnalisées
+            via les valeurs de replis.
           </p>
           <div class="table">
             <pre class="language-css col-50">
@@ -433,10 +433,19 @@ div {
         </section>
 
         <section class="slide full">
-          <div class="col-t-right">
-            <button type="button" id="random">
+          <div class="fieldset">
+            <button type="button" class="fw-400 no-border p-relative disable-css"
+                    role="switch" aria-checked="true" aria-label="Permet de désactiver les styles sur le tableau suivant.">
+                    <span>Stylé</span>
+                    <span>Brut</span>
+            </button>
+            <button type="button" id="random" class="ml-auto"> 
               <span class="sr-only">Random</span>
-              <span aria-hidden="true">&#11118;</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="v-middle"
+                   width="1em" height="1em" viewBox="0 0 100 125" 
+                   focusable="false" aria-hidden="true">
+                <path fill="#fff" d="M42.25 28.97c9.04-6.74 16.8-8.81 32.68-9.01v-10L100 30.02 74.93 50v-9.88c-6.2.16-11.2.41-16.2 2.9 0 0-8.98-9.53-16.48-14.05zM18.73 51.95c-4.54 3.9-18.73 3-18.73 3v20.06c19.42.57 27.63-3.8 35.77-10.91-2.4-1.7-8.17-11.3-17.04-12.15zM100 69.98L74.93 50v11.06c-14-2.23-9.56-7.02-29.9-24.07C34.96 28.82 26.53 25.79 0 26.24v20.1c25.03-.7 28.46 2.8 37 11.84C54.07 77 61.75 79.92 74.93 81.06v8.98L100 69.98z"/>
+              </svg>
             </button>
           </div>
           <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" id="radar"
@@ -464,7 +473,7 @@ div {
               <td><span>4</span></td>
              </tr>
             </tbody>
-           </table>
+          </table>
         </section>
 
         <section class="slide full">
@@ -531,6 +540,18 @@ tr:nth-child(odd) {
   <script src="../accesslide/js/prism.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const switches = document.querySelectorAll('[role="switch"]');
+
+      Array.prototype.forEach.call(switches, (el) => {
+        el.addEventListener('click', function() {
+          let checked = this.getAttribute('aria-checked') === 'true' || false;
+          this.setAttribute('aria-checked', !checked);
+          
+          let chart = this.parentNode.nextElementSibling;
+          chart.classList.toggle('table-charts');
+        });
+      });
+      
       const min = 0,
             chart = document.getElementById('radar'),
             rows  = chart.querySelectorAll('tbody > tr > td'),

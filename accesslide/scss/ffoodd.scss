@@ -251,7 +251,7 @@ h6 {
   line-height: 1.4;
 }
 
-.slide :last-child {
+.slide :last-child:not(.table-ffoodd) {
   margin-bottom: 0;
 }
 
@@ -861,6 +861,10 @@ and (min-width:24em) {
 
   .mt-auto {
     margin-top: auto !important;
+  }
+  
+  .ml-auto {
+    margin-left: auto !important;
   }
 
   .col-left {

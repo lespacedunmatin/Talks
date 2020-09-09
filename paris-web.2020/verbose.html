@@ -442,17 +442,17 @@ div {
           </div>
         </section>
 
-          <section class="slide full">
-              <h2>Des styles réactifs<span aria-hidden="true">&nbsp;&#128165;</span></h2>
-              <p>
-                  Dans <a href="https://ffoodd.github.io/chaarts/accueil.html">chaarts</a>, je mets en place divers type de graphiques de données
-                  en CSS, qui dépendent de propriétés personnalisées déclarées côté HTML.
-              </p>
-              <p>
-                  Autrement dit, ces graphiques <strong>réagissent à des changements de données en temps réels</strong> si vous mettez à jour
-                  les propriétés personnalisées en JavaScript —&nbsp;de préférence à l’aide de la méthode <code>.setProperty</code>.
-              </p>
-              <div class="table">
+        <section class="slide full">
+          <h2>Des styles réactifs<span aria-hidden="true">&nbsp;&#128165;</span></h2>
+          <p>
+              Dans <a href="https://ffoodd.github.io/chaarts/accueil.html">chaarts</a>, je mets en place divers type de graphiques de données
+              en CSS, qui dépendent de propriétés personnalisées déclarées côté HTML.
+          </p>
+          <p>
+              Autrement dit, ces graphiques <strong>réagissent à des changements de données en temps réels</strong> si vous mettez à jour
+              les propriétés personnalisées en JavaScript —&nbsp;de préférence à l’aide de la méthode <code>.setProperty</code>.
+          </p>
+          <div class="table">
             <pre class="language-markup col-50">
               <code class="language-markup">
 &lt;table class="chaarts radar"
@@ -465,7 +465,7 @@ div {
 &lt;/table>
 </code>
             </pre>
-                  <pre class="language-css col-50">
+            <pre class="language-css col-50">
               <code class="language-css">
 .chaarts[class*="radar"] td:nth-of-type(2) span {
   --position: calc(100% - (var(--3) * 100% / (var(--scale) * var(--ratio))));
@@ -477,77 +477,51 @@ div {
 }
 </code>
             </pre>
-              </div>
-          </section>
-
-          <section class="slide full">
-              <div class="col-t-right">
-                  <button type="button" id="random">
-                      <span class="sr-only">Random</span>
-                      <span aria-hidden="true">&#11118;</span>
-                  </button>
-              </div>
-              <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" id="radar"
-                     style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
-                  <caption>Niveau d’intérêt par domaine, sur 20</caption>
-                  <thead>
-                  <tr>
-                      <th scope="col">Accessibilité</th>
-                      <th scope="col">Référencement</th>
-                      <th scope="col">Performance</th>
-                      <th scope="col">Compatibilité</th>
-                      <th scope="col">Sécurité</th>
-                      <th scope="col">Qualité de code</th>
-                      <th scope="col">Test</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                      <td><span>14</span></td>
-                      <td><span>11</span></td>
-                      <td><span>13</span></td>
-                      <td><span>16</span></td>
-                      <td><span>10</span></td>
-                      <td><span>12</span></td>
-                      <td><span>4</span></td>
-                  </tr>
-                  </tbody>
-              </table>
-          </section>>
-          <h2>Des styles réactifs<span aria-hidden="true">&nbsp;&#128165;</span></h2>
-          <p>
-            Dans <a href="https://ffoodd.github.io/chaarts/accueil.html">chaarts</a>, je mets en place divers type de graphiques de données
-            en CSS, qui dépendent de propriétés personnalisées déclarées côté HTML.
-          </p>
-          <p>
-            Autrement dit, ces graphiques <strong>réagissent à des changements de données en temps réels</strong> si vous mettez à jour
-            les propriétés personnalisées en JavaScript —&nbsp;de préférence à l’aide de la méthode <code>.setProperty</code>.
-          </p>
-          <div class="table">
-            <pre class="language-markup col-33">
-              <code class="language-markup">
-&lt;table class="chaarts"
-       style="--scale: 3000">
-  […]
-    &lt;td style="--value: 4">
-    &lt;/td>
-  […]
-&lt;/table>
-</code>
-            </pre>
-            <pre class="language-css col-66">
-              <code class="language-css">
-.chaarts tr {
-  display: grid;
-  grid-template-columns: 10rem repeat( var(--scale, 100), 1fr ) 10ch;
-}
-
-.chaarts td {
-  grid-column: 2 / var(--value, 0);
-}
-</code>
-            </pre>
           </div>
+        </section>
+
+        <section class="slide full">
+          <div class="fieldset">
+            <button type="button" class="fw-400 no-border p-relative disable-css"
+                    role="switch" aria-checked="true" aria-label="Permet de désactiver les styles sur le tableau suivant.">
+                    <span>Stylé</span>
+                    <span>Brut</span>
+            </button>
+            <button type="button" id="random" class="ml-auto"> 
+              <span class="sr-only">Random</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="v-middle"
+                   width="1em" height="1em" viewBox="0 0 100 125" 
+                   focusable="false" aria-hidden="true">
+                <path fill="#fff" d="M42.25 28.97c9.04-6.74 16.8-8.81 32.68-9.01v-10L100 30.02 74.93 50v-9.88c-6.2.16-11.2.41-16.2 2.9 0 0-8.98-9.53-16.48-14.05zM18.73 51.95c-4.54 3.9-18.73 3-18.73 3v20.06c19.42.57 27.63-3.8 35.77-10.91-2.4-1.7-8.17-11.3-17.04-12.15zM100 69.98L74.93 50v11.06c-14-2.23-9.56-7.02-29.9-24.07C34.96 28.82 26.53 25.79 0 26.24v20.1c25.03-.7 28.46 2.8 37 11.84C54.07 77 61.75 79.92 74.93 81.06v8.98L100 69.98z"/>
+              </svg>
+            </button>
+          </div>
+          <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" id="radar"
+                 style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
+            <caption>Niveau d’intérêt par domaine, sur 20</caption>
+            <thead>
+             <tr>
+              <th scope="col">Accessibilité</th>
+              <th scope="col">Référencement</th>
+              <th scope="col">Performance</th>
+              <th scope="col">Compatibilité</th>
+              <th scope="col">Sécurité</th>
+              <th scope="col">Qualité de code</th>
+              <th scope="col">Test</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+              <td><span>14</span></td>
+              <td><span>11</span></td>
+              <td><span>13</span></td>
+              <td><span>16</span></td>
+              <td><span>10</span></td>
+              <td><span>12</span></td>
+              <td><span>4</span></td>
+             </tr>
+            </tbody>
+          </table>
         </section>
 
         <section class="slide full">
@@ -632,22 +606,34 @@ tr:nth-child(odd) {
   <script src="../accesslide/js/prism.min.js"></script>
   <script>
       document.addEventListener('DOMContentLoaded', () => {
-          const min = 0,
-              chart = document.getElementById('radar'),
-              rows  = chart.querySelectorAll('tbody > tr > td'),
-              scale = parseInt(getComputedStyle(chart).getPropertyValue('--scale'));
+        const switches = document.querySelectorAll('[role="switch"]');
 
-          function randomBetween(min, max) {
-              return Math.floor(Math.random() * (max - min + 1) + min);
-          }
-
-          document.getElementById('random').addEventListener('click', () => {
-              rows.forEach( (row, index) => {
-                  let value = randomBetween(min, scale);
-                  row.innerHTML = `<span>${value}</span>`;
-                  chart.style.setProperty(`--${index +1}`, ` ${value}`);
-              });
+        Array.prototype.forEach.call(switches, (el) => {
+          el.addEventListener('click', function() {
+            let checked = this.getAttribute('aria-checked') === 'true' || false;
+            this.setAttribute('aria-checked', !checked);
+            
+            let chart = this.parentNode.nextElementSibling;
+            chart.classList.toggle('table-charts');
           });
+        });
+        
+        const min = 0,
+            chart = document.getElementById('radar'),
+            rows  = chart.querySelectorAll('tbody > tr > td'),
+            scale = parseInt(getComputedStyle(chart).getPropertyValue('--scale'));
+
+        function randomBetween(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.getElementById('random').addEventListener('click', () => {
+            rows.forEach( (row, index) => {
+                let value = randomBetween(min, scale);
+                row.innerHTML = `<span>${value}</span>`;
+                chart.style.setProperty(`--${index +1}`, ` ${value}`);
+            });
+        });
       });
   </script>
 </body>
