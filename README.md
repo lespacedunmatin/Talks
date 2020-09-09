@@ -75,3 +75,7 @@ Comme vous le voyez je désactive les effets en JS, pour [gérer la transition u
 ```
 
 Et voilà !
+
+## Mode plan par défaut
+
+Parce que pour certains sujets les slides utilisés le jour J sont un peu secs sans le discours associé, je dispose d’une version avec le mode plan par défaut : il suffit d’utiliser `AccesSlideVerbose.min.js`.
