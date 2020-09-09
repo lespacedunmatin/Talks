@@ -11,7 +11,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css?2" type="text/css" media="screen">
   <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?3" type="text/css" media="screen">
-  <link rel="stylesheet" href="../accesslide/css/charts.css?35" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?36" type="text/css" media="screen">
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
@@ -25,7 +25,7 @@
     <header id="banner" role="banner" class="main-header clearfix">
       <a href="https://www.ffoodd.fr">ffoodd</a>
       <h1 class="main-title">
-        La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr> 
+        La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr>
         et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
       </h1>
     </header>
@@ -60,7 +60,7 @@
 
         <section class="slide couv">
           <h2>
-            La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr> 
+            La donnée graphique avec <abbr title="Hypertext Markup Language" lang="en">HTML</abbr>
             et <abbr lang="en" title="Cascading StyleSheet">CSS</abbr>
           </h2>
           <p>
@@ -82,8 +82,8 @@
         <section class="slide">
           <h2>Le principe de moindre pouvoir<span aria-hidden="true">&nbsp;&#129412;</span></h2>
           <p>
-            C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>, 
-            proposés par <cite>Tim Berners-Lee</cite> en 1998 
+            C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
+            proposés par <cite>Tim Berners-Lee</cite> en 1998
             —&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
             modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
           </p>
@@ -102,11 +102,11 @@
             <li class="Cmasque">mises en forme afin d’en faciliter la compréhension.<span aria-hidden="true">&nbsp;&#128396;</span></li>
           </ol>
           <p class="Cmasque small">
-            Vous pourrez en apprendre plus sur 
+            Vous pourrez en apprendre plus sur
             <a href="https://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es">la représentation graphique de données sur Wikipédia</a>.
           </p>
         </section>
-          
+        
         <section class="slide">
           <h2>Piqûre de rappel<span aria-hidden="true">&nbsp;&#128137;</span></h2>
           <p>
@@ -119,7 +119,7 @@
           </ol>
           <p class="small">Et oui, ça sert à ça en vrai.</p>
         </section>
-          
+        
         <!-- Step 1 -->
         <section class="slide">
           <h2>Un diagramme en barres<span aria-hidden="true">&nbsp;&#128202;</span></h2>
@@ -226,7 +226,7 @@
         </tbody>
       </table>
         </section>
-          
+        
         <!-- Step 2 -->
         <section class="slide">
           <h3>Un peu d’habillage<span aria-hidden="true">&nbsp;&#129510;</span></h3>
@@ -239,7 +239,7 @@
     caption-side: bottom;
     contain: content;
     empty-cells: hide;
-    font-feature-settings: "tnum";    
+    font-feature-settings: "tnum";
   }
   
   th,
@@ -249,7 +249,7 @@
   }
 }</code>
 </pre>
-        </section>    
+        </section>
         <section class="slide">
           <h3>Le tableau en slip<span aria-hidden="true">&nbsp;&#129500;</span></h3>
           <table class="table-ffoodd table-charts" style="--scale: 3000">
@@ -330,7 +330,7 @@
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 3 -->
         <section class="slide">
           <h3>Un habillage structuré<span aria-hidden="true">&nbsp;	&#9637;</span></h3>
@@ -342,11 +342,11 @@
 @supports (grid-template-columns: repeat(var(--scale, 100), minmax(0, 1fr))) {
     tr {
       display: grid;
-      grid-auto-rows: 1fr;  
+      grid-auto-rows: 1fr;
       grid-row-gap: .5rem;
-      grid-template-columns: 
-        minmax(min-content, 15em) 
-        repeat(var(--scale, 100), minmax(0, 1fr)) 
+      grid-template-columns:
+        minmax(min-content, 15em)
+        repeat(var(--scale, 100), minmax(0, 1fr))
         10ch;
     }
 
@@ -441,7 +441,7 @@
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 4 -->
         <section class="slide">
           <h3>Un détail<span aria-hidden="true">&nbsp;&#128083;</span></h3>
@@ -557,17 +557,17 @@ tr:nth-child(5n+5) {
   --background: var(--stripes);
 }
 
-td {  
-  background: 
-    linear-gradient(to right, #3cb371, #444, #0000cd, #639, crimson) 
-    calc(var(--value, 0) / var(--scale, 100) * 100%) 0% / 
+td {
+  background:
+    linear-gradient(to right, #3cb371, #444, #0000cd, #639, crimson)
+    calc(var(--value, 0) / var(--scale, 100) * 100%) 0% /
     calc(var(--scale, 100) * 100%) 100%,
     transparent var(--background) center / contain;
   background-blend-mode: hard-light;
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <h3>Le tableau bien sapé<span aria-hidden="true">&nbsp;&#128084;</span></h3>
           <table class="table-ffoodd table-charts bar step-1 step-2 step-3" style="--scale: 3000">
@@ -661,10 +661,10 @@ table:hover tr {
 table:hover tr:hover {
   opacity: 1;
 }
-          
+
 @media screen and (-ms-high-contrast: active) {
   td {
-     background-image: 
+     background-image:
        linear-gradient(to right, Window, ButtonFace, ButtonShadow, ButtonText, highlight),
        var(--background);
   }
@@ -752,7 +752,7 @@ table:hover tr:hover {
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 7 -->
         <section class="slide">
           <h3>On fait des vagues<span aria-hidden="true">&nbsp;&#127754;</span></h3>
@@ -770,7 +770,7 @@ tr:nth-of-type(5) td {
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <h3>Le tableau du Niagara<span aria-hidden="true">&nbsp;&#127748;</span></h3>
           <table class="table-ffoodd table-charts bar step-1 step-2 step-3 step-4 waterfall" style="--scale: 3000; --1: 4; --2: 96; --3: 102; --4: 129; --5: 188; --6: 194; --7: 326; --8: 836; --9: 836; --10: 2561; --11: 2980;">
@@ -875,7 +875,7 @@ tr:nth-of-type(5) td {
   &lt;/tbody>
 &lt;/table></code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <h3>Le tableau linéaire<span aria-hidden="true">&nbsp;&#8863;</span></h3>
           <table class="table-ffoodd table-charts" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
@@ -916,7 +916,7 @@ tr:nth-of-type(5) td {
       </tbody>
     </table>
         </section>
-          
+        
         <!-- Step 2 -->
         <section class="slide">
             <h3>Une échelle<span aria-hidden="true">&nbsp;&#128207;</span></h3>
@@ -925,18 +925,18 @@ tr:nth-of-type(5) td {
 table {
     padding: calc(24em - 2rem) 0 1rem;
 }
-        
+
 table::after {
   --scale: calc( ( 100% - ( var(--y) * 1px) ) / var(--y) );
   background-image: repeating-linear-gradient(
-      to bottom, 
-      white, 
-      white var(--scale), 
+      to bottom,
+      white,
+      white var(--scale),
       rgba(0, 0, 0, .25) calc(var(--scale) + .25rem)
   );
 }</code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts line step-1" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
       <caption>Température mensuelle moyenne en 2017</caption>
@@ -976,7 +976,7 @@ table::after {
       </tbody>
     </table>
         </section>
-          
+        
         <!-- Step 3 -->
         <section class="slide">
             <h3>Un tracé<span aria-hidden="true">&nbsp;&#128393;</span></h3>
@@ -1004,7 +1004,7 @@ table::after {
     }
 }</code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts line step-1 step-2" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
       <caption>Température mensuelle moyenne en 2017</caption>
@@ -1050,13 +1050,13 @@ table::after {
             <h3>Des infobulles<span aria-hidden="true">&nbsp;&#128712;</span></h3>
             <p class="small">
               Reposant sur <a hreflang="en" href="https://codepen.io/cassie-codes/pen/22ea69e0f681d45f2f4c2ca5e6acf4ab">une
-              astuce de <cite>Cassie Evans</cite> utilisant les compteurs CSS</a> et 
+              astuce de <cite>Cassie Evans</cite> utilisant les compteurs CSS</a> et
               <a hreflang="en" href="https://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css/">
                 une idée de <cite>Lea Verou</cite> pour gérer le retour à la ligne</a>.</p>
 <pre class="language-css">
   <code class="language-css">
 td {
-    
+
 }
 
 td:first-child {
@@ -1075,7 +1075,7 @@ td::after {
     white-space: pre;
 }</code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts line step-1 step-2 step-3" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
       <caption>Température mensuelle moyenne en 2017</caption>
@@ -1115,7 +1115,7 @@ td::after {
       </tbody>
     </table>
         </section>
-          
+        
         <!-- Step 6 : points -->
         <section class="slide">
            <table class="table-ffoodd table-charts line step-1 step-2 step-3 points" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
@@ -1156,7 +1156,7 @@ td::after {
       </tbody>
     </table>
         </section>
-          
+        
         <!-- Step 6 : multiples -->
         <section class="slide">
            <table class="table-ffoodd table-charts line step-1 step-2 step-3 points multiple" style="--y: 32; --x: 13; --t-1: 'Jan.'; --t-2: 'Fév.'; --t-3: 'Mar.'; --t-4: 'Avr.'; --t-5: 'Mai'; --t-6: 'Juin'; --t-7: 'Juil.'; --t-8: 'Août'; --t-9: 'Sept.'; --t-10: 'Oct.'; --t-11: 'Nov.'; --t-12: 'Déc.';">
@@ -1212,12 +1212,12 @@ td::after {
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 1 -->
         <section class="slide">
             <h2>Au radar<span aria-hidden="true">&nbsp;&#128262;</span></h2>
 <pre class="language-markup">
-  <code class="language-markup">  
+  <code class="language-markup">
 &lt;table style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
   &lt;caption>Niveau d’intérêt par domaine, sur 20&lt;/caption>
   &lt;thead>
@@ -1235,7 +1235,7 @@ td::after {
 &lt;/table>
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
@@ -1263,7 +1263,7 @@ td::after {
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 2 -->
         <section class="slide">
             <h3>Étalonnage<span aria-hidden="true">&nbsp;&#128907;</span></h3>
@@ -1313,7 +1313,7 @@ table {
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 3 -->
         <section class="slide">
             <h3>Encerclement<span aria-hidden="true">&nbsp;&#128158;</span></h3>
@@ -1322,7 +1322,7 @@ table {
             </p>
 <pre class="language-css">
   <code class="language-css">
-table { 
+table {
     --part: calc( 360deg / var(--items) );
 }
 
@@ -1339,7 +1339,7 @@ table {
 }
 </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts radar step-1" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
@@ -1367,7 +1367,7 @@ table {
             </tbody>
           </table>
         </section>
-          
+        
         <!-- Step 4 -->
         <section class="slide">
             <h3>Placer les points<span aria-hidden="true">&nbsp;&#9862;</span></h3>
@@ -1387,7 +1387,7 @@ td:nth-of-type(3) span {
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts radar step-1 step-2" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
@@ -1415,7 +1415,7 @@ td:nth-of-type(3) span {
             </tbody>
           </table>
         </section>
-         
+        
         <!-- Step 5 -->
         <section class="slide">
             <h3>Distribution des parts<span aria-hidden="true">&nbsp;&#127829;</span></h3>
@@ -1434,7 +1434,7 @@ td {
 }
 </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts radar step-1 step-2 step-3" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
@@ -1462,7 +1462,7 @@ td {
             </tbody>
           </table>
         </section>
-         
+        
         <!-- Step 6 -->
         <section class="slide">
           <h3 lang="en">Houston<span aria-hidden="true">&nbsp;&#128225;</span></h3>
@@ -1497,7 +1497,7 @@ td span {
 }
 </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts radar step-1 step-2 step-3 step-4" style="--scale: 20; --step: 5; --items: 7; --1: 14; --2: 11; --3: 13; --4: 16; --5: 10; --6: 12; --7: 4; --8: var(--1);">
             <caption>Niveau d’intérêt par domaine, sur 20</caption>
@@ -1589,7 +1589,7 @@ td span {
   &lt;/tbody>
 &lt;/table></code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts pie">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
@@ -1623,7 +1623,7 @@ td span {
                 <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
                   <td style="--value: 17; --start: 81;">17&nbsp;%</td>
-                </tr>         
+                </tr>
                 <tr style="--color: #585462;--term: 'Autres';">
                     <th scope="row">Autres</th>
                     <td style="--value: 2; --start: 98;">2&nbsp;%</td>
@@ -1631,7 +1631,7 @@ td span {
               </tbody>
             </table>
         </section>
-          
+        
         <!-- Step 2 -->
         <section class="slide">
             <h3>Devenir légende<span aria-hidden="true">&nbsp;&#129502;</span></h3>
@@ -1655,7 +1655,7 @@ tbody [scope="row"]::before {
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts pie step-1">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
@@ -1689,7 +1689,7 @@ tbody [scope="row"]::before {
                 <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
                   <td style="--value: 17; --start: 81;">17&nbsp;%</td>
-                </tr>         
+                </tr>
                 <tr style="--color: #585462;--term: 'Autres';">
                     <th scope="row">Autres</th>
                     <td style="--value: 2; --start: 98;">2&nbsp;%</td>
@@ -1719,7 +1719,7 @@ tbody [scope="row"]::before {
         <section class="slide">
             <h3>Devenir tarte<span aria-hidden="true">&nbsp;&#129383;</span></h3>
             <p class="small">
-              On réitère nos calculs de trigo précédents, et on ajoute une petite couche de complexité avec 
+              On réitère nos calculs de trigo précédents, et on ajoute une petite couche de complexité avec
               <a hreflang="en" href="https://www.kizu.ru/conditions-for-css-variables/">
               des variables pseudo-booléennes, sur une idée de
               <cite>Roman Komarov</cite></a>.
@@ -1743,7 +1743,7 @@ td::before {
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide">
           <table class="table-ffoodd table-charts pie step-1 step-2">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
@@ -1777,7 +1777,7 @@ td::before {
                 <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
                   <td style="--value: 17; --start: 81;">17&nbsp;%</td>
-                </tr>         
+                </tr>
                 <tr style="--color: #585462;--term: 'Autres';">
                     <th scope="row">Autres</th>
                     <td style="--value: 2; --start: 98;">2&nbsp;%</td>
@@ -1807,7 +1807,7 @@ td::before {
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide" style="background: #fff;">
           <table class="table-ffoodd table-charts pie step-1 step-2 donut" style="--offset: 8rem;">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
@@ -1841,7 +1841,7 @@ td::before {
                 <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
                   <td style="--value: 17; --start: 81;">17&nbsp;%</td>
-                </tr>         
+                </tr>
                 <tr style="--color: #585462;--term: 'Autres';">
                     <th scope="row">Autres</th>
                     <td style="--value: 2; --start: 98;">2&nbsp;%</td>
@@ -1849,7 +1849,7 @@ td::before {
               </tbody>
             </table>
         </section>
-          
+        
         <!-- Step 5 : polar -->
         <section class="slide">
             <h3>Devenir polaire<span aria-hidden="true">&nbsp;&#9731;</span></h3>
@@ -1864,7 +1864,7 @@ td::before {
 }
   </code>
 </pre>
-        </section>   
+        </section>
         <section class="slide" id="white-slide">
           <table class="table-ffoodd table-charts pie step-1 step-2 polar" style="--offset: 8rem;">
             <caption>Répartition du poids des ressources pour <a href="https://www.ffoodd.fr" target="_blank" rel="noopener noreferrer">ffoodd.fr</a></caption>
@@ -1898,7 +1898,7 @@ td::before {
                 <tr style="--color: #FF2D40;--term: 'Webfonts';">
                   <th scope="row">Webfonts</th>
                   <td style="--value: 17; --start: 81;">17&nbsp;%</td>
-                </tr>         
+                </tr>
                 <tr style="--color: #585462;--term: 'Autres';">
                     <th scope="row">Autres</th>
                     <td style="--value: 2; --start: 98;">2&nbsp;%</td>
@@ -1906,7 +1906,7 @@ td::before {
               </tbody>
             </table>
         </section>
-             
+        
         <!-- a11y -->
         <section class="slide">
           <h2>Interrupteur de styles<span aria-hidden="true">&nbsp;&#9745;</span></h2>
@@ -2024,7 +2024,7 @@ document.addEventListener( "DOMContentLoaded", function () {
              </tbody>
            </table>
         </section>
-          
+        
         <section class="slide">
           <h2>Explorez<span aria-hidden="true">&nbsp;&#128640;</span></h2>
           <p>Les pistes ne manquent pas&nbsp;:</p>
@@ -2044,7 +2044,7 @@ document.addEventListener( "DOMContentLoaded", function () {
               d’autres types de graphiques&nbsp;;
             </li>
             <li class="Cmasque">
-              <strong>Houdini</strong>, un ensemble de spécifications du futur —&nbsp;jetez donc un œil aux 
+              <strong>Houdini</strong>, un ensemble de spécifications du futur —&nbsp;jetez donc un œil aux
               <a hreflang="en" href="https://css-houdini.rocks/">essais de <cite>Vincent De Oliveira</cite></a>&nbsp;;
             </li>
             <li class="Cmasque">et probablement beaucoup d’autres idées et techniques à découvrir…</li>
