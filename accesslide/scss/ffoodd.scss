@@ -784,6 +784,10 @@ code[class*="language-"],pre[class*="language-"]{color:#032c36;direction:ltr;fon
   .main-header a,
   .main-header h1 {
     font-size: 80%;
+    max-width: calc(100% - 5em);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   #wrapper {
@@ -862,7 +866,7 @@ and (min-width:24em) {
   .mt-auto {
     margin-top: auto !important;
   }
-  
+
   .ml-auto {
     margin-left: auto !important;
   }

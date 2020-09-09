@@ -25,7 +25,7 @@
 }
 
 body > :not(.modeplan) .slide {
-    overflow: hidden !important;
+    overflow-x: hidden !important;
 
     &[id="white-slide"] {
       background: palette( default, contrast );
@@ -46,7 +46,13 @@ pre[class*="language-"] {
 }
 
 pre code[class*="language-"] {
-  font-size: 1.25rem;
+  font-size: .875rem;
+}
+
+@media screen and (min-width: 48em) {
+  pre code[class*="language-"] {
+    font-size: 1.25rem;
+  }
 }
 
 .table-ffoodd {

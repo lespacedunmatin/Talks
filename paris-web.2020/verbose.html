@@ -10,8 +10,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
-  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?4" type="text/css" media="screen">
-  <link rel="stylesheet" href="../accesslide/css/charts.css?36" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlideVerbose.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
@@ -261,10 +261,6 @@ main {
               </figcaption>
             </figure>
           </div>
-          <p class="mt-auto">
-            <a hreflang="en" href="https://www.sarasoueidan.com/blog/style-settings-with-css-variables/"><cite>Sara Soueidan</cite> théorise même une organisation complète</a> autour
-            des propriétés personnalisées.
-          </p>
         </section>
 
         <section  class="slide full">
@@ -612,12 +608,12 @@ tr:nth-child(odd) {
           el.addEventListener('click', function() {
             let checked = this.getAttribute('aria-checked') === 'true' || false;
             this.setAttribute('aria-checked', !checked);
-            
+
             let chart = this.parentNode.nextElementSibling;
             chart.classList.toggle('table-charts');
           });
         });
-        
+
         const min = 0,
             chart = document.getElementById('radar'),
             rows  = chart.querySelectorAll('tbody > tr > td'),
