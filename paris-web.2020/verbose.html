@@ -394,6 +394,18 @@ div {
             <a hreflang="en" href="https://drafts.csswg.org/css-variables/#guaranteed-invalid-value">La spécification du W3C explique très bien ce comportement</a>,
             et le concept de «&nbsp;valeur invalide garantie&nbsp;»&nbsp;:jetez-y un œil&nbsp;!
           </p>
+          <p>En résumé&nbsp;:</p>
+          <ol>
+            <li>la valeur par défaut d’une propriété personnalisée est une <strong>valeur invalide garantie</strong> —&nbsp;quand vous appelez une propriété personnalisée non déclarée, c’est ce que vous obtenez&nbsp;;</li>
+            <li>si la propriété personnalisée est invalide, la propriété entière est <strong>invalide au moment du calcul</strong> —&nbspl;le navigateur ne savait pas qu’il échouerait à calculer, trop tard pour se référer à la cascade…</li>
+            <li>quand une propriété personnalisée est vide, elle est valide&nbsp;: le navigateur continue comme si de rien n’était&nbsp;;</li>
+            <li>pour forcer une propriété personnalisée à être invalide, on utilise le mot-clé <code>initial</code>.</li>
+          </ol>
+          <p>
+            Autrement dit, le <em lang="en">space toggler</em> bascule d’une valeur inutile à une valeur invalide pour une propriété personnalisée&nbsp;:
+            quand la valeur est nulle, le navigateur affecte la valeur derrière <code>var()</code> à la propriété personnalisée&nbsp;;
+            quand elle est invalide, il ignore la propriété personnalisée (elle est donc indéfinie) et utilise la valeur de repli.
+          </p>
           <p class="small">
             Si vous cherchez à vous passer de <code>@media</code>, je vous conseille plutôt
             <a href="https://emails.hteumeuleu.fr/2016/02/fab-four-emails-responsive-sans-media-queries/">la technique des Fab Four par <cite>Rémi Parmentier</cite></a>,
