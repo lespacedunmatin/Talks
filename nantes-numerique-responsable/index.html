@@ -15,6 +15,18 @@
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
+  <style>
+    .grid {
+      flex: 1;
+      display: grid;
+      grid-template: repeat(var(--rows, 4), 1fr) / repeat(var(--cols, 8), 1fr);
+    }
+
+    .grid span {
+      grid-area: var(--y, 1) / var(--x, 1) / span var(--span-y, 1) / span var(--span-x, 1);
+      place-self: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -79,14 +91,21 @@
 
         <section class="slide full">
           <h2>Le handicap, tout un symbole</h2>
+          <div class="grid">
+            <span style="--x:4;--y:3">&#9855;</span>
+          </div>
         </section>
 
         <section class="slide full">
-            <h2>Les différentes facettes du handicap</h2>
+          <h2>Les différentes facettes du handicap</h2>
         </section>
 
         <section class="slide full">
           <h2>Différents classements</h2>
+        </section>
+
+        <section class="slide full">
+          <h2>Déficience et situation de handicap</h2>
         </section>
 
         <section class="slide full">
@@ -162,7 +181,8 @@
         </section>
 
         <section class="slide full">
-          <h2>Participez&nbsp;!</h2>
+          <h2>Par où commencer&nbsp;?</h2>
+          <kbd>Tab</kbd>
         </section>
 
         <section class="slide full">
