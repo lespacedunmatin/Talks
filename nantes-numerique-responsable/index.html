@@ -9,6 +9,7 @@
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <script src="https://twemoji.maxcdn.com/v/13.0.1/twemoji.min.js" integrity="sha384-5f4X0lBluNY/Ib4VhGx0Pf6iDCF99VGXJIyYy7dDLY5QlEd7Ap0hICSSZA1XYbc4" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
   <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
   <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
@@ -20,13 +21,13 @@
       flex: 1;
       display: grid;
       grid-template: repeat(var(--rows, 4), 1fr) / repeat(var(--cols, 8), 1fr);
-      font-size: clamp(2rem, var(--s, 1) * 8rem, 50vh);
       gap: 2rem;
     }
 
     .grid > * {
-      grid-area: var(--y, 2) / var(--x, 1) / span var(--span-y, 1) / span var(--span-x, 1);
+      grid-area: var(--y, 2) / var(--x, 1) / span var(--span-y, var(--span, var(--s, 1))) / span var(--span-x, var(--span, var(--s,1)));
       place-self: center;
+      font-size: clamp(2rem, var(--s, 1) * 8rem, 50vh);
       line-height: 1;
     }
 
@@ -129,29 +130,73 @@
 
         <section class="slide full">
           <h2>Déficience et situation de handicap</h2>
+          <div class="grid" style="--s:2">
+            <span style="--x:3;--y:2">&#129487;</span>
+            <span style="--x:5;--y:2">&#128241;</span>
+          </div>
         </section>
 
         <section class="slide full">
           <h2>Représenter pour pouvoir exister</h2>
+          <div class="grid" style="--s:2">
+            <span>&#129455;</span>
+            <span style="--x:3">&#129504;</span>
+            <span style="--x:5">&#129469;</span>
+            <span style="--x:7">&#129467;</span>
+          </div>
         </section>
 
         <section class="slide full">
           <h2>Les handicaps sont multiples</h2>
+          <div class="grid" style="--s:2">
+            <span>&#128083;</span>
+            <span style="--x:3">&#129301;</span>
+            <span style="--x:5">&#129470;</span>
+            <span style="--x:7">&#129487;</span>
+          </div>
         </section>
 
         <section class="slide full">
           <h2>Statistique mondiale</h2>
+          <div class="grid">
+            <span style="--x:4;--y:1;--span-y:2;--span-x:3;--s:2">&#128506;</span>
+            <span style="--x:3;--y:3">&#129485;</span>
+            <span style="--x:4;--y:2">&#129485;</span>
+            <span style="--x:4;--y:3;--span:2">&#129485;</span>
+            <span style="--x:5;--y:2;--span-y:2">&#129485;</span>
+            <span style="--x:6;--y:2">&#129485;</span>
+            <span style="--x:6;--y:3;--span-x:2">&#129485;</span>
+            <span style="--x:7;--y:1;--span-y:2">&#129485;</span>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2>Statistique mondiale</h2>
+          <div class="grid">
+            <span style="--x:4;--y:1;--span-y:2;--span-x:3;--s:2">&#128506;</span>
+            <span style="--x:3;--y:3">&#129485;</span>
+            <span style="--x:4;--y:2">&#129485;</span>
+            <span style="--x:4;--y:3;--span:2">&#129485;</span>
+            <span style="--x:5;--y:2;--span-y:2;transform:scaleX(-1)">👨‍🦽</span>
+            <span style="--x:6;--y:2">&#129485;</span>
+            <span style="--x:6;--y:3;--span-x:2">&#129485;</span>
+            <span style="--x:7;--y:1;--span-y:2">&#129485;</span>
+          </div>
         </section>
 
         <section class="slide full">
           <h2>L’importance de la représentation</h2>
           <div class="grid" style="--s:2">
-            <span style="--x:4;--y:2;--span-y:2;--span-x:2">&#9855;</span>
+            <span style="--x:4">&#9855;</span>
           </div>
         </section>
 
         <section class="slide full">
           <h2>Quelques marches à gravir&nbsp;?</h2>
+          <div class="grid" style="--s:2">
+            <span style="--x:3;--y:2;transform:scaleX(-1)">👨‍🦽</span>
+            <span style="--x:5;--y:1">&#127968;</span>
+          </div>
         </section>
 
         <section class="slide full">
