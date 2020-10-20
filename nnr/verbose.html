@@ -25,7 +25,7 @@
         max-height: calc(82vh - 4em);
       }
 
-      .grid > * {
+      .grid > *:not(p) {
         grid-area: var(--y, 2) / var(--x, 1) / span var(--span-y, var(--span, var(--s, 1))) / span var(--span-x, var(--span, var(--s,1)));
         place-self: center;
         font-family: "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -36,6 +36,10 @@
       .grid > * .emoji {
         height: 1em;
         width: 1em;
+      }
+
+      .grid > p {
+        grid-area: 4 / 1 / 4 / span 8;
       }
     </style>
 </head>
@@ -107,6 +111,7 @@
                 <path d="M13.824 6.225c1.395-.13 2.478-1.33 2.478-2.735A2.75 2.75 0 0013.556.744a2.75 2.75 0 00-2.745 2.746c0 .461.128.933.343 1.33l.978 13.766 10.076.002 4.132 9.683 5.426-2.128-.84-2-3.036 1.095-3.999-9.23-9.368.062-.129-1.743 6.782.002v-2.58l-7.04-.002z"/>
                 <path d="M23.958 25.967c-1.7 3.361-5.26 5.576-9.057 5.576-5.576 0-10.124-4.548-10.124-10.124 0-3.916 2.373-7.554 5.914-9.167l.229 2.99c-2.094 1.32-3.385 3.701-3.385 6.197 0 4.045 3.299 7.345 7.344 7.345 3.7 0 6.857-2.84 7.287-6.484z"/>
               </svg>
+              <p>Le symbole international du handicap représente une personne dans un fauteuil roulant ; mais il est forcément réducteur.</p>
             </div>
           </section>
 
