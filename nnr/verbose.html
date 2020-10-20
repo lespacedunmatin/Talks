@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
     <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+    <script src="https://twemoji.maxcdn.com/v/13.0.1/twemoji.min.js" integrity="sha384-5f4X0lBluNY/Ib4VhGx0Pf6iDCF99VGXJIyYy7dDLY5QlEd7Ap0hICSSZA1XYbc4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
     <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
     <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
@@ -21,13 +22,20 @@
         display: grid;
         grid-template: repeat(var(--rows, 4), 1fr) / repeat(var(--cols, 8), 1fr);
         gap: 2rem;
+        max-height: calc(82vh - 4em);
       }
 
       .grid > * {
         grid-area: var(--y, 2) / var(--x, 1) / span var(--span-y, var(--span, var(--s, 1))) / span var(--span-x, var(--span, var(--s,1)));
         place-self: center;
+        font-family: "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         font-size: clamp(2rem, var(--s, 1) * 8rem, 50vh);
         line-height: 1;
+      }
+
+      .grid > * .emoji {
+        height: 1em;
+        width: 1em;
       }
     </style>
 </head>
@@ -366,10 +374,11 @@
 
           <section class="slide end noprint">
             <h2 class="end-title">Merci</h2>
-            <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+            <h3>Et à bientôt</h3>
             <h4>Crédits</h4>
             <ul class="credit">
               <li>Contenu initial&nbsp;: <a href="https://vincent-valentin.name/presentations/Le%20handicap,%20tout%20un%20symbole.pdf">«&nbsp;Le handicap, tout un symbole&nbsp;» par <cite>Vincent Valentin</cite> — (PDF, 914ko)</a>&nbsp;;</li>
+              <li>Emojis&nbsp;: <a href="https://github.com/twitter/twemoji" hreflang="en">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
               <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
               <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
               <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
@@ -390,5 +399,6 @@
 
 <script src="../accesslide/js/slide.min.js"></script>
 <script src="../accesslide/js/prism.min.js"></script>
+<script>twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});</script>
 </body>
 </html>
