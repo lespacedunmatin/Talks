@@ -7,6 +7,7 @@
   <meta name="description" content="Le jargon web, avant le web — conférence donnée lors de Paris Web 2021 par Gaël Poupard">
   <meta name="author" content="Gaël Poupard">
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <!-- @todo preload domains: giphy, wikimedia, etc. -->
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
@@ -127,8 +128,9 @@
             Le rapport liant l’informatique au monde physique et mécanique n’est abstrait que depuis peu
             —&nbsp;et l’est d’autant plus en français que nous utilisons des termes anglais.
           </p>
+          <!-- @todo Styles frise chronologique. -->
           <ol>
-            <li class="Cmasque"><time>1725</time>&nbsp;: Basile Bouchon crée les cartes perfores pour… les orgues de barbarie.</li>
+            <li class="Cmasque"><time>1725</time>&nbsp;: Basile Bouchon crée les cartes perforées pour… les orgues de barbarie.</li>
             <li class="Cmasque"><time>1801</time>&nbsp;: Jacques améliore le système et l’applique aux… métiers à tisser.</li>
             <li class="Cmasque">
               <time>1908</time>&nbsp;: le fils de Charles Babbage reprend les travaux du père et présente une «&nbsp;machine analytique&nbsp;»
@@ -167,15 +169,28 @@
         <section class="slide full">
           <h2><i lang="en">Library</i> <span aria-hidden="true">&nbsp;&#128218;</span></h2>
           <h3>Bibliothèque</h3>
-          <p>
-            Et pas «&nbsp;librairie&nbsp;», crénom&nbsp;!
-            La distinction entre librairie et bibliothèque en français est importante. À la librairie,
-            on s’approprie tandis qu’à la bibliothèque, <strong>on emprunte</strong> —&nbsp;et par extension, on rapporte.
-          </p>
-          <p class="small">
-            Dans le contexte des métiers du web, le rapport entre l’<i lang="en">open-source</i>
-            et notre mauvaise traduction de ce terme est intéressant, vous ne trouvez pas&nbsp;?
-          </p>
+          <div class="table">
+            <div class="col-50 v-top">
+              <p>
+                À la librairie, on s’approprie tandis qu’à la bibliothèque, <strong>on emprunte</strong>.
+              </p>
+              <p class="small">
+                Le rapport entre l’<i lang="en">open-source</i>
+                et notre mauvais usage de ce terme est intéressant, vous ne trouvez pas&nbsp&nbsp;?
+              </p>
+            </div>
+            <div class="col-50">
+              <!-- @todo Styles figure en mode polaroïds. -->
+              <figure>
+                <video src="https://media.giphy.com/media/YGlRW1Am9q7e0/giphy.mp4"
+                       controls crossorigin="anonymous" muted autoplay loop></video>
+                <figcaption>
+                  <code>npm install</code>, allégorie.<br>
+                  <small>Trouvée <a href="http://gph.is/1BlUpbz" hreflang="en">sur Giphy</a>.</small>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </section>
 
         <section class="slide full">
@@ -183,6 +198,21 @@
           <h3>Coffrage, charpente</h3>
           <div class="table">
             <div class="col-50">
+              <p>
+                Dans le BTP, «&nbsp;<i lang="en">a wooden framework</i>&nbsp;» est un cadre en bois,
+                allant de la charpente au simple <strong>coffrage</strong>.
+              </p>
+              <p>
+                C’est donc un outil qui soutient le travail, voire un autre ouvrage, et qui peut
+                laisser une empreinte sur le produit final.
+              </p>
+              <p class="small">
+                Le terme français <strong>cadriciel</strong> (par opposition au logiciel) est un pur néologisme mais
+                a le mérite d’utiliser la racine pertinente&nbsp;: le cadre.
+              </p>
+            </div>
+            <div class="col-50">
+              <!-- @todo Styles quand plusieurs figures : quantity queries + transform. -->
               <figure>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg"
                      alt="" width="512" loading="lazy"/>
@@ -194,8 +224,6 @@
                   </a>
                 </figcaption>
               </figure>
-            </div>
-            <div class="col-50">
               <figure>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg/512px-Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg"
                      alt="" width="512" loading="lazy"/>
@@ -209,19 +237,32 @@
               </figure>
             </div>
           </div>
-          <p class="small">
-            Le terme français <strong>cadriciel</strong> (par opposition au logiciel) est un pur néologisme mais
-            a le mérite d’utiliser la racine pertinente&nbsp;: le cadre.
-          </p>
         </section>
 
         <section class="slide full">
           <h2><i lang="en">Radio buttons</i> <span aria-hidden="true">&nbsp;&#128280;</span></h2>
           <h3>Les boutons radio</h3>
-          <p>
-            Ce sont littéralement <a href="https://fr.wikipedia.org/wiki/Bouton_radio">les boutons des vieilles radios.</a>
-            Vous ne pouvez pas écouter plusieurs ondes en même temps, et paf les boutons radios.
-          </p>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Ce sont littéralement <a href="https://fr.wikipedia.org/wiki/Bouton_radio">les boutons des vieilles radios.</a>
+                Vous ne pouvez pas écouter plusieurs ondes en même temps, et paf les boutons radios.
+              </p>
+            </div>
+            <div class="col-50 v-middle">
+              <figure>
+                  <img src="https://christianheilmann.com/wp-content/uploads/2020/05/autoradio-retro-generations-past-nostalgia-vintage-antique-old.jpg"
+                       alt="" width="" height="" loading="lazy"/>
+                  <figcaption>
+                    Un vieil autoradio, avec nos fameux boutons.<br>
+                    <small>Image tirée du
+                      <a href="https://christianheilmann.com/2020/05/05/progressively-enhancing-radio-buttons-with-svg-whilst-staying-accessible/"
+                         hreflang="en">blog de Christian Heillman</a>.
+                    </small>
+                  </figcaption>
+                </figure>
+            </div>
+          </div>
         </section>
 
         <section class="slide full">
@@ -241,7 +282,7 @@
             <div class="col-50">
               <figure>
                 <img src="https://www.ffoodd.fr/wp-content/uploads/2013/11/slide-to-unlock.jpg"
-                     alt="" width="240" height="150" loading="lazy"/>
+                     alt="" width="240" height="150" loading="lazy" class="obs"/>
                 <figcaption>
                   Loquet de sécurité à glissière, portant le texte «&nbsp;<i lang="en">Slide</i>&nbsp;»
                   —&nbsp;littéralement «&nbsp;glisser&nbsp;».
@@ -254,10 +295,24 @@
         <section class="slide full">
           <h2><i lang="en">Carousel</i> <span aria-hidden="true">&nbsp;&#127904;</span></h2>
           <h3>Carrousel</h3>
-          <p>
-            Un manège, quoi. Sauf que <strong>les vrais carrousels attendent</strong>
-            que les gens aient embarqué pour démarrer&nbsp;!
-          </p>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Un manège, quoi. Sauf que <strong>les vrais carrousels attendent</strong>
+                que les gens aient embarqué pour démarrer&nbsp;!
+              </p>
+            </div>
+            <div class="col-50">
+              <figure>
+                <video src="https://media.giphy.com/media/IONcI446NLLTq/giphy.mp4"
+                       controls loop muted autoplay crossorigin="anonymous"></video>
+                <figcaption>
+                  Expert accessibilité auditant un carrousel.<br>
+                  <small>Trouvé <a href="https://media.giphy.com/media/IONcI446NLLTq/giphy.gif" hreflang="en">sur Giphy</a>.</small>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </section>
 
         <section class="slide full">
@@ -277,19 +332,33 @@
 
         <section class="slide full">
           <h2><i lang="en">Spam</i>™</h2>
-          <h3>C’est une marque de porc en conserve…</h3>
-          <p>
-            La marque <a href="https://www.spam.com/" hreflang="en">Spam</a> est devenue extrêmement populaire
-            lors de la 2<sup>nde</sup> Guerre Mondiale par l’armée américaine puis au Royaume-Uni.
-          </p>
-          <p>
-            Son omniprésence dans l’alimentation d’après-guerre est à l’origine
-            d’<a href="https://fr.wikipedia.org/wiki/Spam_(sketch)">un sketch éponyme des Monty Python</a>
-            en 1970 dans leur fameux <cite lang="en">Flying Circus</cite>&nbsp;: un restaurant ne sert que des plats
-            à base de Spam, conduisant le menu à être essentiellement composé du terme Spam.
-          </p>
-          <p>Et c’est en référence à ce sketch que ce mot est utilisé pour désigner les courriers indésirables.</p>
-          <p class="small">Je préfère le terme pourriel, pas vous&nbsp;?</p>
+          <h3>Du <span aria-label="porc">&#128022;</span> en conserve</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Ce terme est utilisé en référence à
+                <a href="https://fr.wikipedia.org/wiki/Spam_(sketch)">un sketch éponyme des Monty Python</a>
+                dans lequel un restaurant ne sert <strong>que</strong>
+                des conserves de la marque <a href="https://www.spam.com/" hreflang="en">Spam</a>,
+                incontournable de l’après 2<sup>nde</sup> Guerre Mondiale.
+              </p>
+              <p class="small">Je préfère le terme pourriel, pas vous&nbsp;?</p>
+            </div>
+            <div class="col-50">
+              <img src="https://fontmeme.com/images/Spam-logo.jpg"
+                   alt="SPAM" width="48" height="48" loading="lazy"/>
+              <figure>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Monty_Python_Live_02-07-14_13_04_42_%2814598710791%29.jpg/1200px-Monty_Python_Live_02-07-14_13_04_42_%2814598710791%29.jpg"
+                     alt="" width="" height="" loading="lazy">
+                <figcaption>
+                  Le menu du sketch des Monthy Python.<br>
+                  <small>
+                    Par <a href="https://commons.wikimedia.org/w/index.php?curid=73509516"
+                           hreflang="en">Eduardo Unda-Sanzana, CC BY 2.0</a>
+                  </small>
+              </figure>
+            </div>
+          </div>
         </section>
 
         <section class="slide full">
