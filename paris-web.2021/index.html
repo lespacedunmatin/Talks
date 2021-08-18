@@ -7,7 +7,8 @@
   <meta name="description" content="Le jargon web, avant le web — conférence donnée lors de Paris Web 2021 par Gaël Poupard">
   <meta name="author" content="Gaël Poupard">
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-  <!-- @todo preload domains: giphy, wikimedia, etc. -->
+  <link rel="preconnect" href="https://upload.wikimedia.org"/>
+  <link rel="preconnect" href="https://media.giphy.com/"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
@@ -16,6 +17,15 @@
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
+  <style>
+    figcaption { font-size: .6em; }
+    figure {
+      background: #fff;
+      box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
+      padding: .5em;
+      width: max-content;
+    }
+  </style>
 </head>
 <body>
 
@@ -81,17 +91,11 @@
         <section class="slide full">
           <h2>Néologismes, vraiment&nbsp;?</h2>
           <p>
-            Le vocabulaire du web et de ses technologies fluctue considérablement, et nous autres français
-            conservons les termes anglophones dans notre quotidien. Le hic, le sens est généralement perdu&nbsp;:
-            <strong>ce sont des néologismes en français, mais pas en anglais</strong>.
+            Ce sont des néologismes en français, mais <strong>pas en anglais</strong>.
           </p>
-          <blockquote class="small">
-            Un <dfn>néologisme</dfn> est un mot de création récente ou emprunté depuis peu à une autre langue ou toute acception
-            nouvelle donnée à un mot ou à une expression qui existaient déjà dans la langue.
-          </blockquote>
           <p>
-            Nos amis anglophones ne se cassent pas la tête&nbsp;: l’intégralité de notre vocable web est
-            <strong>métaphorique</strong>, issu du monde physique et des industries pré-existantes.
+            L’intégralité de notre vocable web est
+            <strong>métaphorique</strong>, issu du monde physique.
           </p>
         </section>
 
@@ -183,10 +187,9 @@
               <!-- @todo Styles figure en mode polaroïds. -->
               <figure>
                 <video src="https://media.giphy.com/media/YGlRW1Am9q7e0/giphy.mp4"
-                       controls crossorigin="anonymous" muted autoplay loop></video>
+                       controls muted autoplay loop width="240" height="360"></video>
                 <figcaption>
                   <code>npm install</code>, allégorie.<br>
-                  <small>Trouvée <a href="http://gph.is/1BlUpbz" hreflang="en">sur Giphy</a>.</small>
                 </figcaption>
               </figure>
             </div>
@@ -213,27 +216,22 @@
             </div>
             <div class="col-50">
               <!-- @todo Styles quand plusieurs figures : quantity queries + transform. -->
-              <figure>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg"
-                     alt="" width="512" loading="lazy"/>
-                <figcaption lang="en">
-                  La Hougue Bie Memorial of Russian slaves in German Bunker, Jersey.
-                  <br>
-                  <a hreflang="en" href="https://commons.wikimedia.org/wiki/File:IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg">
-                    <small>Ellywa, CC BY-SA 3.0, via Wikimedia Commons</small>
-                  </a>
+              <figure clas="Cmasque">
+                <a hreflang="en" href="https://commons.wikimedia.org/wiki/File:IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg"
+                       alt="La Hougue Bie Memorial of Russian slaves in German Bunker, Jersey."
+                       width="400" height="300" loading="lazy"/>
+                </a>
+                <figcaption>
+                  Mémorial des esclaves russes dans un bunker allemand à La Hougue Bie, Jersey.
                 </figcaption>
               </figure>
-              <figure>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg/512px-Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg"
-                     alt="" width="512" loading="lazy"/>
-                <figcaption lang="en">
-                  Wooden Framework to Support Arches in a Building.
-                  <br>
-                  <a hreflang="en" href="https://commons.wikimedia.org/wiki/File:Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg">
-                    <small>Jacob Bos, CC0, via Wikimedia Commons</small>
-                  </a>
-                </figcaption>
+              <figure class="Cmasque">
+                <a hreflang="en" lang="en" href="https://commons.wikimedia.org/wiki/File:Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg/512px-Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg"
+                       alt="Wooden Framework to Support Arches in a Building" width="256" height="178" loading="lazy"/>
+                </a>
+                <figcaption>Structure en bois supportant les arches lors d’une construction.</figcaption>
               </figure>
             </div>
           </div>
@@ -252,7 +250,7 @@
             <div class="col-50 v-middle">
               <figure>
                   <img src="https://christianheilmann.com/wp-content/uploads/2020/05/autoradio-retro-generations-past-nostalgia-vintage-antique-old.jpg"
-                       alt="" width="" height="" loading="lazy"/>
+                       alt="" width="436" height="154" loading="lazy"/>
                   <figcaption>
                     Un vieil autoradio, avec nos fameux boutons.<br>
                     <small>Image tirée du
@@ -272,7 +270,7 @@
             <div class="col-50">
               <figure>
                 <img src="https://i2.wp.com/css-tricks.com/wp-content/uploads/2010/08/slidetounlock.png?w=570&ssl=1"
-                     alt="" width="" height="" loading="lazy"/>
+                     alt="" width="285" height="80" loading="lazy"/>
                 <figcaption>
                   Capture d’écran de l’interface «&nbsp;<i lang="en">Slide to unlock</i>&nbsp;» sur iPhone,<br>
                   <small><a href="https://css-tricks.com/slide-to-unlock/" hreflang="en">reproduite en CSS par Chris Coyier</a></small>
@@ -305,11 +303,8 @@
             <div class="col-50">
               <figure>
                 <video src="https://media.giphy.com/media/IONcI446NLLTq/giphy.mp4"
-                       controls loop muted autoplay crossorigin="anonymous"></video>
-                <figcaption>
-                  Expert accessibilité auditant un carrousel.<br>
-                  <small>Trouvé <a href="https://media.giphy.com/media/IONcI446NLLTq/giphy.gif" hreflang="en">sur Giphy</a>.</small>
-                </figcaption>
+                       controls loop muted autoplay width="480" height="484"></video>
+                <figcaption>Expert accessibilité auditant un carrousel.</figcaption>
               </figure>
             </div>
           </div>
@@ -317,17 +312,23 @@
 
         <section class="slide full">
           <h2><i lang="en">Mail</i> <span aria-hidden="true">&nbsp;&#128236;</span></h2>
-          <h3>Courrier</h3>
-          <p>
-            L’attrait de la nouveauté et la confusion avec la modernité nous a fait adopter le mail comme désignant
-            un nouveau type d’échanges, mais pour les anglosaxons c’est un bon vieux courrier&nbsp;: le même terme
-            est utilisé pour le <strong>courrier postal</strong>.
-          </p>
-          <p class="small">
-            D’où l’ajout du «&nbsp;e&nbsp;» devant le terme, pour dissocier le courrier électronique
-            du bon vieux courrier papier. Notez que ce néologisme existe en français&nbsp;:
-            le <strong>courriel</strong>.
-          </p>
+          <h3>Courrier (postal)</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                D’où l’ajout du «&nbsp;e&nbsp;» devant le terme, pour dissocier le courrier électronique
+                du courrier papier. Notez que ce néologisme existe en français&nbsp;:
+                le <strong>courriel</strong>.
+              </p>
+            </div>
+            <div class="col-50">
+              <figure>
+                <img src="https://www.laposte.fr/medias/sys_master/images/h3e/haf/12118041067550.jpg"
+                     class="obs" alt="" width="473" height="441" loading="lazy"/>
+                <figcaption>Où colle-t-on le timbre, sur un courriel&nbsp;?</figcaption>
+              </figure>
+            </div>
+          </div>
         </section>
 
         <section class="slide full">
@@ -349,7 +350,7 @@
                    alt="SPAM" width="48" height="48" loading="lazy"/>
               <figure>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Monty_Python_Live_02-07-14_13_04_42_%2814598710791%29.jpg/1200px-Monty_Python_Live_02-07-14_13_04_42_%2814598710791%29.jpg"
-                     alt="" width="" height="" loading="lazy">
+                     alt="" width="300" height="400" loading="lazy">
                 <figcaption>
                   Le menu du sketch des Monthy Python.<br>
                   <small>
@@ -364,12 +365,21 @@
         <section class="slide full">
           <h2><i lang="en">Scroll</i> <span aria-hidden="true">&nbsp;&#128220;</span></h2>
           <h3>Rouleau, parchemin</h3>
-          <p>
-            Avant le livre, les écrits étaient conservés sous forme de rouleaux interminables. Les dérouler
-            entièrement eût requis trop d’espace, chaque rouleau était scindé en colonnes et on enroulait
-            d’un côté pour dérouler de l’autre, colonne par colonne.<br>
-            La <i lang="en">scrollbar</i> était née&nbsp;!
-          </p>
+          <div class="table">
+            <div class="col-50 v-top">
+              <p>
+                Avant le livre, les écrits étaient conservés sous forme de rouleaux interminables.<br>
+                La <i lang="en">scrollbar</i> était née&nbsp;!
+              </p>
+            </div>
+            <div class="col-50">
+              <figure>
+                <video src="https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.mp4"
+                       width="480" height="362" muted autoplay controls></video>
+                <figcaption lang="en">Let’s scroll!</figcaption>
+              </figure>
+            </div>
+          </div>
         </section>
 
         <section class="slide full">
@@ -378,19 +388,20 @@
           <div class="table">
             <div class="col-50 v-middle">
               <p>
-                Vous avez entendu parler du Harvard Mark II et de Grace Hopper,
-                qui aurait trouvé un insecte coincé dedans en 1947&nbsp;?
-                <a href="https://fr.wikipedia.org/wiki/Bug_(informatique)#Terminologie">C’est un mythe amplement déformé</a>,
-                le terme étant déjà utilisé dans ce contexte depuis longtemps (par exemple Thomas Edison en 1870).
+                <a href="https://fr.wikipedia.org/wiki/Bug_(informatique)#Terminologie">L’anecdote
+                de Grace Hopper en 1947 est un mythe amplement déformé</a>,
+                le terme étant déjà utilisé dans ce contexte depuis longtemps.
               </p>
             </div>
             <div class="col-50">
               <figure>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg" alt="First Computer Bug, 1945.jpg">
+                <a href="https://commons.wikimedia.org/w/index.php?curid=165211&uselang=fr">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg"
+                       lang="en" alt="First Computer Bug. Courtesy of the Naval Surface Warfare Center, Dahlgren, VA., 1988."
+                       width="370" height="291" loading="lazy">
+                </a>
                 <figcaption>
-                  <a href="https://commons.wikimedia.org/w/index.php?curid=165211&uselang=fr">
-                    <small>Courtesy of the Naval Surface Warfare Center, Dahlgren, VA., 1988.</small>
-                  </a>
+                  Le premier <i lang="en">bug</i> informatique répertorié.
                 </figcaption>
               </figure>
             </div>
@@ -399,18 +410,11 @@
 
         <section class="slide full">
           <h2>Ça pourrait continuer longtemps…</h2>
-          <p>
-            Certains éléments HTML sont des représentations d’éléments existants dans le monde réel
-            (<i lang="en">canvas, dialog, head, body, footer</i>…). Les autres sont des verbes ou des abréviations.
-            C’est ce que nous appelons la sémantique, mais il faut noter que peu de termes ont été créés spécifiquement
-            pour le web&nbsp;: ils ne sont que des métaphores, dont <strong>nous n’appréhendons pas la
-            simplicité</strong> en français.
-          </p>
-          <p>
-            En France, on manipule le vocabulaire anglais sans s’approprier le sens et on finit par le vicier.
-            Au Québec, on conçoit un vocabulaire neuf avec beaucoup de justesse et de poésie,
-            en traduisant littéralement ou en adaptant la graphie («&nbsp;plogue&nbsp;» pour ne pas écrire <i lang=en">plug</i>).
-          </p>
+          <figure>
+            <img src="https://i.ytimg.com/vi/gzLdLnAf9Gw/maxresdefault.jpg"
+                 alt="" width="640" height="360" loading="lazy" class="obs"/>
+            <figcaption>Les éléments HTML figurent parfois des objets courants.</figcaption>
+          </figure>
         </section>
 
         <section class="slide full">
@@ -419,27 +423,30 @@
             Les objets et interactions que nous avons évoqués, ordinaires dans l’univers physique anglo-saxon, confèrent
             à leurs ersatz numériques leur <strong>affordance</strong>&nbsp;: ce sont des interfaces éprouvées.
           </p>
-          <p class="small">
-            Certains termes (comme <i lang="en">Library</i>) ont un sens induit perdu en Français.
-            Parfois c’est anecdotique et ne prête à rien, parfois les glissements sémantiques sont tels
-            qu’en quelques années on déforme et vice complètement le terme employé —&nbsp;par exemple <i lang="en">scrum</i>,
-            qui devient complètement figé et creux dès qu’on l’érige en méthodologie. Ce n’est plus une mêlée.
-          </p>
+          <div class="Cmasque">
+            <figure>
+              <video src="https://media.giphy.com/media/reKoKNEqzn596/giphy.mp4"
+                     autoplay controls muted loop width="480" height="172"></video>
+              <figcaption>Un <i lang="en">daily</i> ordinaire</figcaption>
+            </figure>
+          </div>
         </section>
 
         <section class="slide full">
           <h2>En quête de sens <span aria-hidden="true">&nbsp;&#128270;</span></h2>
-          <p>
-            Comprendre les images mobilisées par le jargon peut
-            s’avérer crucial, par exemple quand on aborde l’accessibilité&nbsp;:
-            le motif de conception ARIA le plus répandu (car le plus utile) est le <i lang="en">disclosure</i>.
-            Vous l’appelez sans doute <i lang="en">dropdown</i>, <i lang="en">collapse</i> ou ce genre de choses.
-          </p>
-          <p>
-            Mais <i lang="en">disclosure</i> signifie <strong>divulgation</strong>,
-            ce qui est autrement plus pertinent que «&nbsp;machin qui s’ouvre vers le bas&nbsp;»
-            ou «&nbsp;machin qui se replie sur lui-même&nbsp;», non&nbsp;?
-          </p>
+          <details>
+            <summary>Comprendre les images mobilisées est crucial</summary>
+            <p>
+              Le motif de conception ARIA le plus répandu est le <i lang="en">disclosure</i>,
+              qui signifie <strong>divulgation</strong>. Autrement plus explicite que <i lang="en">collapse</i>,
+              qui veut dire «&nbsp;effondrement&nbsp;» ou «&nbsp;écroulement&nbsp;».
+            </p>
+            <p>
+              Ici par exemple, <code>&lt;details></code> et <code>&lt;summary></code> sont sans
+              équivoque&nbsp;: un résumé et un détail.
+            </p>
+          </details>
+
         </section>
 
         <section class="slide full">
