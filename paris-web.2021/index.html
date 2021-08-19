@@ -25,6 +25,19 @@
       padding: .5em;
       width: max-content;
     }
+
+    ol.table {
+      padding-left: 0;
+    }
+
+    time {
+      font-weight: bold;
+    }
+
+    .col-20 {
+      display: table-cell;
+      width: 20%;
+    }
   </style>
 </head>
 <body>
@@ -89,69 +102,45 @@
         </section>
 
         <section class="slide full">
-          <h2>Néologismes, vraiment&nbsp;?</h2>
+          <h2>Le sens perdu<span aria-hidden="true">&nbsp;&#129430;</span></h2>
           <p>
-            Ce sont des néologismes en français, mais <strong>pas en anglais</strong>.
+            Notre vocable web est composé de néologismes en français, mais <strong>pas en anglais</strong>.
+            Il est une <strong>métaphore</strong> du monde physique, dont le sens est perdu en français.
           </p>
-          <p>
-            L’intégralité de notre vocable web est
-            <strong>métaphorique</strong>, issu du monde physique.
-          </p>
-        </section>
-
-        <section class="slide full">
-          <h2>Le vocable primordial <span aria-hidden="true">&nbsp;&#129716;</span></h2>
-          <p>
-            Ce vocabulaire et son histoire sont pourtant indispensables pour notre industrie&nbsp;:
-            parler le même langage et conserver son histoire contribue à
-            <strong>fonder une culture</strong>.
-          </p>
+          <p class="small">Globalement on est nuls pour inventer.</p>
         </section>
 
         <section class="slide full">
           <h2>Pensée <span aria-hidden="true">&#8596;</span> Langage</h2>
           <div class="table">
+            <div class="col-50 v-top">
+              <p>
+                C’est ce que <cite>Vygotski</cite> appelait la <strong>dialectique pensée-langage</strong>&nbsp;:
+                c’est un cercle vertueux<span aria-hidden="true">&nbsp;&#9851;</span>.
+              </p>
+            </div>
             <div class="col-50 Cmasque">
               <figure>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Lev_Vygotsky_1896-1934.jpg" alt="">
                 <figcaption>
-                  <a href="https://commons.wikimedia.org/w/index.php?curid=26913713">Portrait de Lev Semionovitch Vygotski</a><br>
+                  <a href="https://commons.wikimedia.org/w/index.php?curid=26913713">Lev Semionovitch Vygotski</a><br>
                   <small>par <a rel="nofollow" href="http://webpages.charter.net/schmolze1/vygotsky/">The Vygotski Project</a>, CC BY-SA 3.0</small>
                 </figcaption>
               </figure>
-            </div>
-            <div class="col-50 Cmasque">
-              <!-- @todo cercle vertueux pensée → langage → pensée… -->
             </div>
           </div>
         </section>
 
         <section class="slide full">
           <h2>Aux origines <span aria-hidden="true">&nbsp;&#128435;</span></h2>
-          <p>
-            Le rapport liant l’informatique au monde physique et mécanique n’est abstrait que depuis peu
-            —&nbsp;et l’est d’autant plus en français que nous utilisons des termes anglais.
-          </p>
-          <!-- @todo Styles frise chronologique. -->
-          <ol>
-            <li class="Cmasque"><time>1725</time>&nbsp;: Basile Bouchon crée les cartes perforées pour… les orgues de barbarie.</li>
-            <li class="Cmasque"><time>1801</time>&nbsp;: Jacques améliore le système et l’applique aux… métiers à tisser.</li>
-            <li class="Cmasque">
-              <time>1908</time>&nbsp;: le fils de Charles Babbage reprend les travaux du père et présente une «&nbsp;machine analytique&nbsp;»
-              à l’académie royale d’astronomie.
-            </li>
-            <li class="Cmasque"><time>1842</time>&nbsp;: Ada Lovelace écrit le premier algorithme exécutable, pour la machine de Babbage.</li>
-            <li class="Cmasque">
-              <time>1946</time>&nbsp;: ENIAC, le premier ordinateur mécanographique (20 mètres de long,
-              2,5 mètres de haut), parent proche de Colossus conçu par Alan Turing et Max Newman.
-              <small>Si vous appréciez les <i lang="en">comics</i> américains, ces noms vous évoqueront peut-être quelque chose&nbsp;!</small>
-            </li>
-            <li class="Cmasque">
-              Et finalement, la miniaturisation permise par les transistors a fait entrer l’informatique
-              dans l’abstraction&nbsp;: il ne s’agit plus de mécanique.
-            </li>
+          <ol class="table">
+            <li class="col-20 Cmasque"><time>1725</time><br/>Bouchon</li>
+            <li class="col-20 Cmasque"><time>1801</time><br/>Jacquard</li>
+            <li class="col-20 Cmasque"><time>1908</time><br/>Babbage</li>
+            <li class="col-20 Cmasque"><time>1842</time><br/>Ada Lovelace</li>
+            <li class="col-20 Cmasque"><time>1946</time><br/>ENIAC</li>
           </ol>
-          <p class="Cmasque">Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
+          <p class="small Cmasque">Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
         </section>
 
         <section class="slide full">
@@ -241,13 +230,13 @@
           <h2><i lang="en">Radio buttons</i> <span aria-hidden="true">&nbsp;&#128280;</span></h2>
           <h3>Les boutons radio</h3>
           <div class="table">
-            <div class="col-50 v-middle">
+            <div class="col-50 v-top">
               <p>
                 Ce sont littéralement <a href="https://fr.wikipedia.org/wiki/Bouton_radio">les boutons des vieilles radios.</a>
                 Vous ne pouvez pas écouter plusieurs ondes en même temps, et paf les boutons radios.
               </p>
             </div>
-            <div class="col-50 v-middle">
+            <div class="col-50 v-top">
               <figure>
                   <img src="https://christianheilmann.com/wp-content/uploads/2020/05/autoradio-retro-generations-past-nostalgia-vintage-antique-old.jpg"
                        alt="" width="436" height="154" loading="lazy"/>
@@ -280,7 +269,7 @@
             <div class="col-50">
               <figure>
                 <img src="https://www.ffoodd.fr/wp-content/uploads/2013/11/slide-to-unlock.jpg"
-                     alt="" width="240" height="150" loading="lazy" class="obs"/>
+                     alt="" width="240" height="150" loading="lazy"/>
                 <figcaption>
                   Loquet de sécurité à glissière, portant le texte «&nbsp;<i lang="en">Slide</i>&nbsp;»
                   —&nbsp;littéralement «&nbsp;glisser&nbsp;».
@@ -294,7 +283,7 @@
           <h2><i lang="en">Carousel</i> <span aria-hidden="true">&nbsp;&#127904;</span></h2>
           <h3>Carrousel</h3>
           <div class="table">
-            <div class="col-50 v-middle">
+            <div class="col-50 v-top">
               <p>
                 Un manège, quoi. Sauf que <strong>les vrais carrousels attendent</strong>
                 que les gens aient embarqué pour démarrer&nbsp;!
@@ -314,7 +303,7 @@
           <h2><i lang="en">Mail</i> <span aria-hidden="true">&nbsp;&#128236;</span></h2>
           <h3>Courrier (postal)</h3>
           <div class="table">
-            <div class="col-50 v-middle">
+            <div class="col-50 v-top">
               <p>
                 D’où l’ajout du «&nbsp;e&nbsp;» devant le terme, pour dissocier le courrier électronique
                 du courrier papier. Notez que ce néologisme existe en français&nbsp;:
@@ -324,7 +313,7 @@
             <div class="col-50">
               <figure>
                 <img src="https://www.laposte.fr/medias/sys_master/images/h3e/haf/12118041067550.jpg"
-                     class="obs" alt="" width="473" height="441" loading="lazy"/>
+                     alt="" width="473" height="441" loading="lazy"/>
                 <figcaption>Où colle-t-on le timbre, sur un courriel&nbsp;?</figcaption>
               </figure>
             </div>
@@ -335,7 +324,7 @@
           <h2><i lang="en">Spam</i>™</h2>
           <h3>Du <span aria-label="porc">&#128022;</span> en conserve</h3>
           <div class="table">
-            <div class="col-50 v-middle">
+            <div class="col-50 v-top">
               <p>
                 Ce terme est utilisé en référence à
                 <a href="https://fr.wikipedia.org/wiki/Spam_(sketch)">un sketch éponyme des Monty Python</a>
@@ -386,7 +375,7 @@
           <h2><i lang="en">Bug</i> <span aria-hidden="true">&nbsp;&#128027;</span></h2>
           <h3>Insecte</h3>
           <div class="table">
-            <div class="col-50 v-middle">
+            <div class="col-50 v-top">
               <p>
                 <a href="https://fr.wikipedia.org/wiki/Bug_(informatique)#Terminologie">L’anecdote
                 de Grace Hopper en 1947 est un mythe amplement déformé</a>,
@@ -409,10 +398,10 @@
         </section>
 
         <section class="slide full">
-          <h2>Ça pourrait continuer longtemps…</h2>
+          <h2>Ça peut être long…</h2>
           <figure>
             <img src="https://i.ytimg.com/vi/gzLdLnAf9Gw/maxresdefault.jpg"
-                 alt="" width="640" height="360" loading="lazy" class="obs"/>
+                 alt="" width="640" height="360" loading="lazy"/>
             <figcaption>Les éléments HTML figurent parfois des objets courants.</figcaption>
           </figure>
         </section>
@@ -423,23 +412,29 @@
             Les objets et interactions que nous avons évoqués, ordinaires dans l’univers physique anglo-saxon, confèrent
             à leurs ersatz numériques leur <strong>affordance</strong>&nbsp;: ce sont des interfaces éprouvées.
           </p>
-          <div class="Cmasque">
-            <figure>
-              <video src="https://media.giphy.com/media/reKoKNEqzn596/giphy.mp4"
-                     autoplay controls muted loop width="480" height="172"></video>
-              <figcaption>Un <i lang="en">daily</i> ordinaire</figcaption>
-            </figure>
+          <div class="table">
+            <div class="col-50 v-top Cmasque">
+              <p class="small">Mais la transposition en français atténue cette affordance naturelle.</p>
+            </div>
+            <div class="col-50 Cmasque">
+              <figure>
+                <video src="https://media.giphy.com/media/reKoKNEqzn596/giphy.mp4"
+                       autoplay controls muted loop width="480" height="172"></video>
+                <figcaption>Un <i lang="en">daily</i> ordinaire</figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 
         <section class="slide full">
           <h2>En quête de sens <span aria-hidden="true">&nbsp;&#128270;</span></h2>
           <details>
-            <summary>Comprendre les images mobilisées est crucial</summary>
+            <summary>Comprendre les images mobilisées est crucial ↓</summary>
             <p>
               Le motif de conception ARIA le plus répandu est le <i lang="en">disclosure</i>,
               qui signifie <strong>divulgation</strong>. Autrement plus explicite que <i lang="en">collapse</i>,
-              qui veut dire «&nbsp;effondrement&nbsp;» ou «&nbsp;écroulement&nbsp;».
+              qui veut dire «&nbsp;effondrement&nbsp;» ou «&nbsp;écroulement&nbsp;», ou encore que les termes « Plier / déplier »
+              et autre tentative de baptême du composant.
             </p>
             <p>
               Ici par exemple, <code>&lt;details></code> et <code>&lt;summary></code> sont sans
