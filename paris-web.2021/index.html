@@ -65,8 +65,16 @@
       margin-bottom: -6rem !important;
     }
 
+    .pt-6 {
+      padding-top: 6rem;
+    }
+
     .pr-4 {
       padding-right: 4rem;
+    }
+
+    .ty-6 {
+      transform: translateY(6rem);
     }
 
     .ty-n6 {
@@ -104,6 +112,54 @@
     }
 
     .spam { width: 3rem !important; }
+
+    .timeline {
+      border-bottom: .125rem solid rgba(3, 44, 54, .5);
+      padding-bottom: .5rem;
+    }
+
+    .timeline li {
+      position: relative;
+    }
+
+    .timeline li::before {
+      background-color: #c42419;
+      border-radius: .125rem;
+      bottom: -.675rem;
+      content: "";
+      height: .25rem;
+      left: -.25rem;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .5s ease-in-out;
+      width: calc(100% + .5rem);
+    }
+
+    .timeline li:nth-child(even)::before {
+      bottom: calc(100% + .625rem);
+    }
+
+    .timeline li[style*="visible"]::before {
+      transform: scaleX(1);
+
+    }
+
+    .timeline li::after {
+      background-color: #efeee3;
+      border: .25rem solid #c42419;
+      border-radius: 50%;
+      bottom: -1.15rem;
+      content: "";
+      height: .75rem;
+      left: -.5rem;
+      position: absolute;
+      width: .75rem;
+    }
+
+    .timeline li:nth-child(even)::after {
+      bottom: calc(100% + .15rem);
+    }
   </style>
 </head>
 <body>
@@ -213,17 +269,16 @@
 
         <section class="slide full">
           <h2>Aux origines <span aria-hidden="true">&nbsp;&#128435;</span></h2>
-          <ol class="table">
+          <ol class="table pt-6 timeline">
             <li class="col-20 Cmasque"><time>1725</time><br/>Bouchon</li>
-            <li class="col-20 Cmasque"><time>1801</time><br/>Jacquard</li>
+            <li class="col-20 ty-6 Cmasque"><time>1801</time><br/>Jacquard</li>
             <li class="col-20 Cmasque"><time>1908</time><br/>Babbage</li>
-            <li class="col-20 Cmasque"><time>1842</time><br/>Ada Lovelace</li>
+            <li class="col-20 ty-6 Cmasque"><time>1842</time><br/>Ada Lovelace</li>
             <li class="col-20 Cmasque"><time>1946</time><br/>ENIAC</li>
           </ol>
-          <p class="small Cmasque">Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
+          <p class="small pt-6 ty-6 Cmasque">Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
         </section>
 
-        <!-- @todo Regarder le docu -->
         <section class="slide full">
           <h2><i lang="en">World Wide Web</i> <span aria-hidden="true">&nbsp;&#127760;</span></h2>
           <h3>La toile d’ampleur mondiale</h3>
@@ -238,65 +293,6 @@
               utilisait le terme «&nbsp;<i lang="en">Mesh</i>&nbsp;»</a>
             qui signifie plus simplement «&nbsp;maille&nbsp;». Un terme qui aurait eu la cote&nbsp;!
           </p>
-        </section>
-
-        <section class="slide full">
-          <h2><i lang="en">Library</i> <span aria-hidden="true">&nbsp;&#128218;</span></h2>
-          <h3>Bibliothèque</h3>
-          <div class="table">
-            <div class="col-50 v-middle">
-              <p>
-                À la librairie, on s’approprie tandis qu’à la bibliothèque, <strong>on emprunte</strong>.
-              </p>
-              <p class="small">
-                Le rapport entre l’<i lang="en">open-source</i>
-                et notre mauvais usage de ce terme est intéressant, vous ne trouvez pas&nbsp&nbsp;?
-              </p>
-            </div>
-            <div class="col-50 col-t-right">
-              <figure class="d-ib mt-n6">
-                <video src="https://media.giphy.com/media/YGlRW1Am9q7e0/giphy.mp4"
-                       controls muted autoplay loop width="240" height="360"></video>
-                <figcaption>
-                  <code>npm install</code>, allégorie.<br>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section class="slide full">
-          <h2><i lang="en">Framework</i> <span aria-hidden="true">&nbsp;&#128444;</span></h2>
-          <h3>Coffrage, charpente</h3>
-          <div class="table">
-            <div class="col-50 v-middle">
-              <p>
-                Dans le BTP, «&nbsp;<i lang="en">a wooden framework</i>&nbsp;» est un cadre en bois,
-                allant de la charpente au simple <strong>coffrage</strong>.
-              </p>
-              <p class="small">
-                Le terme français <strong>cadriciel</strong> (par opposition au logiciel) est un pur néologisme mais
-                a le mérite d’utiliser la racine pertinente&nbsp;: le cadre.
-              </p>
-            </div>
-            <div class="col-50 ty-n6 v-middle">
-              <figure class="mt-n6 z-1 rotate-left Cmasque">
-                <a hreflang="en" href="https://commons.wikimedia.org/wiki/File:IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg"
-                       alt="La Hougue Bie Memorial of Russian slaves in German Bunker, Jersey."
-                       width="400" height="300" loading="lazy"/>
-                </a>
-                <figcaption class="smaller">Mémorial de La Hougue Bie, Jersey.</figcaption>
-              </figure>
-              <figure class="mt-n3 mb-n6 rotate-right Cmasque">
-                <a hreflang="en" lang="en" href="https://commons.wikimedia.org/wiki/File:Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg/512px-Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg"
-                       alt="Wooden Framework to Support Arches in a Building" width="256" height="178" loading="lazy"/>
-                </a>
-                <figcaption class="smaller">Support à la construction d’une arche.</figcaption>
-              </figure>
-            </div>
-          </div>
         </section>
 
         <section class="slide full">
@@ -326,47 +322,46 @@
         </section>
 
         <section class="slide full">
-          <h2><i lang="en">Slide to unlock</i> <span aria-hidden="true">&nbsp;&#128275;</span></h2>
-          <h3>Déverrouiller</h3>
+          <h2><i lang="en">Scroll</i> <span aria-hidden="true">&nbsp;&#128220;</span></h2>
+          <h3>Rouleau, parchemin</h3>
           <div class="table">
-            <div class="col-50 pr-4 Cmasque">
-              <figure class="rotate-right mt-3">
-                <img src="https://i2.wp.com/css-tricks.com/wp-content/uploads/2010/08/slidetounlock.png?w=570&ssl=1"
-                     alt="" width="285" height="80" loading="lazy"/>
-                <figcaption>
-                  Capture d’écran de l’interface «&nbsp;<i lang="en">Slide to unlock</i>&nbsp;» sur iPhone,<br>
-                  <small><a href="https://css-tricks.com/slide-to-unlock/" hreflang="en">reproduite en CSS par Chris Coyier</a></small>
-                </figcaption>
-              </figure>
+            <div class="col-50 v-middle">
+              <p>
+                Avant le livre, les écrits étaient conservés sous forme de rouleaux interminables.<br>
+                La <i lang="en">scrollbar</i> était née&nbsp;!
+              </p>
             </div>
-            <div class="col-50 Cmasque">
-              <figure class="rotate-left d-ib mt-n6">
-                <img src="https://www.ffoodd.fr/wp-content/uploads/2013/11/slide-to-unlock.jpg"
-                     alt="" width="240" height="150" loading="lazy"/>
-                <figcaption>
-                  Loquet de sécurité à glissière, portant le texte «&nbsp;<i lang="en">Slide</i>&nbsp;»
-                  —&nbsp;littéralement «&nbsp;glisser&nbsp;».
-                </figcaption>
+            <div class="col-50 col-t-right">
+              <figure class="d-ib mt-n6">
+                <video src="https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.mp4"
+                       width="480" height="362" muted autoplay controls></video>
+                <figcaption lang="en">Let’s scroll!</figcaption>
               </figure>
             </div>
           </div>
         </section>
 
         <section class="slide full">
-          <h2><i lang="en">Carousel</i> <span aria-hidden="true">&nbsp;&#127904;</span></h2>
-          <h3>Carrousel</h3>
+          <h2><i lang="en">Bug</i> <span aria-hidden="true">&nbsp;&#128027;</span></h2>
+          <h3>Insecte</h3>
           <div class="table">
             <div class="col-50 v-middle">
               <p>
-                Un manège, quoi. Sauf que <strong>les vrais carrousels attendent</strong>
-                que les gens aient embarqué pour démarrer&nbsp;!
+                <a href="https://fr.wikipedia.org/wiki/Bug_(informatique)#Terminologie">L’anecdote
+                  de Grace Hopper en 1947 est un mythe amplement déformé</a>,
+                le terme étant déjà utilisé dans ce contexte depuis longtemps.
               </p>
             </div>
-            <div class="col-50 col-t-right Cmasque">
-              <figure class="d-ib mt-n6 mb-n6">
-                <video src="https://media.giphy.com/media/IONcI446NLLTq/giphy.mp4"
-                       controls loop muted autoplay width="360" height="363"></video>
-                <figcaption>Expert accessibilité auditant un carrousel.</figcaption>
+            <div class="col-50 col-t-right">
+              <figure class="d-ib mt-n6 rotate-right">
+                <a href="https://commons.wikimedia.org/w/index.php?curid=165211&uselang=fr">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg"
+                       lang="en" alt="First Computer Bug. Courtesy of the Naval Surface Warfare Center, Dahlgren, VA., 1988."
+                       width="370" height="291" loading="lazy">
+                </a>
+                <figcaption>
+                  Le premier <i lang="en">bug</i> informatique répertorié.
+                </figcaption>
               </figure>
             </div>
           </div>
@@ -429,46 +424,106 @@
         </section>
 
         <section class="slide full">
-          <h2><i lang="en">Scroll</i> <span aria-hidden="true">&nbsp;&#128220;</span></h2>
-          <h3>Rouleau, parchemin</h3>
+          <h2><i lang="en">Slide to unlock</i> <span aria-hidden="true">&nbsp;&#128275;</span></h2>
+          <h3>Déverrouiller</h3>
           <div class="table">
-            <div class="col-50 v-middle">
-              <p>
-                Avant le livre, les écrits étaient conservés sous forme de rouleaux interminables.<br>
-                La <i lang="en">scrollbar</i> était née&nbsp;!
-              </p>
+            <div class="col-50 pr-4 Cmasque">
+              <figure class="rotate-right mt-3">
+                <img src="https://i2.wp.com/css-tricks.com/wp-content/uploads/2010/08/slidetounlock.png?w=570&ssl=1"
+                     alt="" width="285" height="80" loading="lazy"/>
+                <figcaption>
+                  Capture d’écran de l’interface «&nbsp;<i lang="en">Slide to unlock</i>&nbsp;» sur iPhone,<br>
+                  <small><a href="https://css-tricks.com/slide-to-unlock/" hreflang="en">reproduite en CSS par Chris Coyier</a></small>
+                </figcaption>
+              </figure>
             </div>
-            <div class="col-50 col-t-right">
-              <figure class="d-ib mt-n6">
-                <video src="https://media.giphy.com/media/xT5LMMjQXvcTi1xh0Q/giphy.mp4"
-                       width="480" height="362" muted autoplay controls></video>
-                <figcaption lang="en">Let’s scroll!</figcaption>
+            <div class="col-50 Cmasque">
+              <figure class="rotate-left d-ib mt-n6">
+                <img src="https://www.ffoodd.fr/wp-content/uploads/2013/11/slide-to-unlock.jpg"
+                     alt="" width="240" height="150" loading="lazy"/>
+                <figcaption>
+                  Loquet de sécurité à glissière, portant le texte «&nbsp;<i lang="en">Slide</i>&nbsp;»
+                  —&nbsp;littéralement «&nbsp;glisser&nbsp;».
+                </figcaption>
               </figure>
             </div>
           </div>
         </section>
 
         <section class="slide full">
-          <h2><i lang="en">Bug</i> <span aria-hidden="true">&nbsp;&#128027;</span></h2>
-          <h3>Insecte</h3>
+          <h2><i lang="en">Carousel</i> <span aria-hidden="true">&nbsp;&#127904;</span></h2>
+          <h3>Carrousel</h3>
           <div class="table">
             <div class="col-50 v-middle">
               <p>
-                <a href="https://fr.wikipedia.org/wiki/Bug_(informatique)#Terminologie">L’anecdote
-                de Grace Hopper en 1947 est un mythe amplement déformé</a>,
-                le terme étant déjà utilisé dans ce contexte depuis longtemps.
+                Un manège, quoi. <span class="Cmasque">Sauf que <strong>les vrais carrousels attendent</strong>
+                que les gens aient embarqué pour démarrer&nbsp;!</span>
+              </p>
+            </div>
+            <div class="col-50 col-t-right Cmasque">
+              <figure class="d-ib mt-n6 mb-n6">
+                <video src="https://media.giphy.com/media/IONcI446NLLTq/giphy.mp4"
+                       controls loop muted autoplay width="360" height="363"></video>
+                <figcaption>Expert accessibilité auditant un carrousel.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Library</i> <span aria-hidden="true">&nbsp;&#128218;</span></h2>
+          <h3>Bibliothèque</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                À la librairie, on s’approprie tandis qu’à la bibliothèque, <strong>on emprunte</strong>.
+              </p>
+              <p class="small">
+                Le rapport entre l’<i lang="en">open-source</i>
+                et notre mauvais usage de ce terme est intéressant, vous ne trouvez pas&nbsp&nbsp;?
               </p>
             </div>
             <div class="col-50 col-t-right">
-              <figure class="d-ib mt-n6 rotate-right">
-                <a href="https://commons.wikimedia.org/w/index.php?curid=165211&uselang=fr">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/First_Computer_Bug%2C_1945.jpg"
-                       lang="en" alt="First Computer Bug. Courtesy of the Naval Surface Warfare Center, Dahlgren, VA., 1988."
-                       width="370" height="291" loading="lazy">
-                </a>
+              <figure class="d-ib mt-n6">
+                <video src="https://media.giphy.com/media/YGlRW1Am9q7e0/giphy.mp4"
+                       controls muted autoplay loop width="240" height="360"></video>
                 <figcaption>
-                  Le premier <i lang="en">bug</i> informatique répertorié.
+                  <code>npm install</code>, allégorie.<br>
                 </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide full">
+          <h2><i lang="en">Framework</i> <span aria-hidden="true">&nbsp;&#128444;</span></h2>
+          <h3>Coffrage, charpente</h3>
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Dans le BTP, «&nbsp;<i lang="en">a wooden framework</i>&nbsp;» est un cadre en bois,
+                allant de la charpente au simple <strong>coffrage</strong>.
+              </p>
+              <p class="small">
+                Le terme français <strong>cadriciel</strong> (par opposition au logiciel) est un pur néologisme mais
+                a le mérite d’utiliser la racine pertinente&nbsp;: le cadre.
+              </p>
+            </div>
+            <div class="col-50 ty-n6 v-middle">
+              <figure class="mt-n6 z-1 rotate-left Cmasque">
+                <a hreflang="en" href="https://commons.wikimedia.org/wiki/File:IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/IMG_2455_La_Hougue_Bie_Memorial_of_Russian_slaves_in_German_Bunker_Jersey_August_2006.jpg"
+                       alt="La Hougue Bie Memorial of Russian slaves in German Bunker, Jersey."
+                       width="400" height="300" loading="lazy"/>
+                </a>
+                <figcaption class="smaller">Mémorial de La Hougue Bie, Jersey.</figcaption>
+              </figure>
+              <figure class="mt-n3 mb-n6 rotate-right Cmasque">
+                <a hreflang="en" lang="en" href="https://commons.wikimedia.org/wiki/File:Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg/512px-Speculum_Romanae_Magnificentiae-_Wooden_Framework_to_Support_Arches_in_a_Building_MET_DP870363.jpg"
+                       alt="Wooden Framework to Support Arches in a Building" width="256" height="178" loading="lazy"/>
+                </a>
+                <figcaption class="smaller">Support à la construction d’une arche.</figcaption>
               </figure>
             </div>
           </div>
@@ -533,14 +588,28 @@
         <section class="slide full">
           <h2>Conclusion</h2>
           <h3 lang="en">Naming things is hard</h3>
-          <p>
-            Heureusement dans nos métiers, il y a énormément de choses que nous n’avons pas besoin de nommer.
-            <strong>Apprenons notre vocabulaire&nbsp;!</strong>
-          </p>
-          <p class="small">
-            Et utilisez <a href="https://www.opquast.com/rendre-le-web-meilleur/glossaire/">le glossaire Opquast</a>,
-            au hasard.
-          </p>
+
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Heureusement dans nos métiers, il y a énormément de choses que nous n’avons pas besoin de nommer.
+                <strong>Apprenons notre vocabulaire&nbsp;!</strong>
+              </p>
+            </div>
+            <div class="col-50 col-t-right v-middle">
+              <figure class="d-ib rotate-right">
+                <a href="https://www.opquast.com/">
+                  <img src="https://website.oqs-cdn.com/wp-content/themes/opquast/images/opquast.svg"
+                       loading="lazy" width="" height="" alt=""/>
+                </a>
+                <figcaption class="small">
+                  Et utilisez <a href="https://www.opquast.com/rendre-le-web-meilleur/glossaire/">le glossaire Opquast</a>,
+                  au hasard.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
         </section>
 
         <section class="slide end noprint">
