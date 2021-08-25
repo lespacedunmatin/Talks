@@ -559,7 +559,7 @@ function InitTabSlide(){
   // Set linear layout mode and shutoff global effect
   else{
     $( config.Screen.id ).classList.add( 'modeplan');
-    $( config.Screen.id ).setAttribute( 'data-effect', 'noEffect' );
+    $( config.Screen.id ).setAttribute( 'data-effect', 'Eno' );
     SetNSlide();
   }
   //Set slide TOC
