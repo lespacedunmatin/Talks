@@ -11,14 +11,13 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
   <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
-  <link rel="stylesheet" href="../accesslide/css/charts.css?37" type="text/css" media="screen">
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlideVerbose.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
 </head>
 <body>
 
-  <div id="screen" class="modeplan" data-effect="ffoodd">
+  <div id="screen" class="modeplan" data-effect="Eno">
 
     <div id="volet"></div>
 
@@ -363,6 +362,17 @@
   <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
 
   <script src="../accesslide/js/slide.min.js"></script>
-  <script src="../accesslide/js/prism.min.js"></script>
+  <!--<script>
+    window.addEventListener('load', () => {
+      window.addEventListener("message", (e) => {
+        if (e.origin !== "https://localhost:3000") {
+          return;
+        }
+
+        document.getElementById('tocP').value = e.data;
+        document.getElementById('tocp').click();
+      }, false);
+    });
+  </script>-->
 </body>
 </html>
