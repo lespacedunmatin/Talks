@@ -100,7 +100,7 @@
             parler le même langage et conserver son histoire contribue à
             <strong>fonder une culture</strong>.
           </p>
-          <blockquote class="Cmasque">
+          <blockquote>
             <p>Il faut cultiver notre <del>jardin</del> <ins>jargon web</ins>.</p>
           </blockquote>
         </section>
@@ -120,24 +120,24 @@
             —&nbsp;et l’est d’autant plus en français que nous utilisons des termes anglais.
           </p>
           <ol>
-            <li class="Cmasque"><time>1725</time>&nbsp;: Basile Bouchon crée les cartes perforées pour… les orgues de barbarie.</li>
-            <li class="Cmasque"><time>1801</time>&nbsp;: Jacquard améliore le système et l’applique aux… métiers à tisser.</li>
-            <li class="Cmasque">
+            <li><time>1725</time>&nbsp;: Basile Bouchon crée les cartes perforées pour… les orgues de barbarie.</li>
+            <li><time>1801</time>&nbsp;: Jacquard améliore le système et l’applique aux… métiers à tisser.</li>
+            <li>
               <time>1908</time>&nbsp;: le fils de Charles Babbage reprend les travaux du père et présente une «&nbsp;machine analytique&nbsp;»
               à l’académie royale d’astronomie.
             </li>
-            <li class="Cmasque"><time>1842</time>&nbsp;: Ada Lovelace écrit le premier algorithme exécutable, pour la machine de Babbage.</li>
-            <li class="Cmasque">
+            <li><time>1842</time>&nbsp;: Ada Lovelace écrit le premier algorithme exécutable, pour la machine de Babbage.</li>
+            <li>
               <time>1946</time>&nbsp;: ENIAC, le premier ordinateur mécanographique (20 mètres de long,
               2,5 mètres de haut), parent proche de Colossus conçu par Alan Turing et Max Newman.
               <small>Si vous appréciez les <i lang="en">comics</i> américains, ces noms vous évoqueront peut-être quelque chose&nbsp;!</small>
             </li>
-            <li class="Cmasque">
+            <li>
               Et finalement, la miniaturisation permise par les transistors a fait entrer l’informatique
               dans l’abstraction&nbsp;: il ne s’agit plus de mécanique.
             </li>
           </ol>
-          <p class="Cmasque">Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
+          <p>Vous prendrez bien quelques anecdotes, pour la route&nbsp;?</p>
         </section>
 
         <section class="slide full">
@@ -362,17 +362,16 @@
   <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
 
   <script src="../accesslide/js/slide.min.js"></script>
-  <!--<script>
+  <script>
     window.addEventListener('load', () => {
-      window.addEventListener("message", (e) => {
-        if (e.origin !== "https://localhost:3000") {
+      window.addEventListener('message', (e) => {
+        if (e.origin !== 'https://localhost:3000') {
           return;
         }
-
-        document.getElementById('tocP').value = e.data;
+        document.getElementById('tocP').value = e.data - 1;
         document.getElementById('tocp').click();
       }, false);
     });
-  </script>-->
+  </script>
 </body>
 </html>

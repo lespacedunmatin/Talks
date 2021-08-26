@@ -517,10 +517,10 @@ window.onload = function() {
   // Get current slide when reload
   window.onbeforeunload=function(){
     try{
-      sessionStorage.setItem( 'Scurrent', current );
+      sessionStorage.setItem( 'VScurrent', current );
     }
     catch(e){
-      createCookie( 'Scurrent', current, 0 );
+      createCookie( 'VScurrent', current, 0 );
     }
   }
 }
@@ -531,12 +531,12 @@ window.onload = function() {
 function InitTabSlide(){
   // Get current slide if exists
   try{
-    current = parseInt( sessionStorage.Scurrent );
+    current = parseInt( sessionStorage.VScurrent );
     sessionStorage.clear();
   }
   catch( e ){
-    current = parseInt( readCookie( 'Scurrent' ) );
-    eraseCookie( 'Scurrent' );
+    current = parseInt( readCookie( 'VScurrent' ) );
+    eraseCookie( 'VScurrent' );
   }
   // Set slide array then display current slide if linear layout shutoff
   if( !current )current = 0;
