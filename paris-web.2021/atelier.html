@@ -14,6 +14,11 @@
   <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
+  <style>
+    .float-right {
+      float: right;
+    }
+  </style>
 </head>
 <body>
 
@@ -78,51 +83,73 @@
           <img src="img_slide/arc-range.png" width="468" height="443" alt=""/>
           <figcaption>Chouette, une maquette&nbsp;!</figcaption>
         </figure>
-        <p class="small Cmasque">Et maintenant, on fait quoi&nbsp;?</p>
+        <p class="small center Cmasque">Et maintenant, on fait quoi&nbsp;?</p>
       </section>
 
       <section class="slide full">
         <h2>Questionner l’ergonomie</h2>
-        <p>Quelles questions poseriez-vous, en recevant cette maquette&nbsp;?</p>
-        <ul>
-          <li class="Cmasque">Comment ça fonctionne&nbsp;?</li>
-          <li class="Cmasque">Comment l’utilisateur le sait, le découvre&nbsp;?</li>
-          <li class="Cmasque">Quelles capacités sont requises&nbsp;? Comment faire sans&nbsp;?</li>
-          <li class="Cmasque">Quels sont les risques&nbsp;?</li>
-          <li class="Cmasque">Quel est le <abbr lang="en" title="Minimum Viable Product">MVP</abbr>&nbsp;?</li>
-        </ul>
+        <div class="table">
+          <div class="col-66 v-top">
+            <p>Quelles questions poseriez-vous, en recevant cette maquette&nbsp;?</p>
+            <ul>
+              <li class="Cmasque">Comment ça fonctionne&nbsp;?</li>
+              <li class="Cmasque">Comment l’utilisateur le sait, le découvre&nbsp;?</li>
+              <li class="Cmasque">Quelles capacités sont requises&nbsp;? Comment faire sans&nbsp;?</li>
+              <li class="Cmasque">Quels sont les risques&nbsp;?</li>
+              <li class="Cmasque">Quel est le <abbr lang="en" title="Minimum Viable Product">MVP</abbr>&nbsp;?</li>
+            </ul>
+          </div>
+          <div class="col-33 v-top">
+            <img src="img_slide/arc-range.png" width="468" height="443" alt=""/>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>Amélioration progressive</h2>
-        <p>
-          Sur le plan technique, le produit minimum viable s’apparente au
-          <a href="https://www.w3.org/DesignIssues/Principles.html" hreflang="en">principe de moindre pouvoir</a>,
-          un des axiomes du web posé par Sir Tim Berners-Lee.
-        </p>
-        <p class="Cmasque">Concrètement, comment procède-t-on&nbsp;?</p>
-        <ol>
-          <li class="Cmasque">HTML</li>
-          <li class="Cmasque">CSS</li>
-          <li class="Cmasque">JavaScript</li>
-        </ol>
-        <p class="Cmasque">À l’assaut&nbsp;!</p>
+        <div class="table">
+          <div class="col-66 v-top">
+            <p>
+              Sur le plan technique, le produit minimum viable s’apparente au
+              <a href="https://www.w3.org/DesignIssues/Principles.html" hreflang="en">principe de moindre pouvoir</a>,
+              un des axiomes du web posé par Sir Tim Berners-Lee.
+            </p>
+            <p class="Cmasque">Concrètement, comment procède-t-on&nbsp;?</p>
+            <ol>
+              <li class="Cmasque">HTML</li>
+              <li class="Cmasque">CSS</li>
+              <li class="Cmasque">SVG</li>
+              <li class="Cmasque">JavaScript</li>
+            </ol>
+            <p class="Cmasque">À l’assaut&nbsp;!</p>
+          </div>
+          <div class="col-33 v-top">
+            <img src="img_slide/arc-range.png" width="468" height="443" alt=""/>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>Conception technique</h2>
-        <ul>
-          <li class="Cmasque">Quelles sont nos attentes, pour ce composant&nbsp;?</li>
-          <li class="Cmasque">Existe-t-il un motif de conception adéquat, ou approchant&nbsp;?</li>
-        </ul>
+        <div class="table">
+          <div class="col-66 v-top">
+            <ul>
+              <li class="Cmasque">Quelles sont nos attentes, pour ce composant&nbsp;?</li>
+              <li class="Cmasque">Existe-t-il <a href="https://www.w3.org/TR/wai-aria-practices/#slider" hreflang="en">un motif de conception adéquat</a>, ou approchant&nbsp;?</li>
+            </ul>
+          </div>
+          <div class="col-33 v-top">
+            <img src="img_slide/arc-range.png" width="468" height="443" alt=""/>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>HTML</h2>
         <ul>
-          <li class="Cmasque">Quel élément utiliser&nbsp;?</li>
+          <li class="Cmasque">Quel <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/range">élément</a> utiliser&nbsp;?</li>
           <li class="Cmasque">Que permet-il&nbsp;?</li>
-          <li class="Cmasque">Que lui manque-t-il&nbsp;?</li>
+          <li class="Cmasque">Que lui manque t-il&nbsp;?</li>
         </ul>
         <p class="Cmasque">Et maintenant, comment se rapproche-t-on de la maquette&nbsp;?</p>
       </section>
@@ -130,9 +157,13 @@
       <section class="slide full">
         <h2>CSS</h2>
         <ul>
-          <li class="Cmasque">Comment styler cet élément particulier&nbsp;?</li>
-          <li class="Cmasque">Comment compenser les disparités entre navigateurs&nbsp;?</li>
-          <li class="Cmasque">Comment gérer les états et interactions&nbsp;?</li>
+          <li class="Cmasque">Comment <a href="https://github.com/twbs/bootstrap/blob/main/scss/forms/_form-range.scss" hreflang="en">styler</a> cet élément particulier&nbsp;?</li>
+          <li class="Cmasque">Comment <a href="https://codepen.io/ffoodd/pen/eYgXWZa" hreflang="en">compenser les disparités</a> entre navigateurs&nbsp;?</li>
+          <li class="Cmasque">
+            Comment gérer les états et
+            <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible">interactions</a>,
+            <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:out-of-range">spécifiques</a>
+            ou <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:focus-within">non</a>&nbsp;?</li>
         </ul>
         <p class="Cmasque">
           Aller plus loin nécessitera également
@@ -148,11 +179,13 @@
           vont s’avérer indispensables. On revoit un peu les bases&nbsp;?
         </p>
         <ul>
-          <li class="Cmasque">XML et la <code>viewBox</code>&nbsp;;</li>
-          <li class="Cmasque">les éléments de forme&nbsp;;</li>
-          <li class="Cmasque">l’élément magique, et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d">l’attribut magique</a>&nbsp;</li>
+          <li class="Cmasque">XML et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/viewBox">la <code>viewBox</code></a>&nbsp;;</li>
+          <li class="Cmasque">les <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/circle">éléments de forme</a>&nbsp;;</li>
+          <li class="Cmasque">
+            <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/path">l’élément magique</a>,
+            et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d">l’attribut magique</a>&nbsp;;</li>
           <li class="Cmasque"><a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d#arcto">une commande en particulier</a> pour dessiner un arc-de-cercle&nbsp;;</li>
-          <li class="Cmasque">vous prendrez bien un peu de trigonométrie, pour la route&nbsp;?</li>
+          <li class="Cmasque">vous prendrez bien <a href="http://xahlee.info/js/svg_circle_arc.html" hreflang="en">un peu de trigonométrie</a>, pour la route&nbsp;?</li>
         </ul>
         <p class="Cmasque">Et maintenant, comment on rend ça interactif&nbsp;?</p>
       </section>
@@ -162,8 +195,8 @@
         <ul>
           <li class="Cmasque">Associer <code>input</code> et <code>output</code>,</li>
           <li class="Cmasque">interaction au clavier,</li>
-          <li class="Cmasque">événements au pointeur,</li>
-          <li class="Cmasque">restitution et vocalisation.</li>
+          <li class="Cmasque"><a href="https://developer.mozilla.org/fr/docs/Web/API/PointerEvent">événements au pointeur</a>,</li>
+          <li class="Cmasque">restitution et <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">vocalisation</a>.</li>
         </ul>
         <p class="Cmasque">Et maintenant, comment on s’adapte à différents contextes&nbsp;?</p>
       </section>
@@ -171,9 +204,9 @@
       <section class="slide full">
         <h2>Tout-terrain</h2>
         <ul>
-          <li class="Cmasque">Responsive,</li>
+          <li class="Cmasque"><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList" hreflang="en">Responsive</a>,</li>
           <li class="Cmasque">préférences utilisateur&nbsp;: animations, contrastes, zoom…</li>
-          <li class="Cmasque">un embrayage poyur revenir à une version simple&nbsp;?</li>
+          <li class="Cmasque"><a href="https://ffoodd.github.io/chaarts/camembert.html">un embrayage</a> pour revenir à une version simple&nbsp;?</li>
         </ul>
       </section>
 
