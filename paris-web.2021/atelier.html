@@ -15,8 +15,34 @@
   <script src="../accesslide/js/AccesSlide.min.js"></script>
   <script src="../accesslide/lang/lang_fr.js"></script>
   <style>
-    .float-right {
+    figcaption {
+      font-size: .6em;
+    }
+
+    figure {
+      background: #fff;
+      box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
+      display: inline-block;
+      max-width: 100%;
+      padding: .5em;
+      width: max-content;
+    }
+
+    .rotate-left {
+      transform: rotate(-.005turn);
+    }
+
+    .rotate-right {
+      transform: rotate(.005turn);
+    }
+
+    .col-50 figure:first-child:not(:last-child) {
+      width: 50%;
+    }
+
+    .col-50 figure:last-child:not(:first-child) {
       float: right;
+      width: 66%;
     }
   </style>
 </head>
@@ -204,68 +230,135 @@
 
       <section class="slide full">
         <h2>HTML</h2>
-        <ul>
-          <li class="Cmasque">Quel <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/range">élément</a> utiliser&nbsp;?</li>
-          <li class="Cmasque">Que permet-il&nbsp;?</li>
-          <li class="Cmasque">Que lui manque t-il&nbsp;?</li>
-        </ul>
-        <p class="Cmasque">Et maintenant, comment se rapproche-t-on de la maquette&nbsp;?</p>
+        <div class="table">
+          <div class="col-50 v-middle">
+            <ul>
+              <li class="Cmasque">Quel <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input/range">élément</a> utiliser&nbsp;?</li>
+              <li class="Cmasque">Que permet-il&nbsp;?</li>
+              <li class="Cmasque">Que lui manque t-il&nbsp;?</li>
+            </ul>
+            <p class="Cmasque">Et maintenant, <strong>comment se rapproche-t-on de la maquette</strong>&nbsp;?</p>
+          </div>
+          <div class="col-50 col-t-right">
+            <figure class="Cmasque rotate-right">
+              <img src="img_slide/capture-1.png" width="368" height="47" alt="" loading="lazy"/>
+              <figcaption>
+                Un élément HTML standard, qui fait le job.<br>
+                <a href="https://codepen.io/ffoodd/pen/eYEbPob" hreflang="en" class="small">Démonstration sur CodePen.</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>CSS</h2>
-        <ul>
-          <li class="Cmasque">Comment <a href="https://github.com/twbs/bootstrap/blob/main/scss/forms/_form-range.scss" hreflang="en">styler</a> cet élément particulier&nbsp;?</li>
-          <li class="Cmasque">Comment <a href="https://codepen.io/ffoodd/pen/eYgXWZa" hreflang="en">compenser les disparités</a> entre navigateurs&nbsp;?</li>
-          <li class="Cmasque">
-            Comment gérer les états et
-            <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible">interactions</a>,
-            <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:out-of-range">spécifiques</a>
-            ou <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:focus-within">non</a>&nbsp;?</li>
-        </ul>
-        <p class="Cmasque">
-          Aller plus loin nécessitera également
-          <a href="https://www.ffoodd.fr/cache-cache-css/">un masquage accessible</a>.
-        </p>
-        <p class="Cmasque">Et maintenant, comment se rapproche-t-on (encore plus) de la maquette&nbsp;?</p>
+        <div class="table">
+          <div class="col-50 v-middle">
+            <ul>
+              <li class="Cmasque">Comment <a href="https://github.com/twbs/bootstrap/blob/main/scss/forms/_form-range.scss" hreflang="en">styler</a> cet élément particulier&nbsp;?</li>
+              <li class="Cmasque">Comment <a href="https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/" hreflang="en">compenser les disparités</a> entre navigateurs&nbsp;?</li>
+              <li class="Cmasque">
+                Comment gérer les états et
+                <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:focus-visible">interactions</a>,
+                <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:out-of-range">spécifiques</a>
+                ou <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:focus-within">non</a>&nbsp;?</li>
+              <li class="Cmasque">
+                Aller plus loin nécessitera également
+                <a href="https://www.ffoodd.fr/cache-cache-css/">un masquage accessible</a>.
+              </li>
+            </ul>
+            <p class="Cmasque">Et maintenant, comment se rapproche-t-on (<strong>encore plus</strong>) de la maquette&nbsp;?</p>
+          </div>
+          <div class="col-50 col-t-right">
+            <figure class="Cmasque rotate-left">
+              <img src="img_slide/capture-2.png" width="391" height="82" alt="" loading="lazy"/>
+              <figcaption>
+                Un élément HTML stylé, qui s’intègre au design.<br>
+                <a href="https://codepen.io/ffoodd/pen/yLoGRrx" hreflang="en" class="small">Démonstration sur CodePen.</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>SVG</h2>
-        <p>
-          Pour aller plus loin sur le plan esthétique, les bases de SVG —&nbsp;mais aussi ses super-pouvoirs&nbsp;—
-          vont s’avérer indispensables. On revoit un peu les bases&nbsp;?
-        </p>
-        <ul>
-          <li class="Cmasque">XML et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/viewBox">la <code>viewBox</code></a>&nbsp;;</li>
-          <li class="Cmasque">les <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/circle">éléments de forme</a>&nbsp;;</li>
-          <li class="Cmasque">
-            <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/path">l’élément magique</a>,
-            et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d">l’attribut magique</a>&nbsp;;</li>
-          <li class="Cmasque"><a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d#arcto">une commande en particulier</a> pour dessiner un arc-de-cercle&nbsp;;</li>
-          <li class="Cmasque">vous prendrez bien <a href="http://xahlee.info/js/svg_circle_arc.html" hreflang="en">un peu de trigonométrie</a>, pour la route&nbsp;?</li>
-        </ul>
-        <p class="Cmasque">Et maintenant, comment on rend ça interactif&nbsp;?</p>
+        <div class="table">
+          <div class="col-50 v-middle">
+            <p>
+              Pour aller plus loin sur le plan esthétique, les bases de SVG —&nbsp;mais aussi ses super-pouvoirs&nbsp;—
+              vont s’avérer indispensables. On revoit un peu les bases&nbsp;?
+            </p>
+            <ul>
+              <li class="Cmasque">XML et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/viewBox">la <code>viewBox</code></a>&nbsp;;</li>
+              <li class="Cmasque">les <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/circle">éléments de forme</a>&nbsp;;</li>
+              <li class="Cmasque">
+                <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Element/path">l’élément magique</a>,
+                et <a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d">l’attribut magique</a>&nbsp;;</li>
+              <li class="Cmasque"><a href="https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/d#arcto">une commande en particulier</a> pour dessiner un arc-de-cercle.</li>
+            </ul>
+            <p class="Cmasque">Et maintenant, comment on rend ça <strong>interactif</strong>&nbsp;?</p>
+          </div>
+          <div class="col-50 col-t-right">
+            <figure class="Cmasque rotate-right">
+              <img src="img_slide/capture-3.png" width="487" height="445" alt="" loading="lazy"/>
+              <figcaption>
+                Un élément HTML remplacé (visuellement) par un joli SVG.<br>
+                <a href="https://codepen.io/ffoodd/pen/Yzxddjd" hreflang="en" class="small">Démonstration sur CodePen.</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>JavaScript</h2>
-        <ul>
-          <li class="Cmasque">Associer <code>input</code> et <code>output</code>,</li>
-          <li class="Cmasque">interaction au clavier,</li>
-          <li class="Cmasque"><a href="https://developer.mozilla.org/fr/docs/Web/API/PointerEvent">événements au pointeur</a>,</li>
-          <li class="Cmasque">restitution et <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">vocalisation</a>.</li>
-        </ul>
-        <p class="Cmasque">Et maintenant, comment on s’adapte à différents contextes&nbsp;?</p>
+        <div class="table">
+          <div class="col-50 v-middle">
+            <ul>
+              <li class="Cmasque">Associer <code>input</code> et <code>output</code>,</li>
+              <li class="Cmasque">vous prendrez bien <a href="http://xahlee.info/js/svg_circle_arc.html" hreflang="en">un peu de trigonométrie</a>, pour la route&nbsp;?</li>
+              <li class="Cmasque">interaction au clavier,</li>
+              <li class="Cmasque"><a href="https://developer.mozilla.org/fr/docs/Web/API/PointerEvent">événements au pointeur</a>,</li>
+              <li class="Cmasque">restitution et <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">vocalisation</a>.</li>
+            </ul>
+            <p class="Cmasque">Et maintenant, comment on s’adapte à <strong>différents contextes</strong>&nbsp;?</p>
+          </div>
+          <div class="col-50 col-t-right">
+            <figure class="Cmasque rotate-left">
+              <img src="img_slide/capture-4.png" width="474" height="436" alt="" loading="lazy"/>
+              <figcaption>
+                Un SVG interactif grâce à JavaScript.<br>
+                <a href="https://codepen.io/ffoodd/pen/QWqWNgr" hreflang="en" class="small">Démonstration sur CodePen.</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="slide full">
         <h2>Tout-terrain</h2>
-        <ul>
-          <li class="Cmasque"><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList" hreflang="en">Responsive</a>,</li>
-          <li class="Cmasque">préférences utilisateur&nbsp;: animations, contrastes, zoom…</li>
-          <li class="Cmasque"><a href="https://ffoodd.github.io/chaarts/camembert.html">un embrayage</a> pour revenir à une version simple&nbsp;?</li>
-        </ul>
+        <h3>Pour aller encore plus loin…</h3>
+        <div class="table">
+          <div class="col-66 v-middle">
+            <ul>
+              <li class="Cmasque"><a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList" hreflang="en">Responsive</a> —&nbsp;avec adaptation à la hauteur, voire au ratio&nbsp;?</li>
+              <li class="Cmasque">préférences utilisateur&nbsp;: animations, contrastes, zoom…</li>
+              <li class="Cmasque"><a href="https://ffoodd.github.io/chaarts/camembert.html">un embrayage</a> pour revenir à une version simple&nbsp;?</li>
+              <li class="Cmasque">etc.</li>
+            </ul>
+          </div>
+          <div class="col-33 col-t-right">
+            <figure class="Cmasque rotate-right">
+              <img src="img_slide/capture-5.png" width="266" height="244" alt="" loading="lazy"/>
+              <figcaption>
+                Un SVG responsive.<br>
+                <a href="https://codepen.io/ffoodd/pen/abyrbgg" hreflang="en" class="small">Démonstration sur CodePen.</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="slide end noprint">
