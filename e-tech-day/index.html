@@ -10,6 +10,7 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="./css/ddeecckk.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="./css/prism.min.css" type="text/css" media="screen"/>
 </head>
 <body>
     <header role="banner">
@@ -34,18 +35,214 @@
         </footer>
       </section>
 
-      <section>
-        <h2>Le sens perdu<span aria-hidden="true">&nbsp;&#129430;</span></h2>
-        <p>
-          Notre vocable web est composé de néologismes en français, mais <strong>pas en anglais</strong>.
-          Il est une <strong>métaphore</strong> du monde physique, dont le sens est perdu en français.
-        </p>
-        <p>Globalement on est nuls pour inventer.</p>
+      <section class="demo">
+        <h2>De l’autocomplétion</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;input type="password" autocomplete="new-password"/>
+&lt;input type="email" autocomplete="email"/>
+            </code>
+          </pre>
+        </div>
+        <form class="demo d-flex">
+          <div class="m-auto">
+            <p>
+              <label for="password">Mot de passe</label>
+              <input id="password" type="password" autocomplete="new-password"/>
+            </p>
+            <p>
+              <label for="email">Email</label>
+              <input id="email" type="email" autocomplete="email"/>
+            </p>
+          </div>
+        </form>
+
+      </section>
+
+      <section class="demo">
+        <h2>De la suggestion</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;label for="e-tech">Citez un e-tech marrant&lt;/label>
+&lt;input id="e-tech" type="text" list="e-techs"/>
+&lt;datalist id="e-techs">
+  &lt;option>Yann S.&lt;/option>
+  &lt;option>Nicolas G.&lt;/option>
+  &lt;option>Thomas B.&lt;/option>
+&lt;/datalist>
+            </code>
+          </pre>
+        </div>
+        <form class="demo d-flex">
+          <div class="m-auto">
+            <p>
+              <label for="e-tech">Citez un e-tech marrant</label>
+              <input id="e-tech" type="text" list="e-techs"/>
+              <datalist id="e-techs">
+                <option>Yann S.</option>
+                <option>Nicolas G.</option>
+                <option>Thomas B.</option>
+              </datalist>
+            </p>
+          </div>
+        </form>
       </section>
 
       <section>
-        <h2>Conclusion</h2>
-        <h3 lang="en">Naming things is hard</h3>
+        <h2>D’autres bonus pour formulaires</h2>
+        <p>De nombreux autres attributs sont drôlement pratiques — certains récents, et d’autres… non&nbsp;:</p>
+        <ul>
+          <li><code>inputmode</code> pour déterminer le clavier à utiliser, sur <i lang="en">smartphone</i>,</li>
+          <li><code>enterkeyhint</code> pour indiquer la fonction de la touche entrée, sur <i lang="en">smartphone</i> également,</li>
+          <li><code>for</code> et <code>id</code> pour associer un <code>label</code> à un champ,</li>
+          <li><code>name</code> pour les boutons radios et cases à cocher,</li>
+          <li><code>type</code> pour les boutons et éviter de soumettre les formulaires n’importe quand&nbsp;!</li>
+          <li><code>action</code>, <code>method</code> mais aussi <code>formaction</code> et <code>formmethod</code> (entre autres).</li>
+        </ul>
+      </section>
+
+      <section class="demo">
+        <h2>Un bloc dépliant natif</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;details>
+  &lt;summary>Découvrez mes secrets…&lt;/summary>
+  Hé, à quoi vous vous attendiez&nbsp;!
+&lt;/details>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <details class="m-auto">
+            <summary>Découvrez mes secrets…</summary>
+            Hé, à quoi vous vous attendiez&nbsp;!
+          </details>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Un fenêtre modale native</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;dialog id="dialog">
+  &lt;form method="dialog">
+    &lt;p>Bonjour, fenêtre&nbsp;!&lt;/p>
+    &lt;button>OK&lt;/button>
+  &lt;/form>
+&lt;/dialog>
+&lt;button onclick="dialog.showModal()">Aérer&lt;/button>
+&lt;!-- → Ouvrir la fenêtre -->
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <dialog id="dialog">
+            <form method="dialog">
+              <p>Bonjour, fenêtre&nbsp;!</p>
+              <button>OK</button>
+            </form>
+          </dialog>
+          <button onclick="dialog.showModal()" class="m-auto">Aérer</button>
+          <!-- → Ouvrir la fenêtre -->
+        </div>
+      </section>
+
+      <section>
+        <h2>pattern</h2>
+        à caler avec les formulaires !
+      </section>
+
+      <section>
+        <h2>output</h2>
+      </section>
+
+      <section>
+        <h2>template + slot</h2>
+      </section>
+
+      <section>
+        <h2>output</h2>
+      </section>
+
+      <section>
+        <h2>data-* et dataset</h2>
+      </section>
+
+      <section>
+        <h2>hidden</h2>
+        (is a lie)
+      </section>
+
+      <section>
+        <h2>download</h2>
+      </section>
+
+      <section>
+        <h2>Les perfs</h2>
+
+        preload, prefetch, preconnect etc. pour l’attribut rel sur l’élément <link>
+        defer et async pour l’élément <script>
+        loading pour une stratégie de chargement avancée, avec lazy ou eager
+        priority, hint et leurs variantes : spécs pas sèches
+      </section>
+
+      <section class="demo">
+        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
+        <div class="style">
+<style contenteditable class="highlight--none">.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box {
+  aspect-ratio: 1;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="demo">
+          <div class="modern-container">
+            <div class="box">container</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Avec un peu de <i lang="en">code highlighting</i></h2>
+        <div class="style">
+<style contenteditable style="--num-lines: 1;--highlight-start: calc(8 * var(--line-height));">.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box-2 {
+  aspect-ratio: 1;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="demo">
+          <div class="modern-container">
+            <div class="box-2">container</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>De la correction orthographique</h2>
+        [spellcheck] + styles CSS
+      </section>
+
+      <section>
+        <h2>Une <i lang="en">scrollbar</i> personnalisée</h2>
       </section>
 
       <section>
@@ -74,5 +271,7 @@
         </a></li>
       </ul>
     </footer>
+
+    <script src="../accesslide/js/prism.min.js"></script>
   </body>
 </html>
