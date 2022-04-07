@@ -1,7 +1,7 @@
 'use strict';
 
 const gulp     = require('gulp');
-const sass     = require('gulp-sass');
+const sass     = require('gulp-sass')(require('sass'));
 const maps     = require('gulp-sourcemaps');
 const prefix   = require('gulp-autoprefixer');
 const uglify   = require('gulp-uglify');
@@ -13,7 +13,7 @@ const newer    = require('gulp-newer');
  * @section Build
  * Compile JS & CSS files for theme
  */
- 
+
 gulp.task('css', function () {
     return gulp.src('./accesslide/scss/*.scss')
       .pipe(newer('./accesslide/css'))
