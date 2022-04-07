@@ -62,6 +62,10 @@ html {
   -webkit-text-fill-color: #fafafa;
 }
 
+::marker {
+  color: #c42419;
+}
+
 body {
   display: grid;
   font: normal 400 1rem/1.5 sans-serif;
