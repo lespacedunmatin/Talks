@@ -64,6 +64,7 @@ function watch() {
     gulp.watch('./**/*.html', gulp.series(reload));
     gulp.watch('./accesslide/scss/**/*.scss', gulp.series('css', reload));
     gulp.watch('./accesslide/*.js', gulp.series('js', reload));
+    gulp.watch('./**/css/*.css', gulp.series(reload));
 }
 
 exports.default = gulp.series( 'build', sync, watch );
