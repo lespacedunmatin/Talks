@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Découvrez « le bon HTML » et économisez du JS et du CSS !</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez « le bon HTML » et économisez du JS et du CSS ! — conférence donnée lors du premier e-tech day à onepoint Nantes, par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://upload.wikimedia.org"/>
+  <link rel="preconnect" href="https://media.giphy.com/"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="../accesslide/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" id="currentCSS" href="../accesslide/css/ffoodd.css?5" type="text/css" media="screen">
+  <link rel="stylesheet" href="../accesslide/css/print.css" type="text/css" media="print">
+  <script src="../accesslide/js/AccesSlide.min.js"></script>
+  <script src="../accesslide/lang/lang_fr.js"></script>
+  <style>
+    figcaption { font-size: .6em; }
+    figure,
+    details {
+      background: #fff;
+      box-shadow: 0 .25rem .5rem rgba(0,0,0,.25);
+      max-width: 100%;
+      padding: .5em;
+      width: max-content;
+    }
+
+    details { width: 100%; }
+
+    summary {
+      display: revert;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    ol.table {
+      padding-left: 0;
+    }
+
+    time {
+      font-weight: bold;
+    }
+
+    .col-20 {
+      display: table-cell;
+      width: 20%;
+    }
+
+    .mt-3 {
+      margin-top: 3rem;
+    }
+
+    .mt-n3 {
+      margin-top: -3rem;
+    }
+
+    .mt-n6 {
+      margin-top: -6rem;
+    }
+
+    .mb-n6 {
+      margin-bottom: -6rem !important;
+    }
+
+    .pt-6 {
+      padding-top: 6rem;
+    }
+
+    .pr-4 {
+      padding-right: 4rem;
+    }
+
+    .ty-6 {
+      transform: translateY(6rem);
+    }
+
+    .ty-n6 {
+      transform: translateY(-6rem);
+    }
+
+    .d-ib {
+      display: inline-block;
+    }
+
+    .smaller {
+      font-size: 1rem;
+    }
+
+    .z-1 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .rotate-left {
+      transform: rotate(-.005turn);
+    }
+
+    .rotate-right {
+      transform: rotate(.005turn);
+    }
+
+    .col-50 figure:first-child:not(:last-child) {
+      width: 50%;
+    }
+
+    .col-50 figure:last-child:not(:first-child) {
+      float: right;
+      width: 66%;
+    }
+
+    .spam { width: 3rem !important; }
+
+    .timeline {
+      border-bottom: .125rem solid rgba(3, 44, 54, .5);
+      padding-bottom: .5rem;
+    }
+
+    .timeline li {
+      position: relative;
+    }
+
+    .timeline li::before {
+      background-color: #c42419;
+      border-radius: .125rem;
+      bottom: -.675rem;
+      content: "";
+      height: .25rem;
+      left: -.25rem;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .5s ease-in-out;
+      width: calc(100% + .5rem);
+    }
+
+    .timeline li:nth-child(even)::before {
+      bottom: calc(100% + .625rem);
+    }
+
+    .timeline li[style*="visible"]::before {
+      transform: scaleX(1);
+
+    }
+
+    .timeline li::after {
+      background-color: #efeee3;
+      border: .25rem solid #c42419;
+      border-radius: 50%;
+      bottom: -1.15rem;
+      content: "";
+      height: .75rem;
+      left: -.5rem;
+      position: absolute;
+      width: .75rem;
+    }
+
+    .timeline li:nth-child(even)::after {
+      bottom: calc(100% + .15rem);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="screen" data-effect="ffoodd">
+
+    <div id="volet"></div>
+
+    <header id="banner" role="banner" class="main-header clearfix">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1 class="main-title">
+        Découvrez « le bon HTML » et économisez du JS et du CSS !
+      </h1>
+    </header>
+
+    <div id="nav" class="tool-bar footer-nav clearfix">
+      <div id="wrappernav">
+        <ul class="related">
+          <li>
+            <a href="https://www.ffoodd.fr">
+              <img src="../accesslide/img/ffoodd.svg?2" role="img" alt="Blog de Gaël Poupard" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ffoodd_fr">
+              <img src="../accesslide/img/twitter.svg?2" role="img" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ffoodd/" hreflang="en">
+              <img src="../accesslide/img/github.svg?2" role="img" alt="@ffoodd sur Github" height="32" width="32" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav role="navigation" id="sommaire" class="tool-block tool-block-summary" tabindex="-1"></nav>
+
+    <div id="wrapper">
+
+      <main role="main" id="main">
+
+        <section class="slide full couv">
+          <h2>
+            Découvrez « le bon HTML » et économisez du JS et du CSS !
+          </h2>
+          <p>
+            Retrouvez les slides en ligne sur
+            <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/e-tech-day/">ffoodd.fr/e-tech-day</a>.
+           </p>
+          <footer class="table">
+            <p class="col-50 v-middle">Raconté par <a href="https://www.ffoodd.fr">Gaël Poupard</a></p>
+            <p class="col-50 col-t-right">
+              <a href="https://www.groupeonepoint.com">
+                <img src="../accesslide/img/onepoint.svg" width="332" height="161" style="height:161px" alt="onepoint" class="onepoint"/>
+              </a>
+            </p>
+          </footer>
+        </section>
+
+        <section class="slide full">
+          <h2>Le sens perdu<span aria-hidden="true">&nbsp;&#129430;</span></h2>
+          <p>
+            Notre vocable web est composé de néologismes en français, mais <strong>pas en anglais</strong>.
+            Il est une <strong>métaphore</strong> du monde physique, dont le sens est perdu en français.
+          </p>
+          <p class="small">Globalement on est nuls pour inventer.</p>
+        </section>
+
+        <section class="slide full">
+          <h2>Conclusion</h2>
+          <h3 lang="en">Naming things is hard</h3>
+
+          <div class="table">
+            <div class="col-50 v-middle">
+              <p>
+                Heureusement dans nos métiers, il y a énormément de choses que nous n’avons pas besoin de nommer.
+                <strong>Apprenons notre vocabulaire&nbsp;!</strong>
+              </p>
+            </div>
+            <div class="col-50 col-t-right v-middle">
+              <figure class="d-ib rotate-right">
+                <a href="https://www.opquast.com/">
+                  <img src="https://website.oqs-cdn.com/wp-content/themes/opquast/images/opquast.svg"
+                       loading="lazy" width="" height="" alt=""/>
+                </a>
+                <figcaption class="small">
+                  Et utilisez <a href="https://www.opquast.com/rendre-le-web-meilleur/glossaire/">le glossaire Opquast</a>,
+                  au hasard.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="slide end noprint">
+          <h2 class="end-title">Merci</h2>
+          <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+          <h4>Crédits</h4>
+          <ul class="credit">
+            <li>Moteur de présentation&nbsp;: <a href="https://github.com/access42/accesSlide" hreflang="en">AccesSlide</a> —&nbsp;par <a href="https://access42.net/">Access42</a>&nbsp;;</li>
+            <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+            <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+            <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+    <div id="setting" class="tool-block tool-block-settings " role="dialog" tabindex="-1" style="display:none"></div>
+
+  </div>
+
+  <div id="Caudio"></div>
+  <div id="Dcourante" aria-live="polite" aria-atomic="true" aria-hidden="true"></div>
+
+  <script src="../accesslide/js/slide.min.js"></script>
+  <script>
+    let verbose;
+    window.addEventListener('load', () => {
+      if (window.location.host === 'localhost:3000') {
+        setTimeout(() => {
+          verbose = window.open('https://localhost:3000/paris-web.2021/verbose.html', 'verboseSlides');
+
+          const current = document.getElementById('current').childNodes[0];
+          const observer = new MutationObserver((mutations) => {
+            verbose.postMessage(mutations[0].target.data, 'https://localhost:3000');
+          });
+
+          observer.observe(current, {characterData: true});
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
