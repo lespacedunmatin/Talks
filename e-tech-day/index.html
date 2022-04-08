@@ -75,8 +75,8 @@
             </code>
           </pre>
         </div>
-        <form class="demo d-flex">
-          <div class="m-auto">
+        <div class="demo d-flex">
+          <form class="m-auto">
             <p>
               <label for="e-tech">Citez un e-tech marrant</label>
               <input id="e-tech" type="text" list="e-techs"/>
@@ -86,8 +86,43 @@
                 <option>Thomas B.</option>
               </datalist>
             </p>
-          </div>
-        </form>
+          </form>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Vérifier la saisie</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;label for="pattern">
+  Mot de passe
+  &lt;small>(obligatoire)&lt;/small>
+&lt;/label>
+&lt;input id="pattern" type="password"
+  required
+  pattern="[a-z]{4,8}"
+  spellcheck="false"
+  autocorrect="off"
+  autocapitalize="none"/>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <form class="m-auto" target="_self">
+            <p>
+              <label for="pattern">Mot de passe <small>(obligatoire)</small></label>
+              <input id="pattern" type="password" required
+                     pattern="[a-z]{4,8}"
+                     spellcheck="false" autocorrect="off" autocapitalize="none"
+                     aria-describedby="aide"/>
+              <small id="aide" class="d-block mt-1">
+                Votre mot de passe doit contenir quatre à huit minuscules uniquement.
+              </small>
+            </p>
+            <button type="submit">Valider</button>
+          </form>
+        </div>
       </section>
 
       <section>
@@ -151,43 +186,106 @@
         </div>
       </section>
 
-      <section>
-        <h2>pattern</h2>
-        à caler avec les formulaires !
-      </section>
-
-      <section>
+      <section class="demo">
         <h2>output</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;fieldset>
+  &lt;legend>Addition&lt;/legend>
+  &lt;p>
+    &lt;label for="un">Chiffre&lt;/label>
+    &lt;input id="un" type="number" value="0"/>
+  &lt;/p>
+  &lt;p>
+    &lt;label for="deux">Autre chiffre&lt;/label>
+    &lt;input id="deux" type="number" value="0"/>
+&lt;/fieldset>
+&lt;output id="resultat" for="un deux">&lt;/output>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+         <form class="d-flex m-auto" id="addition">
+           <fieldset>
+             <legend>Addition</legend>
+             <p>
+               <label for="un">Chiffre</label>
+               <input id="un" type="number" value="0"/>
+             </p>
+             <p>
+               <label for="deux">Autre chiffre</label>
+               <input id="deux" type="number" value="0"/>
+             </p>
+           </fieldset>
+           <output id="resultat" for="un deux"></output>
+         </form>
+        </div>
+        <script>
+          const updateValue = () => {
+            document.getElementById('resultat').value = parseInt(document.getElementById('un').value) + parseInt(document.getElementById('deux').value);
+          }
+          document.addEventListener('DOMContentLoaded', () => {
+            updateValue();
+            document.getElementById('addition').addEventListener('input', () => {
+              updateValue();
+            });
+          });
+        </script>
       </section>
 
-      <section>
-        <h2>template + slot</h2>
-      </section>
+      <section class="demo">
+        <h2>Exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
+        <div class="markup">
+        <pre class="language-markup">
+            <code class="language-markup">
+&lt;a href="data:text/json,…" download="export.json">Exporter&lt;/a>
+&lt;form>
+  &lt;p>
+    &lt;label for="import">Importer&lt;/label>
+    &lt;input id="import" type="file" accept="json"/>
+  &lt;/p>
+&lt;/form>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <div class="m-auto">
+            <a download="export.json">Exporter</a>
+            <form>
+              <p>
+                <label for="import">Importer</label>
+                <input id="import" type="file" accept="json"/>
+              </p>
+            </form>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const change = new Event('change', { bubbles: true });
+            localStorage.setItem('Démo', 'Tada !');
 
-      <section>
-        <h2>output</h2>
-      </section>
+            document.querySelector('[download]').href = 'data:text/json,' + JSON.stringify(localStorage);
 
-      <section>
-        <h2>data-* et dataset</h2>
-      </section>
+            document.querySelector('[type="file"]').addEventListener('change', event => {
+              const upload = event.target.files[0];
+              const reader = new FileReader();
 
-      <section>
-        <h2>hidden</h2>
-        (is a lie)
-      </section>
+              reader.onload = (event => {
+                JSON.parse(event.target.result, (label, value) => {
+                  localStorage.removeItem(label);
+                  localStorage.setItem(label, value);
+                });
+              });
 
-      <section>
-        <h2>download</h2>
-      </section>
+              reader.readAsText(upload);
+            });
+          });
 
-      <section>
-        <h2>Les perfs</h2>
-
-        preload, prefetch, preconnect etc. pour l’attribut rel sur l’élément link
-        defer et async pour l’élément script
-        loading pour une stratégie de chargement avancée, avec lazy ou eager
-        priority, hint et leurs variantes : spécs pas sèches
+          document.addEventListener('beforeunload', () => {
+            localStorage.removeItem('Démo');
+          });
+        </script>
       </section>
 
       <section class="demo">
@@ -237,6 +335,42 @@
       </section>
 
       <section>
+        <h2>D’autres nouveautés</h2>
+        <p>J’ai pas eu le temps de faire les démos&nbsp;!</p>
+        <ul>
+          <li>
+            <code>template</code>, <code>slot</code>, <code>is</code> et le
+            <i lang="en">Shadow <abbr title="Document Object Model">DOM</abbr></i>, aussi connu sous le sobriquet
+            de <i lang="en">Web Components</i>,
+          </li>
+          <li>
+            les attributs <code>data-*</code> et l’<abbr lang="en" title="Application Programming Interface">API</abbr>
+            <i lang="en">Dataset</i> pour faire porter des données au <i lang="en">markup</i>
+            tout en restant valide <abbr lang="en" title="World Wide Web Consortium">W3C</abbr>,
+          </li>
+          <li><code>progress</code> et <code>meter</code> pour représenter des mesures,</li>
+          <li><code>kbd</code>, <code>var</code> et <code>samp</code> pour la doc technique,</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Et pour les perfs, alors&nbsp;?</h2>
+        <ul>
+          <li>
+            <code>preload</code>, <code>prefetch</code>, <code>preconnect</code> pour
+            l’attribut <code>rel</code> sur l’élément <code>link</code>,
+          </li>
+          <li>
+            l’attribut <code>loading</code> pour gérer la strétagie de chargement des <i lang="en">assets</i>,
+            avec les valeurs <code>lazy</code> et <code>eager</code>,
+          </li>
+          <li><code>defer</code> et <code>async</code> pour les scripts,</li>
+          <li><code>priority</code>, <code>hint</code> et leurs variantes&nbsp;: pas encore sec,</li>
+        </ul>
+      </section>
+
+      <!-- @todo CSS pour économiser du JS
+      <section>
         <h2>De la correction orthographique</h2>
         [spellcheck] + styles CSS
       </section>
@@ -252,6 +386,7 @@
       <section>
         <h2>scroll-*-*</h2>
       </section>
+      Fin du CSS -->
 
       <section>
         <h2>Merci</h2>
