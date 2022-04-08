@@ -243,7 +243,6 @@ section {
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: .5rem;
   counter-increment: slides;
-  display: grid;
   padding: 2rem;
   position: relative;
 }
@@ -265,6 +264,7 @@ section {
   }
 
   .demo {
+    display: grid;
     grid-template-columns: fit-content(85ch) 1fr;
     grid-template-rows: auto 1fr;
     padding: 0;
@@ -394,8 +394,30 @@ output {
   margin-left: 1rem;
 }
 
+.demo table {
+  border-collapse: collapse;
+  font-size: 1.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+.demo caption {
+  font: 300 1rem/2 "museo-slab";
+  text-align: inherit;
+}
+
+.demo table col:nth-child(odd) {
+  background: #fafafa;
+}
+
+.demo table col:target {
+  background: yellow;
+}
+
 /* Utilities */
 .d-flex { display: flex; }
 .d-block { display: block; }
+.d-grid { display: grid; }
 .m-auto { margin: auto; }
 .mt-1 { margin-top: 1rem; }
+.w-100 { width: 100%; }
