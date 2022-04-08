@@ -307,7 +307,6 @@
         </div>
         <script>
           document.addEventListener('DOMContentLoaded', () => {
-            const change = new Event('change', { bubbles: true });
             localStorage.setItem('Démo', 'Tada !');
 
             document.querySelector('[download]').href = 'data:text/json,' + JSON.stringify(localStorage);
