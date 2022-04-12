@@ -184,6 +184,17 @@
           <button onclick="dialog.showModal()" class="m-auto">Aérer</button>
           <!-- → Ouvrir la fenêtre -->
         </div>
+        <script>
+          // Close dialog on backdrop click
+          // @author Adam Argyle
+          // @see https://twitter.com/argyleink/status/1511761383024521218
+          document.addEventListener('DOMContentLoaded', () => {
+            dialog.addEventListener('click', ({target:dialog}) => {
+              if (dialog.nodeName === 'DIALOG')
+                dialog.close()
+            });
+          });
+        </script>
       </section>
 
       <section class="demo">
