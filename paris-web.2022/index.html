@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Découvrez « le bon HTML » et économisez du JS et du CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez « le bon HTML » et économisez du JS et du CSS — conférence donnée à Paris Web 2022, par Gaël Poupard">
+  <meta name="author" content="Gaël Poupard">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="stylesheet" href="cssdeecckk.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="cssrism.min.css" type="text/css" media="screen"/>
+</head>
+<body>
+    <header role="banner">
+      <a href="https://www.ffoodd.fr">ffoodd</a>
+      <h1>Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></h1>
+    </header>
+
+    <main role="main">
+      <section class="first">
+        <span class="h2">Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></span>
+        <p>
+          Retrouvez les slides en ligne sur
+          <span aria-hidden="true">→&nbsp;</span><a href="https://www.ffoodd.fr/paris-web.2022/">ffoodd.fr/paris-web.2022/</a>.
+         </p>
+        <footer>
+          <p >Raconté par <a href="ttps://www.ffoodd.fr">Gaël Poupard</a></p>
+          <p>
+            <a href="https://www.groupeonepoint.com">
+              <img src="../accesslide/img/onepoint.svg" width="166" height="80" alt="onepoint"/>
+            </a>
+          </p>
+        </footer>
+      </section>
+
+      <!-- @todo Introduction : principe de moindre pouvoir -->
+      <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. --> -->
+
+      <!-- @todo Vérifier l’état de l’accessibilité de ces solutions -->
+      <section class="demo">
+        <h2>De l’autocomplétion</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;input type="password" autocomplete="new-password"/>
+&lt;input type="email" autocomplete="email"/>
+            </code>
+          </pre>
+        </div>
+        <form class="demo d-flex">
+          <div class="m-auto">
+            <p>
+              <label for="password">Mot de passe</label>
+              <input id="password" type="password" autocomplete="new-password"/>
+            </p>
+            <p>
+              <label for="email">Email</label>
+              <input id="email" type="email" autocomplete="email"/>
+            </p>
+          </div>
+        </form>
+
+      </section>
+
+      <section class="demo">
+        <h2>De la suggestion</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;label for="e-tech">Citez un e-tech marrant&lt;/label>
+&lt;input id="e-tech" type="text" list="e-techs"/>
+&lt;datalist id="e-techs">
+  &lt;option>Yann S.&lt;/option>
+  &lt;option>Nicolas G.&lt;/option>
+  &lt;option>Thomas B.&lt;/option>
+&lt;/datalist>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <form class="m-auto">
+            <p>
+              <label for="e-tech">Citez un e-tech marrant</label>
+              <input id="e-tech" type="text" list="e-techs"/>
+              <datalist id="e-techs">
+                <option>Yann S.</option>
+                <option>Nicolas G.</option>
+                <option>Thomas B.</option>
+              </datalist>
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- @todo autocorrect, spellcheck, inputmode, etc. -->
+
+      <section class="demo">
+        <h2>Vérifier la saisie</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;label for="pattern">
+  Mot de passe
+  &lt;small>(obligatoire)&lt;/small>
+&lt;/label>
+&lt;input id="pattern" type="password"
+  required
+  pattern="[a-z]{4,8}"
+  spellcheck="false"
+  autocorrect="off"
+  autocapitalize="none"/>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <form class="m-auto" target="_self">
+            <p>
+              <label for="pattern">Mot de passe <small>(obligatoire)</small></label>
+              <input id="pattern" type="password" required
+                     pattern="[a-z]{4,8}"
+                     spellcheck="false" autocorrect="off" autocapitalize="none"
+                     aria-describedby="aide"/>
+              <small id="aide" class="d-block mt-1">
+                Votre mot de passe doit contenir quatre à huit minuscules uniquement.
+              </small>
+            </p>
+            <button type="submit">Valider</button>
+          </form>
+        </div>
+      </section>
+
+      <section>
+        <h2>D’autres bonus pour formulaires</h2>
+        <p>De nombreux autres attributs sont drôlement pratiques — certains récents, et d’autres… non&nbsp;:</p>
+        <ul>
+          <li><code>inputmode</code> pour déterminer le clavier à utiliser, sur <i lang="en">smartphone</i>,</li>
+          <li><code>enterkeyhint</code> pour indiquer la fonction de la touche entrée, sur <i lang="en">smartphone</i> également,</li>
+          <li><code>for</code> et <code>id</code> pour associer un <code>label</code> à un champ,</li>
+          <li><code>name</code> pour les boutons radios et cases à cocher,</li>
+          <li><code>type</code> pour les boutons et éviter de soumettre les formulaires n’importe quand&nbsp;!</li>
+          <li><code>action</code>, <code>method</code> mais aussi <code>formaction</code> et <code>formmethod</code> (entre autres).</li>
+        </ul>
+      </section>
+
+      <section class="demo">
+        <h2>Un bloc dépliant natif</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;details>
+  &lt;summary>Découvrez mes secrets…&lt;/summary>
+  Hé, à quoi vous vous attendiez&nbsp;!
+&lt;/details>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <details class="m-auto">
+            <summary>Découvrez mes secrets…</summary>
+            Hé, à quoi vous vous attendiez&nbsp;!
+          </details>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Un fenêtre modale native</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;dialog id="dialog">
+  &lt;form method="dialog">
+    &lt;p>Bonjour, fenêtre&nbsp;!&lt;/p>
+    &lt;button>OK&lt;/button>
+  &lt;/form>
+&lt;/dialog>
+&lt;button onclick="dialog.showModal()">Aérer&lt;/button>
+&lt;!-- → Ouvrir la fenêtre -->
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <dialog id="dialog">
+            <form method="dialog">
+              <p>Bonjour, fenêtre&nbsp;!</p>
+              <button>OK</button>
+            </form>
+          </dialog>
+          <button onclick="dialog.showModal()" class="m-auto">Aérer</button>
+          <!-- → Ouvrir la fenêtre -->
+        </div>
+        <script>
+          // Close dialog on backdrop click
+          // @author Adam Argyle
+          // @see https://twitter.com/argyleink/status/1511761383024521218
+          document.addEventListener('DOMContentLoaded', () => {
+            dialog.addEventListener('click', ({target:dialog}) => {
+              if (dialog.nodeName === 'DIALOG')
+                dialog.close()
+            });
+          });
+        </script>
+      </section>
+
+      <section class="demo">
+        <h2>output</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;fieldset>
+  &lt;legend>Addition&lt;/legend>
+  &lt;p>
+    &lt;label for="un">Chiffre&lt;/label>
+    &lt;input id="un" type="number" value="0"/>
+  &lt;/p>
+  &lt;p>
+    &lt;label for="deux">Autre chiffre&lt;/label>
+    &lt;input id="deux" type="number" value="0"/>
+&lt;/fieldset>
+&lt;output id="resultat" for="un deux">&lt;/output>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+         <form class="d-flex m-auto" id="addition">
+           <fieldset>
+             <legend>Addition</legend>
+             <p>
+               <label for="un">Chiffre</label>
+               <input id="un" type="number" value="0"/>
+             </p>
+             <p>
+               <label for="deux">Autre chiffre</label>
+               <input id="deux" type="number" value="0"/>
+             </p>
+           </fieldset>
+           <output id="resultat" for="un deux"></output>
+         </form>
+        </div>
+        <script>
+          const updateValue = () => {
+            document.getElementById('resultat').value = parseInt(document.getElementById('un').value) + parseInt(document.getElementById('deux').value);
+          }
+          document.addEventListener('DOMContentLoaded', () => {
+            updateValue();
+            document.getElementById('addition').addEventListener('input', () => {
+              updateValue();
+            });
+          });
+        </script>
+      </section>
+
+      <section class="demo">
+        <h2>Mettre une colonne en avant</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;table>
+  &lt;caption>Tableau bidon&lt;/caption>
+  &lt;colgroup>
+    &lt;col id="col-un">
+  &lt;/colgroup>
+  &lt;thead>
+    &lt;tr>
+      &lt;th>&lt;a href="#col-un">Un&lt;/a>&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+&lt;/table>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <table class="w-100 m-auto">
+            <caption>Tableau bidon</caption>
+            <colgroup>
+              <col id="col-un">
+              <col id="col-deux">
+              <col id="col-trois">
+            </colgroup>
+            <thead>
+              <tr>
+                <th><a href="#col-un">Un</a></th>
+                <th><a href="#col-deux">Deux</a></th>
+                <th><a href="#col-trois">Trois</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Un truc</td>
+                <td>Deux trucs</td>
+                <td>Et non !</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
+        <div class="markup">
+        <pre class="language-markup">
+            <code class="language-markup">
+&lt;a href="data:text/json,…" download="export.json">Exporter&lt;/a>
+&lt;form>
+  &lt;p>
+    &lt;label for="import">Importer&lt;/label>
+    &lt;input id="import" type="file" accept="json"/>
+  &lt;/p>
+&lt;/form>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <div class="m-auto">
+            <a download="export.json">Exporter</a>
+            <form>
+              <p>
+                <label for="import">Importer</label>
+                <input id="import" type="file" accept="json"/>
+              </p>
+            </form>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            localStorage.setItem('Démo', 'Tada !');
+
+            document.querySelector('[download]').href = 'data:text/json,' + JSON.stringify(localStorage);
+
+            document.querySelector('[type="file"]').addEventListener('change', event => {
+              const upload = event.target.files[0];
+              const reader = new FileReader();
+
+              reader.onload = (event => {
+                JSON.parse(event.target.result, (label, value) => {
+                  localStorage.removeItem(label);
+                  localStorage.setItem(label, value);
+                });
+              });
+
+              reader.readAsText(upload);
+            });
+          });
+
+          document.addEventListener('beforeunload', () => {
+            localStorage.removeItem('Démo');
+          });
+        </script>
+      </section>
+
+      <section class="demo">
+        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
+        <div class="style">
+<style contenteditable class="highlight--none">.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box {
+  aspect-ratio: 1;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="demo d-flex">
+          <div class="modern-container m-auto">
+            <div class="box">container</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Avec un peu de <i lang="en">code highlighting</i></h2>
+        <div class="style">
+<style contenteditable style="--num-lines: 1;--highlight-start: calc(8 * var(--line-height));">.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box-2 {
+  aspect-ratio: 1;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="demo d-flex">
+          <div class="modern-container m-auto">
+            <div class="box-2">container</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>D’autres nouveautés</h2>
+        <p>J’ai pas eu le temps de faire les démos&nbsp;!</p>
+        <ul>
+          <li>
+            <code>template</code>, <code>slot</code>, <code>is</code> et le
+            <i lang="en">Shadow <abbr title="Document Object Model">DOM</abbr></i>, aussi connu sous le sobriquet
+            de <i lang="en">Web Components</i>,
+          </li>
+          <li>
+            les attributs <code>data-*</code> et l’<abbr lang="en" title="Application Programming Interface">API</abbr>
+            <i lang="en">Dataset</i> pour faire porter des données au <i lang="en">markup</i>
+            tout en restant valide <abbr lang="en" title="World Wide Web Consortium">W3C</abbr>,
+          </li>
+          <li><code>progress</code> et <code>meter</code> pour représenter des mesures,</li>
+          <li><code>kbd</code>, <code>var</code> et <code>samp</code> pour la doc technique — vous écrivez de la doc, pas vrai&nbsp;?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Et pour les perfs, alors&nbsp;?</h2>
+        <ul>
+          <li>
+            <code>preload</code>, <code>prefetch</code>, <code>preconnect</code> pour
+            l’attribut <code>rel</code> sur l’élément <code>link</code>,
+          </li>
+          <li>
+            l’attribut <code>loading</code> pour gérer la stratégie de chargement des <i lang="en">assets</i>,
+            avec les valeurs <code>lazy</code> et <code>eager</code>,
+          </li>
+          <li><code>defer</code> et <code>async</code> pour les scripts,</li>
+          <li><code>fetchpriority</code>&nbsp;: pas encore sec,</li>
+        </ul>
+      </section>
+
+
+      <!-- @todo CSS pour économiser du JS
+      <section>
+        <h2>De la correction orthographique</h2>
+        [spellcheck] + styles CSS
+      </section>
+
+      <section>
+        <h2>Une <i lang="en">scrollbar</i> personnalisée</h2>
+      </section>
+
+      <section>
+        <h2>accent-color</h2>
+      </section>
+
+      <section>
+        <h2>scroll-*-*</h2>
+      </section>
+      Fin du CSS -->
+
+      <section>
+        <h2>Merci</h2>
+        <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+        <h4>Crédits</h4>
+        <ul>
+          <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+          <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
+          <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <ul role="list">
+        <li><a href="https://www.ffoodd.fr">
+            <img src="../accesslide/img/ffoodd.svg?2" alt="Blog de Gaël Poupard" height="32" width="32" />
+        </a></li>
+        <li><a href="https://twitter.com/ffoodd_fr">
+            <img src="../accesslide/img/twitter.svg?2" alt="@ffoodd_fr sur Twitter" height="32" width="32" />
+        </a></li>
+        <li><a href="https://github.com/ffoodd/" hreflang="en">
+            <img src="../accesslide/img/github.svg?2" alt="@ffoodd sur Github" height="32" width="32" />
+        </a></li>
+      </ul>
+    </footer>
+
+    <script src="../accesslide/js/prism.min.js"></script>
+  </body>
+</html>
