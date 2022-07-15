@@ -35,12 +35,23 @@
         </footer>
       </section>
 
+      <!-- @todo Un sommaire ? -->
+
       <!-- @todo Introduction : principe de moindre pouvoir -->
       <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. --> -->
 
-      <!-- @todo Vérifier l’état de l’accessibilité de ces solutions -->
+      <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
+      <section>
+        <h2>Autocomplétion</h2>
+        <p>Compléter automatiquement le nom de commune d’après un code postal ou un début de saisie&nbsp;?</p>
+        <p>Pas besoin d’Angular Material ou d’un composant riche&nbsp;!</p>
+        <p class="small">
+          En réalité, vous n’avez pas besoin de gérer la liste des communes de France et de Navarre,
+          l’utilisateur (et son navigateur) ont déjà l’information.
+        </p>
+      </section>
       <section class="demo">
-        <h2>De l’autocomplétion</h2>
+        <h2 aria-hidden="true">Autocomplétion</h2>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
@@ -64,17 +75,22 @@
 
       </section>
 
+      <section>
+        <h2>Liste de suggestions</h2>
+        <p>Vous voulez proposer une liste de valeurs à l’utilisateur, en permettant aussi la saisie libre&nbsp;?</p>
+        <p>Toujours pas besoin d’une bibliothèque, ni même d’un composant riche&nbsp;! </p>
+      </section>
       <section class="demo">
-        <h2>De la suggestion</h2>
+        <h2 aria-hidden="true">De la suggestion</h2>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
-&lt;label for="e-tech">Citez un e-tech marrant&lt;/label>
-&lt;input id="e-tech" type="text" list="e-techs"/>
-&lt;datalist id="e-techs">
-  &lt;option>Yann S.&lt;/option>
-  &lt;option>Nicolas G.&lt;/option>
-  &lt;option>Thomas B.&lt;/option>
+&lt;label for="language">D’après vous, quel est le meilleur langage de programmation&nbsp;?&lt;/label>
+&lt;input id="language" type="text" list="languages"/>
+&lt;datalist id="languages">
+  &lt;option>HTML&lt;/option>
+  &lt;option>CSS&lt;/option>
+  &lt;option>SVG&lt;/option>
 &lt;/datalist>
             </code>
           </pre>
@@ -82,22 +98,25 @@
         <div class="demo d-flex">
           <form class="m-auto">
             <p>
-              <label for="e-tech">Citez un e-tech marrant</label>
-              <input id="e-tech" type="text" list="e-techs"/>
-              <datalist id="e-techs">
-                <option>Yann S.</option>
-                <option>Nicolas G.</option>
-                <option>Thomas B.</option>
+              <label for="language">D’après vous, quel est le meilleur langage de programmation</label>
+              <input id="language" type="text" list="languages"/>
+              <datalist id="languages">
+                <option>HTML</option>
+                <option>CSS</option>
+                <option>SVG</option>
               </datalist>
             </p>
           </form>
         </div>
       </section>
 
-      <!-- @todo autocorrect, spellcheck, inputmode, etc. -->
-
+      <section>
+        <h2>Formater la saisie</h2>
+        <p>Vous n’autorisez que certains caractères, ou avez besoin de normaliser les valeurs&nbsp;?</p>
+        <p>Pas de traitements sur la valeur ou d’écouteurs d’événement crados&nbsp;: HTML à la rescousse&nbsp;!</p>
+      </section>
       <section class="demo">
-        <h2>Vérifier la saisie</h2>
+        <h2 aria-hidden="true">Formater la saisie</h2>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
@@ -144,8 +163,17 @@
         </ul>
       </section>
 
+      <section >
+        <h2>Un bloc dépliant</h2>
+        <p>Un contenu supplémentaire à afficher après une interaction&nbsp;?</p>
+        <p>
+          Vous pouvez implémenter le motif de conception
+          <abbr lang="en" title="Accessible Rich Internet Applications" aria-label="Accessible Rich Internet Applications">ARIA</abbr>
+          <i lang="en">disclosure</i>, évidemment&nbsp;— mais pas que&nbsp;!
+        </p>
+      </section>
       <section class="demo">
-        <h2>Un bloc dépliant natif</h2>
+        <h2 aria-hidden="true">Un bloc dépliant</h2>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
@@ -164,8 +192,14 @@
         </div>
       </section>
 
+      <section>
+        <h2>Une fenêtre modale</h2>
+        <!-- @todo À quoi sert une modale, en vrai ? -->
+        <p>Vous devez exiger une interaction de l’utilisateur, pour confirmer une action&nbsp;?</p>
+        <p>Pourquoi utiliser du JavaScript&nbsp;?</p>
+      </section>
       <section class="demo">
-        <h2>Un fenêtre modale native</h2>
+        <h2>Une fenêtre modale</h2>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
