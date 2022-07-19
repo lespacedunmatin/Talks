@@ -9,8 +9,8 @@
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
-  <link rel="stylesheet" href="cssdeecckk.css" type="text/css" media="screen"/>
-  <link rel="stylesheet" href="cssrism.min.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="deecckk.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="prism.min.css" type="text/css" media="screen"/>
 </head>
 <body>
     <header role="banner">
@@ -38,7 +38,8 @@
       <!-- @todo Un sommaire ? -->
 
       <!-- @todo Introduction : principe de moindre pouvoir -->
-      <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. --> -->
+      <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. -->
+      <!-- @todo Introduction no-js : c’est pas l’objectif ici, pas de bidouilles → juste du HTML que vous ne connaissez peut-être pas ! -->
 
       <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
       <section>
@@ -150,6 +151,7 @@
         </div>
       </section>
 
+      <!-- @todo Réf article de Stéphanie Walter sur Smashing ? -->
       <section>
         <h2>D’autres bonus pour formulaires</h2>
         <p>De nombreux autres attributs sont drôlement pratiques — certains récents, et d’autres… non&nbsp;:</p>
@@ -192,6 +194,7 @@
         </div>
       </section>
 
+      <!-- @todo Réf Adam Argyle + Adrian Roselli -->
       <section>
         <h2>Une fenêtre modale</h2>
         <!-- @todo À quoi sert une modale, en vrai ? -->
@@ -237,6 +240,7 @@
         </script>
       </section>
 
+      <!-- @todo Réf Scott O'Harra : native live regions -->
       <section class="demo">
         <h2>output</h2>
         <div class="markup">
@@ -285,6 +289,7 @@
         </script>
       </section>
 
+      <!-- @todo Réf Manuel Matuzovic -->
       <section class="demo">
         <h2>Mettre une colonne en avant</h2>
         <div class="markup">
@@ -330,8 +335,10 @@
         </div>
       </section>
 
+      <!-- @todo Reformuler : « de combien de JS avez-vous besoin pour gérer un import / export de JSON ? -->
       <section class="demo">
         <h2>Exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
+        <h3>Un minimum de JavaScript&nbsp;: 20 lignes</h3>
         <div class="markup">
         <pre class="language-markup">
             <code class="language-markup">
@@ -383,6 +390,7 @@
         </script>
       </section>
 
+      <!-- @todo Réf Stephanie Eckles -->
       <section class="demo">
         <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
         <div class="style">
@@ -464,26 +472,6 @@
         </ul>
       </section>
 
-
-      <!-- @todo CSS pour économiser du JS
-      <section>
-        <h2>De la correction orthographique</h2>
-        [spellcheck] + styles CSS
-      </section>
-
-      <section>
-        <h2>Une <i lang="en">scrollbar</i> personnalisée</h2>
-      </section>
-
-      <section>
-        <h2>accent-color</h2>
-      </section>
-
-      <section>
-        <h2>scroll-*-*</h2>
-      </section>
-      Fin du CSS -->
-
       <section>
         <h2>Merci</h2>
         <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
@@ -510,6 +498,6 @@
       </ul>
     </footer>
 
-    <script src="../accesslide/js/prism.min.js"></script>
+    <script src="../accesslide/js/prism.min.js" async></script>
   </body>
 </html>
