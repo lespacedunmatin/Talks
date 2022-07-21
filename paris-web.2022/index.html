@@ -9,8 +9,8 @@
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
-  <link rel="stylesheet" href="deecckk.css" type="text/css" media="screen"/>
-  <link rel="stylesheet" href="prism.min.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="css/ddeecckk.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="css/prism.min.css" type="text/css" media="screen"/>
 </head>
 <body>
     <header role="banner">
@@ -37,11 +37,24 @@
 
       <!-- @todo Un sommaire ? -->
 
-      <!-- @todo Introduction : principe de moindre pouvoir -->
+      <section>
+        <h2>Le principe de moindre pouvoir<span aria-hidden="true">&nbsp;&#129412;</span></h2>
+        <p>
+          C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
+          proposés par <cite>Tim Berners-Lee</cite> en 1998
+          —&nbsp;à côté de <abbr lang="en" title="Keep It Simple, Stupid!">kiss</abbr>, du <i lang="en">design</i>
+          modulaire, de la <strong>tolérance</strong> ou de la <strong>décentralisation</strong>.
+        </p>
+        <p>
+          Le mantra de l’<strong>amélioration progressive</strong>, en somme…
+        </p>
+      </section>
       <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. -->
       <!-- @todo Introduction no-js : c’est pas l’objectif ici, pas de bidouilles → juste du HTML que vous ne connaissez peut-être pas ! -->
 
       <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
+      <!-- @todo Pour chaque démo : un slide d’accroche, la démo, un slide warning / ressources -->
+      <!-- @todo Des emojis partout !! -->
       <section>
         <h2>Autocomplétion</h2>
         <p>Compléter automatiquement le nom de commune d’après un code postal ou un début de saisie&nbsp;?</p>
@@ -198,8 +211,11 @@
           </details>
         </div>
       </section>
+      <!-- @todo Warning a11y : https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html -->
 
       <!-- @todo Réf Adam Argyle + Adrian Roselli -->
+      <!-- https://www.scottohara.me/blog/2019/03/05/open-dialog.html -->
+      <!-- https://github.com/KittyGiraudel/a11y-dialog ++ https://a11y-dialog.netlify.app/advanced/dialog-element -->
       <section>
         <h2>Une fenêtre modale</h2>
         <!-- @todo À quoi sert une modale, en vrai ? -->
@@ -247,6 +263,7 @@
 
       <section class="demo">
         <h2><code>output</code></h2>
+        <!-- @todo Warning a11y : un slide après, avec formatage dédié ? -->
         <p>
           <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">
             Scott O’Hara a rédigé un article détaillé sur l’accessibilité de l’élément <code>output</code> (en anglais).
@@ -348,10 +365,56 @@
         </div>
       </section>
 
+      <!-- @todo Réf Stephanie Eckles -->
+      <section class="demo">
+        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
+        <div class="style">
+<style contenteditable class="highlight--none">.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box {
+  aspect-ratio: 1;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="demo d-flex">
+          <div class="modern-container m-auto">
+            <div class="box">container</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo">
+        <h2>Avec un peu de <i lang="en">code highlighting</i></h2>
+        <div class="style">
+<style contenteditable style="--num-lines: 1;--highlight-start: calc(8 * var(--line-height));">.modern-container {
+  display: grid;
+  height: 100%;
+  place-content: center;
+}
+
+.box-2 {
+  aspect-ratio: 1;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 1rem;
+}</style>
+        </div>
+        <div class="demo d-flex">
+          <div class="modern-container m-auto">
+            <div class="box-2">container</div>
+          </div>
+        </div>
+      </section>
+
       <!-- @todo Reformuler : « de combien de JS avez-vous besoin pour gérer un import / export de JSON ? -->
       <section class="demo">
         <h2>Exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
-        <h3>Un minimum de JavaScript&nbsp;: 20 lignes</h3>
         <div class="markup">
         <pre class="language-markup">
             <code class="language-markup">
@@ -403,59 +466,12 @@
         </script>
       </section>
 
-      <!-- @todo Réf Stephanie Eckles -->
-      <section class="demo">
-        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
-        <div class="style">
-<style contenteditable class="highlight--none">.modern-container {
-  display: grid;
-  height: 100%;
-  place-content: center;
-}
-
-.box {
-  aspect-ratio: 1;
-  background-color: rebeccapurple;
-  color: white;
-  padding: 1rem;
-}</style>
-        </div>
-        <div class="demo d-flex">
-          <div class="modern-container m-auto">
-            <div class="box">container</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="demo">
-        <h2>Avec un peu de <i lang="en">code highlighting</i></h2>
-        <div class="style">
-<style contenteditable style="--num-lines: 1;--highlight-start: calc(8 * var(--line-height));">.modern-container {
-  display: grid;
-  height: 100%;
-  place-content: center;
-}
-
-.box-2 {
-  aspect-ratio: 1;
-  background-color: rebeccapurple;
-  color: white;
-  padding: 1rem;
-}</style>
-        </div>
-        <div class="demo d-flex">
-          <div class="modern-container m-auto">
-            <div class="box-2">container</div>
-          </div>
-        </div>
-      </section>
-
       <section>
         <h2>D’autres nouveautés</h2>
         <p>J’ai pas eu le temps de faire les démos&nbsp;!</p>
         <ul>
           <li>
-            <code>template</code>, <code>slot</code>, <code>is</code> et le
+            <code>template</code>, <code>slot</code>, <code>is</code>, <code>part</code> et <code>exportparts</code>, et le
             <i lang="en">Shadow <abbr title="Document Object Model">DOM</abbr></i>, aussi connu sous le sobriquet
             de <i lang="en">Web Components</i>,
           </li>
@@ -511,6 +527,6 @@
       </ul>
     </footer>
 
-    <script src="../accesslide/js/prism.min.js" async></script>
+    <script src="../accesslide/js/prism.min.js"></script>
   </body>
 </html>
