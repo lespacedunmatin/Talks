@@ -19,6 +19,7 @@
     </header>
 
     <main role="main">
+      <!-- @todo Utiliser utopia.fyi pour cibler une font-size dynamique ? -->
       <section class="first">
         <span class="h2">Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></span>
         <p>
@@ -49,16 +50,45 @@
           Le mantra de l’<strong>amélioration progressive</strong>, en somme…
         </p>
       </section>
+
       <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. -->
+      <section>
+        <h2>L’arbre de décision</h2>
+        <!-- @todo Vérifier le support / ajouter une classe -->
+        <ol style="list-style: '↓'">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li><i lang="en">Polyfill</i></li>
+          <li><i lang="en">Framework</i></li>
+        </ol>
+        <!-- @todo Vérifier le support du CSS -->
+        <p>
+          Et en deuxième lame, le support, évidemment&nbsp;:
+          connaissez-vous la différence entre <code>* + *</code> et
+          <code>:first-child</code>&nbsp;?
+        </p>
+        <!-- @todo vérifier le support de hgroup -->
+        <p>
+          Suivez les spécifications, les ajouts ou retraits de fonctionnalités&nbsp;—
+          mais aussi les implémentations dans les navigateurs&nbsp;: <code>hgroup</code> n’a jamais
+          eu d’implémentation sémantique, par exemple.
+        </p>
+      </section>
+
       <!-- @todo Introduction no-js : c’est pas l’objectif ici, pas de bidouilles → juste du HTML que vous ne connaissez peut-être pas ! -->
+      <section>
+        <h2><strong>Note</strong> : pas de bidouilles</h2>
+      </section>
 
       <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
       <!-- @todo Pour chaque démo : un slide d’accroche, la démo, un slide warning / ressources -->
       <!-- @todo Des emojis partout !! -->
       <section>
         <h2>Autocomplétion</h2>
-        <p>Compléter automatiquement le nom de commune d’après un code postal ou un début de saisie&nbsp;?</p>
-        <p>Pas besoin d’Angular Material ou d’un composant riche&nbsp;!</p>
+        <p class="lead">Compléter automatiquement le nom de commune d’après un code postal ou un début de saisie&nbsp&nbsp;?</p>
+        <p>Pas besoin d’Angular Material ou d’un composant riche&nbsp&nbsp;!</p>
+        <!-- @todo Mauvais exemple je pense, ou alors faut prévoir une démo complète et s’assurer que mon Firefox a mon adresse :/ -->
         <p class="small">
           En réalité, vous n’avez pas besoin de gérer la liste des communes de France et de Navarre,
           l’utilisateur (et son navigateur) ont déjà l’information.
@@ -86,8 +116,8 @@
             </p>
           </div>
         </form>
-
       </section>
+      <!-- @todo Mentionner le critère RGAA → https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/glossaire/#liste-des-valeurs-possibles-pour-l-attribut-autocomplete -->
 
       <section>
         <h2>Liste de suggestions</h2>
@@ -263,12 +293,6 @@
 
       <section class="demo">
         <h2><code>output</code></h2>
-        <!-- @todo Warning a11y : un slide après, avec formatage dédié ? -->
-        <p>
-          <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">
-            Scott O’Hara a rédigé un article détaillé sur l’accessibilité de l’élément <code>output</code> (en anglais).
-          </a>
-        </p>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
@@ -302,6 +326,12 @@
            <output id="resultat" for="un deux"></output>
          </form>
         </div>
+        <!-- @todo Warning a11y : un slide après, avec formatage dédié ? -->
+        <p>
+          <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">
+            Scott O’Hara a rédigé un article détaillé sur l’accessibilité de l’élément <code>output</code> (en anglais).
+          </a>
+        </p>
         <script>
           const updateValue = () => {
             document.getElementById('resultat').value = parseInt(document.getElementById('un').value) + parseInt(document.getElementById('deux').value);
@@ -317,11 +347,6 @@
 
       <section class="demo">
         <h2>Mettre une colonne en avant</h2>
-        <p>
-          <a href="https://www.matuzo.at/blog/highlighting-columns/" hreflang="en">
-            Manuel Matuzovic a partagé cette technique sur son blog (en anglais).
-          </a>
-        </p>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
@@ -363,6 +388,11 @@
             </tbody>
           </table>
         </div>
+        <p>
+          <a href="https://www.matuzo.at/blog/highlighting-columns/" hreflang="en">
+            Manuel Matuzovic a partagé cette technique sur son blog (en anglais).
+          </a>
+        </p>
       </section>
 
       <!-- @todo Réf Stephanie Eckles -->
