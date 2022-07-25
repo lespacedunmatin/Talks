@@ -18,6 +18,7 @@
       <h1>Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></h1>
     </header>
 
+    <!-- @todo CIU / a11y support / etc. -->
     <main role="main">
       <!-- @todo Utiliser utopia.fyi pour cibler une font-size dynamique ? -->
       <section class="first">
@@ -51,39 +52,44 @@
         </p>
       </section>
 
-      <!-- @todo Introduction HTML : versions, ajouts d’éléments, obsolescence, etc. -->
       <section>
         <h2>L’arbre de décision</h2>
-        <!-- @todo Vérifier le support / ajouter une classe -->
         <ol style="list-style: '↓'">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
+          <li><abbr lang="en" title="HyperText Markup Language">HTML</abbr></li>
+          <li><abbr lang="en" title="Cascading StyleSheet">CSS</abbr></li>
+          <li>JavaScript et <abbr lang="en" title="Accessible Rich Internet Applications">ARIA</abbr></li>
           <li><i lang="en">Polyfill</i></li>
           <li><i lang="en">Framework</i></li>
         </ol>
-        <!-- @todo Vérifier le support du CSS -->
-        <p>
-          Et en deuxième lame, le support, évidemment&nbsp;:
-          connaissez-vous la différence entre <code>* + *</code> et
-          <code>:first-child</code>&nbsp;?
-        </p>
-        <!-- @todo vérifier le support de hgroup -->
-        <p>
-          Suivez les spécifications, les ajouts ou retraits de fonctionnalités&nbsp;—
-          mais aussi les implémentations dans les navigateurs&nbsp;: <code>hgroup</code> n’a jamais
-          eu d’implémentation sémantique, par exemple.
-        </p>
+        <div>
+          <h3>En deuxième lame&nbsp;: le support</h3>
+          <p>
+            Suivez les spécifications, les ajouts ou retraits de fonctionnalités&nbsp;—
+            mais aussi les implémentations dans les navigateurs&nbsp;:
+            <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/hgroup#notes_dutilisation"><code>hgroup</code>
+              n’a jamais eu d’implémentation sémantique</a>, par exemple&nbsp— et <code>:is()</code> et <code>:where()</code>
+            vous font gagner quelques octets, au détriment du support de (très) nombreux navigateurs…
+          </p>
+          <p><small>Validez votre HTML, aussi.</small></p>
+        </div>
       </section>
 
-      <!-- @todo Introduction no-js : c’est pas l’objectif ici, pas de bidouilles → juste du HTML que vous ne connaissez peut-être pas ! -->
       <section>
-        <h2><strong>Note</strong> : pas de bidouilles</h2>
+        <h2>JavaScript est notre ami</h2>
+        <p class="lead">JavaScript est indispensable, tant pour l’accessibilité que pour une expérience utilisateur optimale.</p>
+        <p>
+          Mais il ne faut l’utiliser qu’en cas de nécessité, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">à l’instar d’ARIA</a>.
+          L’objectif est seulement de vous faire découvrir du HTML que vous ne connaissez peut-être pas.
+        </p>
+        <p><strong>Opinion</strong>&nbsp;: l’écosystème <code>no-js</code> est peuplé de démonstration <i lang="en">CSS only</i>, ce qui est littéralement impossible.</p>
       </section>
 
       <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
       <!-- @todo Pour chaque démo : un slide d’accroche, la démo, un slide warning / ressources -->
       <!-- @todo Des emojis partout !! -->
+
+      <!-- @todo Exemple avec audio / video -->
+
       <section>
         <h2>Autocomplétion</h2>
         <p class="lead">Compléter automatiquement le nom de commune d’après un code postal ou un début de saisie&nbsp&nbsp;?</p>
@@ -148,6 +154,35 @@
                 <option>HTML</option>
                 <option>CSS</option>
                 <option>SVG</option>
+              </datalist>
+            </p>
+          </form>
+        </div>
+      </section>
+      <section class="demo">
+        <h2 aria-hidden="true">De la suggestion</h2>
+        <div class="markup">
+          <pre class="language-markup">
+            <code class="language-markup">
+&lt;label for="colors">Vous mettrez bien un peu de couleur&nbsp;?&lt;/label>
+&lt;input id="colors" type="color" list="colors"/>
+&lt;datalist id="colors">
+  &lt;option>#ff00dd&lt;/option>
+  &lt;option>#911&lt;/option>
+  &lt;option>#bada55&lt;/option>
+&lt;/datalist>
+            </code>
+          </pre>
+        </div>
+        <div class="demo d-flex">
+          <form class="m-auto">
+            <p>
+              <label for="color">Vous mettrez bien un peu de couleur&nbsp;?</label>
+              <input id="color" type="color" list="colors"/>
+              <datalist id="colors">
+                <option>#ff00dd</option>
+                <option>#911</option>
+                <option>#bada55</option>
               </datalist>
             </p>
           </form>
@@ -245,6 +280,7 @@
 
       <!-- @todo Réf Adam Argyle + Adrian Roselli -->
       <!-- https://www.scottohara.me/blog/2019/03/05/open-dialog.html -->
+      <!-- https://web.dev/building-a-dialog-component/ -->
       <!-- https://github.com/KittyGiraudel/a11y-dialog ++ https://a11y-dialog.netlify.app/advanced/dialog-element -->
       <section>
         <h2>Une fenêtre modale</h2>
