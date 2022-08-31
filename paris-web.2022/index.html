@@ -7,8 +7,8 @@
   <meta name="description" content="Découvrez « le bon HTML » et économisez du JS et du CSS — conférence donnée à Paris Web 2022, par Gaël Poupard">
   <meta name="author" content="Gaël Poupard">
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/bello-pro.woff2"/>
-  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../fonts/museo-slab-300.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2"/>
+  <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2"/>
   <link rel="stylesheet" href="css/ddeecckk.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="css/prism.min.css" type="text/css" media="screen"/>
 </head>
@@ -18,7 +18,7 @@
       <h1>Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></h1>
     </header>
 
-    <!-- @todo CIU / a11y support / etc. -->
+    <!-- @todo CIU / a11y support / etc. en présentation visuelle ? -->
     <main role="main">
       <!-- @todo Utiliser utopia.fyi pour cibler une font-size dynamique ? -->
       <section class="first">
@@ -51,22 +51,6 @@
           Le mantra de l’<strong>amélioration progressive</strong>, en somme…
         </p>
       </section>
-
-      <section>
-        <h2>Dans le web, rien de nouveau</h2>
-        <p class="lead">JavaScript a toujours poussé CSS dans ses retranchements.</p>
-        <ul>
-          <li>La gestion du survol avant l’apparition de <code>:hover</code>&nbsp;;</li>
-          <li>La gestion des typographies personnalisées avec <a hreflang="en" href="https://github.com/sorccu/cufon">Cufón</a>, en attendant le support de <code>@font-face</code>&nbsp;;</li>
-          <li>Le défilement doux, les éléments collants ou le chargement paresseux des images nécessitaient JavaScript il y a encore 3 ou 4 ans…</li>
-        </ul>
-        <p>
-          Tous ces usages, implémentés en JavaScript faute de mieux, ont fini par
-          aboutir à une standardisation dans HTML ou CSS.
-        </p>
-        <p class="small">Pensez aussi à jQuery.</p>
-      </section>
-
       <section>
         <h2>L’arbre de décision</h2>
         <ol>
@@ -86,10 +70,9 @@
               n’a jamais eu d’implémentation sémantique</a>, par exemple&nbsp;— et <code>:is()</code> et <code>:where()</code>
             vous font gagner quelques octets, au détriment du support de (très) nombreux navigateurs…
           </p>
-          <p><small>Validez votre HTML, aussi.</small></p>
+          <p class="small">Validez votre HTML, aussi.</p>
         </div>
       </section>
-
       <section>
         <h2>JavaScript est notre ami</h2>
         <p class="lead">JavaScript est indispensable, tant pour l’accessibilité que pour une expérience utilisateur optimale.</p>
@@ -99,60 +82,41 @@
         </p>
         <p><strong>Opinion</strong>&nbsp;: l’écosystème <code>no-js</code> est peuplé de démonstration <i lang="en">CSS only</i>, ce qui est littéralement impossible.</p>
       </section>
+      <section>
+        <h2>Dans le web, rien de nouveau</h2>
+        <p class="lead">JavaScript a toujours poussé CSS dans ses retranchements.</p>
+        <ul>
+          <li>La gestion du survol avant l’apparition de <code>:hover</code>&nbsp;;</li>
+          <li>La gestion des typographies personnalisées avec <a hreflang="en" href="https://github.com/sorccu/cufon">Cufón</a>, en attendant le support de <code>@font-face</code>&nbsp;;</li>
+          <li>Le défilement doux, les éléments collants ou le chargement paresseux des images nécessitaient JavaScript il y a encore 3 ou 4 ans…</li>
+        </ul>
+        <p>
+          Tous ces usages, implémentés en JavaScript faute de mieux, ont fini par
+          aboutir à une standardisation dans HTML ou CSS.
+        </p>
+        <p class="small">Pensez aussi à jQuery.</p>
+      </section>
 
       <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
       <!-- @todo Pour chaque démo : un slide d’accroche, la démo, un slide warning / ressources -->
-      <!-- @todo Des emojis partout !! -->
+      <!-- @todo Des images et emojis partout !! -->
 
       <!-- @todo Exemple avec audio / video -->
-
-      <section>
-        <h2>Autocomplétion</h2>
-        <p class="lead">Compléter automatiquement le nom de commune d’après un code postal ou un début de saisie&nbsp&nbsp;?</p>
-        <p>Pas besoin d’Angular Material ou d’un composant riche&nbsp;!</p>
-        <!-- @todo Mauvais exemple je pense, ou alors faut prévoir une démo complète et s’assurer que mon Firefox a mon adresse :/ -->
-        <p class="small">
-          En réalité, vous n’avez pas besoin de gérer la liste des communes de France et de Navarre,
-          l’utilisateur (et son navigateur) ont déjà l’information.
-        </p>
-      </section>
-      <section class="demo">
-        <h2 aria-hidden="true">Autocomplétion</h2>
-        <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;input type="password" autocomplete="new-password"/>
-&lt;input type="email" autocomplete="email"/>
-            </code>
-          </pre>
-        </div>
-        <form class="demo d-flex">
-          <div class="m-auto">
-            <p>
-              <label for="password">Mot de passe</label>
-              <input id="password" type="password" autocomplete="new-password"/>
-            </p>
-            <p>
-              <label for="email">Email</label>
-              <input id="email" type="email" autocomplete="email"/>
-            </p>
-          </div>
-        </form>
-      </section>
-      <!-- @todo Mentionner le critère RGAA → https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/glossaire/#liste-des-valeurs-possibles-pour-l-attribut-autocomplete -->
+      <!-- @todo Exemple avec progress / meter -->
+      <!-- @todo Exemple avec type="date" et consorts -->
 
       <section>
         <h2>Liste de suggestions</h2>
-        <p>Vous voulez proposer une liste de valeurs à l’utilisateur, en permettant aussi la saisie libre&nbsp;?</p>
-        <p>Toujours pas besoin d’une bibliothèque, ni même d’un composant riche&nbsp;! </p>
+        <p class="lead">Vous voulez proposer une liste de valeurs à l’utilisateur, en permettant aussi la saisie libre&nbsp;?</p>
+        <p>Pas besoin d’une bibliothèque, ni même d’un composant riche&nbsp;!</p>
       </section>
       <section class="demo">
-        <h2 aria-hidden="true">De la suggestion</h2>
+        <h3 class="h2">Exemple de suggestion&nbsp;: pour du texte</h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;label for="language">D’après vous, quel est le meilleur langage de programmation&nbsp;?&lt;/label>
-&lt;input id="language" type="text" list="languages"/>
+          <pre class="language-markup"><code class="language-markup">&lt;label for="language">
+  Quel est le meilleur langage de programmation&nbsp;?
+&lt;/label>
+&lt;input id="language" type="text" list="languages">
 &lt;datalist id="languages">
   &lt;option>HTML&lt;/option>
   &lt;option>CSS&lt;/option>
@@ -161,11 +125,11 @@
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
-          <form class="m-auto">
+        <div class="playground">
+          <form>
             <p>
-              <label for="language">D’après vous, quel est le meilleur langage de programmation</label>
-              <input id="language" type="text" list="languages"/>
+              <label for="language">Quel est le meilleur langage de programmation&nbsp;?</label>
+              <input id="language" type="text" list="languages">
               <datalist id="languages">
                 <option>HTML</option>
                 <option>CSS</option>
@@ -176,46 +140,120 @@
         </div>
       </section>
       <section class="demo">
-        <h2 aria-hidden="true">De la suggestion</h2>
+        <h3 class="h2">Exemple de suggestion&nbsp;: pour une couleur</h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;label for="colors">Vous mettrez bien un peu de couleur&nbsp;?&lt;/label>
-&lt;input id="colors" type="color" list="colors"/>
+          <pre class="language-markup"><code class="language-markup">&lt;label for="colors">
+  Vous mettrez bien un peu de couleur&nbsp;?
+&lt;/label>
+&lt;input id="colors" type="color" list="colors">
 &lt;datalist id="colors">
-  &lt;option>#ff00dd&lt;/option>
-  &lt;option>#911&lt;/option>
-  &lt;option>#bada55&lt;/option>
+  &lt;option value="#ff00dd">
+  &lt;option value="#991111">
+  &lt;option value="#bada55">
 &lt;/datalist>
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
-          <form class="m-auto">
+        <div class="playground">
+          <form>
             <p>
               <label for="color">Vous mettrez bien un peu de couleur&nbsp;?</label>
-              <input id="color" type="color" list="colors"/>
+              <input id="color" type="color" list="colors">
               <datalist id="colors">
-                <option>#ff00dd</option>
-                <option>#911</option>
-                <option>#bada55</option>
+                <option value="#ff00dd">
+                <option value="#991111">
+                <option value="#bada55">
               </datalist>
             </p>
           </form>
         </div>
       </section>
+      <section>
+        <h3 class="h2">Accessibilité et compatibilité</h3>
+        <h4>Compatibilité</h4>
+        <p>
+          <a hreflang="en" href="https://caniuse.com/datalist">Le support de <code>datalist</code> est très bon</a>,
+          avec une nuance pour Firefox qui ne supporte que le <code>type="text"</code>.
+        </p>
+        <p class="small">
+          Vous pouvez <a hreflang="en" href="https://demo.agektmr.com/datalist/">tester les différents
+          types de champs sur cette page de démonstration</a>, réalisée par Eiji Kitamura.
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/datalist.html">Le support
+            par les technologies d’assistance est excellent</a> —&nbsp;avec une limite&nbsp;:
+          <a hreflang="en" href="https://a11ysupport.io/tech/html/datalist_element">pas d’annonce lorsque la liste de suggestions est modifiée</a>.
+          Dans ce cas, il faudra recourir à une <i lang="en">live region</i> ARIA pour restituer le changement.
+        </p>
+      </section>
+
+      <section>
+        <h2>Auto-remplissage</h2>
+        <p class="lead">
+          Votre formulaire demande des données personnelles relatives à l’identité, l’adresse ou encore une carte de crédit&nbsp;?
+        </p>
+        <p>
+          Attendez un peu avant de dégainer une bibliothèque JavaScript pour «&nbsp;faciliter&nbsp;» la saisie à coup de masques
+          ou de déduction&nbsp;— voire d’appels <abbr lang="en" title="Application Programming Interface">API</abbr>&nbsp;:
+          l’utilisateur&nbsp;— et son navigateur&nbsp;— ont déjà l’information.
+        </p>
+      </section>
+      <section class="demo">
+        <h3 class="h2">Exemple d’auto-remplissage</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;input type="password" autocomplete="new-password">
+&lt;input type="email" autocomplete="email">
+&lt;input autocomplete="one-time-code">
+            </code>
+          </pre>
+        </div>
+        <form class="playground">
+          <p>
+            <label for="password">Mot de passe</label>
+            <input id="password" type="password" autocomplete="new-password">
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email">
+          </p>
+        </form>
+      </section>
+      <section>
+        <h3 class="h2">Compatibilité et accessibilité</h3>
+        <h4>Compatibilité</h4>
+        <p>
+          <a hreflang="en" href="https://caniuse.com/input-autocomplete-onoff">Le support d’<code>autocomplete</code>
+            est excellent</a> — même si les navigateurs n’implémentent que partiellement la valeur <code>off</code> (volontairement).
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          Non seulement <code>autocomplete</code> est pleinement accessible, mais est même requis par
+          <a hreflang="en" href="https://www.w3.org/TR/WCAG21/#input-purposes">
+            le critère 1.3.5 des <abbr lang="en" title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</a> et
+          <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-11-13">le
+            critère 11.13 du <abbr title="Référentiel Général d’Amélioration de l’Accessibilité">RGAA</abbr> 4.1</a>.
+        </p>
+      </section>
 
       <section>
         <h2>Formater la saisie</h2>
-        <p>Vous n’autorisez que certains caractères, ou avez besoin de normaliser les valeurs&nbsp;?</p>
-        <p>Pas de traitements sur la valeur ou d’écouteurs d’événement crados&nbsp;: HTML à la rescousse&nbsp;!</p>
+        <p class="lead">Vous n’autorisez que certains caractères, ou avez besoin de normaliser les valeurs&nbsp;?</p>
+        <p>
+          Traiter la valeur fournie après soumission <strong>génère du risque</strong> et engendre un décalage malvenu&nbsp;—
+          «&nbsp;<a href="https://twitter.com/ffoodd_fr/status/664715045683752960/photo/1">Bonjour Ga%c3%abl</a>&nbsp;».
+        </p>
+        <p>
+          Des écouteurs d’événements pour annuler la saisie si elle ne nous convient pas n’est pas une meilleure
+          expérience pour l’utilisateur, causant des <strong>comportements inattendus</strong>.
+        </p>
+        <p class="small">Vous êtes-vous déjà demandé comment étaient restitutés des masques de saisie, sur un lecteur d’écran&nbsp;?</p>
+        <p>HTML à la rescousse&nbsp;!</p>
       </section>
       <section class="demo">
-        <h2 aria-hidden="true">Formater la saisie</h2>
+        <h3 class="h2">Exemple de gestion du format</h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;label for="pattern">
+          <pre class="language-markup"><code class="language-markup">&lt;label for="pattern">
   Mot de passe
   &lt;small>(obligatoire)&lt;/small>
 &lt;/label>
@@ -224,94 +262,119 @@
   pattern="[a-z]{4,8}"
   spellcheck="false"
   autocorrect="off"
-  autocapitalize="none"/>
+  autocapitalize="none">
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
-          <form class="m-auto" target="_self">
+        <div class="playground">
+          <form>
             <p>
               <label for="pattern">Mot de passe <small>(obligatoire)</small></label>
               <input id="pattern" type="password" required
                      pattern="[a-z]{4,8}"
-                     spellcheck="false" autocorrect="off" autocapitalize="none"
-                     aria-describedby="aide"/>
+                     spellcheck="false"
+                     autocorrect="off"
+                     autocomplete="off"
+                     autocapitalize="none"
+                     aria-describedby="aide">
               <small id="aide" class="d-block mt-1">
                 Votre mot de passe doit contenir quatre à huit minuscules uniquement.
               </small>
             </p>
-            <button type="submit">Valider</button>
+            <button>Valider</button>
           </form>
         </div>
+      </section>
+      <section>
+        <h3 class="h2">Accessibilité</h3>
+        <p>
+          L’attribut <code>pattern</code> n’est pas restitué par les technologies d’assistance&nbsp;:
+          il est donc de bon aloi de mentionner les contraintes avant la soumission du formulaire, à l’aide d’un
+          <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/glossaire/#passage-de-texte-lie-par-aria-labelledby-ou-aria-describedby">passage de texte</a>
+          visible&nbsp;— mais également de <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode-rgaa/criteres/#crit-11-11">fournir un exemple de saisie correcte</a>,
+          en cas d’erreur.
+        </p>
+        <p class="small">Vous connaissez <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation">l’API HTML de validation des contraintes</a>&nbsp;?</p>
       </section>
 
       <section>
         <h2>D’autres bonus pour formulaires</h2>
         <p>De nombreux autres attributs sont drôlement pratiques — certains récents, et d’autres… non&nbsp;:</p>
         <ul>
-          <li><code>inputmode</code> pour déterminer le clavier à utiliser, sur <i lang="en">smartphone</i>,</li>
-          <li><code>enterkeyhint</code> pour indiquer la fonction de la touche entrée, sur <i lang="en">smartphone</i> également,</li>
+          <li><code>inputmode</code> pour déterminer le clavier à utiliser (sur mobile),</li>
+          <li><code>enterkeyhint</code> pour indiquer la fonction de la touche entrée (sur mobile également),</li>
           <li><code>for</code> et <code>id</code> pour associer un <code>label</code> à un champ,</li>
           <li><code>name</code> pour les boutons radios et cases à cocher,</li>
           <li><code>type</code> pour les boutons et éviter de soumettre les formulaires n’importe quand&nbsp;!</li>
           <li><code>action</code>, <code>method</code> mais aussi <code>formaction</code> et <code>formmethod</code> (entre autres).</li>
         </ul>
         <p>
-          <a href="https:www.//smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/" hreflang="en">
+          <a hreflang="en" href="https:www.//smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/">
             Stéphanie Walter a publié un guide extrêmement complet pour aider vos utilisateurs à remplir vos formulaires,
-            sur <cite>Smashing Magazine</cite> (en anglais).
-          </a>
+            sur <cite>Smashing Magazine</cite> (en anglais)
+          </a>, et <a hreflang="en" href="https://better-mobile-inputs.netlify.app/">Alex Holacheck a créé un configurateur de champs de formulaires pour mobile</a>.
           </p>
       </section>
 
-      <!-- @todo <progress> et <meter> -->
-
       <section >
         <h2>Un bloc dépliant</h2>
-        <p>Un contenu supplémentaire à afficher après une interaction&nbsp;?</p>
+        <p class="lead">Un contenu supplémentaire à afficher, caché derrière un bouton&nbsp;?</p>
         <p>
-          Vous pouvez implémenter le motif de conception
-          <abbr lang="en" title="Accessible Rich Internet Applications" aria-label="Accessible Rich Internet Applications">ARIA</abbr>
-          <i lang="en">disclosure</i>, évidemment&nbsp;— mais pas que&nbsp;!
+          Vous pouvez implémenter le motif de conception ARIA
+          <i lang="en">disclosure</i>, évidemment&nbsp;— mais nous avons déjà parlé
+          de <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">la première règle d’ARIA</a>&nbsp;!
         </p>
       </section>
       <section class="demo">
-        <h2 aria-hidden="true">Un bloc dépliant</h2>
+        <h3 class="h2">Exemple de bloc dépliant</h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;details>
+          <pre class="language-markup"><code class="language-markup">&lt;details>
   &lt;summary>Découvrez mes secrets…&lt;/summary>
   Hé, à quoi vous vous attendiez&nbsp;!
 &lt;/details>
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
-          <details class="m-auto">
+        <div class="playground">
+          <details class="mt-1">
             <summary>Découvrez mes secrets…</summary>
             Hé, à quoi vous vous attendiez&nbsp;!
           </details>
         </div>
       </section>
-      <!-- @todo Warning a11y : https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html -->
+      <section>
+        <h3 class="h2">Accessibilité</h3>
+        <p>
+          <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/details-summary.html">L’implémentation par les différents navigateurs est complète</a>
+          et <a hreflang="en">le support par les technologies d’assistance est excellent</a>.
+          Alors pourquoi faire un <i lang="en">slide</i> dédié&nbsp;?
+        </p>
+        <p>
+          <a hreflang="en" href="https://adrianroselli.com/2019/04/details-summary-are-not-insert-control-here.html">Adrian Roselli
+            a explicité les détournements de <code>details</code> potentiellement inaccessibles</a>&nbsp;— en résumé, <code>details</code> n’est pas&nbsp;:
+        </p>
+        <ul>
+          <li>un <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">accordéon</a>,</li>
+          <li>un <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/">onglet</a>,</li>
+          <li>un menu de navigation,</li>
+          <li>une <a hreflang="en" href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/">fenêtre de dialogue</a>…</li>
+        </ul>
+        <p class="small">
+          Les principaux défauts sont l’impossibilité de mettre un titre dans un <code>summary</code>
+          (ce dernier ayant un <code>role="button"</code> implicite) et l’absence de gestion d’<kbd>Échap</kbd>
+          pour fermer le détail.
+        </p>
+      </section>
 
-      <!-- @todo Réf Adam Argyle + Adrian Roselli -->
-      <!-- https://www.scottohara.me/blog/2019/03/05/open-dialog.html -->
-      <!-- https://web.dev/building-a-dialog-component/ -->
-      <!-- https://github.com/KittyGiraudel/a11y-dialog ++ https://a11y-dialog.netlify.app/advanced/dialog-element -->
       <section>
         <h2>Une fenêtre modale</h2>
-        <!-- @todo À quoi sert une modale, en vrai ? -->
-        <p>Vous devez exiger une interaction de l’utilisateur, pour confirmer une action&nbsp;?</p>
-        <p>Pourquoi utiliser du JavaScript&nbsp;?</p>
+        <p class="lead">Vous devez exiger une interaction de l’utilisateur, pour confirmer une action&nbsp;?</p>
+        <p>Vous me voyez venir&nbsp;: pourquoi utiliser du JavaScript&nbsp;?</p>
       </section>
       <section class="demo">
-        <h2>Une fenêtre modale</h2>
+        <h3>Exemple de fenêtre modale</h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;dialog id="dialog">
+          <pre class="language-markup"><code class="language-markup">&lt;dialog id="dialog">
   &lt;form method="dialog">
     &lt;p>Bonjour, fenêtre&nbsp;!&lt;/p>
     &lt;button>OK&lt;/button>
@@ -322,7 +385,7 @@
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
+        <div class="playground d-flex">
           <dialog id="dialog">
             <form method="dialog">
               <p>Bonjour, fenêtre&nbsp;!</p>
@@ -344,6 +407,29 @@
           });
         </script>
       </section>
+      <section>
+        <h3 class="h2">Compatibilité et accessibilité</h3>
+        <h4>Compatibilité</h4>
+        <p><a hreflang="en" href="https://caniuse.com/dialog">Le support navigateur est quelque peu récent</a>&nbsp;:</p>
+        <ul>
+          <li>
+            <strong>Firefox</strong> a retiré le <i lang="en">flag</i> début 2022&nbsp;—
+            après des années de support expérimental&nbsp;;
+          </li>
+          <li><strong>Safari</strong> n’a implémenté <code>dialog</code> que dans la version 15.4, soit début 2022 également…</li>
+        </ul>
+        <h4>Accessibilité</h4>
+        <p>
+          <a hreflang="en" href="https://www.scottohara.me/blog/2019/03/05/open-dialog.html">Scott O'Hara a fait
+            le point sur l’accessibilité de <code>dialog</code></a> et
+          <a hreflang="en" href="https://a11y-dialog.netlify.app/advanced/dialog-element/">Kitty Giraudel liste les défauts restants
+            dans la doc de son (excellente) bibliothèque <code>a11y-dialog</code></a>.
+        </p>
+        <p class="small">
+          Cela étant dit, dans une approche d’<strong>amélioration progressive</strong>,
+          les fonctionnalités natives sont autant de fonctionnalités que vous n’avez plus à implémenter en JavaScript.
+        </p>
+      </section>
 
       <section class="demo">
         <h2><code>output</code></h2>
@@ -364,7 +450,7 @@
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
+        <div class="playground d-flex">
          <form class="d-flex m-auto" id="addition">
            <fieldset>
              <legend>Addition</legend>
@@ -418,7 +504,7 @@
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
+        <div class="playground d-flex">
           <table class="w-100 m-auto">
             <caption>Tableau bidon</caption>
             <colgroup>
@@ -466,7 +552,7 @@
   padding: 1rem;
 }</style>
         </div>
-        <div class="demo d-flex">
+        <div class="playground d-flex">
           <div class="modern-container m-auto">
             <div class="box">container</div>
           </div>
@@ -489,7 +575,7 @@
   padding: 1rem;
 }</style>
         </div>
-        <div class="demo d-flex">
+        <div class="playground d-flex">
           <div class="modern-container m-auto">
             <div class="box-2">container</div>
           </div>
@@ -512,7 +598,7 @@
             </code>
           </pre>
         </div>
-        <div class="demo d-flex">
+        <div class="playground d-flex">
           <div class="m-auto">
             <a download="export.json">Exporter</a>
             <form>
@@ -612,5 +698,10 @@
     </footer>
 
     <script src="../accesslide/js/prism.min.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+      document.body.style.setProperty(
+        '--slides', String(document.querySelector('main').childElementCount)
+      );
+    });</script>
   </body>
 </html>
