@@ -431,8 +431,16 @@
         </p>
       </section>
 
+      <section>
+        <h2>Afficher un résultat</h2>
+        <p class="lead">
+          Mettre à jour un total dans un panier ou un tableau&nbsp;?
+          Ajuster le résultat d’un calcul après un changement de paramètre&nbsp;?
+        </p>
+        <p>Encore une fois, HTML est là pour vous aider&nbsp;!</p>
+      </section>
       <section class="demo">
-        <h2><code>output</code></h2>
+        <h3 class="h2">Exemple d’<code>output</code></h3>
         <div class="markup">
           <pre class="language-markup">
             <code class="language-markup">
@@ -446,7 +454,7 @@
     &lt;label for="deux">Autre chiffre&lt;/label>
     &lt;input id="deux" type="number" value="0"/>
 &lt;/fieldset>
-&lt;output id="resultat" for="un deux">&lt;/output>
+&lt;output id="resultat" for="un deux" role="status">&lt;/output>
             </code>
           </pre>
         </div>
@@ -463,7 +471,7 @@
                <input id="deux" type="number" value="0"/>
              </p>
            </fieldset>
-           <output id="resultat" for="un deux"></output>
+           <output id="resultat" for="un deux" role="status"></output>
          </form>
         </div>
         <!-- @todo Warning a11y : un slide après, avec formatage dédié ? -->
