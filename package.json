@@ -15,21 +15,32 @@
     "node_modules"
   ],
   "scripts": {
-    "gulp": "node node_modules/gulp/bin/gulp.js",
-    "start": "npm run gulp"
+    "start": "concurrently --kill-others \"npm:watch\" \"npm:browser:start\"",
+    "browser:start": "browser-sync ./ -w --no-ui --https",
+    "build": "concurrently --kill-others \"npm:build:*\"",
+    "prebuild:css": "sass ./accesslide/scss:./accesslide/css --style compressed --no-source-map",
+    "build:css": "postcss ./accesslide/css/*.css -r -u autoprefixer cssnano --no-map",
+    "build:js": "concurrently --kill-others \"npm:accesslide\" \"npm:verbose\" \"npm:prism\" \"npm:slide\"",
+    "accesslide": "terser ./accesslide/AccesSlide.js -o ./accesslide/js/AccesSlide.min.js -c -m",
+    "verbose": "terser ./accesslide/AccesSlideVerbose.js -o ./accesslide/js/AccesSlideVerbose.min.js -c -m",
+    "prism": "terser ./accesslide/prism.js -o ./accesslide/js/prism.min.js -c -m",
+    "slide": "terser ./accesslide/slide.js -o ./accesslide/js/slide.min.js -c -m",
+    "watch": "concurrently --kill-others \"npm:watch:*\"",
+    "watch:css": "nodemon --watch ./accesslide/scss --ext scss --exec \"npm run build:css\"",
+    "watch:js": "nodemon --watch ./acceslide/js --ext js --exec \"npm run build:js\""
   },
   "browserslist": [
     "last 1 versions"
   ],
   "devDependencies": {
+    "autoprefixer": "^10.4.8",
     "browser-sync": "^2.27.9",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-newer": "^1.4.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.0",
-    "sass": "^1.50.0"
+    "concurrently": "^7.3.0",
+    "cssnano": "^5.1.13",
+    "nodemon": "^2.0.19",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.54.8",
+    "terser": "^5.15.0"
   }
 }
