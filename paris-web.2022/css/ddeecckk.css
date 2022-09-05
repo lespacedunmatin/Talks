@@ -333,6 +333,10 @@ header a {
   font-family: "bello-pro", sans-serif;
 }
 
+section [hreflang="en"]::after {
+  content: " (en anglais)";
+}
+
 section :is(p, ul, ol) {
   font-size: 1.5rem;
   font-weight: 300;
@@ -373,7 +377,7 @@ section::before {
 .style {
   align-items: center;
   background-color: #032c36;
-  border-radius: .5rem 0 0 .5rem;
+  border-radius: 0 0 0 .5rem;
   display: grid;
   font-size: 1.35rem;
   overflow-y: hidden;
@@ -389,10 +393,6 @@ section::before {
 .lead {
   font-size: 1.5rem;
   font-weight: 700;
-}
-
-.demo > :first-child + .style {
-  border-radius: 0 .5rem 0 .5rem;
 }
 
 .highlight--rule-only {
@@ -412,7 +412,10 @@ section::before {
 output {
   align-self: center;
   font: 300 4rem/1.1 monospace;
+  font-variant-numeric: tabular-nums;
   margin-left: 1rem;
+  min-width: 3ch;
+  text-align: right;
 }
 
 .playground table {
@@ -436,7 +439,12 @@ output {
   user-select: none;
 }
 
-.playground table col:target {
+.playground table tr > * {
+  padding: .25rem .5rem;
+}
+
+.playground table col:target,
+.playground table tr:target{
   background: yellow;
 }
 

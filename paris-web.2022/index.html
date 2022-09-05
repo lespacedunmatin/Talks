@@ -18,10 +18,8 @@
       <h1>Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></h1>
     </header>
 
-    <!-- @todo CIU / a11y support / etc. en présentation visuelle ? -->
     <main role="main">
-      <!-- @todo Utiliser utopia.fyi pour cibler une font-size dynamique ? -->
-      <section class="first">
+      <section id="slide-1" class="first">
         <span class="h2">Découvrez «&nbsp;le bon <abbr lang="en" title="HyperText Markup Language">HTML</abbr>&nbsp;» et économisez du <abbr lang="en" title="JavaScript">JS</abbr> et du <abbr lang="en" title="Cascading StyleSheet">CSS</abbr></span>
         <p>
           Retrouvez les slides en ligne sur
@@ -37,9 +35,7 @@
         </footer>
       </section>
 
-      <!-- @todo Un sommaire ? -->
-
-      <section>
+      <section id="slide-2">
         <h2>Le principe de moindre pouvoir<span aria-hidden="true">&nbsp;&#129412;</span></h2>
         <p>
           C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
@@ -51,7 +47,7 @@
           Le mantra de l’<strong>amélioration progressive</strong>, en somme…
         </p>
       </section>
-      <section>
+      <section id="slide-3">
         <h2>L’arbre de décision</h2>
         <ol>
           <li><abbr lang="en" title="HyperText Markup Language">HTML</abbr></li>
@@ -67,13 +63,13 @@
             Suivez les spécifications, les ajouts ou retraits de fonctionnalités&nbsp;—
             mais aussi les implémentations dans les navigateurs&nbsp;:
             <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/hgroup#notes_dutilisation"><code>hgroup</code>
-              n’a jamais eu d’implémentation sémantique</a>, par exemple&nbsp;— et <code>:is()</code> et <code>:where()</code>
-            vous font gagner quelques octets, au détriment du support de (très) nombreux navigateurs…
+              n’a jamais eu d’implémentation sémantique</a>, <code>:is()</code> et <code>:where()</code>
+            vous font gagner quelques octets au détriment du support navigateur…
           </p>
           <p class="small">Validez votre HTML, aussi.</p>
         </div>
       </section>
-      <section>
+      <section id="slide-4">
         <h2>JavaScript est notre ami</h2>
         <p class="lead">JavaScript est indispensable, tant pour l’accessibilité que pour une expérience utilisateur optimale.</p>
         <p>
@@ -82,35 +78,29 @@
         </p>
         <p><strong>Opinion</strong>&nbsp;: l’écosystème <code>no-js</code> est peuplé de démonstration <i lang="en">CSS only</i>, ce qui est littéralement impossible.</p>
       </section>
-      <section>
+      <section id="slide-5">
         <h2>Dans le web, rien de nouveau</h2>
         <p class="lead">JavaScript a toujours poussé CSS dans ses retranchements.</p>
         <ul>
           <li>La gestion du survol avant l’apparition de <code>:hover</code>&nbsp;;</li>
           <li>La gestion des typographies personnalisées avec <a hreflang="en" href="https://github.com/sorccu/cufon">Cufón</a>, en attendant le support de <code>@font-face</code>&nbsp;;</li>
-          <li>Le défilement doux, les éléments collants ou le chargement paresseux des images nécessitaient JavaScript il y a encore 3 ou 4 ans…</li>
+          <li>Le défilement doux, les éléments collants ou le «&nbsp;chargement paresseux&nbsp;» des images nécessitaient JavaScript il y a encore 3 ou 4 ans…</li>
         </ul>
         <p>
           Tous ces usages, implémentés en JavaScript faute de mieux, ont fini par
           aboutir à une standardisation dans HTML ou CSS.
         </p>
-        <p class="small">Pensez aussi à jQuery.</p>
+        <p class="small">Pensez un peu à l’impact de jQuery.</p>
       </section>
 
-      <!-- @todo Vérifier l’état de l’accessibilité de ces solutions : Adrian Roselli, Scott O'Harra, bookmarks compat… -->
-      <!-- @todo Pour chaque démo : un slide d’accroche, la démo, un slide warning / ressources -->
       <!-- @todo Des images et emojis partout !! -->
 
-      <!-- @todo Exemple avec audio / video -->
-      <!-- @todo Exemple avec progress / meter -->
-      <!-- @todo Exemple avec type="date" et consorts -->
-
-      <section>
+      <section id="slide-6">
         <h2>Liste de suggestions</h2>
         <p class="lead">Vous voulez proposer une liste de valeurs à l’utilisateur, en permettant aussi la saisie libre&nbsp;?</p>
         <p>Pas besoin d’une bibliothèque, ni même d’un composant riche&nbsp;!</p>
       </section>
-      <section class="demo">
+      <section id="slide-7" class="demo">
         <h3 class="h2">Exemple de suggestion&nbsp;: pour du texte</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;label for="language">
@@ -139,7 +129,7 @@
           </form>
         </div>
       </section>
-      <section class="demo">
+      <section id="slide-8" class="demo">
         <h3 class="h2">Exemple de suggestion&nbsp;: pour une couleur</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;label for="colors">
@@ -168,7 +158,7 @@
           </form>
         </div>
       </section>
-      <section>
+      <section id="slide-9">
         <h3 class="h2">Accessibilité et compatibilité</h3>
         <h4>Compatibilité</h4>
         <p>
@@ -188,7 +178,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="slide-10">
         <h2>Auto-remplissage</h2>
         <p class="lead">
           Votre formulaire demande des données personnelles relatives à l’identité, l’adresse ou encore une carte de crédit&nbsp;?
@@ -199,7 +189,7 @@
           l’utilisateur&nbsp;— et son navigateur&nbsp;— ont déjà l’information.
         </p>
       </section>
-      <section class="demo">
+      <section id="slide-11" class="demo">
         <h3 class="h2">Exemple d’auto-remplissage</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;input type="password" autocomplete="new-password">
@@ -219,7 +209,7 @@
           </p>
         </form>
       </section>
-      <section>
+      <section id="slide-12">
         <h3 class="h2">Compatibilité et accessibilité</h3>
         <h4>Compatibilité</h4>
         <p>
@@ -236,7 +226,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="slide-13">
         <h2>Formater la saisie</h2>
         <p class="lead">Vous n’autorisez que certains caractères, ou avez besoin de normaliser les valeurs&nbsp;?</p>
         <p>
@@ -247,10 +237,10 @@
           Des écouteurs d’événements pour annuler la saisie si elle ne nous convient pas n’est pas une meilleure
           expérience pour l’utilisateur, causant des <strong>comportements inattendus</strong>.
         </p>
-        <p class="small">Vous êtes-vous déjà demandé comment étaient restitutés des masques de saisie, sur un lecteur d’écran&nbsp;?</p>
+        <p class="small">Vous êtes-vous déjà demandé comment étaient restitués des masques de saisie, sur un lecteur d’écran&nbsp;?</p>
         <p>HTML à la rescousse&nbsp;!</p>
       </section>
-      <section class="demo">
+      <section id="slide-14" class="demo">
         <h3 class="h2">Exemple de gestion du format</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;label for="pattern">
@@ -285,7 +275,7 @@
           </form>
         </div>
       </section>
-      <section>
+      <section id="slide-15">
         <h3 class="h2">Accessibilité</h3>
         <p>
           L’attribut <code>pattern</code> n’est pas restitué par les technologies d’assistance&nbsp;:
@@ -297,7 +287,7 @@
         <p class="small">Vous connaissez <a hreflang="en" href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation">l’API HTML de validation des contraintes</a>&nbsp;?</p>
       </section>
 
-      <section>
+      <section id="slide-16">
         <h2>D’autres bonus pour formulaires</h2>
         <p>De nombreux autres attributs sont drôlement pratiques — certains récents, et d’autres… non&nbsp;:</p>
         <ul>
@@ -311,12 +301,12 @@
         <p>
           <a hreflang="en" href="https:www.//smashingmagazine.com/2018/08/ux-html5-mobile-form-part-2/">
             Stéphanie Walter a publié un guide extrêmement complet pour aider vos utilisateurs à remplir vos formulaires,
-            sur <cite>Smashing Magazine</cite> (en anglais)
+            sur <cite>Smashing Magazine</cite>
           </a>, et <a hreflang="en" href="https://better-mobile-inputs.netlify.app/">Alex Holacheck a créé un configurateur de champs de formulaires pour mobile</a>.
           </p>
       </section>
 
-      <section >
+      <section id="slide-17">
         <h2>Un bloc dépliant</h2>
         <p class="lead">Un contenu supplémentaire à afficher, caché derrière un bouton&nbsp;?</p>
         <p>
@@ -325,7 +315,7 @@
           de <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">la première règle d’ARIA</a>&nbsp;!
         </p>
       </section>
-      <section class="demo">
+      <section id="slide-18" class="demo">
         <h3 class="h2">Exemple de bloc dépliant</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;details>
@@ -342,7 +332,7 @@
           </details>
         </div>
       </section>
-      <section>
+      <section id="slide-19">
         <h3 class="h2">Accessibilité</h3>
         <p>
           <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/details-summary.html">L’implémentation par les différents navigateurs est complète</a>
@@ -362,20 +352,20 @@
         <p class="small">
           Les principaux défauts sont l’impossibilité de mettre un titre dans un <code>summary</code>
           (ce dernier ayant un <code>role="button"</code> implicite) et l’absence de gestion d’<kbd>Échap</kbd>
-          pour fermer le détail.
+          pour fermer le détail&nbsp;— <strong>mais est une fondation solide pour de l’amélioration progressive</strong>.
         </p>
       </section>
 
-      <section>
+      <section id="slide-20">
         <h2>Une fenêtre modale</h2>
         <p class="lead">Vous devez exiger une interaction de l’utilisateur, pour confirmer une action&nbsp;?</p>
         <p>Vous me voyez venir&nbsp;: pourquoi utiliser du JavaScript&nbsp;?</p>
       </section>
-      <section class="demo">
+      <section id="slide-21" class="demo">
         <h3>Exemple de fenêtre modale</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;dialog id="dialog">
-  &lt;form method="dialog">
+&lt;form method="dialog">
     &lt;p>Bonjour, fenêtre&nbsp;!&lt;/p>
     &lt;button>OK&lt;/button>
   &lt;/form>
@@ -407,7 +397,7 @@
           });
         </script>
       </section>
-      <section>
+      <section id="slide-22">
         <h3 class="h2">Compatibilité et accessibilité</h3>
         <h4>Compatibilité</h4>
         <p><a hreflang="en" href="https://caniuse.com/dialog">Le support navigateur est quelque peu récent</a>&nbsp;:</p>
@@ -424,14 +414,13 @@
             le point sur l’accessibilité de <code>dialog</code></a> et
           <a hreflang="en" href="https://a11y-dialog.netlify.app/advanced/dialog-element/">Kitty Giraudel liste les défauts restants
             dans la doc de son (excellente) bibliothèque <code>a11y-dialog</code></a>.
-        </p>
-        <p class="small">
-          Cela étant dit, dans une approche d’<strong>amélioration progressive</strong>,
-          les fonctionnalités natives sont autant de fonctionnalités que vous n’avez plus à implémenter en JavaScript.
+          Vous devez notamment rendre le reste du contenu inerte&nbsp;— mais
+          <a hreflang="en" href="https://caniuse.com/mdn-html_global_attributes_inert">le support de l’attribut <code>inert</code> est disparate</a>
+          donc il vous faudra <a hreflang="en" href="https://github.com/GoogleChrome/inert-polyfill">une prothèse d’émulation</a>.
         </p>
       </section>
 
-      <section>
+      <section id="slide-23">
         <h2>Afficher un résultat</h2>
         <p class="lead">
           Mettre à jour un total dans un panier ou un tableau&nbsp;?
@@ -439,12 +428,10 @@
         </p>
         <p>Encore une fois, HTML est là pour vous aider&nbsp;!</p>
       </section>
-      <section class="demo">
+      <section id="slide-24" class="demo">
         <h3 class="h2">Exemple d’<code>output</code></h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;fieldset>
+          <pre class="language-markup"><code class="language-markup">&lt;fieldset>
   &lt;legend>Addition&lt;/legend>
   &lt;p>
     &lt;label for="un">Chiffre&lt;/label>
@@ -458,8 +445,8 @@
             </code>
           </pre>
         </div>
-        <div class="playground d-flex">
-         <form class="d-flex m-auto" id="addition">
+        <div class="playground">
+         <form class="d-flex mt-1" id="addition">
            <fieldset>
              <legend>Addition</legend>
              <p>
@@ -474,12 +461,6 @@
            <output id="resultat" for="un deux" role="status"></output>
          </form>
         </div>
-        <!-- @todo Warning a11y : un slide après, avec formatage dédié ? -->
-        <p>
-          <a href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html" hreflang="en">
-            Scott O’Hara a rédigé un article détaillé sur l’accessibilité de l’élément <code>output</code> (en anglais).
-          </a>
-        </p>
         <script>
           const updateValue = () => {
             document.getElementById('resultat').value = parseInt(document.getElementById('un').value) + parseInt(document.getElementById('deux').value);
@@ -492,28 +473,57 @@
           });
         </script>
       </section>
+      <section id="slide-25">
+        <h3 class="h2">Compatibilité et accessibilité</h3>
+        <h4>Compatibilité</h4>
+        <p>
+          <code>output</code>
+          <a hreflang="en" href="https://caniuse.com/mdn-html_elements_output">est très bien supporté
+            par les navigateurs</a> et
+          <a hreflang="en" href="https://thepaciellogroup.github.io/AT-browser-tests/test-files/output.html">
+            est bien exposé aux technologies d’assistance</a>.
+        </p>
+        <h4>Accessibilité</h4>
+        <p>
+          Il y a tout de même quelques questionnements à avoir sur l’utilisation d’<code>output</code>.
+          <a hreflang="en" href="https://www.scottohara.me/blog/2019/07/10/the-output-element.html">
+            Scott O’Hara a rédigé un article détaillé sur l’accessibilité de l’élément <code>output</code>
+          </a>&nbsp;— en résumé, pensez à expliciter le <code>role="status"</code>.
+        </p>
+      </section>
 
-      <section class="demo">
+      <section id="slide-26">
         <h2>Mettre une colonne en avant</h2>
+        <p class="lead">
+          Un tableau de données peut rapidement devenir illisible&nbsp;: mettre en avant une
+          donnée peut s’avérer crucial pour l’utilisateur.
+        </p>
+        <p>
+          <a hreflang="en" href="https://www.matuzo.at/blog/highlighting-columns/">
+            Manuel Matuzovic a partagé une technique de mise en avant de colonne de tableau sur son blog
+          </a>, basée sur HTML et CSS&nbsp;— notamment <code>:target</code>.
+        </p>
+        <p class="small">Certains superpouvoirs de HTML ont besoin de CSS pour devenir visibles.</p>
+      </section>
+      <section id="slide-27" class="demo">
+        <h3 class="h2">Exemple de colonne mise en avant</h3>
         <div class="markup">
-          <pre class="language-markup">
-            <code class="language-markup">
-&lt;table>
+          <pre class="language-markup"><code class="language-markup">&lt;table>
   &lt;caption>Tableau bidon&lt;/caption>
   &lt;colgroup>
     &lt;col id="col-un">
   &lt;/colgroup>
   &lt;thead>
     &lt;tr>
-      &lt;th>&lt;a href="#col-un">Un&lt;/a>&lt;/th>
+      &lt;th scope="col">&lt;a href="#col-un">Un&lt;/a>&lt;/th>
     &lt;/tr>
   &lt;/thead>
 &lt;/table>
             </code>
           </pre>
         </div>
-        <div class="playground d-flex">
-          <table class="w-100 m-auto">
+        <div class="playground">
+          <table class="w-100 mt-1">
             <caption>Tableau bidon</caption>
             <colgroup>
               <col id="col-un">
@@ -522,30 +532,75 @@
             </colgroup>
             <thead>
               <tr>
-                <th><a href="#col-un">Un</a></th>
-                <th><a href="#col-deux">Deux</a></th>
-                <th><a href="#col-trois">Trois</a></th>
+                <th scope="col"><a href="#col-un">Un</a></th>
+                <th scope="col"><a href="#col-deux">Deux</a></th>
+                <th scope="col"><a href="#col-trois">Trois</a></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Un truc</td>
                 <td>Deux trucs</td>
-                <td>Et non !</td>
+                <td>Et non&nbsp;!</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p>
-          <a href="https://www.matuzo.at/blog/highlighting-columns/" hreflang="en">
-            Manuel Matuzovic a partagé cette technique sur son blog (en anglais).
-          </a>
-        </p>
+      </section>
+      <section id="slide-28" class="demo">
+        <h3 class="h2">Exemple de ligne mise en avant</h3>
+        <div class="markup">
+          <pre class="language-markup"><code class="language-markup">&lt;table>
+  &lt;caption>Tableau bidon 2, le retour&lt;/caption>
+  &lt;tbody>
+    &lt;tr id="row-un">
+      &lt;th scope="row">&lt;a href="#row-un">Un truc&lt;/a>&lt;/th>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table>
+            </code>
+          </pre>
+        </div>
+        <div class="playground">
+          <table class="w-100 mt-1">
+            <caption>Tableau bidon 2, le retour</caption>
+            <tbody>
+              <tr id="row-un">
+                <th scope="row"><a href="#row-un">Un truc</a></th>
+                <td>Un autre truc</td>
+                <td>Un machin&nbsp;!</td>
+              </tr>
+              <tr id="row-deux">
+                <th scope="row"><a href="#row-deux">Deux trucs</a></th>
+                <td>Encore un truc</td>
+                <td>Un bidule&nbsp;!</td>
+              </tr>
+              <tr id="row-trois">
+                <th scope="row"><a href="#row-trois">Trois trucs</a></th>
+                <td>Un nouveau truc</td>
+                <td>Une chose&nbsp;!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <!-- @todo Réf Stephanie Eckles -->
-      <section class="demo">
+      <section id="slide-29">
         <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
+        <p class="lead">Vous montrez du CSS et voulez faire une démonstration interactive&nbsp;?</p>
+        <p>
+          <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/#aa-live-editing-functionality">
+            Stephanie Eckles partage une solution outrageusement simple pour implémenter de la modification
+            en direct, en HTML
+          </a>.
+        </p>
+        <p class="small">
+          L’aperçu en direct ne fonctionne qu’avec CSS, mais on peut saupoudrer un peu de JavaScript pour
+          gérer le HTML&nbsp;!
+        </p>
+      </section>
+      <section id="slide-30" class="demo">
+        <h3 class="h2">Exemple de <i lang="en">live coding</i></h3>
         <div class="style">
 <style contenteditable class="highlight--none">.modern-container {
   display: grid;
@@ -555,6 +610,7 @@
 
 .box {
   aspect-ratio: 1;
+  /* Changez la couleur, pour voir ! */
   background-color: rebeccapurple;
   color: white;
   padding: 1rem;
@@ -566,9 +622,8 @@
           </div>
         </div>
       </section>
-
-      <section class="demo">
-        <h2>Avec un peu de <i lang="en">code highlighting</i></h2>
+      <section id="slide-31" class="demo">
+        <h3 class="h2">Avec un peu de <i lang="en">code highlighting</i> (en CSS)</h3>
         <div class="style">
 <style contenteditable style="--num-lines: 1;--highlight-start: calc(8 * var(--line-height));">.modern-container {
   display: grid;
@@ -590,13 +645,25 @@
         </div>
       </section>
 
-      <!-- @todo Reformuler : « de combien de JS avez-vous besoin pour gérer un import / export de JSON ? -->
-      <section class="demo">
-        <h2>Exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
+      <section id="slide-32">
+        <h3 class="h2">Compatibilité</h3>
+        <p class="lead">
+          <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/contenteditable#compatibilit%C3%A9_des_navigateurs">Le
+          support navigateur est excellent</a>.
+        </p>
+        <p>
+          Cela dit, modifier <i>in situ</i> est amusant, mais non persistant.
+          <strong>Comment faire pour enregistrer les modifications&nbsp;?</strong>
+        </p>
+        <p class="small">
+          <a href="https://www.ffoodd.fr/paris-web.2019/">L’atelier que j’ai donné à Paris Web 2019</a>
+          contient tous les indices nécessaires&nbsp;: stockage, export, import, remise à zéro.
+        </p>
+      </section>
+      <section id="slide-33" class="demo">
+        <h2>Stocker, exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
         <div class="markup">
-        <pre class="language-markup">
-            <code class="language-markup">
-&lt;a href="data:text/json,…" download="export.json">Exporter&lt;/a>
+        <pre class="language-markup"><code class="language-markup">&lt;a href="data:text/json,…" download="export.json">Exporter&lt;/a>
 &lt;form>
   &lt;p>
     &lt;label for="import">Importer&lt;/label>
@@ -606,8 +673,8 @@
             </code>
           </pre>
         </div>
-        <div class="playground d-flex">
-          <div class="m-auto">
+        <div class="playground">
+          <div class="mt-1">
             <a download="export.json">Exporter</a>
             <form>
               <p>
@@ -643,11 +710,36 @@
           });
         </script>
       </section>
+      <section id="slide-34">
+        <h3 class="h2">Mais… il y a du JavaScript&nbsp;!</h3>
+        <p class="lead">
+          Oui, très exactement 22 lignes pour cette démonstration&nbsp;— sans minification.
+        </p>
+        <p>On s’appuie sur trois mécaniques très simples&nbsp;:</p>
+        <ol>
+          <li>
+            <a href="https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage"><code>localStorage</code></a>
+            pour gérer les données&nbsp;: <code>setItem</code> et <code>removeItem</code>&nbsp;;
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/JSON">l’objet global <code>JSON</code></a>&nbsp;:
+            les méthodes <code>stringify</code> et <code>parse</code>&nbsp;;
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/fr/docs/Web/API/FileReader">l’API <code>FileReader</code></a>
+            pour interpréter le fichier au téléversement.
+          </li>
+        </ol>
+        <p class="small">Sur les 22 lignes, 6 sont dédiées uniquement à la démonstration et non nécessaires à la fonctionnalité.</p>
+      </section>
 
-      <section>
+      <section id="slide-35">
         <h2>D’autres nouveautés</h2>
         <p>J’ai pas eu le temps de faire les démos&nbsp;!</p>
         <ul>
+          <li><code>kbd</code>, <code>var</code> et <code>samp</code> pour la doc technique — vous écrivez de la doc, pas vrai&nbsp;?</li>
+          <li><code>progress</code> et <code>meter</code> pour représenter des mesures,</li>
+          <li><code>audio</code> et <code>video</code>&nbsp;— avec <code>track</code>, <code>kind</code> et <code>srclang</code>,</li>
           <li>
             <code>template</code>, <code>slot</code>, <code>is</code>, <code>part</code> et <code>exportparts</code>, et le
             <i lang="en">Shadow <abbr title="Document Object Model">DOM</abbr></i>, aussi connu sous le sobriquet
@@ -656,14 +748,12 @@
           <li>
             les attributs <code>data-*</code> et l’<abbr lang="en" title="Application Programming Interface">API</abbr>
             <i lang="en">Dataset</i> pour faire porter des données au <i lang="en">markup</i>
-            tout en restant valide <abbr lang="en" title="World Wide Web Consortium">W3C</abbr>,
+            tout en restant valide <abbr lang="en" title="World Wide Web Consortium">W3C</abbr>…
           </li>
-          <li><code>progress</code> et <code>meter</code> pour représenter des mesures,</li>
-          <li><code>kbd</code>, <code>var</code> et <code>samp</code> pour la doc technique — vous écrivez de la doc, pas vrai&nbsp;?</li>
         </ul>
       </section>
 
-      <section>
+      <section id="slide-36">
         <h2>Et pour les perfs, alors&nbsp;?</h2>
         <ul>
           <li>
@@ -671,22 +761,23 @@
             l’attribut <code>rel</code> sur l’élément <code>link</code>,
           </li>
           <li>
-            l’attribut <code>loading</code> pour gérer la stratégie de chargement des <i lang="en">assets</i>,
+            l’attribut <code>loading</code> pour gérer la stratégie de chargement des ressources statiques,
             avec les valeurs <code>lazy</code> et <code>eager</code>,
           </li>
           <li><code>defer</code> et <code>async</code> pour les scripts,</li>
-          <li><code>fetchpriority</code>&nbsp;: pas encore sec,</li>
+          <li><code>fetchpriority</code>&nbsp;: pas encore sec…</li>
         </ul>
       </section>
 
-      <section>
+      <section id="slide-37">
         <h2>Merci</h2>
         <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
         <h4>Crédits</h4>
         <ul>
-          <li>Pictogrammes&nbsp;: <a href="https://thenounproject.com/marekpolakovic/collection/rounded-ui" hreflang="en">Rounded UI</a> —&nbsp;par <a href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+          <li>Pictogrammes&nbsp;: <a hreflang="en" href="https://thenounproject.com/marekpolakovic/collection/rounded-ui">Rounded UI</a> —&nbsp;par <a hreflang="en" href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
           <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
-          <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>.</li>
+          <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
+          <li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
         </ul>
       </section>
     </main>
