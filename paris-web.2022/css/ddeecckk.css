@@ -455,3 +455,6 @@ output {
 .m-auto { margin: auto; }
 .mt-1 { margin-top: 1rem; }
 .w-100 { width: 100%; }
+
+[class^="grid"] { display: grid; }
+.grid-1-2 { grid-template-columns: 1fr 2fr; }

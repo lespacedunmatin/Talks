@@ -36,7 +36,7 @@
       </section>
 
       <section id="slide-2">
-        <h2>Le principe de moindre pouvoir<span aria-hidden="true">&nbsp;&#129412;</span></h2>
+        <h2>Le principe de moindre pouvoir <span aria-hidden="true">&nbsp;&#129412;</span></h2>
         <p>
           C’est <a hreflang="en" href="https://www.w3.org/DesignIssues/Principles.html">un des axiomes du web</a>,
           proposés par <cite>Tim Berners-Lee</cite> en 1998
@@ -48,38 +48,40 @@
         </p>
       </section>
       <section id="slide-3">
-        <h2>L’arbre de décision</h2>
-        <ol>
-          <li><abbr lang="en" title="HyperText Markup Language">HTML</abbr></li>
-          <li><abbr lang="en" title="Cascading StyleSheet">CSS</abbr></li>
-          <li>JavaScript</li>
-          <li><abbr lang="en" title="Accessible Rich Internet Applications">ARIA</abbr></li>
-          <li><i lang="en">Polyfill</i></li>
-          <li><i lang="en">Framework</i></li>
-        </ol>
-        <div>
-          <h3>En deuxième lame&nbsp;: le support</h3>
-          <p>
-            Suivez les spécifications, les ajouts ou retraits de fonctionnalités&nbsp;—
-            mais aussi les implémentations dans les navigateurs&nbsp;:
-            <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/hgroup#notes_dutilisation"><code>hgroup</code>
-              n’a jamais eu d’implémentation sémantique</a>, <code>:is()</code> et <code>:where()</code>
-            vous font gagner quelques octets au détriment du support navigateur…
-          </p>
-          <p class="small">Validez votre HTML, aussi.</p>
+        <h2>L’arbre de décision <span aria-hidden="true">&nbsp;&#127795;</span></h2>
+        <div class="grid-1-2">
+          <ol>
+            <li><abbr lang="en" title="HyperText Markup Language">HTML</abbr></li>
+            <li><abbr lang="en" title="Cascading StyleSheet">CSS</abbr></li>
+            <li>JavaScript</li>
+            <li><abbr lang="en" title="Accessible Rich Internet Applications">ARIA</abbr></li>
+            <li><i lang="en">Polyfill</i></li>
+            <li><i lang="en">Framework</i></li>
+          </ol>
+          <div>
+            <h3>Le support et le bon sens</h3>
+            <p>
+              Suivez <strong>les spécifications</strong>, les ajouts ou retraits de fonctionnalités&nbsp;—
+              mais aussi les implémentations dans les navigateurs.
+              <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/hgroup#notes_dutilisation"><code>hgroup</code>
+                n’a jamais eu d’implémentation sémantique</a>, <code>:is()</code> et <code>:where()</code>
+              vous font gagner quelques octets au détriment du support navigateur…
+            </p>
+            <p class="small">Validez votre HTML, aussi.</p>
+          </div>
         </div>
       </section>
       <section id="slide-4">
-        <h2>JavaScript est notre ami</h2>
+        <h2>JavaScript est notre ami <span aria-hidden="true">&nbsp;&#128152;</span></h2>
         <p class="lead">JavaScript est indispensable, tant pour l’accessibilité que pour une expérience utilisateur optimale.</p>
         <p>
           Mais il ne faut l’utiliser qu’en cas de nécessité, <a hreflang="en" href="https://www.w3.org/TR/using-aria/#rule1">à l’instar d’ARIA</a>.
           L’objectif est seulement de vous faire découvrir du HTML que vous ne connaissez peut-être pas.
         </p>
-        <p><strong>Opinion</strong>&nbsp;: l’écosystème <code>no-js</code> est peuplé de démonstration <i lang="en">CSS only</i>, ce qui est littéralement impossible.</p>
+        <p class="small"><strong>Opinion</strong>&nbsp;: l’écosystème <code>no-js</code> est peuplé de démonstration <i lang="en">CSS only</i>, ce qui est littéralement impossible.</p>
       </section>
       <section id="slide-5">
-        <h2>Dans le web, rien de nouveau</h2>
+        <h2>Dans le web, rien de nouveau <span aria-hidden="true">&nbsp;&#9851;&#65039;</span></h2>
         <p class="lead">JavaScript a toujours poussé CSS dans ses retranchements.</p>
         <ul>
           <li>La gestion du survol avant l’apparition de <code>:hover</code>&nbsp;;</li>
@@ -93,10 +95,8 @@
         <p class="small">Pensez un peu à l’impact de jQuery.</p>
       </section>
 
-      <!-- @todo Des images et emojis partout !! -->
-
       <section id="slide-6">
-        <h2>Liste de suggestions</h2>
+        <h2>Liste de suggestions <span aria-hidden="true">&nbsp;&#128071;</span> </h2>
         <p class="lead">Vous voulez proposer une liste de valeurs à l’utilisateur, en permettant aussi la saisie libre&nbsp;?</p>
         <p>Pas besoin d’une bibliothèque, ni même d’un composant riche&nbsp;!</p>
       </section>
@@ -179,14 +179,14 @@
       </section>
 
       <section id="slide-10">
-        <h2>Auto-remplissage</h2>
+        <h2>Auto-remplissage <span aria-hidden="true">&nbsp;&#128373;</span></h2>
         <p class="lead">
           Votre formulaire demande des données personnelles relatives à l’identité, l’adresse ou encore une carte de crédit&nbsp;?
         </p>
         <p>
           Attendez un peu avant de dégainer une bibliothèque JavaScript pour «&nbsp;faciliter&nbsp;» la saisie à coup de masques
           ou de déduction&nbsp;— voire d’appels <abbr lang="en" title="Application Programming Interface">API</abbr>&nbsp;:
-          l’utilisateur&nbsp;— et son navigateur&nbsp;— ont déjà l’information.
+          <strong>l’utilisateur&nbsp;— et son navigateur&nbsp;— ont déjà l’information</strong>.
         </p>
       </section>
       <section id="slide-11" class="demo">
@@ -227,7 +227,7 @@
       </section>
 
       <section id="slide-13">
-        <h2>Formater la saisie</h2>
+        <h2>Formater la saisie <span aria-hidden="true">&nbsp;&#128291;</span></h2>
         <p class="lead">Vous n’autorisez que certains caractères, ou avez besoin de normaliser les valeurs&nbsp;?</p>
         <p>
           Traiter la valeur fournie après soumission <strong>génère du risque</strong> et engendre un décalage malvenu&nbsp;—
@@ -307,7 +307,7 @@
       </section>
 
       <section id="slide-17">
-        <h2>Un bloc dépliant</h2>
+        <h2>Un bloc dépliant <span aria-hidden="true">&nbsp;&#128194;</span></h2>
         <p class="lead">Un contenu supplémentaire à afficher, caché derrière un bouton&nbsp;?</p>
         <p>
           Vous pouvez implémenter le motif de conception ARIA
@@ -357,12 +357,12 @@
       </section>
 
       <section id="slide-20">
-        <h2>Une fenêtre modale</h2>
+        <h2>Une fenêtre modale <span aria-hidden="true">&nbsp;&#129695;</span></h2>
         <p class="lead">Vous devez exiger une interaction de l’utilisateur, pour confirmer une action&nbsp;?</p>
         <p>Vous me voyez venir&nbsp;: pourquoi utiliser du JavaScript&nbsp;?</p>
       </section>
       <section id="slide-21" class="demo">
-        <h3>Exemple de fenêtre modale</h3>
+        <h3 class="h2">Exemple de fenêtre modale</h3>
         <div class="markup">
           <pre class="language-markup"><code class="language-markup">&lt;dialog id="dialog">
 &lt;form method="dialog">
@@ -421,10 +421,10 @@
       </section>
 
       <section id="slide-23">
-        <h2>Afficher un résultat</h2>
+        <h2>Afficher un résultat <span aria-hidden="true">&nbsp;&#129518;</span></h2>
         <p class="lead">
-          Mettre à jour un total dans un panier ou un tableau&nbsp;?
-          Ajuster le résultat d’un calcul après un changement de paramètre&nbsp;?
+          Mettre à jour un total dans un panier ou un tableau, ou
+          ajuster le résultat d’un calcul après un changement de paramètre&nbsp;?
         </p>
         <p>Encore une fois, HTML est là pour vous aider&nbsp;!</p>
       </section>
@@ -493,7 +493,7 @@
       </section>
 
       <section id="slide-26">
-        <h2>Mettre une colonne en avant</h2>
+        <h2>Mettre une colonne en avant <span aria-hidden="true">&nbsp;&#128209;</span></h2>
         <p class="lead">
           Un tableau de données peut rapidement devenir illisible&nbsp;: mettre en avant une
           donnée peut s’avérer crucial pour l’utilisateur.
@@ -586,7 +586,7 @@
       </section>
 
       <section id="slide-29">
-        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code></h2>
+        <h2>Du <i lang="en">live coding</i> grâce à <code>contenteditable</code> <span aria-hidden="true">&nbsp;&#128250;</span></h2>
         <p class="lead">Vous montrez du CSS et voulez faire une démonstration interactive&nbsp;?</p>
         <p>
           <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/#aa-live-editing-functionality">
@@ -661,7 +661,7 @@
         </p>
       </section>
       <section id="slide-33" class="demo">
-        <h2>Stocker, exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr></h2>
+        <h2>Stocker, exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr> <span aria-hidden="true">&nbsp;&#128230;</span></h2>
         <div class="markup">
         <pre class="language-markup"><code class="language-markup">&lt;a href="data:text/json,…" download="export.json">Exporter&lt;/a>
 &lt;form>
@@ -734,7 +734,7 @@
       </section>
 
       <section id="slide-35">
-        <h2>D’autres nouveautés</h2>
+        <h2>D’autres nouveautés <span aria-hidden="true">&nbsp;&#10024;</span></h2>
         <p>J’ai pas eu le temps de faire les démos&nbsp;!</p>
         <ul>
           <li><code>kbd</code>, <code>var</code> et <code>samp</code> pour la doc technique — vous écrivez de la doc, pas vrai&nbsp;?</li>
@@ -754,7 +754,7 @@
       </section>
 
       <section id="slide-36">
-        <h2>Et pour les perfs, alors&nbsp;?</h2>
+        <h2>Et les perfs <span aria-hidden="true">&nbsp;&#128640;</span></h2>
         <ul>
           <li>
             <code>preload</code>, <code>prefetch</code>, <code>preconnect</code> pour
@@ -771,7 +771,7 @@
 
       <section id="slide-37">
         <h2>Merci</h2>
-        <h3>Et à bientôt<span aria-hidden="true">&nbsp;&#9786;</span></h3>
+        <h3>Et à bientôt <span aria-hidden="true">&nbsp;&#128522;</span></h3>
         <h4>Crédits</h4>
         <ul>
           <li>Pictogrammes&nbsp;: <a hreflang="en" href="https://thenounproject.com/marekpolakovic/collection/rounded-ui">Rounded UI</a> —&nbsp;par <a hreflang="en" href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
