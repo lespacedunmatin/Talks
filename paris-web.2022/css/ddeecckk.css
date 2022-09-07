@@ -404,6 +404,21 @@ section::before {
   background-color: currentColor;
 }
 
+h2 [aria-hidden],
+.h2 [aria-hidden] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.emoji {
+  display: inline-block;
+  font-family: "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  height: 1em;
+  line-height: 1;
+  margin-left: .25ch;
+  width: 1em;
+}
+
 /* Demos */
 .playground label {
   display: block;

@@ -775,6 +775,7 @@
         <h4>Crédits</h4>
         <ul>
           <li>Pictogrammes&nbsp;: <a hreflang="en" href="https://thenounproject.com/marekpolakovic/collection/rounded-ui">Rounded UI</a> —&nbsp;par <a hreflang="en" href="https://www.marekpolakovic.sk/">Marek Polakovic</a>&nbsp;;</li>
+          <li>Emojis&nbsp;: <a hreflang="en" href="https://github.com/twitter/twemoji">Twemoji</a> —&nbsp;par Twitter&nbsp;;</li>
           <li>Typographie de titraille&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/bello-pro">Bello Pro</a> —&nbsp;créée par <a hreflang="en" href="https://www.underware.nl/">Underware</a>&nbsp;;</li>
           <li>Typographie de labeur&nbsp;: <a hreflang="en" href="https://typekit.com/fonts/museo-slab">Museo Slab</a> —&nbsp;créée par <a hreflang="en" href="https://www.exljbris.com/">Exljbris</a>&nbsp;;</li>
           <li>Moteur de présentation inspiré de <a hreflang="en" href="https://css-tricks.com/css-scroll-snap-slide-deck/">"<cite lang="en">CSS scroll-snap slide deck that supports live coding</cite>" de Stephanie Eckles sur Smashing Magazine</a>.</li>
@@ -797,10 +798,14 @@
     </footer>
 
     <script src="../accesslide/js/prism.min.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', () => {
-      document.body.style.setProperty(
-        '--slides', String(document.querySelector('main').childElementCount)
-      );
-    });</script>
+    <script src="../accesslide/js/twemoji.min.js"></script>
+    <script>
+      twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});
+      document.addEventListener('DOMContentLoaded', () => {
+        document.body.style.setProperty(
+          '--slides', String(document.querySelector('main').childElementCount)
+        );
+      });
+    </script>
   </body>
 </html>
