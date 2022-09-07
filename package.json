@@ -20,11 +20,12 @@
     "build": "concurrently --kill-others \"npm:build:*\"",
     "prebuild:css": "sass ./accesslide/scss:./accesslide/css --style compressed --no-source-map",
     "build:css": "postcss ./accesslide/css/*.css -r -u autoprefixer cssnano --no-map",
-    "build:js": "concurrently --kill-others \"npm:accesslide\" \"npm:verbose\" \"npm:prism\" \"npm:slide\"",
+    "build:js": "concurrently --kill-others \"npm:accesslide\" \"npm:verbose\" \"npm:prism\" \"npm:slide\" \"npm:twemoji\"",
     "accesslide": "terser ./accesslide/AccesSlide.js -o ./accesslide/js/AccesSlide.min.js -c -m",
     "verbose": "terser ./accesslide/AccesSlideVerbose.js -o ./accesslide/js/AccesSlideVerbose.min.js -c -m",
     "prism": "terser ./accesslide/prism.js -o ./accesslide/js/prism.min.js -c -m",
     "slide": "terser ./accesslide/slide.js -o ./accesslide/js/slide.min.js -c -m",
+    "twemoji": "terser ./accesslide/twemoji.js -o ./accesslide/js/twemoji.min.js -c -m",
     "watch": "concurrently --kill-others \"npm:watch:*\"",
     "watch:css": "nodemon --watch ./accesslide/scss --ext scss --exec \"npm run build:css\"",
     "watch:js": "nodemon --watch ./acceslide/js --ext js --exec \"npm run build:js\""
