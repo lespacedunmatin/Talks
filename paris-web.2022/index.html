@@ -397,17 +397,6 @@
           <button onclick="dialog.showModal()" class="m-auto">Aérer</button>
           <!-- → Ouvrir la fenêtre -->
         </div>
-        <script>
-          // Close dialog on backdrop click
-          // @author Adam Argyle
-          // @see https://twitter.com/argyleink/status/1511761383024521218
-          document.addEventListener('DOMContentLoaded', () => {
-            dialog.addEventListener('click', ({target:dialog}) => {
-              if (dialog.nodeName === 'DIALOG')
-                dialog.close()
-            });
-          });
-        </script>
       </section>
       <section id="slide-22">
         <h3 class="h2">Compatibilité et accessibilité</h3>
@@ -430,9 +419,6 @@
             le point sur l’accessibilité de <code>dialog</code></a> et
           <a hreflang="en" href="https://a11y-dialog.netlify.app/advanced/dialog-element/">Kitty Giraudel liste les défauts restants
             dans la doc de son (excellente) bibliothèque <code>a11y-dialog</code></a>.
-          Vous devez notamment rendre le reste du contenu inerte&nbsp;— mais
-          <a hreflang="en" href="https://caniuse.com/mdn-html_global_attributes_inert">le support de l’attribut <code>inert</code> est disparate</a>
-          donc il vous faudra <a hreflang="en" href="https://github.com/GoogleChrome/inert-polyfill">une prothèse d’émulation</a>.
         </p>
       </section>
 

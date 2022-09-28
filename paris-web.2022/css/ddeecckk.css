@@ -414,7 +414,12 @@ output {
 
 .playground dialog::backdrop {
   background: rgba(0, 0, 0, .5);
+  backdrop-filter: blur(.25rem);
   user-select: none;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
 }
 
 .playground table tr > * {
