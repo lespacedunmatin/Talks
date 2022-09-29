@@ -324,7 +324,7 @@ section::before {
   font: 500 1rem/2 "museo-slab";
   padding: .5rem;
   position: absolute;
-  right: -1px;
+  right: 0;
   text-align: center;
   width: 5rem;
   z-index: 2;
@@ -467,6 +467,10 @@ html:has(dialog[open]) {
     padding: 2rem;
     scroll-snap-align: center;
     scroll-snap-stop: always;
+  }
+
+  section::before {
+    right: -1px;
   }
 
   .demo {
