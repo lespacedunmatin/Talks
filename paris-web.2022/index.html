@@ -622,48 +622,33 @@
           </div>
         </div>
       </section>
-      <section id="slide-31" class="demo">
-        <h3 class="h2">Avec un peu de <i lang="en">code highlighting</i> (en CSS)</h3>
-        <div class="style">
-<style contenteditable style="--num-lines: 1;--highlight-start: calc(8 * var(--line-height));">.modern-container {
-  display: grid;
-  height: 100%;
-  place-content: center;
-}
 
-.box-2 {
-  aspect-ratio: 1;
-  background-color: rebeccapurple;
-  color: white;
-  padding: 1rem;
-}</style>
-        </div>
-        <div class="playground d-flex">
-          <div class="modern-container m-auto">
-            <div class="box-2">container</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- @todo data:text/html,<html contenteditable> -->
-      <!-- @todo https://github.com/zserge/awfice -->
-      <!-- @todo https://github.com/jacwright/wyg -->
-      <section id="slide-32">
+      <section id="slide-31">
         <h3 class="h2">Compatibilité</h3>
         <p class="lead">
           <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Global_attributes/contenteditable#compatibilit%C3%A9_des_navigateurs">Le
           support navigateur est excellent</a>.
         </p>
+        <h3>Mais… pourquoi&nbsp;?</h3>
+        <p>
+          Cet attribut est la porte ouverte à tout un tas d’idées saugrenues, dont mon exemple favori est
+          <a hreflang="en" href="https://github.com/zserge/awfice">Awfice, une suite bureautique minimaliste</a>.
+        </p>
+        <p class="small">
+          Un exemple&nbsp;? Voici le bloc-notes&nbsp;: <code>data:text/html,&lt;html contenteditable&gt;</code>.
+        </p>
+        <p>
+          C’est aussi un socle d’amélioration progressive pour
+          <a hreflang="en" href="https://github.com/jacwright/wyg"><strong>wyg</strong></a> ou
+          <a hreflang="en" href="https://quilljs.com/">Quill</a>, des éditeurs
+          <abbr lang="en" title="What You See Is What You Get">wysiwyg</abbr> légers et viables.
+        </p>
         <p>
           Cela dit, modifier <i>in situ</i> est amusant, mais non persistant.
           <strong>Comment faire pour enregistrer les modifications&nbsp;?</strong>
         </p>
-        <p class="small">
-          <a href="https://www.ffoodd.fr/paris-web.2019/">L’atelier que j’ai donné à Paris Web 2019</a>
-          contient tous les indices nécessaires&nbsp;: stockage, export, import, remise à zéro.
-        </p>
       </section>
-      <section id="slide-33" class="demo">
+      <section id="slide-32" class="demo">
         <h2>Stocker, exporter et importer du <abbr lang="en" title="JavaScript Object Notation">JSON</abbr> <span aria-hidden="true">&nbsp;&#128230;</span></h2>
         <div class="markup">
         <pre class="language-markup"><code class="language-markup">&lt;a href="data:text/json,…" download="export.json">Exporter&lt;/a>
