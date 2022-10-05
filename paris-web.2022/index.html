@@ -794,6 +794,20 @@
         document.body.style.setProperty(
           '--slides', String(document.querySelector('main').childElementCount)
         );
+
+        let io = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting === true) {
+            history.pushState({}, "", `#${entries[0].target.id}`);
+          }
+        }, {
+          root: document.querySelector('main'),
+          threshold: [1]
+        });
+
+        const slides = document.querySelectorAll('section[id]');
+        for (let i = 0; i < slides.length; i++) {
+          io.observe(slides[i]);
+        }
       });
     </script>
   </body>
