@@ -195,16 +195,6 @@ code[class] {
 /* @see https://css-tricks.com/css-scroll-snap-slide-deck/ */
 style {
   height: 100%;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  --line-height: 1.65rem;
-  --highlight-start: calc(2 * var(--line-height));
-  --lines: calc(1rem + var(--highlight-start) + (var(--num-lines, 1) * var(--line-height)));
-  background-image: linear-gradient(
-    rgba(250, 250, 250, .66) 0 calc(1rem + var(--highlight-start)),
-    rgb(255, 255, 255) calc(1rem + var(--highlight-start)) var(--lines),
-    rgba(250, 250, 250, .66) var(--lines) 100%
-  );
 }
 
 [required] {
@@ -364,15 +354,6 @@ section::before {
 .lead {
   font-size: 1.25rem;
   font-weight: 700;
-}
-
-.highlight--rule-only {
-  --highlight-start: calc(1 * var(--line-height))
-}
-
-.highlight--none {
-  background-image: none;
-  background-color: currentColor;
 }
 
 h2 [aria-hidden],
