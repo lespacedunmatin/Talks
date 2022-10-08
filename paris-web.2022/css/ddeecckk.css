@@ -67,42 +67,6 @@ html {
   color: #c42419;
 }
 
-body {
-  display: grid;
-  font: normal 400 1rem/1.5 sans-serif;
-  font-family: "museo-slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Emoji","Segoe UI Symbol";
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-rows:  3rem 1fr 4rem;
-  margin: 0 auto;
-  min-height: 100vh;
-  overflow-x: hidden;
-  text-rendering: optimizeSpeed;
-}
-
-a:not([class]) {
-  color: #c42419;
-  text-decoration-skip-ink: auto;
-}
-
-a:hover,
-a:focus {
-  color: #971c13;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-input,
-button,
-textarea,
-select {
-  border-style: solid;
-  font: inherit;
-  max-width: 100%;
-}
-
 :focus {
   outline-color: currentColor;
   outline-offset: .25rem;
@@ -120,9 +84,49 @@ select {
   isolation: isolate;
 }
 
+body {
+  display: grid;
+  font: normal 400 1rem/1.5 sans-serif;
+  font-family: "museo-slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Segoe UI Emoji","Segoe UI Symbol";
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows:  3rem 1fr 4rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  border-style: solid;
+  font: inherit;
+  max-width: 100%;
+}
+
+fieldset {
+  min-width: 0;
+}
+
 body:hover [tabindex="-1"]:focus {
   outline-color: transparent;
   isolation: auto;
+}
+
+a:not([class]) {
+  color: #c42419;
+  text-decoration-skip-ink: auto;
+}
+
+a:hover,
+a:focus {
+  color: #971c13;
 }
 
 [hidden],
@@ -258,10 +262,9 @@ section {
   border: 1px solid rgba(0, 0, 0, .1);
   counter-increment: slides;
   height: max-content;
-  padding: 1rem;
+  padding: 3rem 1rem;
   position: relative;
   scroll-snap-align: start;
-  scroll-snap-stop: always;
   width: 100vw;
 }
 
@@ -448,6 +451,10 @@ html:has(dialog[open]) {
 
 /* Responsive */
 @media (max-width: 60rem) {
+  :target {
+    scroll-margin-top: 6rem;
+  }
+
   section {
     border-bottom: 2px solid #fafafa;
   }
