@@ -9,7 +9,7 @@
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/bello-pro.woff2"/>
   <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="../accesslide/fonts/museo-slab-300.woff2"/>
-  <link rel="stylesheet" href="css/ddeecckk.css?2" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="css/ddeecckk.css?3" type="text/css" media="screen"/>
   <link rel="stylesheet" href="css/prism.min.css" type="text/css" media="screen"/>
 </head>
 <body>
@@ -440,25 +440,30 @@
   &lt;p>
     &lt;label for="deux">Autre chiffre&lt;/label>
     &lt;input id="deux" type="number" value="0"/>
+  &lt;p>
+  &lt;output id="resultat" for="un deux" role="status">&lt;/output>
 &lt;/fieldset>
-&lt;output id="resultat" for="un deux" role="status">&lt;/output>
             </code>
           </pre>
         </div>
         <div class="playground">
-         <form class="d-flex mt-1" id="addition">
+         <form id="addition">
            <fieldset>
              <legend>Addition</legend>
-             <p>
-               <label for="un">Chiffre</label>
-               <input id="un" type="number" value="0"/>
-             </p>
-             <p>
-               <label for="deux">Autre chiffre</label>
-               <input id="deux" type="number" value="0"/>
-             </p>
+             <div class="d-grid grid-2">
+               <div>
+                 <p>
+                   <label for="un">Chiffre</label>
+                   <input id="un" type="number" value="0"/>
+                 </p>
+                 <p>
+                   <label for="deux">Autre chiffre</label>
+                   <input id="deux" type="number" value="0"/>
+                 </p>
+               </div>
+               <output id="resultat" for="un deux" role="status"></output>
+             </div>
            </fieldset>
-           <output id="resultat" for="un deux" role="status"></output>
          </form>
         </div>
         <script>
